@@ -2,11 +2,10 @@
 
 Contribuidores: 
 
-  Nombre:                   Correo:                             Github:
-  Jaime Alvarez Gómez       j.alvarezgo@alumnos.urjc.es         xeven95
-  Laura Martín Hijosa       l.martinhi@alumnos.urjc.es          Lauram25
-  Sergio Serrano Serrano    s.serranoserr@alumnos.urjc.es       Sergioserr
-  Álvaro Pavón Alvarado     a.pavonal@alumnos.urjc.es           Alvaro95pa
+  Nombre: Jaime Alvarez Gómez, Correo: j.alvarezgo@alumnos.urjc.es, Github: xeven95
+  Nombre: Laura Martín Hijosa,  Correo: l.martinhi@alumnos.urjc.es, Github: Lauram25
+  Nombre: Sergio Serrano Serrano,  Correo: s.serranoserr@alumnos.urjc.es, Github: Sergioserr
+  Nombre: Álvaro Pavón Alvarado,  Correo: a.pavonal@alumnos.urjc.es, Github: Alvaro95pa
 
 Trello:
 
