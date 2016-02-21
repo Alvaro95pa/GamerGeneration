@@ -1,4 +1,4 @@
-# proyecto-web85
+﻿# proyecto-web85
 
 Contribuidores: 
 
@@ -15,5 +15,20 @@ Trello:
   https://trello.com/b/mgWRrV5M/daw
   
 Descripción:
+	Solamente los usuarios registrados podran realizar todas las funciones de la página web (comentarios,favoritos,...). Mientras
+te registrar podras configurar tu perfil asi como tus preferencias para que te muestren las noticias que te interesan.
+
+Entidades:
+	Usuario
+	
+	Comentarios
+
+	Foro
+	
+	Favoritos
+
+	Noticias/Post/Críticas
+
+	
 
   
