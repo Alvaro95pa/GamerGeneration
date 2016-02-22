@@ -14,18 +14,20 @@ Trello:
 
   https://trello.com/b/mgWRrV5M/daw
   
+  
 Descripción:
-	Solamente los usuarios registrados podran realizar todas las funciones de la página web (comentarios,favoritos,...). Mientras
-te registrar podras configurar tu perfil asi como tus preferencias para que te muestren las noticias que te interesan.
+
+La página principal mostrará un listado de los ultimos posts (noticias) añadidas a la web, junto con una barra de navegación y 	una opción para iniciar sesión o registrarse. También constará con un buscador de series y juegos, con el que se podrá acceder a toda la información disponible de dicha/o serie/juego. Los usuarios registrados tendrán acceso a una mayor funcionalidad, permitiéndoles modificar sus preferencias para filtrar los posts, además de comentarlos y de añadir series/juegos a una lista de favoritos.
 
 Entidades:
+
 	Usuario
 	
 	Comentarios
 
-	Foro
+	Catálogo
 	
-	Favoritos
+	Favoritos/Calificación
 
 	Noticias/Post/Críticas
 
