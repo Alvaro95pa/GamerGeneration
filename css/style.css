@@ -2,3 +2,36 @@
     width: 33%;
     text-align: center;
 }
+
+.portada{
+    text-align: center;
+}
+
+.datos h4{
+    font-size: 16px;
+    color: #666;
+    margin: 4px 0px;
+    padding: 0px 0px 4px 0px;
+    border-bottom: 2px solid #DDD;
+}
+
+.datos dt{
+    float: left;
+    margin-right: 8px;
+}
+
+header.col-md-3 {
+    
+}
+
+dl{
+    display: inline;
+}
+
+.comentarios header{
+    text-align: center;
+}
+
+.comentarios article{
+    margin-bottom: 20px;
+}
