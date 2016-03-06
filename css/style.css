@@ -20,16 +20,14 @@
     margin-right: 8px;
 }
 
-header.col-md-3 {
-    
-}
-
-dl{
-    display: inline;
-}
 
 .comentarios header{
     text-align: center;
+    padding: 0px;
+}
+
+.comentarios img{
+    width: 80%;
 }
 
 .comentarios article{
