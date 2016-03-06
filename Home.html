@@ -8,11 +8,12 @@
         <title> Home </title>
     </head>
     <body>
+       
         <div class="container">
             <div class="cabecera">
                 <div class="logo">
                     <img src="img/Logo%20GG.png"/>
-                    <span>GAMER GENERATION</span>
+                    <span class="nombre">GAMER GENERATION</span>
                 </div>
                 <!-- Barra -->
                 <nav class="navbar navbar-default">
@@ -25,20 +26,59 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Catalógo</a></li>
+                                <li><a href="#">Catálogo</a></li>
                                 <li><a href="#">Noticias</a></li>
                                 <li><a href="#">Análisis</a></li>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </form> 
+                                
                             </ul>
-                            <form class="navbar-form navbar-right" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Buscar...">
-                                </div>
-                                <button type="submit" class="btn btn-default">Buscar</button>
-                            </form>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Login<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <form class="form" id="formLogin"> 
+                                            <input name="username" id="username" type="text" placeholder="Username"> 
+                                            <input name="password" id="password" type="password" placeholder="Password"><br>
+                                            <button type="button" class="btn btn-default">Login</button>
+                                            <button type="button" class="btn btn-default">Registrarse</button>
+                                        </form>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </nav>
             </div>
-        </div>
+        
+            <div class="row">
+              
+
+              <div class="col-sm-1 col-md-7">
+                <h2>Tablón principal</h2>
+
+                <div id="barra"></div><br>
+
+
+                <h3>Último post:</h3><br>
+                <p>Includes over 250 glyphs in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, we only ask that you include a link back to Glyphicons whenever possible.</p><br>
+
+                <h4 id="">Ejemplo 2</h4><br>
+                <h4 id="">Ejemplo 3</h4><br>
+                <h4 id="">Ejemplo 4</h4><br>
+                <h4 id="">Ejemplo 5</h4><br>
+                <h4 id="">Ejemplo 6</h4><br>
+                <h4 id="">Ejemplo 7</h4><br>
+                <h4 id="">Ejemplo 8</h4><br>
+                <h4 id="">Ejemplo 9</h4><br>
+                <h4 id="">Ejemplo 10</h4><br>
+                <h4 id="">Ejemplo 11</h4><br>
+              </div>
+            </div>
+        </div>    
     </body>
 </html>
