@@ -1,12 +1,12 @@
-.pestaña {
-    width: 33%;
-    text-align: center;
-}
-
 .portada{
     text-align: center;
 }
-
+.portada img{
+    width: 100%;
+}
+div{
+    vertical-align: middle;
+}
 .datos h4{
     font-size: 16px;
     color: #666;
@@ -19,17 +19,78 @@
     float: left;
     margin-right: 8px;
 }
-
-
+.panel.panel-primary.comentarios{
+    margin:0;
+}
 .comentarios header{
     text-align: center;
     padding: 0px;
 }
 
 .comentarios img{
-    width: 80%;
+    width: 70%;
 }
 
-.comentarios article{
-    margin-bottom: 20px;
+
+.comentarios time{
+    border-bottom: 1px solid #BDBDBD;
+}
+.puntuacion{
+    border: 1px solid #BDBDBD;
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 14px;
+    background-color: #00BFFF;
+    border-radius: 5px 10px;
+    color: white;
+    font-weight: bold;
+}
+
+
+.respuesta textarea{
+    height: 200px;
+    width: 100%;
+   
+}
+
+
+#fav {
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+    padding: 0px;
+}
+
+#fav:hover {
+    background: #00FF40;
+}
+
+#fav label {
+    float:left;
+    width:4.0em;
+    margin: 0px;
+    width: 100%;
+}
+
+#fav label span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+    font-size-adjust: auto;
+    height: 30px;
+}
+
+#fav label input {
+    position:absolute;
+    top:-20px;
+}
+
+#fav input:checked + span {
+    background-color:#911;
+    color:#fff;
 }

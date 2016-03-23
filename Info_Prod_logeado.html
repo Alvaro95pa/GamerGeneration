@@ -64,7 +64,11 @@
 
                                     <div class="portada col-md-2 col-xs-5">
                                         <img src="img/dead.jpg">
-                                        
+                                        <div id="fav" class="col-md-12 col-xs-12">
+                                           <label>
+                                              <input type="checkbox" value="1" hidden><span > Favoritos</span>
+                                           </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +119,23 @@
                                         </article>
                                 </div>
                             </div>
-                            
+                            <div class="panel panel-primary comentarios">
+                                <div class="panel-heading"><button id="btn_rsp" onclick="document.getElementById('oculto').style.display = 'block';">Responder</button></div>
+                                <div class="panel-body" id="oculto" style='display:none;'>
+                                    <div class="col-md-12 col-xs-12 respuesta">
+                                            <header class="col-md-2 col-xs-2">
+                                                <dl>
+                                                    <dd><img src="img/personaB.png"></dd>
+                                                    <dd><a href="#">Marianela Roselli</a></dd> 
+                                                </dl>
+                                            </header>
+                                            <div class="col-md-10 col-xs-10">
+                                                <textarea >Escribe</textarea>
+                                                <button id="btn_enviar" class="col-md-2 col-xs-12">Enviar</button>
+                                            </div>
+                                    </div>    
+                                </div>
+                            </div>
                         </div>
 
                     </div>
