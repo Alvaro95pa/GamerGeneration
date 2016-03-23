@@ -39,19 +39,45 @@
                                 
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Login<span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <form class="form" id="formLogin"> 
-                                            <input name="username" id="username" type="text" placeholder="Username"> 
-                                            <input name="password" id="password" type="password" placeholder="Password"><br>
-                                            <button type="button" class="btn btn-default">Login</button>
-                                            <button type="button" class="btn btn-default">Registrarse</button>
-                                        </form>
-                                    </ul>
+                                <li>
+                                    <a href="#" role="button" aria-haspopup="true" aria-expanded="false" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-user"></span> Login</a>   
                                 </li>
                             </ul>
                         </div>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h3 class="sesion">Iniciar sesión</h3>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                    <span class="usr_pas">Usuario:</span><br>
+                                    <input type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                <br>
+                                <form>
+                                    <span>Contraseña:</span><br>
+                                    <input type="password" class="form-control" placeholder="Contraseña" cr>
+                                </form>
+                                <br>
+                                <button type="button" class="btn">Entrar</button>
+                                <label class="record"><input type="checkbox">Recuérdame</label>
+                                <hr>
+                                <span class="reg">
+                                Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                                </span><br>
+                                <button type="button" class="btn btn-info">Registrarse</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
                     </div>
                 </nav>
             </div>

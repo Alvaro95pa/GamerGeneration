@@ -32,3 +32,17 @@ footer {
     border-radius: 10px;
 }
 
+.sesion {
+    text-align: center;
+}
+
+.reg {
+    text-align: left;
+    font-size: 18px;
+}
+
+.record {
+    padding-left: 50px;
+}
+
+
