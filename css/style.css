@@ -10,6 +10,11 @@ footer {
     text-align: center;
 }
 
+.red_hr {
+    border-top: 4px solid firebrick;
+    border-radius: 3px;
+}
+
 .pestaña {
     width: 33%;
     text-align: center;
@@ -27,6 +32,18 @@ footer {
     padding-left: 20px;
 }
 
+@media screen and (max-width: 500px) {
+  #nombre {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #calendario {
+    visibility: hidden;
+  }
+}
+
 .cabecera {
     background-color: firebrick;
     border-radius: 10px;
@@ -37,12 +54,57 @@ footer {
 }
 
 .reg {
-    text-align: left;
+    text-align: center;
     font-size: 18px;
 }
 
 .record {
-    padding-left: 50px;
+    padding-left: 40px;
+}
+
+.noticia {
+    color: black;
+}
+
+.calendario {
+    text-align: center;
+}
+
+#login {
+    background-color: firebrick;
+    color: white;
+    border: 0px;
+    border-radius: 2px;
+    font-size: 17px;
+}
+
+#login:hover {
+    background-color: darkred;
+    color: whitesmoke;
+    border: 0px;
+    border-radius: 2px;
+    font-size: 17px;
+}
+
+.cierre {
+    font-size: 20px;
+    background-color: firebrick;
+    color: white;
+    border: 0px;
+    border-radius: 2px;
+}
+
+.cierre:hover {
+    font-size: 20px;
+    background-color: darkred;
+    color: white;
+    border: 0px;
+    border-radius: 2px;
+    align-content: center;
+}
+
+#mBody {
+   text-align: center;
 }
 
 
