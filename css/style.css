@@ -106,3 +106,9 @@ ul.listado li:hover {
     background-color: whitesmoke;
     color: black;
 }
+
+.privado p{
+    color: red;
+    text-align: center;
+    font-size: 22px;
+}
