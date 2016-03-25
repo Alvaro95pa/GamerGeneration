@@ -12,6 +12,7 @@
     <body>
         <div class="container">
             <div class="cabecera">
+                <!-- Logo -->
                 <div class="logo">
                     <img src="img/control.png"/>
                     <span>GAMER GENERATION</span>
@@ -55,41 +56,37 @@
                     </div>
                     <div class="col-md-10">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
+                            <div class="panel-heading mod_panel">
                                 Cambiar datos personales 
                             </div>
                             <div class="panel-body">
-                                <div class="datos">
-                                    <center>
-                                        <input type="text" class="form-control" placeholder="Nombre">
-                                        <br>
-                                        <input type="text" class="form-control" placeholder="Apellidos">
-                                        <br>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Usuario">
-                                            <span class="input-group-addon" id="basic-addon2"> * </span>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Correo electrónico">
-                                            <span class="input-group-addon" id="basic-addon2"> * </span>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Cumpleaños">
-                                            <span class="input-group-addon" id="basic-addon2"> dd/mm/aaaa </span>
-                                        </div>
-                                        <br>
-                                        <input type="text" class="form-control" placeholder="Nacionalidad">
-                                    </center>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <span> * (Obligatorio) </span>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <button type="submit" class="btn btn-primary"> Guardar </button>
-                                        </div>
+                                <div class="personales">
+                                    <input type="text" class="form-control" placeholder="Nombre">
+                                </div>
+                                <div class="personales">
+                                    <input type="text" class="form-control" placeholder="Apellidos">
+                                </div>
+                                <div class="input-group personales">
+                                    <input type="text" class="form-control" placeholder="Usuario">
+                                    <span class="input-group-addon" id="basic-addon2"> * </span>
+                                </div>
+                                <div class="input-group personales">
+                                    <input type="text" class="form-control" placeholder="Correo electrónico">
+                                    <span class="input-group-addon" id="basic-addon2"> * </span>
+                                </div>
+                                <div class="input-group personales">
+                                    <input type="text" class="form-control" placeholder="Cumpleaños">
+                                    <span class="input-group-addon" id="basic-addon2"> dd/mm/aaaa </span>
+                                </div>
+                                <div class="personales">
+                                    <input type="text" class="form-control" placeholder="Nacionalidad">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <span> * (Obligatorio) </span>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary"> Guardar </button>
                                     </div>
                                 </div>
                             </div>
@@ -100,23 +97,18 @@
                             </div>
                             <div class="panel-body">
                                 <div class="contraseña">
-                                    <center>
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" placeholder="Contraseña">
-                                            <span class="input-group-addon" id="basic-addon2"> * </span>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" placeholder="Nueva contraseña">
-                                            <span class="input-group-addon" id="basic-addon2"> * </span>
-                                        </div>
-                                        <br>
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" placeholder="Repetir contraseña">
-                                            <span class="input-group-addon" id="basic-addon2"> * </span>
-                                        </div>
-                                    </center>
-                                    <br>
+                                    <div class="input-group personales">
+                                        <input type="password" class="form-control" placeholder="Contraseña">
+                                        <span class="input-group-addon" id="basic-addon2"> * </span>
+                                    </div>
+                                    <div class="input-group personales">
+                                        <input type="password" class="form-control" placeholder="Nueva contraseña">
+                                        <span class="input-group-addon" id="basic-addon2"> * </span>
+                                    </div>
+                                    <div class="input-group personales">
+                                        <input type="password" class="form-control" placeholder="Repetir contraseña">
+                                        <span class="input-group-addon" id="basic-addon2"> * </span>
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-10">
                                             <span> * (Obligatorio) </span>
@@ -132,60 +124,56 @@
                             <div class="panel-heading">
                                 Privacidad 
                             </div>
-                            <div class="panel-body">
-                                <center>
-                                    <span>Perfil</span>
-                                    <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-success active">
-                                            <input type="radio" autocomplete="off" checked> Visible para todos
-                                        </label>
-                                        <label class="btn btn-success">
-                                            <input type="radio" autocomplete="off">  Visible para amigos
-                                        </label>
-                                        <label class="btn btn-success">
-                                            <input type="radio" autocomplete="off"> No visible
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <span>Contenido</span>
-                                    <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-success active">
-                                            <input type="radio" autocomplete="off" checked> Visible para todos
-                                        </label>
-                                        <label class="btn btn-success">
-                                            <input type="radio" autocomplete="off">  Visible para amigos
-                                        </label>
-                                        <label class="btn btn-success">
-                                            <input type="radio" autocomplete="off"> No visible
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <span>Amigos</span>
-                                    <div class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-success active">
-                                            <input type="radio" autocomplete="off" checked> Visible para todos
-                                        </label>
-                                        <label class="btn btn-success">
-                                            <input type="radio" autocomplete="off">  Visible para amigos
-                                        </label>
-                                        <label class="btn btn-success">
-                                            <input type="radio" autocomplete="off"> No visible
-                                        </label>
-                                    </div>
-                                </center>
+                            <div class="panel-body centrado">
+                                <span>Perfil</span>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" autocomplete="off" checked> Visible para todos
+                                    </label>
+                                    <label class="btn btn-success">
+                                        <input type="radio" autocomplete="off">  Visible para amigos
+                                    </label>
+                                    <label class="btn btn-success">
+                                        <input type="radio" autocomplete="off"> No visible
+                                    </label>
+                                </div>
+                                <br>
+                                <br>
+                                <span>Contenido</span>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" autocomplete="off" checked> Visible para todos
+                                    </label>
+                                    <label class="btn btn-success">
+                                        <input type="radio" autocomplete="off">  Visible para amigos
+                                    </label>
+                                    <label class="btn btn-success">
+                                        <input type="radio" autocomplete="off"> No visible
+                                    </label>
+                                </div>
+                                <br>
+                                <br>
+                                <span>Amigos</span>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" autocomplete="off" checked> Visible para todos
+                                    </label>
+                                    <label class="btn btn-success">
+                                        <input type="radio" autocomplete="off">  Visible para amigos
+                                    </label>
+                                    <label class="btn btn-success">
+                                        <input type="radio" autocomplete="off"> No visible
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 Borrar cuenta 
                             </div>
-                            <div class="panel-body">
-                                <center>
-                                    <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
-                                    <button type="submit" class="btn btn-danger"> Eliminar </button>
-                                </center>
+                            <div class="panel-body centrado">
+                                <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
+                                <button type="submit" class="btn btn-danger"> Eliminar </button>
                             </div>
                         </div>
                     </div>

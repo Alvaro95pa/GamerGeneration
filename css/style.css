@@ -92,3 +92,17 @@ ul.listado li:hover {
 .amigos li:hover{
     background-color: darkgray;
 }
+
+.personales{
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.centrado{
+    text-align: center;
+}
+
+.panel-body{
+    background-color: whitesmoke;
+    color: black;
+}
