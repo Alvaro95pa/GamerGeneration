@@ -3,6 +3,8 @@
 }
 .portada img{
     width: 100%;
+    max-height: 250px;
+    
 }
 div{
     vertical-align: middle;
@@ -19,7 +21,7 @@ div{
     float: left;
     margin-right: 8px;
 }
-.panel.panel-primary.comentarios{
+.panel.panel-primary.respuesta{
     margin:0;
 }
 .comentarios header{
@@ -55,9 +57,11 @@ div{
    
 }
 
-
+.btn_respuesta{
+    background: #2E2EFE;
+}
 #fav {
-    margin:4px;
+    margin: 4px 4px 0px 4px;
     background-color:#EFEFEF;
     border-radius:4px;
     border:1px solid #D0D0D0;
