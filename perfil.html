@@ -11,13 +11,14 @@
     </head>
     <body>
         <div class="container">
+            <!-- Logo y barra de menú -->
             <div class="cabecera">
                 <!-- Logo -->
                 <div class="logo">
                     <img src="img/control.png"/>
                     <span>GAMER GENERATION</span>
                 </div>
-                <!-- Barra -->
+                <!-- Barra de menú -->
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
                         <div class="navbar-header">
@@ -28,117 +29,154 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Catálogo</a></li>
-                                <li><a href="#">Noticias</a></li>
-                                <li><a href="#">Análisis</a></li>
+                                <li><a href="catalogo.html">Catálogo</a></li>
+                                <li><a href="noticias.html">Noticias</a></li>
+                                <li><a href="analisis.html">Análisis</a></li>
+                                <form class="navbar-form navbar-right" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </form>
                             </ul>
-                            <form class="navbar-form navbar-right" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Buscar...">
+                            <ul class="nav navbar-nav navbar-right" id="log">
+                                <li>
+                                    <a id="logeo" href="#" role="button" aria-haspopup="true" aria-expanded="false" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-user"></span> Login</a>   
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document" id="mDialog">
+                            <div class="modal-content" id="mContent">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h3 class="sesion">Iniciar sesión</h3>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                    <span class="usr_pas">Usuario:</span><br>
+                                    <input id="user" type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                <br>
+                                <form>
+                                    <span>Contraseña:</span><br>
+                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña">
+                                </form>
+                                <br>
+                                <button type="button" id="login">Entrar</button>
+                                <label class="record"><input type="checkbox">Recuérdame</label>
+                                <hr>
+                                <div class="reg">
+                                    <span>
+                                    Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                                    </span><br>
+                                    <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
                                 </div>
-                                <button type="submit" class="btn btn-default">Buscar</button>
-                            </form>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </nav>
             </div>
+            <!-- Página principal -->
             <div class="paginado">
+                <!-- Primera fila (Datos personales y avatar con información)  -->
                 <div class="row">
+                    <!-- Menú del pefil  -->
                     <div class="col-md-2">
                         <div class="menu">
                             <div class="list-group">
-                                <a href="perfil.html" class="list-group-item active"><span class="glyphicon glyphicon-user"> Cuenta </span></a>
+                                <a href="perfil.html" class="list-group-item"><span class="glyphicon glyphicon-user"> Cuenta </span></a>
                                 <a href="contenido.html" class="list-group-item"><span class="glyphicon glyphicon-folder-open" > Contenido </span></a>
                                 <a href="ajustes.html" class="list-group-item"><span class="glyphicon glyphicon-cog"> Ajustes </span></a>
                                 <a href="amigos.html" class="list-group-item"><span class="glyphicon glyphicon-globe"> Amigos </span></a>
                             </div>
                         </div>
                     </div>
+                    <!-- Datos personales  -->
                     <div class="col-md-7">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading cabecera">
                                 Datos personales
                             </div>
                             <div class="panel-body">
-                                <span class="datos"> Nombre : Pepito </span>
-                                <br>
-                                <br>
-                                <span class="datos"> Apellidos : Montes del Val </span>
-                                <br>
-                                <br>
-                                <span class="datos"> Nacionalidad : Española </span>
-                                <br>
-                                <br>
-                                <span class="datos"> Cumpleaños : 22/2/1995 </span>
+                                <p class="datos"> Nombre : Pepito </p>
+                                <p class="datos"> Apellidos : Montes del Val </p>
+                                <p class="datos"> Nacionalidad : Española </p>
+                                <p class="datos"> Cumpleaños : 22/2/1995 </p>
                             </div>
                         </div>
                     </div>
+                    <!-- Avatar y datos principales  -->
                     <div class="col-md-3">
-                        <img src="img/avatar.png"/>
-                        <span class="avatar"> Usuario : castorTresDientes </span>
-                        <br>
-                        <span class="avatar"> Correo: pepitogrillo32@gmail.com </span>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="img/avatar.png"/>
+                                <p class="avatar"> Usuario : castorTresDientes </p>
+                                <p class="avatar"> Correo: pepitogrillo32@gmail.com </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- Segunda fila (Estadisticas y detalles) -->
                 <div class="row">
+                    <!-- Estadísticas -->
                     <div class="col-md-9">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <span class="info1"> Número de amigos : 6 </span>
-                                <br>
-                                <br>
-                                <span class="info1"> Número de peliculas vistas : 3 </span>
-                                <br>
-                                <br>
-                                <span class="info1"> Número de series vistas : 2 </span>
-                                <br>
-                                <br>
-                                <span class="info1"> Número de videojuegos jugados : 1 </span>
-                                <br>
-                                <br>
+                                <p class="datos"> Número de amigos : 6 </p>
+                                <p class="datos"> Número de peliculas vistas : 3 </p>
+                                <p class="datos"> Número de series vistas : 3 </p>
+                                <p class="datos"> Número de videojuegos jugados : 2 </p>
                             </div>
                         </div>
                     </div>
+                    <!-- Detalles -->
                     <div class="col-md-3">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <span class="info2"> Aportes : Ninguno </span>
-                                <br>
-                                <br>
-                                <span class="info2"> Ultima visita : Ayer </span>
-                                <br>
-                                <br>
-                                <span class="info2"> Usuario desde : hace 1 año </span>
-                                <br>
-                                <br>
+                                <p class="info2"> Aportes : Ninguno </p>
+                                <p class="info2"> Ultima visita : Ayer </p>
+                                <p class="info2"> Usuario desde : hace 1 año </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="favoritos">
-                    <center><h1> Favoritos</h1></center>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="panel panel-default">
-                                <div class="panel-body fotos">
-                                    <p> Pelicula </p>
-                                    <img src="img/deadpool.jpg"/>
-                                </div>
-                            </div>
+                <!-- Favoritos-->
+                <div class="centrado">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading cabecera">
+                            Favoritos
                         </div>
-                        <div class="col-md-4">
-                            <div class="panel panel-default">
-                                <div class="panel-body fotos">
-                                    <p> Serie </p>
-                                    <img src="img/twd.jpg"/>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body fotos">
+                                            <p> Pelicula </p>
+                                            <img src="img/deadpool.jpg"/>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="panel panel-default">
-                                <div class="panel-body fotos">
-                                    <p> Videojuego </p>
-                                    <img src="img/civ5.jpg"/>
+                                <div class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body fotos">
+                                            <p> Serie </p>
+                                            <img src="img/twd.jpg"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body fotos">
+                                            <p> Videojuego </p>
+                                            <img src="img/civ5.jpg"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
