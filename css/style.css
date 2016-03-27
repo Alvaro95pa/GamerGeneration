@@ -6,28 +6,73 @@ ul{
     padding: 0px;
 }
 
-
+nav-tabs a:active{
+    background-color: red;
+    
+}
 .pestaña {
     width: 33%;
     text-align: center;
 }
 
-ul.listado li {
+.filtro{
+    padding: 0px;
+}
+.filtro button{
+    background: firebrick;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+.categoria_mobile{
+    margin-top: 5px;
+}
+
+.categoria.col-xs-12{
+    display:
+}
+.listado li {
     display: inline-block;
     width: 20%;
     margin-bottom: 1%;
+    border: 1px solid white;
 }
-ul.listado li:hover {
-    background-color:#CCFFFF;
+.listado li:hover {
+    background: #F6CECE;
+    border: 1px solid #F2F2F2;
     
+}
+.listado a{
+    text-decoration: none;
+    color: black;
 }
 
 .categoria {
     border-style: solid;
     border-width: 1px;
     border-color: gainsboro;
-    
+    padding: 0px;
+    float: right;
 }
+.categoria h4{
+    margin: 0px;
+    padding: 8px;
+    text-align: center;
+    background: firebrick;
+    color: white;
+}
+
+.categoria a{
+    color: black;
+    text-decoration: none;
+}
+.categoria li {
+    padding: 5px 5px 5px 5px;
+}
+.categoria li:hover{
+    background: #F6CECE;
+}
+
 
 .col-md-9.pestanas{
     padding: 0px;
@@ -45,5 +90,5 @@ ul.listado li:hover {
 .listado div{
     padding: 5px;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
