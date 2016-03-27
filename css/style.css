@@ -10,6 +10,17 @@ footer {
     text-align: center;
 }
 
+/* Home */
+.fondo {
+    background-color: whitesmoke;
+}
+
+.botonRed {
+    color: whitesmoke;
+    background-color: firebrick;
+    border-radius: 10px;
+}
+
 .red_hr {
     border-top: 4px solid firebrick;
     border-radius: 3px;
@@ -74,7 +85,7 @@ footer {
     background-color: firebrick;
     color: white;
     border: 0px;
-    border-radius: 2px;
+    border-radius: 3px;
     font-size: 17px;
 }
 
@@ -82,7 +93,7 @@ footer {
     background-color: darkred;
     color: whitesmoke;
     border: 0px;
-    border-radius: 2px;
+    border-radius: 3px;
     font-size: 17px;
 }
 
@@ -91,7 +102,7 @@ footer {
     background-color: firebrick;
     color: white;
     border: 0px;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .cierre:hover {
@@ -99,12 +110,20 @@ footer {
     background-color: darkred;
     color: white;
     border: 0px;
-    border-radius: 2px;
+    border-radius: 3px;
     align-content: center;
 }
 
 #mBody {
    text-align: center;
 }
+
+
+
+/* Análisis */
+.aLista li {
+    list-style: none;
+}
+
 
 
