@@ -18,7 +18,7 @@ footer {
 .botonRed {
     color: whitesmoke;
     background-color: firebrick;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 .red_hr {
@@ -121,9 +121,84 @@ footer {
 
 
 /* Análisis */
+.aLista {
+    padding-left: 0px;
+}
+
 .aLista li {
     list-style: none;
 }
 
+.filtro {
+    padding-top: 20px; 
+}
 
+.fondoRed {
+    background-color: firebrick;
+    border-radius: 3px;
+}
 
+.logo2 img {
+    width: 100px;
+    height: 70px;
+    padding-left: 20px;
+}
+
+.logo2 span {
+    font-size: 30px;
+    padding-left: 7px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.fondo2 {
+    background-color: white;
+    border: 1px solid gainsboro;
+    padding-bottom: 20px;
+}
+
+.more {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.icono {
+    width: 25px;
+    height: 23px;
+}
+
+@media screen and (max-width: 400px) {
+  #spanTab {
+    visibility: hidden;
+  }
+}
+
+.cartel img{
+    width: 200px;
+    height: 250px;
+    float: left;
+}
+
+.cartel p {
+    padding-left: 230px;
+}
+
+@media screen and (max-width: 1000px) {
+    .cartel img {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+
+    .cartel p {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #text {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+}
