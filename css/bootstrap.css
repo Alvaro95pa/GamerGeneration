@@ -3110,7 +3110,7 @@ fieldset[disabled] .btn-default:focus,
 .btn-default.disabled.focus,
 .btn-default[disabled].focus,
 fieldset[disabled] .btn-default.focus {
-  background-color: #fff;
+  background-color: silver;
   border-color: #ccc;
 }
 .btn-default .badge {
@@ -3983,6 +3983,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
+  
 }
 .nav > li > a {
   position: relative;
@@ -5255,7 +5256,7 @@ a.thumbnail.active {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
 }
 .list-group-item:first-child {
   border-top-left-radius: 4px;
@@ -5467,6 +5468,7 @@ button.list-group-item-danger.active:focus {
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  font-size: 20px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -5688,6 +5690,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-default {
   border-color: #ddd;
+  text-align: center; 
 }
 .panel-default > .panel-heading {
   color: #333;
@@ -6761,3 +6764,37 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 
 
+
+.logo {
+    background-color: firebrick;
+    border: 2px solid firebrick;
+    border-radius: 2px;
+}
+
+.nombre {
+    font-family: fantasy;
+    font-size: 40px;
+    color: snow;
+}
+
+#barra {
+    height: 10px;
+    background-color: firebrick;
+    border-radius: 20px;
+}
+
+.registro {
+    width: 350px;
+}
+
+.textoReg {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: dimgrey;
+}
+
+#barra2 {
+    height: 10px;
+    background-color: transparent;
+    border-radius: 20px;
+}

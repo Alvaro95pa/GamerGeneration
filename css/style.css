@@ -1,4 +1,4 @@
-﻿/* CSS Alvaro */
+﻿﻿/* CSS Alvaro */
 body {
     background-image: url("ds.jpg");
     background-color: gainsboro;
@@ -217,6 +217,7 @@ footer {
     padding-left: 20px;
 }
 
+/* Rama login (Registro) */
 .pestaña {
     width: 33%;
     text-align: center;
@@ -609,3 +610,28 @@ ul.listado li:hover {
     font-size: 22px;
 }
 /* Fin Rama perfil */
+
+.condiciones {
+    font-size: 12px;
+    font-family: cabin;
+}
+
+.cuerpo{
+    margin-top: 5%;
+}
+
+.titulo{
+    font-size: 30px;
+    font-family: cabin;
+}
+
+.registro form {
+    padding-top: 3%;
+    padding-bottom: 4%;
+}
+
+.condiciones {
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+/* Fin Rama login (Registro) */
