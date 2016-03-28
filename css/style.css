@@ -1,3 +1,4 @@
+/* CSS Alvaro */
 body {
     background-image: url("ds.jpg");
     background-color: gainsboro;
@@ -18,7 +19,7 @@ footer {
 .botonRed {
     color: whitesmoke;
     background-color: firebrick;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 .red_hr {
@@ -118,8 +119,168 @@ footer {
    text-align: center;
 }
 
+.margen {
+    margin-bottom: 20px;
+}
+
 /* Análisis */
+.aLista {
+    padding-left: 0px;
+}
+
 .aLista li {
     list-style: none;
 }
 
+.filtro {
+    padding-top: 20px; 
+}
+
+.fondoRed {
+    background-color: firebrick;
+    border-radius: 3px;
+}
+
+.logo2 img {
+    width: 100px;
+    height: 70px;
+    padding-left: 20px;
+}
+
+.logo2 span {
+    font-size: 30px;
+    padding-left: 7px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.fondo2 {
+    background-color: white;
+    border: 1px solid gainsboro;
+    padding-bottom: 20px;
+}
+
+.more {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.icono {
+    width: 25px;
+    height: 23px;
+}
+
+@media screen and (max-width: 400px) {
+  #spanTab {
+    visibility: hidden;
+  }
+}
+
+.cartel img{
+    width: 200px;
+    height: 250px;
+    float: left;
+}
+
+.cartel p {
+    padding-left: 230px;
+}
+
+@media screen and (max-width: 1000px) {
+    .cartel img {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+
+    .cartel p {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #text {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+/* Colores de span */
+#ps4 {
+    color: blue;
+}
+
+#pc {
+    color: red;
+}
+
+#xbox {
+    color: limegreen;
+}
+/* Fin colores de span */
+
+.aCuerpo {
+    padding-top: 76px;
+}
+
+#imagenAnalisis {
+    width: 800px;
+    height: 550px;
+    margin-bottom: 10px;
+}
+
+.aCuerpo div {
+    
+    margin-bottom: 10px;
+}
+
+.aCuerpo div p {
+    border: 2px solid limegreen;
+    border-radius: 2px;
+    word-wrap: break-word;
+    font-size: 50px;
+}
+
+@media screen and (max-width: 800px) {
+    #imagenAnalisis {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
+}
+/* FIN CSS Alvaro */
+
+.panel.panel-danger.respuesta{
+    margin:0;
+}
+.comentarios header{
+    text-align: center;
+    padding: 0px;
+}
+
+.comentarios img{
+    width: 70%;
+}
+
+.comentarios time{
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.respuesta textarea{
+    height: 200px;
+    width: 100%;
+   
+}
+
+.btn_respuesta{
+    background: firebrick;
+}
+
+.altura {
+    height: 550px;
+}
