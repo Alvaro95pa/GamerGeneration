@@ -1,3 +1,4 @@
+/* Rama login (Registro) */
 .pestaña {
     width: 33%;
     text-align: center;
@@ -16,3 +17,14 @@
     font-size: 30px;
     font-family: cabin;
 }
+
+.registro form {
+    padding-top: 3%;
+    padding-bottom: 4%;
+}
+
+.condiciones {
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+/* Fin Rama login (Registro) */
