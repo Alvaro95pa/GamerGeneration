@@ -1,4 +1,4 @@
-﻿# GG (Gamer Generation)
+# GG (Gamer Generation)
 
 Contribuidores: 
 
@@ -47,3 +47,15 @@ Entidades:
  http://alvaro95pa.github.io/daw_web/Home.html
 
   
+﻿# Diagrama de navegacion:
+ 
+![Image](CapturasDAW/Diagrama_navegcion.png)
+
+﻿# Captura de pantalla de las paginas principales:
+ 
+![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaPantallaPrincipal.png "Pagina principal")
+![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaNoticias.png "Pagina de noticias")
+![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaAnalisis.png "Pagina de analisis")
+![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaCatalogo.png "Pagina del catalogo")
+![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaPerfil.png "Pagina del perfil")
+
