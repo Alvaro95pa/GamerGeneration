@@ -1,3 +1,67 @@
+body {
+    background-image: url("ds.jpg");
+    background-color: gainsboro;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer {
+    color: white;
+    text-align: center;
+}
+
+/* Cabecera */ {
+    
+}
+.fondo {
+    background-color: whitesmoke;
+    padding: 0px;
+}
+
+.botonRed {
+    color: whitesmoke;
+    background-color: firebrick;
+    border-radius: 3px;
+}
+
+
+
+.logo img {
+    width: 130px;
+    height: 100px;
+    padding-left: 20px;
+}
+
+.logo span {
+    font-size: 40px;
+    font-family: 'Black Ops One';
+    padding-left: 20px;
+}
+
+.cabecera {
+    background-color: firebrick;
+    border-radius: 10px;
+}
+
+#login {
+    background-color: firebrick;
+    color: white;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+#login:hover {
+    background-color: darkred;
+    color: whitesmoke;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+/* Fin Cabecera */
+
+/* Info_Prod */
 .portada{
     text-align: center;
 }
@@ -5,9 +69,6 @@
     width: 100%;
     max-height: 250px;
     
-}
-div{
-    vertical-align: middle;
 }
 .datos h4{
     font-size: 16px;
@@ -44,13 +105,15 @@ div{
     height: 50px;
     text-align: center;
     padding-top: 14px;
-    background-color: #00BFFF;
+    background-color: #FA5858;
     border-radius: 5px 10px;
     color: white;
     font-weight: bold;
 }
 
-
+.panel-heading{
+    background: #FE2E2E;
+}
 .respuesta textarea{
     height: 200px;
     width: 100%;
@@ -58,7 +121,7 @@ div{
 }
 
 .btn_respuesta{
-    background: #2E2EFE;
+    background: #FE2E2E;
 }
 #fav {
     margin: 4px 4px 0px 4px;

@@ -12,8 +12,8 @@
         <div class="container">
             <div class="cabecera">
                 <div class="logo">
-                    <img src="img/Logo%20GG.png"/>
-                    <span>GAMER GENERATION</span>
+                    <img src="img/control.png"/>
+                    <span id="nombre">GAMER GENERATION</span>
                 </div>
                 <!-- Barra -->
                 <nav class="navbar navbar-default">
@@ -26,17 +26,59 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Catalógo</a></li>
+                                <li><a href="Catalogo.html">Catálogo</a></li>
                                 <li><a href="#">Noticias</a></li>
-                                <li><a href="#">Análisis</a></li>
+                                <li><a href="analisis.html">Análisis</a></li>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </form> 
+                                
                             </ul>
-                            <form class="navbar-form navbar-right" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Buscar...">
-                                </div>
-                                <button type="submit" class="btn btn-default">Buscar</button>
-                            </form>
+                            <ul class="nav navbar-nav navbar-right" id="log">
+                                <li>
+                                    <a id="logeo" href="#" role="button" aria-haspopup="true" aria-expanded="false" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-user"></span> Login</a>   
+                                </li>
+                            </ul>
                         </div>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document" id="mDialog">
+                            <div class="modal-content" id="mContent">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h3 class="sesion">Iniciar sesión</h3>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                    <span class="usr_pas">Usuario:</span><br>
+                                    <input id="user" type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                <br>
+                                <form>
+                                    <span>Contraseña:</span><br>
+                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña">
+                                </form>
+                                <br>
+                                <button type="button" id="login">Entrar</button>
+                                <label class="record"><input type="checkbox">Recuérdame</label>
+                                <hr>
+                                <div class="reg">
+                                    <span>
+                                    Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                                    </span><br>
+                                    <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
                     </div>
                 </nav>
             </div>
@@ -45,7 +87,7 @@
                 <div class="info col-md-12">
                     <div class="datos_basicos">
                         <div class="panel-group">
-                            <div class="panel panel-primary">
+                            <div class="panel panel-danger">
                                 <div class="panel-heading">Datos Básicos</div>
                                 <div class="panel-body">
                                     <div class="datos col-md-9 col-xs-7">
@@ -90,14 +132,14 @@
                                 </div>
                             </div>
                             
-                            <div class="panel panel-primary sinopsis">
+                            <div class="panel panel-danger sinopsis">
                                 <div class="panel-heading">Sinopsis</div>
                                 <div class="panel-body">
                                     <p>El juego tiene lugar en los últimos días de la "edad del fuego", la cual, como es relatado al principio de la historia, comenzó tras la derrota de los dragones que anteriormente reinaban el mundo. Éste, durante esta época era un lugar oscuro y lúgubre habitado solamente por una raza inmortal de gigantes dragones cuya capacidad de prolongar su vida eternamente provenía de sus escamas. En esta época aparentemente no existía aún ninguna llama, por lo que el mundo era un lugar completamente oscuro y casi desierto. Así fue hasta que un grupo de seres descubrieron también el poder del fuego y de la luz, a través de la "primera llama", y siendo liderados por Gwyn, el "Señor de la Primera Llama" acabaron con casi la totalidad de los dragones en una legendaria guerra que dio origen tras la derrota del bando reinante a la edad del fuego. Y con ella la aparición de todos los seres vivos que se ven en Dark Souls, siendo éstos, a diferencia de los dragones, limitados en el tiempo por lo que ningún ser que provenga del fuego es inmortal completamente, como si lo eran los casi desaparecidos dragones.</p>
                                 </div>
                             </div>
                             
-                            <div class="panel panel-primary trailer">
+                            <div class="panel panel-danger trailer">
                                 <div class="panel-heading">Trailer</div>
                                 <div class="panel-body ">
                                     <div class="embed-responsive embed-responsive-16by9">
@@ -107,7 +149,7 @@
                                 </div>
                             </div>
                             
-                            <div class="panel panel-primary comentarios">
+                            <div class="panel panel-danger comentarios">
                                 <div class="panel-heading">Comentarios</div>
                                 <div class="panel-body">
                                        
