@@ -1,3 +1,4 @@
+
 body {
     background-image: url("ds.jpg");
     background-color: gainsboro;
@@ -160,4 +161,108 @@ footer {
 #fav input:checked + span {
     background-color:#911;
     color:#fff;
+    text-align: center;
 }
+
+
+
+
+
+/* CATALOGO */
+.fondo_catalogo p{
+    margin:0px;
+}
+.fondo_catalogo ul{
+    list-style: none;
+    padding: 0px;
+}
+
+
+.fondo_catalogo .pestanas{
+    background-color: whitesmoke;
+
+}
+.pestaña {
+    width: 33%;
+    text-align: center;
+}
+
+.filtro{
+    padding: 0px;
+}
+.filtro button{
+    background: firebrick;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+.categoria_mobile{
+    margin-top: 5px;
+}
+
+.categoria.col-xs-12{
+    display:
+}
+.listado li {
+    display: inline-block;
+    width: 20%;
+    margin-bottom: 1%;
+    border: 1px solid white;
+}
+.listado li:hover {
+    background: #F6CECE;
+    border: 1px solid #F2F2F2;
+    
+}
+.listado a{
+    text-decoration: none;
+    color: black;
+}
+
+.categoria {
+    border-style: solid;
+    border-width: 1px;
+    border-color: gainsboro;
+    padding: 0px;
+    float: right;
+}
+.categoria h4{
+    margin: 0px;
+    padding: 8px;
+    text-align: center;
+    background: firebrick;
+    color: white;
+}
+
+.categoria a{
+    color: black;
+    text-decoration: none;
+}
+.categoria li {
+    padding: 5px 5px 5px 5px;
+}
+.categoria li:hover{
+    background: #F6CECE;
+}
+
+
+.col-md-9.pestanas{
+    padding: 0px;
+}
+
+.col-md-9.pestanas ul{
+    padding: 0px;
+}
+
+.listado img{
+    width: 100%;
+    margin-bottom: 3px;
+    height: 100%;
+}
+.listado div{
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2vw;
+}
+/* FIN CATALOGO */
+
