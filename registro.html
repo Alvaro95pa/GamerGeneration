@@ -2,20 +2,20 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet"  href="./css/bootstrap.css" />
-        <link type="text/css" rel="stylesheet" href="./css/style.css">
-        <link href='https://fonts.googleapis.com/css?family=Cabin:500' rel='stylesheet' type='text/css'>
-        
+        <link type="text/css" rel="stylesheet" href="./css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/calendar.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        
+        <script src="js/scriptjq.js"></script>
         <title> Registro </title>
     </head>
     <body>
         <div class="container">
             <div class="cabecera">
                 <div class="logo">
-                    <img src="img/Logo%20GG.png"/>
-                    <span class="nombre">GAMER GENERATION</span>
+                    <img src="img/control.png"/>
+                    <span id="nombre">GAMER GENERATION</span>
                 </div>
                 <!-- Barra -->
                 <nav class="navbar navbar-default">
@@ -28,9 +28,9 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Catalógo</a></li>
-                                <li><a href="#">Noticias</a></li>
-                                <li><a href="#">Análisis</a></li>
+                                <li><a href="Catalogo.html">Catalógo</a></li>
+                                <li><a href="noticias.html">Noticias</a></li>
+                                <li><a href="analisis.html">Análisis</a></li>
                                 <form class="navbar-form navbar-left" role="search">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Buscar...">
@@ -81,30 +81,32 @@
                     </div>
                 </nav>
             </div>
-            <div class="cuerpo">
-                <center>
-                    <div class="titulo">
-                        Únete hoy a Gamer Generation.
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <center>
+                            <div class="titulo">
+                                Únete hoy a Gamer Generation.
+                            </div>
+                            <div class="registro">
+                                <form>
+                                    <input type="text" class="form-control" placeholder="Correo electrónico">
+                                </form>
+                                <form>
+                                    <input type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                <form>
+                                    <input type="text" class="form-control" placeholder="Contraseña">
+                                </form>
+                                <form>
+                                    <input type="text" class="form-control" placeholder="Repite contraseña">
+                                </form>
+                                <div class="condiciones">
+                                    Al registrarte, aceptas las Condiciones de Servicio y la Política de Privacidad, incluyendo el Uso de Cookies.
+                                </div>
+                                <button type="submit" class="btn btn-info">Resgistrarse</button>
+                            </div>
+                        </center>
                     </div>
-                    <div class="registro">
-                        <form>
-                            <input type="text" class="form-control" placeholder="Correo electrónico">
-                        </form>
-                        <form>
-                            <input type="text" class="form-control" placeholder="Nombre de usuario">
-                        </form>
-                        <form>
-                            <input type="text" class="form-control" placeholder="Contraseña">
-                        </form>
-                        <form>
-                            <input type="text" class="form-control" placeholder="Repite contraseña">
-                        </form>
-                        <div class="condiciones">
-                            Al registrarte, aceptas las Condiciones de Servicio y la Política de Privacidad, incluyendo el Uso de Cookies.
-                        </div>
-                        <button type="submit" class="btn btn-info">Resgistrarse</button>
-                    </div>
-                </center>
-            </div>
+                </div>
         </div>
     </body>        

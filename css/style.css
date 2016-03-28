@@ -1,4 +1,4 @@
-﻿﻿/* CSS Alvaro */
+/* CSS Alvaro */
 body {
     background-image: url("ds.jpg");
     background-color: gainsboro;
@@ -83,11 +83,13 @@ footer {
 .portada{
     text-align: center;
 }
+
 .portada img{
     width: 100%;
     max-height: 250px;
     
 }
+
 .datos h4{
     font-size: 16px;
     color: #666;
@@ -100,9 +102,11 @@ footer {
     float: left;
     margin-right: 8px;
 }
+
 .panel.panel-primary.respuesta{
     margin:0;
 }
+
 .comentarios header{
     text-align: center;
     padding: 0px;
@@ -112,10 +116,10 @@ footer {
     width: 70%;
 }
 
-
 .comentarios time{
     border-bottom: 1px solid #BDBDBD;
 }
+
 .puntuacion{
     border: 1px solid #BDBDBD;
     margin-top: 5px;
@@ -132,6 +136,7 @@ footer {
 .panel-heading{
     background: #FE2E2E;
 }
+
 .respuesta textarea{
     height: 200px;
     width: 100%;
@@ -141,6 +146,7 @@ footer {
 .btn_respuesta{
     background: #FE2E2E;
 }
+
 #fav {
     margin: 4px 4px 0px 4px;
     background-color:#EFEFEF;
@@ -190,11 +196,11 @@ footer {
 .fondo_catalogo p{
     margin:0px;
 }
+
 .fondo_catalogo ul{
     list-style: none;
     padding: 0px;
 }
-
 
 .fondo_catalogo .pestanas{
     background-color: whitesmoke;
@@ -226,12 +232,14 @@ footer {
 .filtro{
     padding: 0px;
 }
+
 .filtro button{
     background: firebrick;
     padding: 5px;
     color: white;
     font-weight: bold;
 }
+
 .categoria_mobile{
     margin-top: 5px;
 }
@@ -239,17 +247,20 @@ footer {
 .categoria.col-xs-12{
     display:
 }
+
 .listado li {
     display: inline-block;
     width: 20%;
     margin-bottom: 1%;
     border: 1px solid white;
 }
+
 .listado li:hover {
     background: #F6CECE;
     border: 1px solid #F2F2F2;
     
 }
+
 .listado a{
     text-decoration: none;
     color: black;
@@ -262,6 +273,7 @@ footer {
     padding: 0px;
     float: right;
 }
+
 .categoria h4{
     margin: 0px;
     padding: 8px;
@@ -274,13 +286,14 @@ footer {
     color: black;
     text-decoration: none;
 }
+
 .categoria li {
     padding: 5px 5px 5px 5px;
 }
+
 .categoria li:hover{
     background: #F6CECE;
 }
-
 
 .col-md-9.pestanas{
     padding: 0px;
@@ -614,10 +627,6 @@ ul.listado li:hover {
 .condiciones {
     font-size: 12px;
     font-family: cabin;
-}
-
-.cuerpo{
-    margin-top: 5%;
 }
 
 .titulo{
