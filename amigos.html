@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet"  href="./css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="./css/style.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        
+        <title> Perfil </title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Logo y barra de menú -->
+            <div class="cabecera">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="img/control.png"/>
+                    <span>GAMER GENERATION</span>
+                </div>
+                <!-- Barra de menú -->
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                            </button>
+                            <a class="navbar-brand" href="Home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="catalogo.html">Catálogo</a></li>
+                                <li><a href="noticias.html">Noticias</a></li>
+                                <li><a href="analisis.html">Análisis</a></li>
+                                <form class="navbar-form navbar-right" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </form>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="log">
+                                <li>
+                                    <a id="logeo" href="#" role="button" aria-haspopup="true" aria-expanded="false" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-user"></span> Login</a>   
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document" id="mDialog">
+                            <div class="modal-content" id="mContent">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h3 class="sesion">Iniciar sesión</h3>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                    <span class="usr_pas">Usuario:</span><br>
+                                    <input id="user" type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                <br>
+                                <form>
+                                    <span>Contraseña:</span><br>
+                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña">
+                                </form>
+                                <br>
+                                <button type="button" id="login">Entrar</button>
+                                <label class="record"><input type="checkbox">Recuérdame</label>
+                                <hr>
+                                <div class="reg">
+                                    <span>
+                                    Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                                    </span><br>
+                                    <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Página principal -->
+            <div class="paginado">
+                <!-- Unica fila -->
+                <div class="row">
+                    <!-- Menú del pefil  -->
+                    <div class="col-md-2">
+                        <div class="menu">
+                            <div class="list-group">
+                                <a href="perfil.html" class="list-group-item"><span class="glyphicon glyphicon-user"> Cuenta </span></a>
+                                <a href="contenido.html" class="list-group-item"><span class="glyphicon glyphicon-folder-open" > Contenido </span></a>
+                                <a href="ajustes.html" class="list-group-item"><span class="glyphicon glyphicon-cog"> Ajustes </span></a>
+                                <a href="amigos.html" class="list-group-item"><span class="glyphicon glyphicon-globe"> Amigos </span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Amigos  -->
+                    <div class="col-md-10">
+                        <div class="panel panel-default">
+                            <div class="panel-body amigos">
+                                <ul class="amigos">
+                                    <a href="perfil_privado.html">
+                                        <li>
+                                            <img src="img/avatar.png"/>
+                                            <p> Usuario: alfredoSinDientes </p>
+                                            <p> Afinidad: 33% </p>
+                                        </li>
+                                    </a>
+                                    <a href="perfil_ajeno.html">
+                                        <li>
+                                            <img src="img/avatar.png"/>
+                                            <p> Usuario: velocidadEscarlata </p>
+                                            <p> Afinidad: 0% </p>
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li>
+                                            <img src="img/avatar.png"/>
+                                            <p> Usuario: podriaSerMejor </p>
+                                            <p> Afinidad: 4% </p>
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li>
+                                            <img src="img/avatar.png"/>
+                                            <p> Usuario: sinCara </p>
+                                            <p> Afinidad: 2% </p>
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li>
+                                            <img src="img/avatar.png"/>
+                                            <p> Usuario: peloQuemado </p>
+                                            <p> Afinidad: 50% </p>
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li>
+                                            <img src="img/avatar.png"/>
+                                            <p> Usuario: web </p>
+                                            <p> Afinidad: 100% </p>
+                                        </li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
