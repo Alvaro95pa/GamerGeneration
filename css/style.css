@@ -1,4 +1,68 @@
-/// CATALOGO ///
+
+body {
+    background-image: url("ds.jpg");
+    background-color: gainsboro;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+footer {
+    color: white;
+    text-align: center;
+}
+
+/* Cabecera */
+.fondo {
+    background-color: whitesmoke;
+    padding: 0px;
+}
+
+.botonRed {
+    color: whitesmoke;
+    background-color: firebrick;
+    border-radius: 3px;
+}
+
+
+
+.logo img {
+    width: 130px;
+    height: 100px;
+    padding-left: 20px;
+}
+
+.logo span {
+    font-size: 40px;
+    font-family: 'Black Ops One';
+    padding-left: 20px;
+}
+
+.cabecera {
+    background-color: firebrick;
+    border-radius: 10px;
+}
+
+#login {
+    background-color: firebrick;
+    color: white;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+#login:hover {
+    background-color: darkred;
+    color: whitesmoke;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+/* Fin Cabecera */
+
+
+
+/* CATALOGO */
 p{
     margin:0px;
 }
@@ -93,4 +157,4 @@ nav-tabs a:active{
     text-align: center;
     font-size: 1.2vw;
 }
-/// FIN CATALOGO ///
+/* FIN CATALOGO */
