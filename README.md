@@ -8,7 +8,7 @@ Contribuidores:
   
   Nombre: Sergio Serrano Serrano,  Correo: s.serranoserr@alumnos.urjc.es, Github: Sergioserr
   
-  Nombre: Álvaro Pavón Alvarado,  Correo: a.pavonal@alumnos.urjc.es, Github: Alvaro95pa
+  Nombre: Álvaro Pavón Alvarado,  Correo: a.pavonal@alumnos.urjc.es, Github: Alvaro95pa -> Hawk
 
 Trello:
 
@@ -30,7 +30,20 @@ Entidades:
 	Favoritos/Calificación
 
 	Noticias/Post/Críticas
-
 	
+﻿# Instrucciones para descargar y ejecutar:
+ 
+ -Para descargar el último tag del repositorio se puede utilizar la opción de descargar en .zip directamente desde la rama master.
+  Puesto que se trata de un repositorio público se puede obtener la última versión (tag: Fase 2) clonando el repositorio a local.
+  
+ -La forma más recomendable para visualizar el código es utilizar el IDE Brackets. Este software también permite previsualizar en el    navegador los documentos web.
+ 
+ -Se ha comprobado su perfecto funcionamiento en los siguientes navegadores:
+  	Google Chrome.
+  	Mozilla Firefox.
+
+﻿# Hosting de la web (Github):
+ 
+ http://alvaro95pa.github.io/daw_web/Home.html
 
   
