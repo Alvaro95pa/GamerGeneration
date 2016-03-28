@@ -14,7 +14,9 @@ footer {
 /* Home */
 .fondo {
     background-color: whitesmoke;
-    padding: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-radius: 3px;
 }
 
 .botonRed {
