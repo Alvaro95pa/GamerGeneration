@@ -13,17 +13,16 @@ footer {
 
 /* Cabecera */
 .fondo {
-    background-color: whitesmoke;
+    background-color: whitesmoke; 
     padding: 0px;
 }
+
 
 .botonRed {
     color: whitesmoke;
     background-color: firebrick;
     border-radius: 3px;
 }
-
-
 
 .logo img {
     width: 130px;
@@ -63,17 +62,18 @@ footer {
 
 
 /* CATALOGO */
-p{
+.fondo_catalogo p{
     margin:0px;
 }
-ul{
+.fondo_catalogo ul{
     list-style: none;
     padding: 0px;
 }
 
-nav-tabs a:active{
-    background-color: red;
-    
+
+.fondo_catalogo div{
+    background-color: whitesmoke;
+
 }
 .pestaña {
     width: 33%;
