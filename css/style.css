@@ -1,9 +1,10 @@
-/* CSS Alvaro */
 body {
-    background-image: url("ds.jpg");
+    background: url("ds.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-color: gainsboro;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 footer {
