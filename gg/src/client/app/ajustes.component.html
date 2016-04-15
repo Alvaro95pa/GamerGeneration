@@ -1,0 +1,100 @@
+<!-- Menu del perfil  -->
+<div class="col-md-2">
+  <menu-component></menu-component>
+</div>
+<!-- Ajustes  -->
+<div class="col-md-10">
+  <!-- Datos personales  -->
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      Cambiar datos personales
+    </div>
+    <div class="panel-body">
+      <div class="personales">
+        <input type="text" class="form-control" placeholder="Nombre">
+      </div>
+      <div class="personales">
+        <input type="text" class="form-control" placeholder="Apellidos">
+      </div>
+      <div class="input-group personales">
+        <input type="text" class="form-control" placeholder="Usuario">
+        <span class="input-group-addon" id="basic-addon2"> * </span>
+      </div>
+      <div class="input-group personales">
+        <input type="text" class="form-control" placeholder="Correo electrónico">
+        <span class="input-group-addon" id="basic-addon2"> * </span>
+      </div>
+      <div class="input-group personales">
+        <input type="text" class="form-control" placeholder="Cumpleaños">
+        <span class="input-group-addon" id="basic-addon2"> dd/mm/aaaa </span>
+      </div>
+      <div class="personales">
+        <input type="text" class="form-control" placeholder="Nacionalidad">
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <span> * (Obligatorio) </span>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary"> Guardar </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contraseña  -->
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      Cambiar contraseña
+    </div>
+    <div class="panel-body">
+      <div class="input-group personales">
+        <input type="password" class="form-control" placeholder="Contraseña">
+        <span class="input-group-addon" id="basic-addon2"> * </span>
+      </div>
+      <div class="input-group personales">
+        <input type="password" class="form-control" placeholder="Nueva contraseña">
+        <span class="input-group-addon" id="basic-addon2"> * </span>
+      </div>
+      <div class="input-group personales">
+        <input type="password" class="form-control" placeholder="Repetir contraseña">
+        <span class="input-group-addon" id="basic-addon2"> * </span>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <span> * (Obligatorio) </span>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary"> Guardar </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Privacidad  -->
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      Privacidad
+    </div>
+    <div class="panel-body centrado">
+      <span>Perfil</span>
+      <seleccion-component></seleccion-component>
+      <br>
+      <br>
+      <span>Contenido</span>
+      <seleccion-component></seleccion-component>
+      <br>
+      <br>
+      <span>Amigos</span>
+      <seleccion-component></seleccion-component>
+    </div>
+  </div>
+  <!-- Eliminar cuenta  -->
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      Borrar cuenta
+    </div>
+    <div class="panel-body centrado">
+      <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
+      <button type="submit" class="btn btn-danger"> Eliminar </button>
+    </div>
+  </div>
+</div>

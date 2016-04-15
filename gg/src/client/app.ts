@@ -1,4 +1,4 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {GgApp} from './app/gg';
+import {PerfilComponent} from './app/perfil.component';
 
-bootstrap(GgApp, []);
+bootstrap(PerfilComponent, []);

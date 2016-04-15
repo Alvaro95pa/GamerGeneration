@@ -1,0 +1,17 @@
+.amigos li{
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    padding-top: 2%;
+}
+.amigos p{
+    padding-top: 5%;
+    color: black;
+}
+.amigos li:hover{
+    background-color: firebrick;
+}
+.panel-body{
+    background-color: whitesmoke;
+    color: black;
+}

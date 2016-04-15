@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
   integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <title>Gg</title>
+  <title> Game Generation</title>
   <base href="/">
   {{content-for 'head'}}
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 
   <!-- Service worker support is disabled by default.
        Install the worker script and uncomment to enable.
@@ -22,7 +24,7 @@
   -->
 </head>
 <body>
-  <gg-app>Loading...</gg-app>
+  <perfil-component>Loading...</perfil-component>
 
   <script src="vendor/es6-shim/es6-shim.js"></script>
   <script src="vendor/systemjs/dist/system-polyfills.js"></script>
@@ -33,6 +35,7 @@
   <script src="vendor/angular2/bundles/angular2.dev.js"></script>
   <script src="vendor/angular2/bundles/http.dev.js"></script>
   <script src="vendor/angular2/bundles/router.dev.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ng2-bootstrap/1.0.10/ng2-bootstrap.min.js"></script>
 
   <script>
@@ -42,6 +45,9 @@
           format: 'register',
           defaultExtension: 'js'
         }
+      },
+      map: {
+        moment: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment-with-locales.js'
       }
     });
     System.import('app.js').then(null, console.error.bind(console));

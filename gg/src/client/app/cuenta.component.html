@@ -1,0 +1,91 @@
+<!-- Primera fila (Datos personales y avatar con información)  -->
+<div class="row">
+  <!-- Menú del pefil  -->
+  <div class="col-md-2">
+    <menu-component></menu-component>
+  </div>
+  <!-- Datos personales  -->
+  <div class="col-md-7">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        Datos personales
+      </div>
+      <div class="panel-body">
+        <p class="datos"> Nombre : {{usuario.nombre}} </p>
+        <p class="datos"> Apellidos : {{usuario.apellidos}} </p>
+        <p class="datos"> Nacionalidad : {{usuario.nacionalidad}} </p>
+        <p class="datos"> Cumpleaños :  </p>
+      </div>
+    </div>
+  </div>
+  <!-- Avatar y datos principales  -->
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <img src="img/avatar.png"/>
+        <p class="avatar"> Usuario : {{usuario.usuario}} </p>
+        <p class="avatar"> Correo: {{usuario.correo}} </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Segunda fila (Estadisticas y detalles) -->
+<div class="row">
+  <!-- Estadísticas -->
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="datos"> Número de amigos :  </p>
+        <p class="datos"> Número de peliculas vistas :  </p>
+        <p class="datos"> Número de series vistas :  </p>
+        <p class="datos"> Número de videojuegos jugados : </p>
+      </div>
+    </div>
+  </div>
+  <!-- Detalles -->
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p class="info2"> Aportes : {{usuario.datos.aportes}} </p>
+        <p class="info2"> Ultima visita : {{usuario.datos.ultima}} </p>
+        <p class="info2"> Usuario desde : {{usuario.datos.tUsuario}} </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Tercera fila (favoritos) -->
+<div class="centrado">
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      Favoritos
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body fotos">
+              <p> Pelicula </p>
+              <img src="img/deadpool.jpg"/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body fotos">
+              <p> Serie </p>
+              <img src="img/twd.jpg"/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body fotos">
+              <p> Videojuego </p>
+              <img src="img/civ5.jpg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
