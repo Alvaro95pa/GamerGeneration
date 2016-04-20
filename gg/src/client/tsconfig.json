@@ -18,6 +18,9 @@
 
   "files": [
     "app.ts",
+    "app/noticia.model.ts",
+    "app/analisis.model.ts",
+    "app/expositor.component.ts",
     "typings.d.ts"
   ]
 }

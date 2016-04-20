@@ -1,4 +1,4 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {GgApp} from './app/gg';
+import {HomeApp} from './app/home';
 
-bootstrap(GgApp, []);
+bootstrap(HomeApp, []);
