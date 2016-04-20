@@ -1,27 +1,36 @@
+<!-- Perfil privado  -->
+<div *ngIf="visible && !usuario.datos.pPerfilTodos && !(usuario.usuario == actual)" class="panel panel-default">
+  <div class="panel-body">
+    <div class="privado">
+      <p> Este perfil es privado </p>
+    </div>
+  </div>
+</div>
+<!-- Perfil publico -->
 <!-- Primera fila (Datos personales y avatar con información)  -->
-<div class="row">
+<div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="row">
   <!-- Menú del pefil  -->
   <div class="col-md-2">
-    <menu-component></menu-component>
+    <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
   </div>
   <!-- Datos personales  -->
-  <div class="col-md-7">
-    <div class="panel panel-danger">
+  <div  class="col-md-7">
+    <div  class="panel panel-danger">
       <div class="panel-heading">
         Datos personales
       </div>
-      <div class="panel-body">
-        <p class="datos"> Nombre : {{usuario.nombre}} </p>
+      <div  class="panel-body">
+        <p class="datos"> Nombre : {{usuario.nombre}}{{usuarioActual}} </p>
         <p class="datos"> Apellidos : {{usuario.apellidos}} </p>
         <p class="datos"> Nacionalidad : {{usuario.nacionalidad}} </p>
-        <p class="datos"> Cumpleaños :  </p>
+        <p class="datos"> Cumpleaños : {{usuario.cumpleanos}} de cada año </p>
       </div>
     </div>
   </div>
   <!-- Avatar y datos principales  -->
   <div class="col-md-3">
     <div class="panel panel-default">
-      <div class="panel-body">
+      <div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="panel-body">
         <img src="img/avatar.png"/>
         <p class="avatar"> Usuario : {{usuario.usuario}} </p>
         <p class="avatar"> Correo: {{usuario.correo}} </p>
@@ -30,22 +39,22 @@
   </div>
 </div>
 <!-- Segunda fila (Estadisticas y detalles) -->
-<div class="row">
+<div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="row">
   <!-- Estadísticas -->
   <div class="col-md-9">
     <div class="panel panel-default">
       <div class="panel-body">
-        <p class="datos"> Número de amigos :  </p>
-        <p class="datos"> Número de peliculas vistas :  </p>
-        <p class="datos"> Número de series vistas :  </p>
-        <p class="datos"> Número de videojuegos jugados : </p>
+        <p class="datos"> Número de amigos : {{usuario.datos.nAmigos}} </p>
+        <p class="datos"> Número de peliculas vistas : {{usuario.datos.nPelis}} </p>
+        <p class="datos"> Número de series vistas : {{usuario.datos.nSeries}} </p>
+        <p class="datos"> Número de videojuegos jugados : {{usuario.datos.nJuegos}} </p>
       </div>
     </div>
   </div>
   <!-- Detalles -->
   <div class="col-md-3">
     <div class="panel panel-default">
-      <div class="panel-body">
+      <div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="panel-body">
         <p class="info2"> Aportes : {{usuario.datos.aportes}} </p>
         <p class="info2"> Ultima visita : {{usuario.datos.ultima}} </p>
         <p class="info2"> Usuario desde : {{usuario.datos.tUsuario}} </p>
@@ -54,7 +63,7 @@
   </div>
 </div>
 <!-- Tercera fila (favoritos) -->
-<div class="centrado">
+<div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="centrado">
   <div class="panel panel-danger">
     <div class="panel-heading">
       Favoritos

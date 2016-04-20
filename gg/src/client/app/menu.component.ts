@@ -1,5 +1,7 @@
-import { Component } from 'angular2/core';
+import { Component, Input } from 'angular2/core';
 import { Router } from 'angular2/router';
+import { Usuario } from './usuario'
+import { Datos } from './datos';
 
 @Component({
   selector: 'menu-component',
@@ -10,6 +12,11 @@ import { Router } from 'angular2/router';
 })
 
 export class MenuComponent {
+  //Variables
+  @Input()
+  private usuario: Usuario;
+  @Input()
+  private actual: string;
   //Metodos
   constructor(private _router: Router) { }
   irA(link: string){

@@ -22,3 +22,8 @@
     width: 200px;
     height: 270px;
 }
+.privado p{
+    color: red;
+    text-align: center;
+    font-size: 22px;
+}

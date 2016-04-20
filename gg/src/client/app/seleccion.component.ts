@@ -10,5 +10,5 @@ import { BUTTON_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 })
 
 export class SeleccionComponent {
-  public activo = 'Izquierda';
+  public activo = 'NoVisible';
 }

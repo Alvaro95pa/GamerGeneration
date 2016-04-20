@@ -1,18 +1,6 @@
 import { Usuario } from './usuario';
 import { Datos } from './datos';
 
-
-export var USUARIO: Usuario = {
-  "nombre": "Pepito",
-  "apellidos": "Matarile Motos",
-  "nacionalidad": "Española",
-  "cumpleaños": "22/2/1995",
-  "usuario": "castorTresDientes",
-  "contraseña": "1234",
-  "correo": "pepitogrillo32@gmail.com",
-  "datos": datos,
-};
-
 var datos: Datos = {
   nAmigos: "6",
   nPelis: "3",
@@ -25,12 +13,20 @@ var datos: Datos = {
   fSerie: "The walking dead",//Prod
   fJuego: "Civilization V",//Prod
   pPerfilTodos: true,
-  pPerfilAmigos: true,
   cPerfilTodos: true,
-  cPerfilAmigos: true,
   aPerfilTodos: true,
-  aPerfilAmigos: true,
   //contePelis: Prod[];
   //conteSeries: Prod[];
   //conteJuegos: Prod[];
-}
+};
+
+export var USUARIO: Usuario = {
+  "nombre": "Pepito",
+  "apellidos": "Matarile Motos",
+  "nacionalidad": "Española",
+  "cumpleanos": "22/02",
+  "usuario": "castorTresDientes",
+  "contraseña": "1234",
+  "correo": "pepitogrillo32@gmail.com",
+  "datos": datos
+};

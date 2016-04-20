@@ -5,7 +5,7 @@ export class Usuario {
   nombre: string;
   apellidos: string;
   nacionalidad: string;
-  cumpleaños: string;
+  cumpleanos: string;
   //Datos principales
   usuario: string;
   contraseña: string;

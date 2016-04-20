@@ -5,9 +5,6 @@ import { AmigosComponent } from './amigos.component';
 import { AjustesComponent } from './ajustes.component';
 import { ContenidoComponent } from './contenido.component';
 import { UsuarioService } from './usuario.service';
-import { Usuario } from './usuario';
-import { Datos } from './datos';
-import { OnInit } from 'angular2/core';
 
 @Component({
   selector: 'perfil-component',
@@ -38,10 +35,8 @@ import { OnInit } from 'angular2/core';
   path: '/contenido',
   name: 'Contenido',
   component: ContenidoComponent,
-  },
+  }
 ])
 
-export class PerfilComponent implements OnInit {
-  ngOnInit() {
-  }
+export class PerfilComponent{
 }

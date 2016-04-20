@@ -16,11 +16,8 @@ export class Datos {
   fJuego: string;//Prod
   //Privacidad
   pPerfilTodos: boolean;
-  pPerfilAmigos: boolean;
   cPerfilTodos: boolean;
-  cPerfilAmigos: boolean;
   aPerfilTodos: boolean;
-  aPerfilAmigos: boolean;
   //Contenido
   //contePelis: Prod[];
   //conteSeries: Prod[];
