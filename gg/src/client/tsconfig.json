@@ -21,6 +21,11 @@
     "app/noticia.model.ts",
     "app/analisis.model.ts",
     "app/expositor.component.ts",
+    "app/home.ts",
+    "app/analisis.ts",
+    "app/admin.model.ts",
+    "app/mock-admin.ts",
+    "app/admin.service.ts",
     "typings.d.ts"
   ]
 }

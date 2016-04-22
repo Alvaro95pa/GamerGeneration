@@ -18,16 +18,9 @@
     </button>
     <!-- issue: removing currently active slide should not lead to white screen? -->
     <button type="button" class="btn btn-info"
-            (click)="removeSlide(2)">Remove Slide#3
+            (click)="removeSlide(2)">Remove Slide
     </button>
     <br>
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" [(ngModel)]="noWrapSlides">
-        Disable Slide Looping
-      </label>
-    </div>
 
     Interval, in milliseconds: <input type="number" class="form-control" [(ngModel)]="myInterval">
     <br/>Enter a negative number or 0 to stop the interval.

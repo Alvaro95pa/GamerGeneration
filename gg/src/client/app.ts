@@ -1,4 +1,4 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {HomeApp} from './app/home';
+import {CabeceraComponent} from './app/cabecera.component';
 
-bootstrap(HomeApp, []);
+bootstrap(CabeceraComponent, []);
