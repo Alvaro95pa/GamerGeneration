@@ -13,20 +13,22 @@ var datos: Datos = {
   fSerie: "The walking dead",//Prod
   fJuego: "Civilization V",//Prod
   pPerfilTodos: true,
-  cPerfilTodos: true,
+  cPerfilTodos: false,
   aPerfilTodos: true,
   //contePelis: Prod[];
   //conteSeries: Prod[];
   //conteJuegos: Prod[];
+  //amigos: number[];
 };
 
 export var USUARIO: Usuario = {
-  "nombre": "Pepito",
-  "apellidos": "Matarile Motos",
-  "nacionalidad": "Española",
-  "cumpleanos": "22/02",
-  "usuario": "castorTresDientes",
-  "contraseña": "1234",
-  "correo": "pepitogrillo32@gmail.com",
-  "datos": datos
+  id: 1,
+  nombre: "Pepito",
+  apellidos: "Matarile Motos",
+  nacionalidad: "Española",
+  cumpleanos: "22/02",
+  usuario: "castorTresDientes",
+  contrasena: "1234",
+  correo: "pepitogrillo32@gmail.com",
+  datos: datos
 };

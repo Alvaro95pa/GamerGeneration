@@ -1,6 +1,8 @@
 import { Datos } from './datos';
 
 export class Usuario {
+  //Identificador
+  id: number;
   //Informacion personal
   nombre: string;
   apellidos: string;
@@ -8,7 +10,7 @@ export class Usuario {
   cumpleanos: string;
   //Datos principales
   usuario: string;
-  contraseña: string;
+  contrasena: string;
   correo: string;
   //Mas informacion
   datos: Datos;

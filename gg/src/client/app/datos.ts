@@ -22,4 +22,6 @@ export class Datos {
   //contePelis: Prod[];
   //conteSeries: Prod[];
   //conteJuegos: Prod[];
+  //Amigos
+  //amigos: number[];
 }

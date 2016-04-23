@@ -1,4 +1,4 @@
-<div *ngIf="visible && usuario.usuario == actual" class="row">
+<div (click)="prepaContra()" *ngIf="visible && usuario.usuario == actual" class="row">
   <!-- Menu del perfil  -->
   <div class="col-md-2">
     <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
@@ -15,94 +15,109 @@
           <input *ngIf="visible && usuario.nombre == null" type="text" class="form-control" placeholder="Nombre">
           <div *ngIf="visible && usuario.nombre != null" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Nombre </span>
-            <input [(ngModel)]="usuario.nombre"  type="text" class="form-control" placeholder="{{usuario.nombre}}">
+            <input [(ngModel)]="usuario.nombre" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.nombre}}">
           </div>
         </div>
         <div class="personales">
           <input *ngIf="visible && usuario.apellidos == null" type="text" class="form-control" placeholder="Apellidos">
           <div *ngIf="visible && usuario.apellidos != null" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Apellidos </span>
-            <input [(ngModel)]="usuario.apellidos"  type="text" class="form-control" placeholder="{{usuario.apellidos}}">
+            <input [(ngModel)]="usuario.apellidos" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.apellidos}}">
           </div>
         </div>
         <div *ngIf="visible" class="input-group personales">
           <span  class="input-group-addon" id="basic-addon1"> Usuario </span>
-          <input [(ngModel)]="usuario.usuario" type="text" class="form-control" placeholder="{{usuario.usuario}}">
+          <input [(ngModel)]="usuario.usuario" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.usuario}}">
           <span class="input-group-addon" id="basic-addon2"> * </span>
         </div>
         <div *ngIf="visible" class="input-group personales">
           <span  class="input-group-addon" id="basic-addon1"> Correo </span>
-          <input [(ngModel)]="usuario.correo" type="text" class="form-control" placeholder="{{usuario.correo}}">
+          <input [(ngModel)]="usuario.correo" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.correo}}">
           <span class="input-group-addon" id="basic-addon2"> * </span>
         </div>
         <div class="personales">
           <input *ngIf="visible && usuario.cumpleanos == null" type="text" class="form-control" placeholder="Cumpleaños">
           <div *ngIf="visible && usuario.cumpleanos != null" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Cumpleaños </span>
-            <input [(ngModel)]="usuario.cumpleanos"  type="text" class="form-control" placeholder="{{usuario.cumpleanos}}">
+            <input [(ngModel)]="usuario.cumpleanos" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.cumpleanos}}">
             <span class="input-group-addon" id="basic-addon2"> dd/mm </span>
           </div>
         </div><div class="personales">
           <input *ngIf="visible && usuario.nacionalidad == null" type="text" class="form-control" placeholder="Nacionalidad">
           <div *ngIf="visible && usuario.nacionalidad != null" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Nacionalidad </span>
-            <input [(ngModel)]="usuario.nacionalidad"  type="text" class="form-control" placeholder="{{usuario.nacionalidad}}">
+            <input [(ngModel)]="usuario.nacionalidad" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.nacionalidad}}">
           </div>
         </div>
         <div class="row">
           <div class="col-md-10">
             <span> * (Obligatorio) </span>
+            <br>
+            <br>
+            <div *ngIf="datos" class="alert alert-success alert-dismissible" role="alert">
+              <button (click)="noNotificar('datos')" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              Se han realizado los cambios con éxito
+            </div>
           </div>
           <div class="col-md-2">
-            <button type="submit" class="btn btn-primary"> Guardar </button>
+            <button type="submit" class="btn btn-primary" (click)="notificar('datos')"> Guardar </button>
           </div>
         </div>
       </div>
     </div>
     <!-- Contraseña  -->
-    <div class="panel panel-danger">
+    <div *ngIf="visible" class="panel panel-danger">
       <div class="panel-heading">
         Cambiar contraseña
       </div>
       <div class="panel-body">
         <div class="input-group personales">
-          <input type="password" class="form-control" placeholder="Contraseña">
+          <input #prePass (click)="noNotificar('contra')" type="password" class="form-control" placeholder="Contraseña">
           <span class="input-group-addon" id="basic-addon2"> * </span>
         </div>
         <div class="input-group personales">
-          <input type="password" class="form-control" placeholder="Nueva contraseña">
+          <input #pass (click)="noNotificar('contra')" type="password" class="form-control" placeholder="Nueva contraseña">
           <span class="input-group-addon" id="basic-addon2"> * </span>
         </div>
         <div class="input-group personales">
-          <input type="password" class="form-control" placeholder="Repetir contraseña">
+          <input #repPass (click)="noNotificar('contra')" type="password" class="form-control" placeholder="Repetir contraseña">
           <span class="input-group-addon" id="basic-addon2"> * </span>
         </div>
         <div class="row">
           <div class="col-md-10">
             <span> * (Obligatorio) </span>
+            <br>
+            <br>
+            <div *ngIf="contra" class="alert alert-success alert-dismissible" role="alert">
+              <button (click)="noNotificar('contra')" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              Se ha cambiado la contraseña con éxito
+            </div>
           </div>
           <div class="col-md-2">
-            <button type="submit" class="btn btn-primary"> Guardar </button>
+            <span *ngIf="prePass.value != preContra || pass.value != repPass.value || pass.value == '' || prePass.value ==''" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+            <button *ngIf="prePass.value != preContra || pass.value != repPass.value || pass.value == '' || prePass.value ==''" type="submit" class="btn btn-warning"> Guardar </button>
+            <span *ngIf="prePass.value == preContra && pass.value == repPass.value && pass.value != ''" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+            <button (click)="guardarContra(pass.value); notificar('contra')" *ngIf="prePass.value == preContra && pass.value == repPass.value && pass.value != ''" type="submit" class="btn btn-success"> Guardar </button>
           </div>
         </div>
       </div>
     </div>
     <!-- Privacidad  -->
-    <div class="panel panel-danger">
+    <div *ngIf="visible" class="panel panel-danger">
       <div class="panel-heading">
         Privacidad
       </div>
       <div class="panel-body centrado">
         <span>Perfil</span>
-        <seleccion-component></seleccion-component>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.datos.pPerfilTodos, 'perfil')" [inicial]='usuario.datos.pPerfilTodos'></seleccion-component>
         <br>
         <br>
         <span>Contenido</span>
-        <seleccion-component></seleccion-component>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.datos.cPerfilTodos, 'contenido')" [inicial]='usuario.datos.cPerfilTodos'></seleccion-component>
         <br>
         <br>
         <span>Amigos</span>
-        <seleccion-component></seleccion-component>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.datos.aPerfilTodos, 'amigos')" [inicial]='usuario.datos.aPerfilTodos'></seleccion-component>
       </div>
     </div>
     <!-- Eliminar cuenta  -->
