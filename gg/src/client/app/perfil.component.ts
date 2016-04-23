@@ -16,7 +16,7 @@ import { UsuarioService } from './usuario.service';
 
 @RouteConfig([
   {
-    path: '/cuenta',
+    path: '/cuenta/id',
     name: 'Cuenta',
     component: CuentaComponent,
     useAsDefault: true,

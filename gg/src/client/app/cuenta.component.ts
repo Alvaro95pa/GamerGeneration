@@ -1,5 +1,6 @@
 import { Component, Input } from 'angular2/core';
 import { MenuComponent } from './menu.component';
+import { RouteParams } from 'angular2/router';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario'
@@ -12,17 +13,18 @@ import { Datos } from './datos';
   styleUrls: ['app/cuenta.component.css'],
 })
 
-export class CuentaComponent  implements OnInit {
+export class CuentaComponent implements OnInit {
   //Variables
   usuario: Usuario;
   actual: string = 'castorTresDientes'
   visible: boolean = false;
   //Metodos
-  constructor(private _usuarioService: UsuarioService) {}
+  constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams) {}
   ngOnInit() {
-    this._usuarioService.getUsuario().then(usuario =>{
-      this.usuario = usuario;
+    //let id= +this._routeParams.get('id');
+    this._usuarioService.getUsuarios().then(usuarios =>{
+      this.usuario = usuarios;
       this.visible = true
-    });
-  }
+    })
+  };
 }

@@ -25,7 +25,7 @@ export class AjustesComponent  implements OnInit {
   //Metodos
   constructor(private _usuarioService: UsuarioService) {}
   ngOnInit() {
-    this._usuarioService.getUsuario().then(usuario =>{
+    this._usuarioService.getUsuarios().then(usuario =>{
       this.usuario = usuario;
       this.visible = true;
       this.preContra = this.usuario.contrasena;

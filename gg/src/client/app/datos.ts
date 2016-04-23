@@ -1,4 +1,5 @@
 //import { Prod } from './Prod'
+import { Amigo } from './amigos';
 
 export class Datos {
   //Estadisticas
@@ -23,5 +24,5 @@ export class Datos {
   //conteSeries: Prod[];
   //conteJuegos: Prod[];
   //Amigos
-  //amigos: number[];
+  amigos: Amigo[];
 }

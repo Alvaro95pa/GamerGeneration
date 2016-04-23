@@ -97,7 +97,7 @@
             <span *ngIf="prePass.value != preContra || pass.value != repPass.value || pass.value == '' || prePass.value ==''" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
             <button *ngIf="prePass.value != preContra || pass.value != repPass.value || pass.value == '' || prePass.value ==''" type="submit" class="btn btn-warning"> Guardar </button>
             <span *ngIf="prePass.value == preContra && pass.value == repPass.value && pass.value != ''" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-            <button (click)="guardarContra(pass.value); notificar('contra')" *ngIf="prePass.value == preContra && pass.value == repPass.value && pass.value != ''" type="submit" class="btn btn-success"> Guardar </button>
+            <button (click)="guardarContra(pass.value); notificar('contra'); prePass.value = ''; pass.value = ''; repPass.value = ''" *ngIf="prePass.value == preContra && pass.value == repPass.value && pass.value != ''" type="submit" class="btn btn-success"> Guardar </button>
           </div>
         </div>
       </div>

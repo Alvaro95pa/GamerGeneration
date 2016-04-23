@@ -1,27 +1,30 @@
-import { USUARIO } from './mock-usuario';
+import { USUARIOS } from './mock-usuario';
 import { Injectable } from 'angular2/core';
 import { Usuario } from './usuario'
 import { Datos } from './datos';
 
 @Injectable()
 export class UsuarioService {
-  getUsuario() {
-    return Promise.resolve(USUARIO);
+  getUsuarios() {
+    return Promise.resolve(USUARIOS[0]);
+  }
+  getUsuario(id: number) {
+    return Promise.resolve(USUARIOS).then(usuarios => usuarios.filter(usuario => usuario.id === id)[0])
   }
   setContraseña(pass: string){
-    USUARIO.contrasena = pass;
+    USUARIOS[0].contrasena = pass;
   }
   setPersonales(user: Usuario){
-    USUARIO.nombre = user.nombre;
-    USUARIO.apellidos = user.apellidos;
-    USUARIO.nacionalidad = user.nacionalidad;
-    USUARIO.cumpleanos = user.cumpleanos;
-    USUARIO.usuario = user.usuario;
-    USUARIO.correo = user.correo;
+    USUARIOS[0].nombre = user.nombre;
+    USUARIOS[0].apellidos = user.apellidos;
+    USUARIOS[0].nacionalidad = user.nacionalidad;
+    USUARIOS[0].cumpleanos = user.cumpleanos;
+    USUARIOS[0].usuario = user.usuario;
+    USUARIOS[0].correo = user.correo;
   }
   setPrivacidad(data: Datos){
-    USUARIO.datos.pPerfilTodos = data.pPerfilTodos;
-    USUARIO.datos.cPerfilTodos = data.cPerfilTodos;
-    USUARIO.datos.aPerfilTodos = data.aPerfilTodos;
+    USUARIOS[0].datos.pPerfilTodos = data.pPerfilTodos;
+    USUARIOS[0].datos.cPerfilTodos = data.cPerfilTodos;
+    USUARIOS[0].datos.aPerfilTodos = data.aPerfilTodos;
   }
 }

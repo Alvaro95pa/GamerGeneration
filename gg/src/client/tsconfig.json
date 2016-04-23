@@ -20,6 +20,7 @@
     "app.ts",
     "app/ajustes.component.ts",
     "app/amigos.component.ts",
+    "app/amigos.ts",
     "app/contenido.component.ts",
     "app/cuenta.component.ts",
     "app/datos.ts",

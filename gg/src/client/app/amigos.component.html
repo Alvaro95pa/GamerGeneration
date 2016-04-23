@@ -1,49 +1,17 @@
-<div class="row">
+<div  *ngIf="visible && (usuario.datos.aPerfilTodos || (usuario.usuario == actual))" class="row">
   <!-- Menú del pefil  -->
   <div class="col-md-2">
-    <menu-component></menu-component>
+    <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
   </div>
   <!-- Amigos  -->
   <div class="col-md-10">
     <div class="panel panel-default">
       <div class="panel-body amigos">
         <ul class="amigos">
-          <a href="#">
-            <li>
-              <img src="./img/avatar.png"/>
-              <p> Usuario: alfredoSinDientes </p>
-            </li>
-          </a>
-          <a href="#">
-            <li>
-              <img src="./img/avatar.png"/>
-              <p> Usuario: velocidadEscarlata </p>
-            </li>
-          </a>
-          <a href="#">
-            <li>
-              <img src="./img/avatar.png"/>
-              <p> Usuario: podriaSerMejor </p>
-            </li>
-          </a>
-          <a href="#">
-            <li>
-              <img src="./img/avatar.png"/>
-              <p> Usuario: sinCara </p>
-            </li>
-          </a>
-          <a href="#">
-            <li>
-              <img src="./img/avatar.png"/>
-              <p> Usuario: peloQuemado </p>
-            </li>
-          </a>
-          <a href="#">
-            <li>
-              <img src="./img/avatar.png"/>
-              <p> Usuario: web </p>
-            </li>
-          </a>
+          <li *ngFor="#amigo of usuario.datos.amigos" (click)="irConcreto(amigo)">
+            <img src="./img/avatar.png"/>
+            <p> Usuario: {{amigo.usuario}} </p>
+          </li>
         </ul>
       </div>
     </div>
