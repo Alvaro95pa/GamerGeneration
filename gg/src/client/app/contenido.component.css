@@ -1,11 +1,10 @@
-.pestaña {
-    width: 33%;
-    text-align: center;
-}
-ul.listado li {
+ul.listado{
     display: inline-block;
     width: 20%;
     margin-bottom: 1%;
+}
+.listado{
+  list-style: none;
 }
 ul.listado li:hover {
     background-color: firebrick;

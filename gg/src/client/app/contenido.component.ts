@@ -5,7 +5,6 @@ import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario'
 import { Datos } from './datos';
 import { Amigo } from './amigos';
-import { Router } from 'angular2/router';
 
 
 @Component({
@@ -16,7 +15,7 @@ import { Router } from 'angular2/router';
   providers: []
 })
 
-export class ContenidoComponent implements OnInit {
+export class ContenidoComponent{
   //Variables
   usuario: Usuario;
   actual: string = 'castorTresDientes'

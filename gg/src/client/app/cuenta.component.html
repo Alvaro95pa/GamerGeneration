@@ -60,6 +60,7 @@
         <p class="info2"> Usuario desde : {{usuario.datos.tUsuario}} </p>
       </div>
     </div>
+    <button *ngIf="!(visible && usuario.usuario == actual)" class="btn btn-primary col-md-12" (click)="notificar('datos')"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir amigo </button>
   </div>
 </div>
 <!-- Tercera fila (favoritos) -->
@@ -74,7 +75,8 @@
           <div class="panel panel-default">
             <div class="panel-body fotos">
               <p> Pelicula </p>
-              <img src="img/deadpool.jpg"/>
+              <img src={{usuario.datos.fPeli.img}}/>
+              <p> {{usuario.datos.fPeli.name}} </p>
             </div>
           </div>
         </div>
@@ -82,7 +84,8 @@
           <div class="panel panel-default">
             <div class="panel-body fotos">
               <p> Serie </p>
-              <img src="img/twd.jpg"/>
+              <img src={{usuario.datos.fSerie.img}}/>
+              <p> {{usuario.datos.fSerie.name}} </p>
             </div>
           </div>
         </div>
@@ -90,7 +93,8 @@
           <div class="panel panel-default">
             <div class="panel-body fotos">
               <p> Videojuego </p>
-              <img src="img/civ5.jpg"/>
+              <img src={{usuario.datos.fJuego.img}}/>
+              <p> {{usuario.datos.fJuego.name}} </p>
             </div>
           </div>
         </div>

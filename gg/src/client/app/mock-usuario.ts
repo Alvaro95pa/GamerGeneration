@@ -10,16 +10,21 @@ var datos1: Datos = {
   aportes: "Ninguno",
   ultima: "Ayer",
   tUsuario: "hace 1 año",
-  fPeli: "Deadpool",//Prod
-  fSerie: "The walking dead",//Prod
-  fJuego: "Civilization V",//Prod
+  fPeli: { id: 1, tipoprod: 3, name: "Deadpool", img: "img/deadpool.jpg", genero: null, plataforma: null},
+  fSerie: { id: 2, tipoprod: 2, name: "The walkind dead", img: "img/twd.jpg", genero: null, plataforma: null},
+  fJuego: { id: 3, tipoprod: 1, name: "Civilization V", img: "img/civ5.jpg", genero: null, plataforma: null},
   pPerfilTodos: true,
   cPerfilTodos: false,
   aPerfilTodos: true,
-  //contePelis: Prod[];
-  //conteSeries: Prod[];
-  //conteJuegos: Prod[];
-  amigos: [{id: 2, usuario: "velocidadEscarlata"}]
+  contenido: [{ id: 1, tipoprod: 3, name: "Deadpool", img: "img/deadpool.jpg", genero: null, plataforma: null},
+              { id: 2, tipoprod: 3, name: "Creed", img: "img/creed.jpg", genero: null, plataforma: null},
+              { id: 3, tipoprod: 3, name: "El renacido", img: "img/renacido.jpg", genero: null, plataforma: null},
+              { id: 1, tipoprod: 2, name: "Arrow", img: "img/arrow.jpg", genero: null, plataforma: null},
+              { id: 2, tipoprod: 2, name: "The walkind dead", img: "img/twd.jpg", genero: null, plataforma: null},
+              { id: 3, tipoprod: 2, name: "Los 100", img: "img/100.jpg", genero: null, plataforma: null},
+              { id: 1, tipoprod: 1, name: "XCOM 2", img: "img/xcom.jpg", genero: null, plataforma: null},
+              { id: 2, tipoprod: 1, name: "Civilization V", img: "img/civ5.jpg", genero: null, plataforma: null}],
+amigos: [{id: 2, usuario: "castorTresDientes"}]
 };
 var usuario1: Usuario = {
   id: 1,
@@ -41,15 +46,13 @@ var datos2: Datos = {
   aportes: "Ninguno",
   ultima: "Hoy",
   tUsuario: "hace 1 mes",
-  fPeli: "Deadpool",//Prod
-  fSerie: "The walking dead",//Prod
-  fJuego: "Civilization V",//Prod
+  fPeli: { id: 1, tipoprod: 3, name: "Deadpool", img: "img/deadpool.jpg", genero: null, plataforma: null},
+  fSerie: { id: 2, tipoprod: 2, name: "The walkind dead", img: "img/twd.jpg", genero: null, plataforma: null},
+  fJuego: { id: 3, tipoprod: 1, name: "Civilization V", img: "img/civ5.jpg", genero: null, plataforma: null},
   pPerfilTodos: true,
   cPerfilTodos: false,
   aPerfilTodos: false,
-  //contePelis: Prod[];
-  //conteSeries: Prod[];
-  //conteJuegos: Prod[];
+  contenido: null,
   amigos: [{id: 1, usuario: "castorTresDientes"}]
 };
 var usuario2: Usuario = {

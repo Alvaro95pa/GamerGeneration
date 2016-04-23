@@ -5,6 +5,7 @@ import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario'
 import { Datos } from './datos';
+import { Prod } from './prod';
 
 @Component({
   selector: 'cuenta-component',

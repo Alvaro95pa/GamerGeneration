@@ -1,26 +1,20 @@
-<div class="row">
+<div *ngIf="visible && (usuario.datos.aPerfilTodos || (usuario.usuario == actual))" class="row">
   <!-- Menú del pefil  -->
   <div class="col-md-2">
-    <menu-component></menu-component>
+    <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
   </div>
   <!-- Contenido  -->
   <div class="col-md-10">
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="row contenedor_catalogo">
-    <ul class="pestanas_catalogo">
-      <li (click)="gotoTipoprod(1)">Videojuegos
-      </li><li (click)="gotoTipoprod(2)">Series
-      </li><li (click)="gotoTipoprod(3)">Peliculas
-      </li>
-    </ul>
-        <div class="col-sm-9 norelative ">
-        <ul class="listado">
-            <li *ngFor="#produc of list_producto" (click)="gotoDetalles(produc)" >
-              <prod-detalle [prod]="produc" ></prod-detalle>
-            </li>
-        </ul></div>
-    </div>
+        <ul *ngFor="#contenido of usuario.datos.contenido" class="listado">
+          <li>
+            <div>
+              <img src={{contenido.img}}>
+              <p> {{contenido.name}} </p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

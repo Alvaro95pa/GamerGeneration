@@ -1,4 +1,4 @@
-//import { Prod } from './Prod'
+import { Prod } from './prod'
 import { Amigo } from './amigos';
 
 export class Datos {
@@ -12,17 +12,15 @@ export class Datos {
   ultima: string;
   tUsuario: string;
   //Favoritos
-  fPeli: string;//Prod
-  fSerie: string;//Prod
-  fJuego: string;//Prod
+  fPeli: Prod;
+  fSerie: Prod;
+  fJuego: Prod;
   //Privacidad
   pPerfilTodos: boolean;
   cPerfilTodos: boolean;
   aPerfilTodos: boolean;
   //Contenido
-  //contePelis: Prod[];
-  //conteSeries: Prod[];
-  //conteJuegos: Prod[];
+  contenido: Prod[];
   //Amigos
   amigos: Amigo[];
 }
