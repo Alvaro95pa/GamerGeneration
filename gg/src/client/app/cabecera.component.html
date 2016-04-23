@@ -26,11 +26,19 @@
                       </form>
 
                   </ul>
-                  <ul class="nav navbar-nav navbar-right" id="log">
+                  <ul class="nav navbar-nav navbar-right" *ngIf="!u && !c"> <!--User sin logear-->
                       <li>
-                          <a id="logeo" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+                          <a href="" id="log" role="button" aria-haspopup="true" aria-expanded="false"
                           data-toggle="modal" data-target="#myModal">
                           <span class="glyphicon glyphicon-user"></span> Login</a>
+                      </li>
+                  </ul>
+
+                  <ul class="nav navbar-nav navbar-right" *ngIf="u && c"> <!--User logeado-->
+                      <li>
+                          <a href="" id="admin_log" role="button" aria-haspopup="true" aria-expanded="false"
+                          data-toggle="modal" data-target="#myModal">
+                          <span class="glyphicon glyphicon-wrench"></span>Admin</a>
                       </li>
                   </ul>
               </div>
@@ -38,26 +46,26 @@
               <!-- Modal -->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document" id="mDialog">
-                  <div class="modal-content" id="mContent">
+                  <div class="modal-content" id="mContent" *ngIf="!u && !c && !after">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                       <h3 class="sesion">Iniciar sesión</h3>
                     </div>
+
+                    <!--Body sin login-->
                     <div class="modal-body">
                       <form class="margen">
                           <span>Usuario:</span>
-                          <input id="user" #usr type="text" class="form-control" placeholder="Nombre de usuario"
-                          (keyup)="onKey(user=usr.value)">
+                          <input #usr type="text" class="form-control" placeholder="Nombre de usuario"
+                          [(ngModel)]="user">
                       </form>
-
                       <form class="margen">
                           <span>Contraseña:</span>
-                          <input id="pass" #pss type="password" class="form-control" placeholder="Contraseña"
-                          (keyup)="onKey(pass=pss.value)">
+                          <input #pss type="password" class="form-control" placeholder="Contraseña"
+                          [(ngModel)]="pass">
                       </form>
-                      <button type="button" id="login" (click)="onClick()">Entrar</button>
+                      <button type="button" id="login" (click)="inicioSesion()">Entrar</button>
                       <label class="record"><input type="checkbox">Recuérdame</label>
-                      <span *ngIf="bool">DDDDDD:</span>
                       <hr>
                       <div class="reg">
                           <span>
@@ -67,13 +75,59 @@
                       </div>
                     </div>
                   </div>
+
+                  <!--Datos erroneos-->
+                  <div class="modal-content" id="mContent" *ngIf="((after && !u) || (after && !c))">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h3 class="sesion">Iniciar sesión</h3>
+                    </div>
+                    <div class="modal-body">
+                      <form class="margen">
+                          <span>Usuario:</span>
+                          <input *ngIf="u" #usr type="text" class="form-control" placeholder="Nombre de usuario"
+                          [(ngModel)]="user">
+                          <input *ngIf="!u" id="err" #usr type="text" class="form-control" placeholder="USUARIO INCORRECTO"
+                          [(ngModel)]="user">
+                      </form>
+                      <form class="margen">
+                          <span>Contraseña:</span>
+                          <input *ngIf="c" #usr type="password" class="form-control" placeholder="Contraseña"
+                          [(ngModel)]="pass">
+                          <input *ngIf="!c" id="err" #pss type="password" class="form-control" placeholder="CONTRASEÑA INCORRECTA"
+                          [(ngModel)]="pass">
+                      </form>
+                      <button type="button" id="login" (click)="inicioSesion()">Entrar</button>
+                      <label class="record"><input type="checkbox">Recuérdame</label>
+                      <hr>
+                      <div class="reg">
+                          <span>
+                          Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                          </span>
+                          <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Body con login -->
+                  <div class="modal-content" id="mContent" *ngIf="u && c">
+                    <div class="modal-body" id="mBody">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                      <h2>Ir a perfil:</h2>
+                      <a type="button" class="btn btn-info" href="perfil.html">Perfil</a>
+                      <hr>
+                      <h3>Cierre de sesión</h3>
+                      <button type="button" class="cierre" id="cerrar" (click)="cierreSesion()">Cerrar sesión</button>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
+              </div><!-- Fin del Modal -->
 
           </div>
       </nav>
   </div>
-
   <router-outlet></router-outlet>
 </div>
 <my-footer></my-footer>

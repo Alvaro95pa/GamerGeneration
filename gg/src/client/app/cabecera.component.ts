@@ -30,17 +30,31 @@ export class CabeceraComponent {
 	private user: String = '';
 	private pass: String = '';
 	admin: Admin;
-	bool: boolean = false;
+	u: boolean = false;
+	c: boolean = false;
+	after: boolean = false;
 
 	constructor(private _adminService: AdminService) {}
 
-	onClick(){
-		this._adminService.getAdmin().then(admin =>{
-      this.admin = admin;
-    });
+	inicioSesion(){
+		this.admin = this._adminService.getAdmin();
 		if((this.user == this.admin.usuario) && (this.pass == this.admin.contraseña)){
-			this.bool = true;
+			this.u = true;
+			this.c = true;
+		} else if((this.user == this.admin.usuario) && (this.pass != this.admin.contraseña)){
+				this.u = true;
+		} else if((this.user != this.admin.usuario) && (this.pass == this.admin.contraseña)){
+				this.c = true;
 		}
+		this.after = true;
+	}
+
+	cierreSesion(){
+		this.after = false;
+		this.u = false;
+		this.c = false;
+		this.user = '';
+		this.pass = '';
 	}
 
 }
