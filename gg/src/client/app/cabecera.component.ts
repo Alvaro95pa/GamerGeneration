@@ -4,6 +4,7 @@ import {FooterComponent} from './footer.component';
 import {Home} from './home';
 import {Analisis} from './analisis';
 import {Admin} from './admin.model';
+import {Usuario} from './usuario';
 import {AdminService} from './admin.service';
 
 @Component({

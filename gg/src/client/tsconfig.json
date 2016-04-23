@@ -19,13 +19,20 @@
   "files": [
     "app.ts",
     "app/noticia.model.ts",
-    "app/analisis.model.ts",
+    "app/listado.component.ts",
     "app/expositor.component.ts",
     "app/home.ts",
     "app/analisis.ts",
+    "app/contenido.model.ts",
+    "app/destacado.model.ts",
+    "app/mock-contenido.ts",
     "app/admin.model.ts",
     "app/mock-admin.ts",
+    "app/contenido.service.ts",
     "app/admin.service.ts",
+    "app/usuario.ts",
+    "app/datos.ts",
+    "app/mock-usuario.ts",
     "typings.d.ts"
   ]
 }
