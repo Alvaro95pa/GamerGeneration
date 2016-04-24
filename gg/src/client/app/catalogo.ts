@@ -8,12 +8,13 @@ import {ContenidoService} from './contenido.service'
 import {proddetalleComponent} from './prod-detalle.component';
 import {listproductoscomponent} from './list-productos.component';
 import {listproductosconfiltermenucomponent} from './list-productosconfiltermenu.component';
-import {informacionprod} from './informacion-prod';
-import {listusers} from './list-users';
-import {listcontenido} from './list-contenido';
-import {listobjetos} from './list-objetos';anadirproducto
-import {anadircontenido} from './anadircontenido';
-import {anadirproducto} from './anadirproducto';
+import {informacionprod} from './informacion-prod.component';
+import {listusers} from './list-users.component';
+import {listcontenido} from './list-contenido.component';
+import {anadircontenido} from './anadircontenido.component';
+import {anadirproducto} from './anadirproducto.component';
+import {listobjetos} from './list-objetos.component';
+import {loginadmin} from './adminlogin.component'
 
 
 
@@ -60,6 +61,11 @@ import {anadirproducto} from './anadirproducto';
     component: listproductoscomponent,
   },
   {
+    path:'/Admin',
+    name: 'AdminLogin',
+    component: loginadmin
+  },
+  {
     path:'/Admin/Users',
     name: 'AdminUsers',
     component: listusers
@@ -93,7 +99,7 @@ export class catalogoApp {
     this.router.navigate(link);
   }
   gotoadmin_users(){
-    let link = ['AdminUsers'];
+    let link = ['AdminLogin'];
     this.router.navigate(link);
   }
   gotocatalogo(){
