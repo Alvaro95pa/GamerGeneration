@@ -13,9 +13,19 @@ import {clasesservice} from './clases.service';
       <div class="panel panel-danger">
         <div class="panel-heading">Datos Básicos</div>
         <div class="panel-body">
-          <div class="datos col-md-9 col-xs-7">
+          <div  class="datos col-md-9 col-xs-7">
             <h4>Información técnica</h4>
-            <dl  *ngIf="visible">
+            <dl  *ngIf="aux_tipoprod!=1 && visible">
+              <dt>Fecha de lanzamiento: </dt>
+              <dd>{{produc.infotecnic.fecha}}</dd>
+              <dt>Género: </dt>
+              <dd><span class="label label-default">{{produc.infotecnic.genero}}</span></dd>
+              <dt>Director:</dt>
+              <dd>{{produc.infotecnic.desarrollador}}</dd>
+              <dt>Patrocinador:</dt>
+              <dd>{{produc.infotecnic.editor}}</dd>
+            </dl>
+            <dl  *ngIf="aux_tipoprod==1 && visible">
               <dt>Fecha de lanzamiento: </dt>
               <dd>{{produc.infotecnic.fecha}}</dd>
               <dt>Género: </dt>
@@ -44,23 +54,24 @@ import {clasesservice} from './clases.service';
 
           <div class="portada col-md-3 col-xs-5">
             <img src={{produc.img}}>
-            <div *ngIf="logeado" id="fav" class="col-md-12 col-xs-12">
-              <label>
-                <input type="checkbox" value="favorito" hidden><span > Favoritos</span>
-              </label>
+            <div (click)="seguir=!seguir" [class.checkfavorito]="seguir" *ngIf="logeado" class="favorito col-md-12 col-xs-12">
+              <div><span class="glyphicon glyphicon-plus"></span>Seguir</div>
+            </div>
+            <div (click)="favorito=!favorito" [class.checkfavorito]="favorito" *ngIf="logeado" class="favorito col-md-12 col-xs-12">
+              <div><span class="glyphicon glyphicon-star"> </span>Favoritos</div>
             </div>
           </div>
 
         </div>
       </div>
-      <div class="panel panel-danger sinopsis">
+      <div *ngIf="produc.sinopsis" class="panel panel-danger sinopsis">
         <div class="panel-heading">Sinopsis</div>
         <div class="panel-body">
           <p>{{produc.sinopsis}}</p>
         </div>
       </div>
 
-      <div class="panel panel-danger trailer">
+      <div *ngIf="produc.trailer" class="panel panel-danger trailer">
         <div class="panel-heading">Trailer</div>
         <div class="panel-body ">
            <div class="embed-responsive embed-responsive-16by9">
@@ -86,7 +97,7 @@ import {clasesservice} from './clases.service';
             <header class="col-md-2 col-xs-2">
               <dl>
                 <dd><img src="img/personaB.png"></dd>
-                <dd><a href="#">Marianela Roselli</a></dd>
+                <dd><a>Marianela Roselli</a></dd>
               </dl>
             </header>
             <div class="col-sm-10 col-xs-10">
@@ -124,7 +135,8 @@ export class informacionprod implements OnInit{
   resp_comentario:comentario;
   error:boolean =false;
 
-  favoritos:boolean =true;
+  seguir:boolean =false;
+  favorito:boolean =false;
   logeado:boolean = true;
   id_user=1;
 

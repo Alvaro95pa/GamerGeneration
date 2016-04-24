@@ -146,7 +146,7 @@ Listado Catalogo
     height:200px;
 }
 .btn_respuesta{
-    background: #FE2E2E;
+    background: #CC2525;
 }
 .text{
   padding: 0 !important;
@@ -160,6 +160,18 @@ Listado Catalogo
   margin-left: 15px;
 }
 /*CSS Boton favoritos*/
+.favorito {
+  background: #F2F2F2;
+  padding: 6px 0px;
+  margin-top: 5px;
+  border: 1px #E6E6E6 solid;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.checkfavorito{
+  background: green;
+}
 #fav {
     margin:0px;
     margin-top:4px;
@@ -238,7 +250,7 @@ Listado Catalogo
     height: 50px;
     text-align: center;
     padding-top: 14px;
-    background-color: #FA5858;
+    background-color: #CC2525;
     border-radius: 5px 10px;
     color: white;
     font-weight: bold;

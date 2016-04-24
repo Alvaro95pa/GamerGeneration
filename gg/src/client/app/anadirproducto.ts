@@ -41,7 +41,17 @@ import { RouteParams } from 'angular2/router';
         <span class="input-group-addon" id="basic-addon1">Trailer:</span>
         <input [(ngModel)]="trailer" type="text" class="form-control" placeholder="Inserte una URL de un video" aria-describedby="basic-addon1">
       </div>
-      <div class="datos col-sm-6 infotecn">
+      <div *ngIf="tipoprod==2 || tipoprod==3">
+      <div class="input-group nuevocontenido">
+        <span class="input-group-addon" id="basic-addon1">Director:</span>
+        <input [(ngModel)]="desarrollador" type="text" class="form-control" placeholder="Inserte un el nombre de un director" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group nuevocontenido">
+        <span class="input-group-addon" id="basic-addon1">Patrocinador:</span>
+        <input [(ngModel)]="editor" type="text" class="form-control" placeholder="Inserte un el nombre de un editor" aria-describedby="basic-addon1">
+      </div>
+      </div>
+      <div *ngIf="tipoprod==1" class="datos col-sm-6 infotecn">
           <h4>Información técnica</h4>
           <div class="input-group nuevocontenido">
             <span class="input-group-addon" id="basic-addon1">Fecha:</span>
@@ -64,7 +74,7 @@ import { RouteParams } from 'angular2/router';
             <input [(ngModel)]="editor" type="text" class="form-control" placeholder="Inserte un editor" aria-describedby="basic-addon1">
           </div>
       </div>
-      <div class="datos col-sm-6 inforeq">
+      <div *ngIf="tipoprod==1" class="datos col-sm-6 inforeq">
           <h4>Requisitos del sistema</h4>
           <div class="input-group nuevocontenido">
             <span class="input-group-addon" id="basic-addon1">Procesador:</span>

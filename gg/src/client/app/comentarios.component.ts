@@ -12,7 +12,7 @@ import {comentario} from './clases';
     <header class="col-md-2 col-xs-2">
       <dl>
         <dd><img src={{comentario.user_img}}></dd>
-        <dd><a href="#">{{comentario.user}}</a></dd>
+        <dd><a >{{comentario.user}}</a></dd>
       </dl>
     </header>
     <time class="col-md-10 col-xs-10 fecha">{{comentario.fecha}}</time>

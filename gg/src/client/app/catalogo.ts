@@ -15,7 +15,7 @@ import {listobjetos} from './list-objetos';anadirproducto
 import {anadircontenido} from './anadircontenido';
 import {anadirproducto} from './anadirproducto';
 
-import {registrar} from './registro';
+
 
 
 
