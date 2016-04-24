@@ -20,7 +20,7 @@ import {comentario} from './clases';
     <div class="col-md-1 col-xs-12 puntuacion"><span>{{comentario.puntuacion}}</span></div>
   </article>
   `,
-  styleUrls:  ['style.css']
+  styleUrls:  ['style_j.css']
 })
 
 export class comentarioscomponent{

@@ -10,7 +10,7 @@ import {Prod} from './clases';
       <p>{{prod.name}}</p>
     </div></a>
   `,
-  styleUrls:  ['style.css']
+  styleUrls:  ['style_j.css']
 })
 
 export class proddetalleComponent{

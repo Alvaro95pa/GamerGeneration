@@ -1,34 +1,23 @@
 import {Injectable} from 'angular2/core';
 
 import {Prod,infodetalle,comentario,usuario} from './clases';
+import {Contenido} from './contenido.model';
 import {prod_list,infolista,comentarios_list,usuarios_list} from './mock';
+import {CONTENIDO} from './mock-contenido';
 
 @Injectable()
-export class clasesservice {
+export class adminservice {
   getProductos (){
     return Promise.resolve (prod_list);
   }
   getProductosFiltro(juego:number,series:number,pelis:number){
     return Promise.resolve(prod_list).then( list => list.filter(prod => prod.tipoprod===juego || prod.tipoprod===series || prod.tipoprod===pelis))
   }
-  getProductosTipo(tipo: number){
-    return Promise.resolve(prod_list).then( list => list.filter(prod => prod.tipoprod===tipo))
-  }
   getProd (id:number){
     return Promise.resolve(prod_list).then( list => list.filter(prod => prod.id===id))
   }
-  getProdPlataforma(plat: string){
-    return Promise.resolve(prod_list).then(list => list.filter(prod => prod.plataforma === plat ));
-  }
-  getProdGenero(gen: string){
-    return Promise.resolve(prod_list).then(list => list.filter(prod => prod.genero === gen ));
-  }
-
   getinfo(id:number){
     return Promise.resolve(infolista).then( list => list.filter(prod => prod.id===id))
-  }
-  getcomentarios(idjuego:number){
-    return Promise.resolve(comentarios_list).then( list => list.filter( prod => prod.idjuego === idjuego))
   }
 
   getusuarios(){
@@ -39,7 +28,19 @@ export class clasesservice {
     usuarios_list.splice(position,1);
     console.log(position);
   }
-  pushRespuesta(comentario:comentario){
-    comentarios_list.push(comentario);
+  deleteProd(produc:Prod){
+    let position = prod_list.indexOf(produc);
+    prod_list.splice(position,1);
+  }
+  pushProd(produc:Prod,info:infodetalle){
+    prod_list.push(produc);
+    infolista.push(info);
+  }
+  deleteContenido(content:Contenido){
+    let position = CONTENIDO.indexOf(content);
+    CONTENIDO.splice(position,1);
+  }
+  pushContenido(content:Contenido){
+    CONTENIDO.push(content);
   }
 }

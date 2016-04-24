@@ -10,7 +10,7 @@ import {proddetalleComponent} from './prod-detalle.component'
   selector: 'list-productos',
   templateUrl: 'app/list-productos.html',
   providers: [],
-  styleUrls:  ['style.css'],
+  styleUrls:  ['style_j.css'],
   directives: [proddetalleComponent]
 })
 

@@ -109,7 +109,7 @@ import {clasesservice} from './clases.service';
 
     </div>
   `,
-  styleUrls:  ['style.css'],
+  styleUrls:  ['style_j.css'],
   directives: [comentarioscomponent]
 })
 
@@ -138,7 +138,8 @@ export class informacionprod implements OnInit{
     this.aux_id=id;
   }
   getcomentarios(){
-    this.clasesservice.getcomentarios(1).then( list => this.comentarios = list);
+    let id = +this._routeParams.get('idprod');
+    this.clasesservice.getcomentarios(id).then( list => this.comentarios = list);
   }
   ngOnInit() {
     this.getProducto();
@@ -159,6 +160,7 @@ export class informacionprod implements OnInit{
         mensaje:this.respuesta
       };
       this.clasesservice.pushRespuesta(this.resp_comentario);
+      this.getcomentarios();
       console.log(this.resp_comentario.puntuacion);
     }
   }

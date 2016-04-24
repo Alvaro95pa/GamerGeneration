@@ -95,7 +95,7 @@
         </div>
         <div class="col-sm-9 norelative ">
         <ul class="listado">
-            <li *ngFor="#produc of list_producto" (click)="gotoDetalles(produc)" >
+            <li *ngFor="#produc of list_producto" (click)="gotoDetalles(produc)"  >
               <prod-detalle [prod]="produc" ></prod-detalle>
             </li>
         </ul></div>

@@ -1,4 +1,4 @@
-import {Prod,infodetalle,infotecnica,requisitosinfor,comentario} from './clases';
+import {Prod,infodetalle,infotecnica,requisitosinfor,comentario,usuario} from './clases';
 
 var demoinfotecnica:infotecnica= {"fecha":"12-04-2016", "genero": "RPG", "plataforma":"PC","desarrollador":"FromSoftware Inc ","editor":"BANDAI NAMCO Entertainment	"}
 var demorequisitos:requisitosinfor={"procesador":"Intel Core i5 2500 3.1 GHz / AMD® A8 3870 3,6 Ghz","memoria":"4 GB","graficos":"NVIDIA® GeForce GTX 465 / ATI Radeon TM HD 6870","almacenamiento":"50 GB"}
@@ -22,6 +22,13 @@ export var prod_list: Prod[] = [
   { "id": 11, "tipoprod": 3,"name": "Deadpool","img":"img/deadpool.jpg", "genero": "Aventura", "plataforma":"PC" },
   { "id": 12, "tipoprod": 3,"name": "Creed","img":"img/creed.jpg", "genero": "Aventura", "plataforma":"PC" },
   { "id": 13, "tipoprod": 3,"name": "Star Wars","img":"img/SW.jpg", "genero": "Aventura", "plataforma":"PC" }
+];
+
+export var usuarios_list:usuario[] = [
+  {"id":1,"nombre":"Usuario 1","apellidos":"Apellido 1","img":"img/personaB.png","nacionalidad":"España","cumpleanos":"12-12-1995","usuario":"user1","contraseña":"1234","correo":"prueba@gmail.com"},
+  {"id":2,"nombre":"Usuario 2","apellidos":"Apellido 2","img":"img/personaB.png","nacionalidad":"España","cumpleanos":"12-12-1995","usuario":"user2","contraseña":"1234","correo":"prueba@gmail.com"},
+  {"id":3,"nombre":"Usuario 2","apellidos":"Apellido 2","img":"img/personaB.png","nacionalidad":"España","cumpleanos":"12-12-1995","usuario":"user3","contraseña":"1234","correo":"prueba@gmail.com"},
+  {"id":4,"nombre":"Usuario 3","apellidos":"Apellido 3","img":"img/personaB.png","nacionalidad":"España","cumpleanos":"12-12-1995","usuario":"user4","contraseña":"1234","correo":"prueba@gmail.com"}
 ];
 
 export var comentarios_list:comentario[] = [

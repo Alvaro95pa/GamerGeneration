@@ -1,3 +1,14 @@
+export class usuario{
+  id:number;
+  nombre:string;
+  apellidos:string;
+  img:string;
+  nacionalidad:string;
+  cumpleanos:string;
+  usuario:string;
+  contraseña:string;
+  correo:string;
+}
 export class Prod {
   id: number;
   tipoprod: number;
@@ -39,5 +50,4 @@ export class comentario{
   fecha:string;
   puntuacion:number;
   mensaje:string;
-
 }
