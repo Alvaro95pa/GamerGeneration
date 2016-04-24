@@ -26,13 +26,16 @@
     "app/contenido.model.ts",
     "app/destacado.model.ts",
     "app/mock-contenido.ts",
-    "app/admin.model.ts",
+    "app/sesion.model.ts",
+    "app/mock-sesion.ts",
     "app/mock-admin.ts",
     "app/contenido.service.ts",
     "app/admin.service.ts",
     "app/usuario.ts",
     "app/datos.ts",
     "app/mock-usuario.ts",
+    "app/usuario.service.ts",
+    "app/analisis-details.ts",
     "typings.d.ts"
   ]
 }

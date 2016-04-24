@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="visible">
   <div class="cabecera">
       <div class="logo">
           <img src="./img/control.png"/>
@@ -15,18 +15,11 @@
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
-                      <li><a href="#">Catálogo</a></li>
-                      <li><a href="#">Noticias</a></li>
+                      <li><a href="">Catálogo</a></li>
+                      <li><a href="">Noticias</a></li>
                       <li><a [routerLink]="['Analisis']">Análisis</a></li>
-                      <form class="navbar-form navbar-left" role="search">
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Buscar...">
-                          </div>
-                          <button type="submit" class="btn btn-default">Buscar</button>
-                      </form>
-
                   </ul>
-                  <ul class="nav navbar-nav navbar-right" *ngIf="!u && !c"> <!--User sin logear-->
+                  <ul class="nav navbar-nav navbar-right" *ngIf="!sesion.user && !sesion.pass && !sesion.loged"> <!--User sin logear-->
                       <li>
                           <a href="" id="log" role="button" aria-haspopup="true" aria-expanded="false"
                           data-toggle="modal" data-target="#myModal">
@@ -34,11 +27,10 @@
                       </li>
                   </ul>
 
-                  <ul class="nav navbar-nav navbar-right" *ngIf="u && c"> <!--User logeado-->
+                  <ul class="nav navbar-nav navbar-right" *ngIf="sesion.user && sesion.pass && sesion.loged"> <!--User logeado-->
                       <li>
-                          <a href="" id="admin_log" role="button" aria-haspopup="true" aria-expanded="false"
-                          data-toggle="modal" data-target="#myModal">
-                          <span class="glyphicon glyphicon-wrench"></span>Admin</a>
+                          <a href="" id="log2" role="button" aria-haspopup="true" aria-expanded="false"
+                          data-toggle="modal" data-target="#myModal"><img id="usr_avatar" src="{{sesion.imagen}}"> {{sesion.usuario}}</a>
                       </li>
                   </ul>
               </div>
@@ -46,7 +38,7 @@
               <!-- Modal -->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document" id="mDialog">
-                  <div class="modal-content" id="mContent" *ngIf="!u && !c && !after">
+                  <div class="modal-content" id="mContent" *ngIf="!sesion.user && !sesion.pass && !sesion.loged">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                       <h3 class="sesion">Iniciar sesión</h3>
@@ -56,13 +48,13 @@
                     <div class="modal-body">
                       <form class="margen">
                           <span>Usuario:</span>
-                          <input #usr type="text" class="form-control" placeholder="Nombre de usuario"
-                          [(ngModel)]="user">
+                          <input type="text" class="form-control" placeholder="Nombre de usuario"
+                          [(ngModel)]="sesion.usuario">
                       </form>
                       <form class="margen">
                           <span>Contraseña:</span>
-                          <input #pss type="password" class="form-control" placeholder="Contraseña"
-                          [(ngModel)]="pass">
+                          <input type="password" class="form-control" placeholder="Contraseña"
+                          [(ngModel)]="sesion.contrasena">
                       </form>
                       <button type="button" id="login" (click)="inicioSesion()">Entrar</button>
                       <label class="record"><input type="checkbox">Recuérdame</label>
@@ -77,25 +69,27 @@
                   </div>
 
                   <!--Datos erroneos-->
-                  <div class="modal-content" id="mContent" *ngIf="((after && !u) || (after && !c))">
+                  <div class="modal-content" id="mContent" *ngIf="((sesion.loged && !sesion.user) || (sesion.loged && !sesion.pass))">
                     <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                       <h3 class="sesion">Iniciar sesión</h3>
                     </div>
                     <div class="modal-body">
                       <form class="margen">
                           <span>Usuario:</span>
-                          <input *ngIf="u" #usr type="text" class="form-control" placeholder="Nombre de usuario"
-                          [(ngModel)]="user">
-                          <input *ngIf="!u" id="err" #usr type="text" class="form-control" placeholder="USUARIO INCORRECTO"
-                          [(ngModel)]="user">
+                          <input *ngIf="sesion.user" type="text" class="form-control" placeholder="Nombre de usuario"
+                          [(ngModel)]="sesion.usuario">
+                          <input *ngIf="!sesion.user" id="err" type="text" class="form-control" placeholder="USUARIO INCORRECTO"
+                          [(ngModel)]="sesion.usuario">
                       </form>
                       <form class="margen">
                           <span>Contraseña:</span>
-                          <input *ngIf="c" #usr type="password" class="form-control" placeholder="Contraseña"
-                          [(ngModel)]="pass">
-                          <input *ngIf="!c" id="err" #pss type="password" class="form-control" placeholder="CONTRASEÑA INCORRECTA"
-                          [(ngModel)]="pass">
+                          <input *ngIf="sesion.pass" type="password" class="form-control" placeholder="Contraseña"
+                          [(ngModel)]="sesion.contrasena">
+                          <input *ngIf="!sesion.pass" id="err" type="password" class="form-control" placeholder="CONTRASEÑA INCORRECTA"
+                          [(ngModel)]="sesion.contrasena">
                       </form>
                       <button type="button" id="login" (click)="inicioSesion()">Entrar</button>
                       <label class="record"><input type="checkbox">Recuérdame</label>
@@ -110,7 +104,7 @@
                   </div>
 
                   <!--Body con login -->
-                  <div class="modal-content" id="mContent" *ngIf="u && c">
+                  <div class="modal-content" id="mContent" *ngIf="sesion.user && sesion.pass && sesion.loged">
                     <div class="modal-body" id="mBody">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>

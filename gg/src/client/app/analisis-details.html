@@ -1,0 +1,54 @@
+<div class="row fondo" *ngIf="visible">
+    <div class="col-md-12">
+        <h2></h2>
+        <hr class="red_hr">
+        <div class="cartel">
+            <a id="pop">
+                <img src="">
+            </a>
+
+
+
+            <p><span class="negrita">Categoría:</span> DLC</p>
+            <p><span class="negrita">Pltaformas:</span>
+            <span id="ps4"> PS4</span>/ <span id="xbox"> Xbox One</span>/<span id="pc"> PC</span>
+            </p>
+            <p><span class="negrita">Desarrollador:</span> Bethesda Softworks</p>
+            <p><span class="negrita">Distribuidor:</span> Bethesda Softworks</p>
+            <p><span class="negrita">Género:</span> Rol, Acción RPG (Ciencia ficción)</p>
+            <p><span class="negrita">Lanzamiento:</span> 22 de marzo de 2016 (<span id="pc">Pegi: +18</span>)</p>
+        </div>
+        <div class="aCuerpo">
+          <hr class="red_hr">
+           <h3>{{contenido.titulo}} - {{contenido.fecha}}</h3>
+           <hr>
+           <p></p>
+           <div>
+               <img src="img/puntuacion.png">
+           </div>
+           <p>Comentar vuestras propias opiniones e impresiones a continuación, en la sección de comentarios. No olvides registrarte para tener acceso a esta y muchas más funcionalidades adicionales.</p>
+           <hr>
+           <h3>Comentarios:</h3>
+           <hr>
+           <div class="panel panel-danger comentarios respuesta">
+                    <div class="panel-heading">
+                    <button type="button" class="btn btn-primary btn_respuesta" onclick="document.getElementById('oculto').style.display = 'block';"><span class="glyphicon glyphicon-plus"></span> Comentar</button></div>
+                    <div class="panel-body" id="oculto" style='display:none;'>
+                        <div class="col-md-12 col-xs-12 respuesta">
+                                <header class="col-md-2 col-xs-2">
+                                    <dl>
+                                        <dd><img src="img/personaB.png"></dd>
+                                        <dd><a href="#">admin</a></dd>
+                                    </dl>
+                                </header>
+                                <div class="col-md-10 col-xs-10">
+                                    <textarea placeholder="Escribe aquí"></textarea>
+                                    <button id="btn_enviar" class="col-md-2 col-xs-12">Enviar</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+</div>

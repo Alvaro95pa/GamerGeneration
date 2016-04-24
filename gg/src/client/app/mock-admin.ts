@@ -1,6 +1,11 @@
-import {Admin} from './admin.model';
+import {Sesion} from './sesion.model';
 
-export var ADMIN: Admin = {
+export var ADMIN: Sesion = {
+  "id": 0,
+  "imagen": "",
   "usuario": "admin",
-  "contraseña": "1234"
+  "contrasena": "1234",
+  "user": false,
+  "pass": false,
+  "loged": false
 };

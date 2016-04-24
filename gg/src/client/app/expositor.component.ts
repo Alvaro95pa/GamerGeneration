@@ -12,7 +12,7 @@ import {ContenidoService} from './contenido.service';
 })
 
 export class ExpositorComponent {
-  public myInterval:number = 5000;
+  public myInterval:number = 4000;
   public noWrapSlides:boolean = false;
   public slides:Array<any> = [];
   contenido: Contenido[] = [];
@@ -21,24 +21,17 @@ export class ExpositorComponent {
     this.addSlide();
   }
 
-  ngOnInit(){
-		this._contentService.getContenido().then(contenido =>{
-      this.contenido = contenido;
-    });
-	}
 
   public addSlide():void {
+    this.contenido = this._contentService.getContenidoSlides();
     for(let i=0; i<this.contenido.length; i++){
       if(this.contenido[i].dest.destacado){
         this.slides.push({
-          image: 'this.contenido[i].dest.imgn',
-          text: 'this.contenido[i].titulo'
+          image: this.contenido[i].dest.imgn,
+          text: this.contenido[i].titulo,
+          date: this.contenido[i].fecha
         })
       }
     }
-  }
-
-  public removeSlide(index:number):void {
-    this.slides.splice(index, 1);
   }
 }

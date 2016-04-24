@@ -2,6 +2,7 @@ import 'angular2/core';
 import {Destacado} from './destacado.model';
 
 export interface Contenido {
+  id: number;
   tipo: string;
   categoria: string;
 	titulo: string;

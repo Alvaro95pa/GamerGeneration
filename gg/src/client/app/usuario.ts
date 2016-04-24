@@ -12,6 +12,7 @@ export class Usuario {
   usuario: string;
   contrasena: string;
   correo: string;
+  imagen: string;
   //Mas informacion
   datos: Datos;
 }
