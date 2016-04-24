@@ -30,7 +30,6 @@
     "app/mock-usuario.ts",
     "app/perfil.component.ts",
     "app/prod.ts",
-    "app/registro.component.ts",
     "app/route-config.ts",
     "app/seleccion.component.ts",
     "app/usuario.service.ts",

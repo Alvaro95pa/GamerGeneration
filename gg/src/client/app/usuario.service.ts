@@ -3,6 +3,7 @@ import { Injectable } from 'angular2/core';
 import { Usuario } from './usuario'
 import { Datos } from './datos';
 import { Amigo } from './amigos';
+import { Prod } from './prod'
 
 @Injectable()
 export class UsuarioService {
@@ -38,5 +39,16 @@ export class UsuarioService {
   addAmigo(amigo: Amigo, actual: Amigo){
     USUARIOS[amigo.id-1].datos.amigos.push(actual);
     USUARIOS[actual.id-1].datos.amigos.push(amigo);
+  }
+  setFavorito(fav: Prod, id:  number){
+    if(fav.plataforma == 'pelicula'){
+      USUARIOS[id-1].datos.fPeli = fav;
+    }
+    if(fav.plataforma == 'serie'){
+      USUARIOS[id-1].datos.fSerie = fav;
+    }
+    if(fav.plataforma == 'juego'){
+      USUARIOS[id-1].datos.fJuego = fav;
+    }
   }
 }

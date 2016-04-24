@@ -13,6 +13,8 @@
             <div>
               <img src={{contenido.img}}>
               <p> {{contenido.name}} </p>
+              <button *ngIf="usuario.datos.fPeli.name == contenido.name || usuario.datos.fSerie.name == contenido.name || usuario.datos.fJuego.name == contenido.name"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+              <button *ngIf="usuario.datos.fPeli.name != contenido.name && usuario.datos.fSerie.name != contenido.name && usuario.datos.fJuego.name != contenido.name" (click)="cambiarFavorito(contenido)"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></button>
             </div>
           </li>
         </ul>

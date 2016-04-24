@@ -6,6 +6,7 @@ import { Usuario } from './usuario'
 import { Datos } from './datos';
 import { Amigo } from './amigos';
 import { RouteParams } from 'angular2/router';
+import { Prod } from './prod'
 
 @Component({
   selector: 'contenido-component',
@@ -29,4 +30,7 @@ export class ContenidoComponent{
       this.visible = true
     })
   };
+  cambiarFavorito(fav: Prod){
+      this._usuarioService.setFavorito(fav, this.usuario.id);
+  }
 }
