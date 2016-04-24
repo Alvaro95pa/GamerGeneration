@@ -3,7 +3,7 @@ import {usuario} from './clases';
 import {Destacado} from './destacado.model';
 import {Contenido} from './contenido.model';
 import {clasesservice} from './clases.service'
-import {adminservice} from './modoadmin.service';
+import {modoadminservice} from './modoadmin.service';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 
@@ -88,7 +88,7 @@ export class anadircontenido implements OnInit{
   destacado:boolean =false;
 
 
-  constructor (private router: Router,private adminservice: adminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
+  constructor (private router: Router,private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
 
   anadirElemContenido(){
     this.dest = {

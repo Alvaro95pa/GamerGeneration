@@ -1,7 +1,7 @@
 import {Component,Input,OnInit} from 'angular2/core';
 import {Contenido} from './contenido.model';
 import {ContenidoService} from './contenido.service';
-import {adminservice} from './modoadmin.service';
+import {modoadminservice} from './modoadmin.service';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 
@@ -36,7 +36,7 @@ import { RouteParams } from 'angular2/router';
 export class listcontenido implements OnInit{
   tipoopcion:number;
   list_contenido:Contenido[];
-  constructor (private router: Router,private adminservice: adminservice,private ContenidoService: ContenidoService,private _routeParams: RouteParams){}
+  constructor (private router: Router,private adminservice: modoadminservice,private ContenidoService: ContenidoService,private _routeParams: RouteParams){}
 
   getcontenido(){
     let tipo = this._routeParams.get('tipo');

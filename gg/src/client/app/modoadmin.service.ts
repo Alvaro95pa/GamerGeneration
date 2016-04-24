@@ -6,7 +6,7 @@ import {prod_list,infolista,comentarios_list,usuarios_list} from './mock';
 import {CONTENIDO} from './mock-contenido';
 
 @Injectable()
-export class adminservice {
+export class modoadminservice {
   getProductos (){
     return Promise.resolve (prod_list);
   }

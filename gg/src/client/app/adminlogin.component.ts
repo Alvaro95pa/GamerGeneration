@@ -1,7 +1,9 @@
-import {Component,Input} from 'angular2/core';
+import {Component,Input,OnInit} from 'angular2/core';
 import {usuario} from './clases';
+import {Sesion} from './sesion.model';
 import {clasesservice} from './clases.service'
-import {adminservice} from './modoadmin.service';
+import {modoadminservice} from './modoadmin.service';
+import {AdminService} from './admin.service';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 
@@ -33,20 +35,26 @@ import { RouteParams } from 'angular2/router';
   styleUrls:  ['style_j.css']
 })
 
-export class loginadmin{
+export class loginadmin implements OnInit{
   user:string;
   pass:string;
   error:boolean =false;
+  admin:Sesion;
   loginadmin(){
-    if (this.user == "admin" && this.pass =="1234"){
+    if (this.user == this.admin.usuario && this.pass == this.admin.contrasena){
       this.error=false;
       this.gotoadmin_users();
     } else {
       this.error = true;
     }
   }
-  constructor (private router: Router){}
-
+  constructor (private router: Router, private AdminService:AdminService){}
+  getadmin(){
+    this.admin = this.AdminService.getAdmin();
+  }
+  ngOnInit(){
+    this.getadmin();
+  }
   gotoadmin_users(){
     let link = ['AdminUsers'];
     this.router.navigate(link);

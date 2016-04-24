@@ -1,7 +1,7 @@
 import {Component,Input,OnInit} from 'angular2/core';
 import {usuario,Prod} from './clases';
 import {clasesservice} from './clases.service';
-import {adminservice} from './modoadmin.service';
+import {modoadminservice} from './modoadmin.service';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 import {proddetalleComponent} from './prod-detalle.component'
@@ -110,7 +110,7 @@ export class listobjetos implements OnInit{
     }
   }
 
-  constructor (private router: Router,private adminservice: adminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
+  constructor (private router: Router,private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
   getproductos(){
     this.adminservice.getProductos().then(list => this.list_productos=list);
   }

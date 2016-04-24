@@ -1,7 +1,7 @@
 import {Component,Input,OnInit} from 'angular2/core';
 import {usuario} from './clases';
 import {clasesservice} from './clases.service'
-import {adminservice} from './modoadmin.service';
+import {modoadminservice} from './modoadmin.service';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 
@@ -51,7 +51,7 @@ export class listusers implements OnInit{
     this.adminservice.deleteUser(user);
     this.getusuarios();
   }
-  constructor (private router: Router,private adminservice: adminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
+  constructor (private router: Router,private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
   getusuarios(){
     this.adminservice.getusuarios().then(users => this.list_usuarios = users);
   }

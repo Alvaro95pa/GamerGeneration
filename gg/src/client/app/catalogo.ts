@@ -3,7 +3,8 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS,Router} from 'angular2/
 
 import {Prod} from './clases';
 import {clasesservice} from './clases.service';
-import {adminservice} from './modoadmin.service';
+import {modoadminservice} from './modoadmin.service';
+import {AdminService} from './admin.service';
 import {ContenidoService} from './contenido.service'
 import {proddetalleComponent} from './prod-detalle.component';
 import {listproductoscomponent} from './list-productos.component';
@@ -32,7 +33,7 @@ import {loginadmin} from './adminlogin.component'
 
 
   `,
-  providers: [ROUTER_PROVIDERS,adminservice,clasesservice,ContenidoService],
+  providers: [ROUTER_PROVIDERS,modoadminservice,clasesservice,ContenidoService,AdminService],
   styleUrls:  ['style_j.css'],
   directives: [ROUTER_DIRECTIVES,proddetalleComponent],
   pipes: [],
