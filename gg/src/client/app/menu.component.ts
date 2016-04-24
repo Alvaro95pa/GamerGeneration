@@ -19,7 +19,10 @@ export class MenuComponent {
   private actual: string;
   //Metodos
   constructor(private _router: Router) { }
-  irA(link: string){
-    this._router.navigate([link]);
+  irA(lugar: string, id: number){
+    this._router.navigate([lugar, {id: id}]);
+  }
+  ir(lugar: string){
+    this._router.navigate([lugar]);
   }
 }

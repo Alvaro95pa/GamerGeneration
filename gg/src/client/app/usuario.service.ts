@@ -2,29 +2,41 @@ import { USUARIOS } from './mock-usuario';
 import { Injectable } from 'angular2/core';
 import { Usuario } from './usuario'
 import { Datos } from './datos';
+import { Amigo } from './amigos';
 
 @Injectable()
 export class UsuarioService {
   getUsuarios() {
-    return Promise.resolve(USUARIOS[0]);
+    return Promise.resolve(USUARIOS);
   }
   getUsuario(id: number) {
     return Promise.resolve(USUARIOS).then(usuarios => usuarios.filter(usuario => usuario.id === id)[0])
   }
-  setContraseña(pass: string){
-    USUARIOS[0].contrasena = pass;
+  setContraseña(pass: string, id:  number){
+    USUARIOS[id-1].contrasena = pass;
   }
-  setPersonales(user: Usuario){
-    USUARIOS[0].nombre = user.nombre;
-    USUARIOS[0].apellidos = user.apellidos;
-    USUARIOS[0].nacionalidad = user.nacionalidad;
-    USUARIOS[0].cumpleanos = user.cumpleanos;
-    USUARIOS[0].usuario = user.usuario;
-    USUARIOS[0].correo = user.correo;
+  setPersonales(user: Usuario, id:  number){
+    USUARIOS[id-1].nombre = user.nombre;
+    USUARIOS[id-1].apellidos = user.apellidos;
+    USUARIOS[id-1].nacionalidad = user.nacionalidad;
+    USUARIOS[id-1].cumpleanos = user.cumpleanos;
+    USUARIOS[id-1].usuario = user.usuario;
+    USUARIOS[id-1].correo = user.correo;
   }
-  setPrivacidad(data: Datos){
-    USUARIOS[0].datos.pPerfilTodos = data.pPerfilTodos;
-    USUARIOS[0].datos.cPerfilTodos = data.cPerfilTodos;
-    USUARIOS[0].datos.aPerfilTodos = data.aPerfilTodos;
+  setPrivacidad(data: Datos, id:  number){
+    USUARIOS[id-1].datos.pPerfilTodos = data.pPerfilTodos;
+    USUARIOS[id-1].datos.cPerfilTodos = data.cPerfilTodos;
+    USUARIOS[id-1].datos.aPerfilTodos = data.aPerfilTodos;
+  }
+  addUsuario(usuario: Usuario){
+    USUARIOS.push(usuario);
+  }
+  removeUsuario(usuario: Usuario){
+    let posicion = USUARIOS.indexOf(usuario);
+    USUARIOS.splice(posicion,1);
+  }
+  addAmigo(amigo: Amigo, actual: Amigo){
+    USUARIOS[amigo.id-1].datos.amigos.push(actual);
+    USUARIOS[actual.id-1].datos.amigos.push(amigo);
   }
 }

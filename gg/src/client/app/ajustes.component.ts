@@ -5,6 +5,7 @@ import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario'
 import { Datos } from './datos';
+import { RouteParams } from 'angular2/router';
 
 @Component({
   selector: 'ajustes-component',
@@ -23,13 +24,14 @@ export class AjustesComponent  implements OnInit {
   contra: boolean = false;
   preContra: string = 'nada';
   //Metodos
-  constructor(private _usuarioService: UsuarioService) {}
+  constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams) {}
   ngOnInit() {
-    this._usuarioService.getUsuarios().then(usuario =>{
+    let id= +this._routeParams.get('id');
+    this._usuarioService.getUsuario(id).then(usuario =>{
       this.usuario = usuario;
       this.visible = true;
-      this.preContra = this.usuario.contrasena;
-    });
+      this.preContra = this.usuario.contrasena
+    })
   }
   notificar(campo){
     if(campo == 'datos'){
@@ -51,24 +53,24 @@ export class AjustesComponent  implements OnInit {
     }
   }
   guardarDatosP(){
-    this._usuarioService.setPersonales(this.usuario);
+    this._usuarioService.setPersonales(this.usuario, this.usuario.id);
   }
   guardarContra(pass: string){
     this.usuario.contrasena = pass;
-    this._usuarioService.setContraseña(this.usuario.contrasena);
+    this._usuarioService.setContraseña(this.usuario.contrasena, this.usuario.id);
   }
   cambiaEstado(estado: boolean, sitio: string){
     if(sitio == 'perfil'){
       this.usuario.datos.pPerfilTodos = estado;
-      this._usuarioService.setPrivacidad(this.usuario.datos);
+      this._usuarioService.setPrivacidad(this.usuario.datos, this.usuario.id);
     }
     if(sitio == 'contenido'){
       this.usuario.datos.cPerfilTodos = estado;
-      this._usuarioService.setPrivacidad(this.usuario.datos);
+      this._usuarioService.setPrivacidad(this.usuario.datos, this.usuario.id);
     }
     if(sitio == 'amigos'){
       this.usuario.datos.aPerfilTodos = estado;
-      this._usuarioService.setPrivacidad(this.usuario.datos);
+      this._usuarioService.setPrivacidad(this.usuario.datos, this.usuario.id);
     }
   }
 }

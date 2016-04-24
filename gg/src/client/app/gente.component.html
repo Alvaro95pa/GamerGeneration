@@ -1,0 +1,19 @@
+<!-- Mural de gente -->
+<div *ngIf="visible" class="row">
+  <div class="col-md-2">
+    <button class="btn btn-danger" (click)="volver()"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Volver </button>
+  </div>
+  <!-- Amigos  -->
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div class="panel-body amigos">
+        <ul class="amigos">
+          <li *ngFor="#gente of usuarios" (click)="irConcreto(gente)">
+            <img style = "width: 60%; height: 60%" src={{gente.imagen}}/>
+            <p> Usuario: {{gente.usuario}} </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

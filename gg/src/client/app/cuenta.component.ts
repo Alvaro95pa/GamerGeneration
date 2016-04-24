@@ -6,6 +6,7 @@ import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario'
 import { Datos } from './datos';
 import { Prod } from './prod';
+import { Amigo } from './amigos';
 
 @Component({
   selector: 'cuenta-component',
@@ -22,10 +23,23 @@ export class CuentaComponent implements OnInit {
   //Metodos
   constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams) {}
   ngOnInit() {
-    //let id= +this._routeParams.get('id');
-    this._usuarioService.getUsuarios().then(usuarios =>{
-      this.usuario = usuarios;
-      this.visible = true
-    })
+    let id= +this._routeParams.get('id');
+    if(id != 0){
+      this._usuarioService.getUsuario(id).then(usuario =>{
+        this.usuario = usuario;
+        this.visible = true
+      })
+    }
+    else{
+      this._usuarioService.getUsuario(1).then(usuario =>{
+        this.usuario = usuario;
+        this.visible = true
+      })
+    }
   };
+  addAmigo(){
+    var actual: Amigo = {id: 1, usuario: this.actual, imagen: "img/avatar1.jpg"};
+    var amigo: Amigo = {id: this.usuario.id, usuario: this.usuario.usuario, imagen: this.usuario.imagen};
+    this._usuarioService.addAmigo(amigo, actual);
+  }
 }

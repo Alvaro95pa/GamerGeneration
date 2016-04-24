@@ -2,10 +2,10 @@ import { Component } from 'angular2/core';
 import { MenuComponent } from './menu.component';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
-import { Usuario } from './usuario'
+import { Usuario } from './usuario';
 import { Datos } from './datos';
 import { Amigo } from './amigos';
-import { Router } from 'angular2/router';
+import { Router, RouteParams } from 'angular2/router';
 
 @Component({
   selector: 'amigos-component',
@@ -21,12 +21,13 @@ export class AmigosComponent implements OnInit {
   actual: string = 'castorTresDientes'
   visible: boolean = false;
   //Metodos
-  constructor(private _usuarioService: UsuarioService,  private _router: Router) {}
+  constructor(private _usuarioService: UsuarioService,  private _router: Router, private _routeParams: RouteParams) {}
   ngOnInit() {
-    this._usuarioService.getUsuarios().then(usuario =>{
+    let id= +this._routeParams.get('id');
+    this._usuarioService.getUsuario(id).then(usuario =>{
       this.usuario = usuario;
       this.visible = true
-    });
+    })
   }
   irConcreto(amigo: Amigo){
     this._router.navigate(['Cuenta', { id: amigo.id }]);

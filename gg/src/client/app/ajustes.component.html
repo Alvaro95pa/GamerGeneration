@@ -1,3 +1,4 @@
+<!-- Ajustes perfil -->
 <div (click)="prepaContra()" *ngIf="visible && usuario.usuario == actual" class="row">
   <!-- Menu del perfil  -->
   <div class="col-md-2">
@@ -12,23 +13,23 @@
       </div>
       <div class="panel-body">
         <div class="personales">
-          <input *ngIf="visible && usuario.nombre == null" type="text" class="form-control" placeholder="Nombre">
-          <div *ngIf="visible && usuario.nombre != null" class="input-group">
+          <input [(ngModel)]="usuario.nombre" *ngIf="visible && usuario.nombre == ''" type="text" class="form-control" placeholder="Nombre">
+          <div *ngIf="visible && usuario.nombre != ''" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Nombre </span>
             <input [(ngModel)]="usuario.nombre" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.nombre}}">
           </div>
         </div>
         <div class="personales">
-          <input *ngIf="visible && usuario.apellidos == null" type="text" class="form-control" placeholder="Apellidos">
-          <div *ngIf="visible && usuario.apellidos != null" class="input-group">
+          <input [(ngModel)]="usuario.apellidos" *ngIf="visible && usuario.apellidos == ''" type="text" class="form-control" placeholder="Apellidos">
+          <div *ngIf="visible && usuario.apellidos != ''" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Apellidos </span>
             <input [(ngModel)]="usuario.apellidos" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.apellidos}}">
           </div>
         </div>
         <div *ngIf="visible" class="input-group personales">
           <span  class="input-group-addon" id="basic-addon1"> Usuario </span>
-          <input [(ngModel)]="usuario.usuario" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.usuario}}">
-          <span class="input-group-addon" id="basic-addon2"> * </span>
+          <input (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.usuario}}">
+          <span class="input-group-addon" id="basic-addon2"> No cambiable </span>
         </div>
         <div *ngIf="visible" class="input-group personales">
           <span  class="input-group-addon" id="basic-addon1"> Correo </span>
@@ -36,15 +37,15 @@
           <span class="input-group-addon" id="basic-addon2"> * </span>
         </div>
         <div class="personales">
-          <input *ngIf="visible && usuario.cumpleanos == null" type="text" class="form-control" placeholder="Cumpleaños">
-          <div *ngIf="visible && usuario.cumpleanos != null" class="input-group">
+          <input [(ngModel)]="usuario.cumpleanos" *ngIf="visible && usuario.cumpleanos == ''" type="text" class="form-control" placeholder="Cumpleaños">
+          <div *ngIf="visible && usuario.cumpleanos != ''" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Cumpleaños </span>
             <input [(ngModel)]="usuario.cumpleanos" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.cumpleanos}}">
             <span class="input-group-addon" id="basic-addon2"> dd/mm </span>
           </div>
         </div><div class="personales">
-          <input *ngIf="visible && usuario.nacionalidad == null" type="text" class="form-control" placeholder="Nacionalidad">
-          <div *ngIf="visible && usuario.nacionalidad != null" class="input-group">
+          <input [(ngModel)]="usuario.nacionalidad" *ngIf="visible && usuario.nacionalidad == ''" type="text" class="form-control" placeholder="Nacionalidad">
+          <div *ngIf="visible && usuario.nacionalidad != ''" class="input-group">
             <span  class="input-group-addon" id="basic-addon1"> Nacionalidad </span>
             <input [(ngModel)]="usuario.nacionalidad" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.nacionalidad}}">
           </div>
@@ -60,7 +61,7 @@
             </div>
           </div>
           <div class="col-md-2">
-            <button type="submit" class="btn btn-primary" (click)="notificar('datos')"> Guardar </button>
+            <button type="submit" class="btn btn-primary" (click)="notificar('datos'); guardarDatosP()"> Guardar </button>
           </div>
         </div>
       </div>

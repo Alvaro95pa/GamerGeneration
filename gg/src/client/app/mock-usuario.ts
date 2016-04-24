@@ -15,7 +15,7 @@ var datos1: Datos = {
   fJuego: { id: 3, tipoprod: 1, name: "Civilization V", img: "img/civ5.jpg", genero: null, plataforma: null},
   pPerfilTodos: true,
   cPerfilTodos: false,
-  aPerfilTodos: true,
+  aPerfilTodos: false,
   contenido: [{ id: 1, tipoprod: 3, name: "Deadpool", img: "img/deadpool.jpg", genero: null, plataforma: null},
               { id: 2, tipoprod: 3, name: "Creed", img: "img/creed.jpg", genero: null, plataforma: null},
               { id: 3, tipoprod: 3, name: "El renacido", img: "img/renacido.jpg", genero: null, plataforma: null},
@@ -24,7 +24,7 @@ var datos1: Datos = {
               { id: 3, tipoprod: 2, name: "Los 100", img: "img/100.jpg", genero: null, plataforma: null},
               { id: 1, tipoprod: 1, name: "XCOM 2", img: "img/xcom.jpg", genero: null, plataforma: null},
               { id: 2, tipoprod: 1, name: "Civilization V", img: "img/civ5.jpg", genero: null, plataforma: null}],
-amigos: [{id: 2, usuario: "castorTresDientes"}]
+  amigos: []
 };
 var usuario1: Usuario = {
   id: 1,
@@ -35,25 +35,26 @@ var usuario1: Usuario = {
   usuario: "castorTresDientes",
   contrasena: "1234",
   correo: "pepitogrillo32@gmail.com",
+  imagen: "img/avatar1.jpg",
   datos: datos1
 };
 //Usuario 2
 var datos2: Datos = {
-  nAmigos: "0",
+  nAmigos: "1",
   nPelis: "0",
   nSeries: "0",
   nJuegos: "0",
   aportes: "Ninguno",
   ultima: "Hoy",
-  tUsuario: "hace 1 mes",
-  fPeli: { id: 1, tipoprod: 3, name: "Deadpool", img: "img/deadpool.jpg", genero: null, plataforma: null},
-  fSerie: { id: 2, tipoprod: 2, name: "The walkind dead", img: "img/twd.jpg", genero: null, plataforma: null},
-  fJuego: { id: 3, tipoprod: 1, name: "Civilization V", img: "img/civ5.jpg", genero: null, plataforma: null},
+  tUsuario: "hace 1 día",
+  fPeli: { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null},
+  fSerie: { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null},
+  fJuego: { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null},
   pPerfilTodos: true,
-  cPerfilTodos: false,
-  aPerfilTodos: false,
+  cPerfilTodos: true,
+  aPerfilTodos: true,
   contenido: null,
-  amigos: [{id: 1, usuario: "castorTresDientes"}]
+  amigos: []
 };
 var usuario2: Usuario = {
   id: 2,
@@ -64,6 +65,7 @@ var usuario2: Usuario = {
   usuario: "velocidadEscarlata",
   contrasena: "5678",
   correo: "soyLoMas@gmail.com",
+  imagen: "img/avatar2.jpg",
   datos: datos2
 };
 //Usuarios

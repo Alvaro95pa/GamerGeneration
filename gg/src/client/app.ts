@@ -1,4 +1,4 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {PerfilComponent} from './app/perfil.component';
+import {MainComponent} from './app/main.component';
 
-bootstrap(PerfilComponent, []);
+bootstrap(MainComponent, []);
