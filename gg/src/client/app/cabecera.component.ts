@@ -7,12 +7,13 @@ import {Admin} from './admin.model';
 import {AdminService} from './admin.service';
 import {Noticias} from './noticias.component';
 import {NoticiaDetails} from './noticia-detail.component';
+import {SesionService} from './sesion.service';
 
 @Component({
 	selector: 'cabecera',
 	templateUrl: 'app/cabecera.component.html',
 	directives: [FooterComponent, Home, Analisis, Noticias, ROUTER_DIRECTIVES],
-	providers: [ROUTER_PROVIDERS, AdminService]
+	providers: [ROUTER_PROVIDERS, AdminService, SesionService]
 })
 @RouteConfig([
   {
