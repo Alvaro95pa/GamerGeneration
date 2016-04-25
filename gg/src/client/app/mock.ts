@@ -28,6 +28,8 @@ export var prod_list: Prod[] = [
   { "id": 17, "tipoprod": 1,"name": "Fifa 16","img":"img/f_cont.jpg", "genero": "FPS", "plataforma":"XBOX" },
   { "id": 18, "tipoprod": 2,"name": "Daredevil","img":"img/dd_cont.jpg", "genero": "Accion", "plataforma":"TV" },
   { "id": 19, "tipoprod": 3,"name": "Batman vs Superman","img":"img/bs_cont.jpg", "genero": "Accion", "plataforma":"Cines" }
+  { "id": 20, "tipoprod": 3,"name": "Star Wars","img":"img/SW.jpg", "genero": "Aventura", "plataforma":"PC" }
+
 ];
 
 export var usuarios_list:usuario[] = [
@@ -38,9 +40,16 @@ export var usuarios_list:usuario[] = [
 ];
 
 export var comentarios_list:comentario[] = [
+<<<<<<< HEAD
   {"idcomentario":1,"idjuego":1,"idcontenido":0,"user":"velocidadEscarlata","user_img":"img/img/avatar2.jpg","fecha":"Jueves 3 de Marzo, 03:35","puntuacion":8.3,"mensaje":"Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared. Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara."},
   {"idcomentario":2,"idjuego":1,"idcontenido":0,"user":"castorTresDientes","user_img":"img/avatar1.jpg","fecha":"Miercoles 2 de Marzo, 04:35","puntuacion":9,"mensaje":"Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared. Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara."},
   {"idcomentario":4,"idjuego":2,"idcontenido":0,"user":"castorTresDientes","user_img":"img/avatar1.png","fecha":"Miercoles 2 de Marzo, 03:35","puntuacion":8.3,"mensaje":"Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared. Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara."}
+=======
+  {"idcomentario":1,"idjuego":1,"user":"Usuario 1","user_img":"img/personaB.png","fecha":"Jueves 3 de Marzo, 03:35","puntuacion":8.3,"mensaje":"Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared. Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara."},
+  {"idcomentario":2,"idjuego":1,"user":"Usuario 2","user_img":"img/personaB.png","fecha":"Miercoles 2 de Marzo, 04:35","puntuacion":9,"mensaje":"Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared. Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara."},
+  {"idcomentario":3,"idjuego":1,"user":"Usuario 3","user_img":"img/personaB.png","fecha":"Viernes 25 de Febrero, 12:34","puntuacion":7.5,"mensaje":"Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared. Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara."},
+  {"idcomentario":4,"idjuego":2,"user":"Usuario 4","user_img":"img/personaB.png","fecha":"Miercoles 2 de Marzo, 03:35","puntuacion":8.3,"mensaje":"Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared. Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara."}
+>>>>>>> catalogo-A2
 
 ]
 

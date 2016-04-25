@@ -46,9 +46,18 @@
     "app/usuario.model.ts",
     "app/usuario.service.ts",
     "typings.d.ts"
+<<<<<<< HEAD
   ],
   "filesGlob": [],
   "atom": {
     "rewriteTsconfig": true
   }
+=======
+
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+
+>>>>>>> catalogo-A2
 }

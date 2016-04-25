@@ -33,10 +33,12 @@ export class clasesservice {
   getcomentarios(idjuego:number){
     return Promise.resolve(comentarios_list).then( list => list.filter( prod => prod.idjuego === idjuego))
   }
+
   getcomentariosContenido(idcontenido:number){
     return Promise.resolve(comentarios_list).then( list => list.filter( prod => prod.idcontenido === idcontenido))
 
   }
+
 
   getusuarios(){
     return Promise.resolve (usuarios_list);

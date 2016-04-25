@@ -19,7 +19,9 @@ import {comentario} from './clases';
     <p class="col-md-9 col-xs-8">{{comentario.mensaje}}</p>
     <div *ngIf="comentario.idjuego!=0" class="col-md-1 col-xs-12 puntuacion"><span>{{comentario.puntuacion}}</span></div>
   </article>
-  `
+  `,
+  styleUrls:  ['style_j.css']
+>>>>>>> catalogo-A2
 })
 
 export class comentarioscomponent{

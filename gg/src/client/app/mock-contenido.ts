@@ -39,6 +39,7 @@ export var CONTENIDO: Contenido[] = [
 	Así mismo, Plunder -nombre del modo en inglés- en el pasado era una experiencia de cinco contra cincho,
 	ahora será de cuatro contra cuatro.`,
   "ratio": "",
+<<<<<<< HEAD
 	"dest": d3
 	},
 
@@ -90,6 +91,11 @@ export var CONTENIDO: Contenido[] = [
 	{
 	"id": 4,
 	"nombreProd": "Quantum Break",
+=======
+	"dest": d3},
+
+	{"id": 2,
+>>>>>>> catalogo-A2
 	"tipo": "Análisis",
 	"categoria": "Juegos",
 	"titulo": "Análisis de Quantum Break",
@@ -129,6 +135,7 @@ export var CONTENIDO: Contenido[] = [
 	Falta camino por recorrer en este sentido, ya que las diferencias de registros
 	siguen estando muy presentes y el puzle no acaba de encajar.`,
   "ratio": "7/10",
+<<<<<<< HEAD
 	"dest": d4
 	},
 
@@ -160,6 +167,11 @@ export var CONTENIDO: Contenido[] = [
 	{
 	"id": 6,
 	"nombreProd": "Dark Souls 3",
+=======
+	"dest": d4},
+
+	{"id": 3,
+>>>>>>> catalogo-A2
 	"tipo": "Noticia",
 	"categoria": "Juegos",
 	"titulo": "Se acerca el lanzamiento de Dark Souls 3",
@@ -172,8 +184,12 @@ export var CONTENIDO: Contenido[] = [
   "ratio": "",
 	"dest": d1},
 
+<<<<<<< HEAD
 	{"id": 7,
 	"nombreProd": "Daredevil",
+=======
+	{"id": 4,
+>>>>>>> catalogo-A2
 	"tipo": "Análisis",
 	"categoria": "Series",
 	"titulo": "Daredevil, análisis de la segunda temporada",
@@ -197,12 +213,18 @@ export var CONTENIDO: Contenido[] = [
 	ganas de tomar la justicia en sus propias manos. Sin embargo, sus métodos parecen no funcionar,
 	cortas una cabeza al monstruo y otra crece en las sombras.`,
   "ratio": "8/10",
+<<<<<<< HEAD
 	"dest": d4
 	},
 
 	{
 	"id": 8,
 	"nombreProd": "Rogue One",
+=======
+	"dest": d4},
+
+	{"id": 5,
+>>>>>>> catalogo-A2
 	"tipo": "Noticia",
 	"categoria": "Peliculas",
 	"titulo": "Filtraciones de la sinopsis de Star Wars: Rogue One",
