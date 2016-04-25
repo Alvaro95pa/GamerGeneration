@@ -1,4 +1,4 @@
-import { Prod } from './clases'
+import { Prod } from './prod.model'
 import { Amigo } from './amigos.model';
 
 export class Datos {

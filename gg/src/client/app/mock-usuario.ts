@@ -3,7 +3,7 @@ import { Datos } from './datos.model';
 
 //Usuario 1
 var datos1: Datos = {
-  nAmigos: 1,
+  nAmigos: 0,
   nPelis: 3,
   nSeries: 3,
   nJuegos: 2,
@@ -39,7 +39,7 @@ var usuario1: Usuario = {
 };
 //Usuario 2
 var datos2: Datos = {
-  nAmigos: 1,
+  nAmigos: 0,
   nPelis: 0,
   nSeries: 0,
   nJuegos: 0,

@@ -3,7 +3,7 @@ import { Injectable } from 'angular2/core';
 import { Usuario } from './usuario.model'
 import { Datos } from './datos.model';
 import { Amigo } from './amigos.model';
-import { Prod } from './clases';
+import { Prod } from './prod.model'
 
 @Injectable()
 export class UsuarioService {
@@ -11,7 +11,6 @@ export class UsuarioService {
   getUsuarios() {
     return Promise.resolve(USUARIOS);
   }
-
   getUsuarios2() {
     return USUARIOS;
   }
@@ -73,6 +72,18 @@ export class UsuarioService {
     }
     if(fav.tipoprod == 1){
       USUARIOS[id-1].datos.fJuego = fav;
+    }
+  }
+  //Borrar favoritos
+  removeFav(producto: Prod, id: number){
+    if(producto.tipoprod == 3){
+      USUARIOS[id-1].datos.fPeli = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+    }
+    if(producto.tipoprod == 2){
+      USUARIOS[id-1].datos.fSerie = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+    }
+    if(producto.tipoprod == 1){
+      USUARIOS[id-1].datos.fJuego = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
     }
   }
   //Añadir contenido al usuario
