@@ -1,0 +1,26 @@
+<div class="row fondo">
+    <div class="col-xs-12 col-md-8">
+          <h1> Noticias </h1>
+          <hr class="red_hr">
+
+          <div class="panel-group">
+            <ul class="noticias">
+              <li *ngFor="#noticia of noticias">
+              <a href="#">
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">{{noticia.titulo}}</h3>{{noticia.fecha}}
+                  </div>
+                  <div class="panel-body">
+                    <img class="embed-responsive-item" src="{{noticia.multimedia}}"/>
+                    <hr>
+                    <p class="noticia">{{noticia.cuerpo}}</p>
+                  </div>
+                </div>
+            </a>
+            <hr>
+          </li>
+          </ul>
+        </div>
+  </div>
+</div>

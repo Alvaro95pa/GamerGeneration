@@ -1,4 +1,4 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {GgApp} from './app/gg';
+import {CabeceraComponent} from './app/cabecera.component';
 
-bootstrap(GgApp, []);
+bootstrap(CabeceraComponent, []);
