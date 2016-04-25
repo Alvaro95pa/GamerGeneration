@@ -1,0 +1,63 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "mapRoot": "",
+    "module": "system",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "outDir": "../dist/",
+    "rootDir": ".",
+    "sourceMap": true,
+    "target": "es5",
+    "inlineSources": true
+  },
+  "files": [
+    "app.ts",
+    "app/admin.service.ts",
+    "app/amigos.model.ts",
+    "app/analisis-details.ts",
+    "app/analisis.ts",
+    "app/cabecera.component.ts",
+    "app/calendario.component.ts",
+    "app/clases.service.ts",
+    "app/clases.ts",
+    "app/comentarios.component.ts",
+    "app/contenido.model.ts",
+    "app/contenido.service.ts",
+    "app/datos.model.ts",
+    "app/destacado.model.ts",
+    "app/expositor.component.ts",
+    "app/footer.component.ts",
+    "app/home.ts",
+    "app/listado.component.ts",
+    "app/mock-admin.ts",
+    "app/mock-contenido.ts",
+    "app/mock-sesion.ts",
+    "app/mock-usuario.ts",
+    "app/mock.ts",
+    "app/registro.component.ts",
+    "app/route-config.ts",
+    "app/sesion.model.ts",
+    "app/sesion.service.ts",
+    "app/usuario.model.ts",
+    "app/usuario.service.ts",
+    "typings.d.ts"
+<<<<<<< HEAD
+  ],
+  "filesGlob": [],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+=======
+
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+
+>>>>>>> catalogo-A2
+}
