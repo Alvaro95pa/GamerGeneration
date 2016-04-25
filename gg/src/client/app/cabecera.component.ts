@@ -42,19 +42,69 @@ import {registrar} from './registro.component';
 		path: '/registro',
 		name: 'Registro',
 		component: registrar
-	}
+	},
 	/*{
 		path: '/perfil/...',
 		name: 'Perfil',
 		component: PerfilComponent
-	}*/
+	}
+	{
+    path:'/Catalogo/1/',
+    name: 'Princ_Catalogo',
+    component: listproductoscomponent,
+  },
+  {
+    path: '/Catalogo/:tipoprod/:idprod',
+    name: 'Detalleprod',
+    component:informacionprod
+  },
+  {
+    path:'/Catalogo/:tipoprod/:tipo/:filtro',
+    name: 'FiltroJ',
+    component: listproductosconfiltermenucomponent,
+  },
+  {
+    path:'/Catalogo/:tipoprod',
+    name: 'SelecCatalogo',
+    component: listproductoscomponent,
+  },
+  {
+    path:'/Admin',
+    name: 'AdminLogin',
+    component: loginadmin
+  },
+  {
+    path:'/Admin/Users',
+    name: 'AdminUsers',
+    component: listusers
+  },
+  {
+    path:'/Admin/:tipo',
+    name: 'AdminContenido',
+    component: listcontenido
+  },
+  {
+    path:'/Admin/:tipo/:nuevo',
+    name: 'AdminNewContenido',
+    component: anadircontenido
+  },
+  {
+    path:'/Admin/Productos',
+    name: 'AdminProductos',
+    component: listobjetos
+  },
+  {
+    path:'/Admin/Productos/AñadirProducto',
+    name: 'AdminNewProducto',
+    component: anadirproducto
+  }*/
 ])
 
 export class CabeceraComponent implements OnInit{
 	sesion: Sesion;
 	usr: Usuario[] = [];
 	visible: boolean = false;
-	
+
 	constructor(private _sesionService: SesionService, private _usuarioService: UsuarioService) {}
 
 	ngOnInit(){
