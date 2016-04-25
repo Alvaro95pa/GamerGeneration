@@ -4,10 +4,11 @@ import {FooterComponent} from './footer.component';
 import {Home} from './home';
 import {Analisis} from './analisis';
 import {Sesion} from './sesion.model';
-import {Usuario} from './usuario';
+import {Usuario} from './usuario.model';
 import {SesionService} from './sesion.service';
 import {UsuarioService} from './usuario.service';
 import {AnalisisDetails} from './analisis-details';
+import {registrar} from './registro.component';
 
 @Component({
 	selector: 'cabecera',
@@ -31,14 +32,29 @@ import {AnalisisDetails} from './analisis-details';
 		path: '/analisis/:id',
 		name: 'AnalisisDetalles',
 		component: AnalisisDetails
+	},
+	/*{
+		path: '/noticias',
+		name: 'Noticias',
+		component: Noticias
+	},*/
+	{
+		path: '/registro',
+		name: 'Registro',
+		component: registrar
 	}
+	/*{
+		path: '/perfil/...',
+		name: 'Perfil',
+		component: PerfilComponent
+	}*/
 ])
 
 export class CabeceraComponent implements OnInit{
 	sesion: Sesion;
 	usr: Usuario[] = [];
 	visible: boolean = false;
-
+	
 	constructor(private _sesionService: SesionService, private _usuarioService: UsuarioService) {}
 
 	ngOnInit(){
@@ -55,6 +71,7 @@ export class CabeceraComponent implements OnInit{
 				this.sesion.user = true;
 				this.sesion.pass = true;
 				this.sesion.imagen = this.usr[i].imagen;
+
 			} else if((this.sesion.usuario == this.usr[i].usuario) && (this.sesion.contrasena != this.usr[i].contrasena)){
 					this.sesion.user = true;
 			} else if((this.sesion.usuario != this.usr[i].usuario) && (this.sesion.contrasena == this.usr[i].contrasena)){

@@ -1,4 +1,4 @@
-import {Sesion} from './sesion.model.ts';
+import {Sesion} from './sesion.model';
 
 export var SESION: Sesion = {
   "id": 0,

@@ -3,6 +3,7 @@ import {Destacado} from './destacado.model';
 
 export interface Contenido {
   id: number;
+  nombreProd: string;
   tipo: string;
   categoria: string;
 	titulo: string;

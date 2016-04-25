@@ -192,6 +192,10 @@ footer{
   }
 }
 
+.cartel {
+  height: 170px;
+}
+
 .cartel img{
     width: 200px;
     height: 250px;
@@ -227,15 +231,15 @@ footer{
 }
 
 /* Colores de span */
-#ps4 {
+#PS4 {
     color: blue;
 }
 
-#pc {
+#PC {
     color: red;
 }
 
-#xbox {
+#XBOX {
     color: limegreen;
 }
 
@@ -252,13 +256,6 @@ footer{
 .aCuerpo div {
 
     margin-bottom: 10px;
-}
-
-.aCuerpo div p {
-    border: 2px solid limegreen;
-    border-radius: 2px;
-    word-wrap: break-word;
-    font-size: 50px;
 }
 
 @media screen and (max-width: 800px) {
@@ -302,4 +299,8 @@ footer{
 #usr_avatar {
   width: 30px;
   height: 30px;
+}
+
+.calendario {
+  padding-top: 30px;
 }

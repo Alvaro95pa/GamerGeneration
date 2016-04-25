@@ -1,4 +1,4 @@
-import {Sesion} from './sesion.model.ts';
+import {Sesion} from './sesion.model';
 import { SESION } from './mock-sesion';
 import { Injectable } from 'angular2/core';
 

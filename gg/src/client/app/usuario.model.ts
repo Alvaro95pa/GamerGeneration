@@ -1,4 +1,4 @@
-import { Datos } from './datos';
+import { Datos } from './datos.model';
 
 export class Usuario {
   //Identificador

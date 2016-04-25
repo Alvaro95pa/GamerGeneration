@@ -19,6 +19,7 @@ var d4: Destacado = {
 
 export var CONTENIDO: Contenido[] = [
 	{"id": 1,
+	"nombreProd": "Uncharted 4",
 	"tipo": "Noticia",
 	"categoria": "Juegos",
 	"titulo": "Uncharted 4: Naughty Dog presenta el Modo Saqueo del multijugador",
@@ -38,9 +39,57 @@ export var CONTENIDO: Contenido[] = [
 	Así mismo, Plunder -nombre del modo en inglés- en el pasado era una experiencia de cinco contra cincho,
 	ahora será de cuatro contra cuatro.`,
   "ratio": "",
-	"dest": d3},
+	"dest": d3
+	},
 
-	{"id": 2,
+	{
+		"id": 2,
+		"nombreProd": "Fifa 16",
+		"tipo": "Noticia",
+	  "categoria": "Juegos",
+	  "titulo": "Nueva selección de goles con FIFA 16",
+	  "fecha": "15/04/2016",
+    "multimedia": "img/f_cont.jpg",
+    "resumen": `EA Sports nos presenta un nuevo vídeo de FIFA 16.
+    Como cada semana se centra en ofrecernos una selección de los mejores goles realizados en los últimos días.`,
+		"cuerpo": `EA Sports nos presenta un nuevo vídeo de FIFA 16.
+		Como cada semana se centra en ofrecernos una selección de los mejores goles realizados en los últimos días.
+		En la nueva recopilación podemos ver cómo han sido los tantos más espectaculares y
+		las jugadas más llamativas que han capturado y enviado a EA Sports los jugadores de este simulador de fútbol en los últimos días. En esta semana, encontramos un gol de Hulk de falta desde más allá del balcón del área, y un tanto de Sergio Agüero impresionante.
+		FIFA 16 se puso a la venta en septiembre del año en PC, Xbox One, Xbox 360, PlayStation 4 y PlayStation 3.
+		Os recordamos, que pronto llegará de forma gratuita para los suscriptores de EA Access y Origin Access.`,
+    "ratio": "",
+		"dest": d4
+  },
+
+  {
+	"id": 3,
+	"nombreProd": "Battlefront",
+	"tipo": "Noticia",
+	"categoria": "Juegos",
+	"titulo": "Star Wars: Battlefront nos adelanta el contenido que llegará al juego en primavera",
+	"fecha": "13/04/2016",
+	"multimedia": "img/btl_cont.jpg",
+  "resumen": `EA y DICE han anunciado sus planes de contenido para Star Wars: Battlefront,
+  que llegarán a lo largo de la primavera. La desarrolladora ha confirmado que está trabajando en
+  la implementación de muchos contenidos nuevos y gratuitos.`,
+	"cuerpo": `EA y DICE han anunciado sus planes de contenido para Star Wars: Battlefront,
+	que llegarán a lo largo de la primavera. La desarrolladora ha confirmado que está trabajando en la implementación de muchos contenidos nuevos y gratuitos.
+	Además, DICE agradece los mensajes de apoyo de la comunidad, y anuncia, que en los próximos meses,
+	los jugadores podrán disfrutar de novedades gratuitas como más fines de semana de doble puntuación,
+ 	misiones de comunidad y eventos especiales -que reportarán más créditos y experiencia-, nuevos contratos del Hutt
+ 	-que traerán cartas estelares como Berserker,
+	la Bomba de bacta y el Neutralizador de iones- y más características.
+	Entre ellas, y una de las más esperadas por los usuarios, serán más opciones para disfrutar de Star Wars:
+	Battlefront sin conexión. Y marcan una fecha: el 4 de mayo, aprovechando que se celebra el Día de Star Wars,
+	DICE preparará nuevas actividades Star Wars: Battlefront que se anunciarán en breve.`,
+  "ratio": "",
+	"dest": d4
+	},
+
+	{
+	"id": 4,
+	"nombreProd": "Quantum Break",
 	"tipo": "Análisis",
 	"categoria": "Juegos",
 	"titulo": "Análisis de Quantum Break",
@@ -80,9 +129,37 @@ export var CONTENIDO: Contenido[] = [
 	Falta camino por recorrer en este sentido, ya que las diferencias de registros
 	siguen estando muy presentes y el puzle no acaba de encajar.`,
   "ratio": "7/10",
+	"dest": d4
+	},
+
+	{
+	"id": 5,
+	"nombreProd": "Batman vs Superman",
+	"tipo": "Análisis",
+	"categoria": "Peliculas",
+	"titulo": "Análisis: Batman vs Superman",
+	"fecha": "22/04/2016",
+	"multimedia": "img/bs_cont.jpg",
+  "resumen": `Batman v. Superman: Dawn of Justice, o el Amanecer de la Justicia,
+	es una película de dos actos. El primero representa fielmente el título de la película.
+	El segundo, aunque obligatorio para crear el DC Comics Extended Universe,
+	se siente ajeno a la película en cierto sentido.`,
+	"cuerpo":`Tras sacar adelante Man of Steel (2013), Zack Snyder se ha echado la
+	Justice League a hombros y quiere hacerla algo suyo. No sabemos si habría
+	alguien mejor que Snyder al timón de este barco, pero es el capitán que tenemos.
+	Hay que aceptarlo. Tampoco se puede entender esta película como un ente independiente.
+	Requiere de un pensamiento episódico, es el comienzo de algo más grande.
+	La película tiene sus momentos de humor entre tanto escenario de tensión,
+	pero muchos menos que, por ejemplo, las dos cintas de The Avengers de Joss Whedon.
+	Las comparaciones son inevitables, DC está intentado crear “sus Avengers” pero DC no es Marvel.
+	Los personajes de DC siempre tuvieron más fondo, y una película de conjunto le resta parte de este fondo.
+	Por suerte, Superman ya lo tuvo, Wonder Woman lo tendrá, y de este nuevo Batman lo veremos por el camino.`,
+  "ratio": "6/10",
 	"dest": d4},
 
-	{"id": 3,
+	{
+	"id": 6,
+	"nombreProd": "Dark Souls 3",
 	"tipo": "Noticia",
 	"categoria": "Juegos",
 	"titulo": "Se acerca el lanzamiento de Dark Souls 3",
@@ -95,7 +172,8 @@ export var CONTENIDO: Contenido[] = [
   "ratio": "",
 	"dest": d1},
 
-	{"id": 4,
+	{"id": 7,
+	"nombreProd": "Daredevil",
 	"tipo": "Análisis",
 	"categoria": "Series",
 	"titulo": "Daredevil, análisis de la segunda temporada",
@@ -119,9 +197,12 @@ export var CONTENIDO: Contenido[] = [
 	ganas de tomar la justicia en sus propias manos. Sin embargo, sus métodos parecen no funcionar,
 	cortas una cabeza al monstruo y otra crece en las sombras.`,
   "ratio": "8/10",
-	"dest": d4},
+	"dest": d4
+	},
 
-	{"id": 5,
+	{
+	"id": 8,
+	"nombreProd": "Rogue One",
 	"tipo": "Noticia",
 	"categoria": "Peliculas",
 	"titulo": "Filtraciones de la sinopsis de Star Wars: Rogue One",

@@ -19,7 +19,7 @@
                       <li><a href="">Noticias</a></li>
                       <li><a [routerLink]="['Analisis']">Análisis</a></li>
                   </ul>
-                  <ul class="nav navbar-nav navbar-right" *ngIf="!sesion.user && !sesion.pass && !sesion.loged"> <!--User sin logear-->
+                  <ul class="nav navbar-nav navbar-right" *ngIf="!sesion.user || !sesion.pass"> <!--User sin logear-->
                       <li>
                           <a href="" id="log" role="button" aria-haspopup="true" aria-expanded="false"
                           data-toggle="modal" data-target="#myModal">
@@ -63,7 +63,10 @@
                           <span>
                           Si aún no estas registrado en nuestra web puedes hacerlo aquí:
                           </span>
-                          <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                          <a type="button" class="btn btn-info" [routerLink]="['Registro']"
+                          data-dismiss="modal" aria-label="Close">
+                            Registrarse
+                          </a>
                       </div>
                     </div>
                   </div>
@@ -98,7 +101,10 @@
                           <span>
                           Si aún no estas registrado en nuestra web puedes hacerlo aquí:
                           </span>
-                          <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                          <a type="button" class="btn btn-info" [routerLink]="['Registro']"
+                          data-dismiss="modal" aria-label="Close">
+                            Registrarse
+                          </a>
                       </div>
                     </div>
                   </div>
