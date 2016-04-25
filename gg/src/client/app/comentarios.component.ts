@@ -17,7 +17,7 @@ import {comentario} from './clases';
     </header>
     <time class="col-md-10 col-xs-10 fecha">{{comentario.fecha}}</time>
     <p class="col-md-9 col-xs-8">{{comentario.mensaje}}</p>
-    <div class="col-md-1 col-xs-12 puntuacion"><span>{{comentario.puntuacion}}</span></div>
+    <div *ngIf="comentario.idjuego!=0" class="col-md-1 col-xs-12 puntuacion"><span>{{comentario.puntuacion}}</span></div>
   </article>
   `
 })

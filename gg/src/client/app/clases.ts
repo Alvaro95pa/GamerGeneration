@@ -45,6 +45,7 @@ export class requisitosinfor{
 export class comentario{
   idcomentario:number;
   idjuego:number;
+  idcontenido:number;
   user:string;
   user_img:string;
   fecha:string;
