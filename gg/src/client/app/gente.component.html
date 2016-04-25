@@ -9,8 +9,8 @@
       <div class="panel-body amigos">
         <ul class="amigos">
           <li *ngFor="#gente of usuarios" (click)="irConcreto(gente)">
-            <img style = "width: 60%; height: 60%" src={{gente.imagen}}/>
-            <p> Usuario: {{gente.usuario}} </p>
+            <img *ngIf="gente.usuario != actual" style = "width: 60%; height: 60%" src={{gente.imagen}}/>
+            <p *ngIf="gente.usuario != actual"> Usuario: {{gente.usuario}} </p>
           </li>
         </ul>
       </div>

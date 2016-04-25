@@ -1,14 +1,13 @@
-import { Prod } from './prod'
-import { Amigo } from './amigos';
+import { Prod } from './prod.model'
+import { Amigo } from './amigos.model';
 
 export class Datos {
   //Estadisticas
-  nAmigos: string;
-  nPelis: string;
-  nSeries: string;
-  nJuegos: string;
+  nAmigos: number;
+  nPelis: number;
+  nSeries: number;
+  nJuegos: number;
   //Informacion
-  aportes: string;
   ultima: string;
   tUsuario: string;
   //Favoritos

@@ -56,12 +56,12 @@
     <div class="col-md-3">
       <div class="panel panel-default">
         <div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="panel-body">
-          <p class="info2"> Aportes : {{usuario.datos.aportes}} </p>
           <p class="info2"> Ultima visita : {{usuario.datos.ultima}} </p>
           <p class="info2"> Usuario desde : {{usuario.datos.tUsuario}} </p>
         </div>
       </div>
-      <button *ngIf="!(visible && usuario.usuario == actual)" class="btn btn-primary col-md-12" (click)="addAmigo()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir amigo </button>
+      <button *ngIf="!(visible && usuario.usuario == actual) && !amigo" class="btn btn-primary col-md-12" (click)="addAmigo()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir amigo </button>
+      <button *ngIf="!(visible && usuario.usuario == actual) && amigo" class="btn btn-danger col-md-12" (click)="removeAmigo()"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Eliminar amigo </button>
     </div>
   </div>
   <!-- Tercera fila (favoritos) -->

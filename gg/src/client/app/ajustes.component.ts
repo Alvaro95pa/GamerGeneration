@@ -3,34 +3,39 @@ import { MenuComponent } from './menu.component';
 import { SeleccionComponent } from './seleccion.component';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
-import { Usuario } from './usuario'
-import { Datos } from './datos';
+import { Usuario } from './usuario.model'
+import { Datos } from './datos.model';
 import { RouteParams } from 'angular2/router';
+import {Sesion} from './sesion.model';
+import { SesionService } from './sesion.service';
 
 @Component({
   selector: 'ajustes-component',
   templateUrl: 'app/ajustes.component.html',
   directives: [MenuComponent, SeleccionComponent],
   styleUrls: ['app/ajustes.component.css'],
-  providers: [UsuarioService]
+  providers: [UsuarioService, SesionService]
 })
 
 export class AjustesComponent  implements OnInit {
   //Variables
   usuario: Usuario;
-  actual: string = 'castorTresDientes'
+  actual: string;
   visible: boolean = false;
   datos: boolean = false;
   contra: boolean = false;
   preContra: string = 'nada';
   //Metodos
-  constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams) {}
+  constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams, private _sesionService: SesionService) {}
   ngOnInit() {
     let id= +this._routeParams.get('id');
     this._usuarioService.getUsuario(id).then(usuario =>{
       this.usuario = usuario;
-      this.visible = true;
-      this.preContra = this.usuario.contrasena
+      this.preContra = this.usuario.contrasena;
+      this._sesionService.getSesion().then(sesion =>{
+        this.actual = sesion.usuario;
+      });
+      this.visible = true
     })
   }
   notificar(campo){

@@ -4,6 +4,6 @@
     <a *ngIf="usuario.datos.cPerfilTodos || usuario.usuario == actual" class="list-group-item" (click)="irA('Contenido', usuario.id)"><span class="glyphicon glyphicon-folder-open" > Contenido </span></a>
     <a *ngIf="usuario.usuario == actual" class="list-group-item" (click)="irA('Ajustes', usuario.id)"><span class="glyphicon glyphicon-cog"> Ajustes </span></a>
     <a *ngIf="usuario.datos.aPerfilTodos || usuario.usuario == actual" class="list-group-item" (click)="irA('Amigos', usuario.id)"><span class="glyphicon glyphicon-heart"> Amigos </span></a>
-    <a class="list-group-item" (click)="ir('Gente')"><span class="glyphicon glyphicon-globe"> Gente </span></a>
+    <a *ngIf="usuario.usuario == actual" class="list-group-item" (click)="ir('Gente')"><span class="glyphicon glyphicon-globe"> Gente </span></a>
   </div>
 </div>
