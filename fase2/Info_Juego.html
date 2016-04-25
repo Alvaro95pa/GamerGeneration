@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet"  href="./css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="./css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/scriptjq.js"></script>
+        <title> GG </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="cabecera">
+                <div class="logo">
+                    <img src="img/control.png"/>
+                    <span id="nombre">GAMER GENERATION</span>
+                </div>
+                <!-- Barra -->
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                            </button>
+                            <a class="navbar-brand" href="Home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="Catalogo.html">Catálogo</a></li>
+                                <li><a href="noticias.html">Noticias</a></li>
+                                <li><a href="analisis.html">Análisis</a></li>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </form> 
+                                
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="log">
+                                <li>
+                                    <a id="logeo" href="#" role="button" aria-haspopup="true" aria-expanded="false" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-user"></span> Login</a>   
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document" id="mDialog">
+                            <div class="modal-content" id="mContent">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h3 class="sesion">Iniciar sesión</h3>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                    <span class="usr_pas">Usuario:</span><br>
+                                    <input id="user" type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                <br>
+                                <form>
+                                    <span>Contraseña:</span><br>
+                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña">
+                                </form>
+                                <br>
+                                <button type="button" id="login">Entrar</button>
+                                <label class="record"><input type="checkbox">Recuérdame</label>
+                                <hr>
+                                <div class="reg">
+                                    <span>
+                                    Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                                    </span><br>
+                                    <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                </nav>
+            </div>
+            
+            <div class="row">
+                <div class="info col-md-12">
+                    <div class="datos_basicos">
+                        <div class="panel-group">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">Datos Básicos</div>
+                                <div class="panel-body">
+                                    <div class="datos col-md-9 col-xs-7">
+                                        <h4>Información técnica</h4>
+                                        <dl>
+                                            <dt>Fecha de lanzamiento: </dt>
+                                            <dd>12-04-2016</dd>
+                                            <dt>Género: </dt>
+                                            <dd><span class="label label-default">Accion</span></dd>
+                                            <dt>Desarrollador:</dt>
+                                            <dd>FromSoftware, Inc. </dd>
+                                            <dt>Editor:</dt>
+                                            <dd>FromSoftware, Inc., BANDAI NAMCO Entertainment	</dd>
+                                            <dt>Plataformas:</dt>
+                                            <dd><span class="label label-default">PC</span><span class="label label-default">PS4</span><span class="label label-default">Xbox One</span></dd>
+                                        </dl>
+                                        <h4>Requisitos del sistema</h4>
+                                        <dl>
+                                            <dt>SO:</dt>
+                                            <dd>Windows 7 SP1 64bit, Windows 8.1 64bit Windows 10 64bit</dd>
+                                            <dt>Procesador:</dt>
+                                            <dd>Intel Core i5 2500 3.1 GHz / AMD® A8 3870 3,6 Ghz</dd>
+                                            <dt>Memoria:</dt>
+                                            <dd>8 GB de RAM</dd>
+                                            <dt>Gráficos:</dt>
+                                            <dd>NVIDIA® GeForce GTX 465 / ATI Radeon TM HD 6870</dd>
+                                            <dt>DirectX:</dt>
+                                            <dd>Versión 11</dd>
+                                            <dt>Red:</dt>
+                                            <dd>Conexión de banda ancha a Internet </dd>
+                                            <dt>Almacenamiento:</dt>
+                                            <dd>50 GB de espacio disponible</dd>
+                                            <dt>Tarjeta de sonido:</dt>
+                                            <dd>DirectX 11 sound device</dd>
+                                        </dl>                             
+                                    </div>
+
+                                    <div class="portada col-md-3 col-xs-5">
+                                        <img src="img/dark-souls-iii-2015615194341_1.jpg">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="panel panel-danger sinopsis">
+                                <div class="panel-heading">Sinopsis</div>
+                                <div class="panel-body">
+                                    <p>El juego tiene lugar en los últimos días de la "edad del fuego", la cual, como es relatado al principio de la historia, comenzó tras la derrota de los dragones que anteriormente reinaban el mundo. Éste, durante esta época era un lugar oscuro y lúgubre habitado solamente por una raza inmortal de gigantes dragones cuya capacidad de prolongar su vida eternamente provenía de sus escamas. En esta época aparentemente no existía aún ninguna llama, por lo que el mundo era un lugar completamente oscuro y casi desierto. Así fue hasta que un grupo de seres descubrieron también el poder del fuego y de la luz, a través de la "primera llama", y siendo liderados por Gwyn, el "Señor de la Primera Llama" acabaron con casi la totalidad de los dragones en una legendaria guerra que dio origen tras la derrota del bando reinante a la edad del fuego. Y con ella la aparición de todos los seres vivos que se ven en Dark Souls, siendo éstos, a diferencia de los dragones, limitados en el tiempo por lo que ningún ser que provenga del fuego es inmortal completamente, como si lo eran los casi desaparecidos dragones.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="panel panel-danger trailer">
+                                <div class="panel-heading">Trailer</div>
+                                <div class="panel-body ">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QjY99zF3_to"></iframe>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="panel panel-danger comentarios">
+                                <div class="panel-heading">Comentarios</div>
+                                <div class="panel-body">
+                                       
+                                        <article class="col-md-12 col-xs-12">
+                                            <header class="col-md-2 col-xs-2">
+                                                <dl>
+                                                    <dd><img src="img/personaB.png"></dd>
+                                                    <dd><a href="#">Juan Perez</a></dd>
+                                                    
+                                                </dl>
+                        
+                                            </header>
+                                            <time class="col-md-10 col-xs-10 fecha">Miercoles 2 de Marzo, 03:35</time>
+                                            <p class="col-md-9 col-xs-8">Gran pelicula. Mucho humor, mucha acción y muy fiel a los comics (no he leido mucho los de Deadpool, pero desde luego lo que he leido queda reflejado en la pantalla.) Muy bien llevado la parte de romper la 4 pared.
+                                            Pelicula que se disfruta a cada escena, con muy buenas coreografias para los combates y muy buenos efectos visuales y de camara.</p>
+                                            <div class="col-md-1 col-xs-12 puntuacion"><span>8.3</span></div>
+                                        </article>
+                                        <article class="col-md-12 col-xs-12">
+                                            <header class="col-md-2 col-xs-2">
+                                                <dl>
+                                                    <dd><img src="img/personaB.png"></dd>
+                                                    <dd><a href="#">Pepito García</a></dd>
+                                                </dl>
+                                            </header>
+                                            <time class="col-md-10 col-xs-10 fecha">Jueves 3 de Marzo, 12:15</time>
+                                            <p class="col-md-9 col-xs-8">Menuda sorpresa me he llevado con este autentico peliculon. La verdad que es una película espectacular llena de acción y humor negro muy bien desarrolado.
+
+                                            El actor Ryan Reynolds le pega como anillo al dedo el papel de Deadpool porque lo hace genial y te partes el culo toda la película con sus chistes y bromas pesadas y frases ignorantes que hace en toda la película.
+
+                                            La verdad que para ser un producto de Marvel el cual estamos acostumbrados a ver películas mas para gente menor de 13 años, este producto cumple como producto para gente mas adulta y a la que nos gusta la clase de películas como lo es esta llena de accíon, violencia, sangre, humor negro, sexo, buena historia y peliculon en toda regla.
+
+                                            Para mi tiene un merecido 10 porque con el poco presupuesto que costó hacer la película me hizo pasar unas 2 horas verdaderamente entretenido y feliz de lo que estaba viendo y como no..me eche unas muy buenas risas con este personaje de principio a fin.
+
+                                            Simplemente espectacular, os la recomiendo a todos. Ojo al dato..sobretodo esperar a después de los creditos que os partireis jeje.</p>
+                                            <div class="col-md-1 col-xs-12 puntuacion"><span>10</span></div>
+                                        </article>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

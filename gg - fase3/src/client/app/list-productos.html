@@ -1,0 +1,102 @@
+<div class="row contenedor_catalogo fondo">
+    <ul class="pestanas_catalogo">
+      <li [class.selected]="aux_tipoprod == 1" (click)="gotoTipoprod(1)">Videojuegos
+      </li><li [class.selected]="aux_tipoprod == 2" (click)="gotoTipoprod(2)">Series
+      </li><li [class.selected]="aux_tipoprod == 3" (click)="gotoTipoprod(3)">Peliculas
+      </li>
+    </ul>
+    <button *ngIf="aux_tipoprod==1" type="button" class="btn btn-danger visible-xs col-xs-12" onclick="document.getElementById('oculto').style.display = 'block';"><span class="glyphicon glyphicon-option-vertical"></span> Mostrar filtros</button>
+    <div *ngIf="aux_tipoprod==1" id="oculto" class="col-sm-3 col-xs-12 categoria">
+      <ul class="genero">
+        <h4>Género</h4>
+        <a (click)="gotoFiltrar('gen','Accion')" ><li>Acción
+        </li></a>
+        <a (click)="gotoFiltrar('gen','Aventura')"><li>Aventura
+        </li></a>
+        <a (click)="gotoFiltrar('gen','Estrategia')"><li>Estrategia
+        </li></a>
+        <a (click)="gotoFiltrar('gen','Indie')"><li>Indie
+        </li></a>
+        <a (click)="gotoFiltrar('gen','RPG')"><li>RPG
+        </li></a>
+        <a (click)="gotoFiltrar('gen','Simulador')"><li>Simuladores
+        </li></a>
+      </ul>
+      <ul class="plataforma">
+        <h4>Plataforma</h4>
+        <a (click)="gotoFiltrar('plat','PC')"><li>PC</li></a>
+        <a (click)="gotoFiltrar('plat','PS4')"><li>PS4</li></a>
+        <a (click)="gotoFiltrar('plat','XBOX ONE')"><li>XBOX ONE</li></a>
+        <a (click)="gotoFiltrar('plat','3DS')"><li>3DS</li></a>
+        <a (click)="gotoFiltrar('plat','WII U')"><li>WII U</li></a>
+      </ul>
+    </div>
+    <button *ngIf="aux_tipoprod==2" type="button" class="btn btn-danger visible-xs col-xs-12" onclick="document.getElementById('oculto2').style.display = 'block';"><span class="glyphicon glyphicon-option-vertical"></span> Mostrar filtros</button>
+    <div *ngIf="aux_tipoprod==2" id="oculto2" class="col-sm-3 col-xs-12 categoria">
+        <ul class="genero">
+          <h4>Género</h4>
+            <a (click)="gotoFiltrar('gen','Accion')"><li>Acción
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Animacion')"><li>Animación
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Aventura')"><li>Aventura
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Cienciaficcion')"><li>Ciencia Ficción
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Comedia')"><li>Comedia
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Drama')"><li>Drama
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Infantil')"><li>Infantil
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Intriga')"><li>Intriga
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Musical')"><li>Musical
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Romance')"><li>Romance
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Terror')"><li>Terror
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Thriller')"><li>Thriller
+            </li></a>
+            <a (click)="gotoFiltrar('gen','Western')"><li>Western
+            </li></a>
+        </ul>
+      </div>
+      <button *ngIf="aux_tipoprod==3" type="button" class="btn btn-danger visible-xs col-xs-12" onclick="document.getElementById('oculto3').style.display = 'block';"><span class="glyphicon glyphicon-option-vertical"></span> Mostrar filtros</button>
+      <div *ngIf="aux_tipoprod==3" id="oculto3" class="col-sm-3 col-xs-12 categoria">
+          <ul class="genero">
+            <h4>Género</h4>
+              <a (click)="gotoFiltrar('gen','Accion')"><li>Acción
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Animacion')"><li>Animación
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Aventura')"><li>Aventura
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Cienciaficcion')"><li>Ciencia Ficción
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Comedia')"><li>Comedia
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Drama')"><li>Drama
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Infantil')"><li>Infantil
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Intriga')"><li>Intriga
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Nusical')"><li>Musical
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Romance')"><li>Romance
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Terror')"><li>Terror
+              </li></a>
+              <a (click)="gotoFiltrar('gen','Thriller')"><li>Thriller
+              </li></a>
+          </ul>
+        </div>
+        <div class="col-sm-9 norelative ">
+        <ul class="listado">
+            <li *ngFor="#produc of list_producto" (click)="gotoDetalles(produc)"  >
+              <prod-detalle [prod]="produc" ></prod-detalle>
+            </li>
+        </ul></div>
+    </div>

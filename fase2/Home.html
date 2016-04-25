@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet"  href="./css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="./css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="./css/calendar.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/calendar.js"></script>
+        <script src="js/scriptjq.js"></script>
+        <title> Home </title>
+    </head>
+    <body>
+       
+        <div class="container">
+            <div class="cabecera">
+                <div class="logo">
+                    <img src="img/control.png"/>
+                    <span id="nombre">GAMER GENERATION</span>
+                </div>
+                <!-- Barra -->
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                            </button>
+                            <a class="navbar-brand" href="Home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="Catalogo.html">Catálogo</a></li>
+                                <li><a href="noticias.html">Noticias</a></li>
+                                <li><a href="analisis.html">Análisis</a></li>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </form> 
+                                
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="log">
+                                <li>
+                                    <a id="logeo" href="#" role="button" aria-haspopup="true" aria-expanded="false" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-user"></span> Login</a>   
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document" id="mDialog">
+                            <div class="modal-content" id="mContent">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h3 class="sesion">Iniciar sesión</h3>
+                              </div>
+                              <div class="modal-body">
+                                <form class="margen">
+                                    <span>Usuario:</span>
+                                    <input id="user" type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                
+                                <form class="margen">
+                                    <span>Contraseña:</span>
+                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña">
+                                </form>
+                                <button type="button" id="login">Entrar</button>
+                                <label class="record"><input type="checkbox">Recuérdame</label>
+                                <hr>
+                                <div class="reg">
+                                    <span>
+                                    Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                                    </span>
+                                    <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                </nav>
+            </div>
+        
+            <div class="row fondo">
+              
+
+              <div class="col-xs-12 col-md-8">
+                <h1>Tablón principal</h1>
+
+                <hr class="red_hr">
+
+                <h2>Noticias destacadas:</h2>
+                <hr>
+                <a href="#" class="noticia">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Se acerca el lanzamiento de Dark Souls 3 - 24/03/2016</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="embed-responsive embed-responsive-16by9 margen">
+                                <iframe class="embed-responsive-item" 
+                                src="https://www.youtube.com/embed/lKS7d9kjWog" allowfullscreen>
+                                </iframe>
+                            </div>
+                            <p>El lanzamiento de Dark Souls 3 está a menos de un mes y Bandai no deja de crear hype. Esta vez nos han dejado un trailer con gameplay real y un tema sonoro muy epico.</p>
+                        </div>            
+                    </div>
+                </a>
+                
+                <hr class="red_hr">
+                <h2>Últimos posts:</h2>
+                <hr>
+                <a href="analisisConcreta.html" class="noticia">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Fallout 4: Automatron - 23/03/2016</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="cartel">
+                                <img src="img/f4.jpg">
+                                    <p>Automatron no llega a Fallout 4 con la intención de hacer tambalear los cimientos del videojuego de Bethesda, introducir una trama excesivamente elaborada o un gran mundo nuevo por recorrer, es más bien el aperitivo de todo lo que vendrá. Bethesda ha prometido que el mundo de Fallout 4 se expandirá considerablemente y con Automatron prepara el terreno.</p>
+                                    <p id="text">Una vez que estemos en el nivel 15 empezará la magia de Automatron, pues a partir de ahí obtendremos la habilidad de poder crear y customizar a nuestros amigos robots. La manera de construir a estos compañeros es muy similar a la de la creación de armaduras. Cada uno de sus miembros puede ser objeto de nuestra interesada creatividad...</p>
+                             </div>
+                        </div>            
+                    </div>
+                </a>
+                
+                <hr>
+                <a href="#" class="noticia">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Filtraciones de la sinopsis de Star Wars: Rogue One - 20/03/2016</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p>Desde hace pocas horas existen rumores en internet sobre 
+                            una posible filtración de la sinopsis de Star Wars: Rogue One, 
+                            la primera pélicula de la Antología de Star Wars...</p>
+                        </div>             
+                    </div>
+                </a>
+                
+              </div>
+              <div class="col-xs-6 col-md-4">
+                  <div id="calendario" class="calendario">
+                      <h2>Calendario</h2>
+                      <script type="text/javascript">
+                        calendar();
+                      </script>
+                  </div>
+                 
+              </div>
+            </div>
+        </div> 
+        <footer clas="footer">&#169; Gamer Generation</footer>   
+    </body>
+</html>

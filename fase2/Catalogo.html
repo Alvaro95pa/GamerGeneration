@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet"  href="./css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="./css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/scriptjq.js"></script>
+        <title> Catalogo </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="cabecera">
+                <div class="logo">
+                    <img src="img/control.png"/>
+                    <span id="nombre">GAMER GENERATION</span>
+                </div>
+                <!-- Barra -->
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                            </button>
+                            <a class="navbar-brand" href="Home.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="Catalogo.html">Catálogo</a></li>
+                                <li><a href="noticias.html">Noticias</a></li>
+                                <li><a href="analisis.html">Análisis</a></li>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Buscar...">
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Buscar</button>
+                                </form> 
+                                
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="log">
+                                <li>
+                                    <a id="logeo" href="#" role="button" aria-haspopup="true" aria-expanded="false" 
+                                    data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-user"></span> Login</a>   
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document" id="mDialog">
+                            <div class="modal-content" id="mContent">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h3 class="sesion">Iniciar sesión</h3>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                    <span class="usr_pas">Usuario:</span><br>
+                                    <input id="user" type="text" class="form-control" placeholder="Nombre de usuario">
+                                </form>
+                                <br>
+                                <form>
+                                    <span>Contraseña:</span><br>
+                                    <input id="pass" type="password" class="form-control" placeholder="Contraseña">
+                                </form>
+                                <br>
+                                <button type="button" id="login">Entrar</button>
+                                <label class="record"><input type="checkbox">Recuérdame</label>
+                                <hr>
+                                <div class="reg">
+                                    <span>
+                                    Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                                    </span><br>
+                                    <a type="button" class="btn btn-info" href="registro.html">Registrarse</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                </nav>
+            </div>
+            
+            <div class="row fondo">
+                <div class="col-md-12 fondo_catalogo">
+                    <div class="tabpanel">
+                        <ul class="nav nav-tabs">
+                          <li class="active pestaña"><a data-toggle="tab" href="#vjuegos">Videojuegos</a></li>
+                          <li class="pestaña"><a data-toggle="tab" href="#series">Series</a></li>
+                          <li class="pestaña"><a data-toggle="tab" href="#peliculas">Peliculas</a></li>
+                        </ul>
+
+                        <div class=" tab-content">                
+                            <div id="vjuegos" class="tab-pane fade in active">
+                               <div class="col-md-12 col-xs-12 filtro">
+                                  <button type="button" class="btn btn-danger visible-xs col-xs-12" onclick="document.getElementById('oculto').style.display = 'block';"><span class="glyphicon glyphicon-option-vertical"></span> Mostrar filtros</button>
+                                  <div id="oculto"  style='display:none;'>
+                                      <div class=" visible-xs col-xs-12 categoria categoria_mobile">
+                                            <ul class="genero">
+                                                <h4>Género</h4>
+                                                <a href=""><li>Acción 
+                                                </li></a>
+                                                <a href=""><li>Aventura
+                                                </li></a>
+                                                <a href=""><li>Estrategia
+                                                </li></a>
+                                                <a href=""><li>Indie
+                                                </li></a>
+                                                <a href=""><li>RPG
+                                                </li></a>
+                                                <a href=""><li>Simuladores
+                                                </li></a>
+                                            </ul>
+                                            <ul class="plataforma">
+                                               <h4>Plataforma</h4>
+                                                <a href=""><li>PC</li></a>
+                                                <a href=""><li>PS4</li></a>
+                                                <a href=""><li>XBOX ONE</li></a>
+                                                <a href=""><li>3DS</li></a>
+                                                <a href=""><li>WII U</li></a>
+                                            </ul>
+                                        </div>
+                                  </div>
+                               </div>
+                               
+                                <div class="col-sm-9 pestanas col-xs-12">
+                                    <ul class="listado">
+                                        <li><a href="Info_Juego.html">
+                                            <div>
+                                                <img src="img/dark-souls-iii.jpg">
+                                                <p>Dark Souls III</p>
+                                            </div></a>
+                                        </li><li> <a href="">
+                                            <div>
+                                                <img src="img/xcom.jpg">
+                                                <p>XCOM 2</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/outdrive.jpg">
+                                                <p>OutDrive</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/superhot.jpg">
+                                                <p>SuperHot</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/resident.jpg">
+                                                <p>Resident Evil Zero</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/layersoffear.jpg">
+                                                <p>Layers of fear</p>
+                                            </div></a>
+                                        </li><li> <a href="">
+                                            <div>
+                                                <img src="img/xcom.jpg">
+                                                <p>XCOM 2</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/outdrive.jpg">
+                                                <p>OutDrive</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/superhot.jpg">
+                                                <p>SuperHot</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/resident.jpg">
+                                                <p>Resident Evil Zero</p>
+                                            </div></a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                                
+                                <div class="col-sm-3 visible-sm visible-md visible-lg categoria">
+                                    
+                                    <ul class="genero">
+                                        <h4>Género</h4>
+                                        <a href=""><li>Acción 
+                                        </li></a>
+                                        <a href=""><li>Aventura
+                                        </li></a>
+                                        <a href=""><li>Estrategia
+                                        </li></a>
+                                        <a href=""><li>Indie
+                                        </li></a>
+                                        <a href=""><li>RPG
+                                        </li></a>
+                                        <a href=""><li>Simuladores
+                                        </li></a>
+                                    </ul>
+                                    <ul class="plataforma">
+                                       <h4>Plataforma</h4>
+                                        <a href=""><li>PC</li></a>
+                                        <a href=""><li>PS4</li></a>
+                                        <a href=""><li>XBOX ONE</li></a>
+                                        <a href=""><li>3DS</li></a>
+                                        <a href=""><li>WII U</li></a>
+                                    </ul>
+                                </div>  
+                            </div>
+                            
+                        <div id="series" class="tab-pane fade">
+                           <div class="col-md-12 col-xs-12 filtro">
+                                  <button type="button" class="btn btn-danger visible-xs col-xs-12" onclick="document.getElementById('oculto1').style.display = 'block';"><span class="glyphicon glyphicon-option-vertical"></span> Mostrar filtros</button>
+                                  <div id="oculto1"  style='display:none;'>
+                                      <div class=" visible-xs col-xs-12 categoria categoria_mobile">
+                                            <ul class="genero">
+                                                <h4>Género</h4>
+                                                <a href=""><li>Acción 
+                                                </li></a>
+                                                <a href=""><li>Animación
+                                                </li></a>
+                                                <a href=""><li>Aventuras
+                                                </li></a>
+                                                <a href=""><li>Ciencia Ficción
+                                                </li></a>
+                                                <a href=""><li>Comedia
+                                                </li></a>
+                                                <a href=""><li>Drama
+                                                </li></a>
+                                                <a href=""><li>Infantil
+                                                </li></a>
+                                                <a href=""><li>Intriga
+                                                </li></a>
+                                                <a href=""><li>Musical
+                                                </li></a>
+                                                <a href=""><li>Romance
+                                                </li></a>
+                                                <a href=""><li>Terror
+                                                </li></a>
+                                                <a href=""><li>Thriller
+                                                </li></a>
+                                                <a href=""><li>Western
+                                                </li></a>
+                                            </ul>
+                                        </div>
+                                  </div>
+                               </div>
+                           
+                            <div class="col-sm-9 pestanas col-xs-12">
+                                    <ul class="listado">
+                                        <li><a href="">
+                                            <div>
+                                                <img src="img/arrow.jpg">
+                                                <p>Arrow</p>
+                                            </div></a>
+                                        </li><li> <a href="">
+                                            <div>
+                                                <img src="img/100.jpg">
+                                                <p>Los 100</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/magicians.jpg">
+                                                <p>Magicians</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/modernfamily.jpg">
+                                                <p>Modern Family</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/vikings.jpg">
+                                                <p>Vikings</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/arrow.jpg">
+                                                <p>Arrow</p>
+                                            </div></a>
+                                        </li><li> <a href="">
+                                            <div>
+                                                <img src="img/100.jpg">
+                                                <p>Los 100</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/magicians.jpg">
+                                                <p>Magicians</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/modernfamily.jpg">
+                                                <p>Modern Family</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/vikings.jpg">
+                                                <p>Vikings</p>
+                                            </div></a>
+                                        </li>
+                                        
+                                       
+                                    </ul>
+                                    
+                                </div>
+                            
+                            <div class="col-sm-3 visible-sm visible-md visible-lg categoria">
+                                    
+                                    <ul class="genero">
+                                        <h4>Género</h4>
+                                        <a href=""><li>Acción 
+                                                </li></a>
+                                                <a href=""><li>Animación
+                                                </li></a>
+                                                <a href=""><li>Aventuras
+                                                </li></a>
+                                                <a href=""><li>Ciencia Ficción
+                                                </li></a>
+                                                <a href=""><li>Comedia
+                                                </li></a>
+                                                <a href=""><li>Drama
+                                                </li></a>
+                                                <a href=""><li>Infantil
+                                                </li></a>
+                                                <a href=""><li>Intriga
+                                                </li></a>
+                                                <a href=""><li>Musical
+                                                </li></a>
+                                                <a href=""><li>Romance
+                                                </li></a>
+                                                <a href=""><li>Terror
+                                                </li></a>
+                                                <a href=""><li>Thriller
+                                                </li></a>
+                                                <a href=""><li>Western
+                                                </li></a>
+                                    </ul>
+                                </div>  
+                        </div>
+                            
+                        <div id="peliculas" class="tab-pane fade">
+                           <div class="col-md-12 col-xs-12 filtro">
+                                  <button type="button" class="btn btn-danger visible-xs col-xs-12" onclick="document.getElementById('oculto2').style.display = 'block';"><span class="glyphicon glyphicon-option-vertical"></span> Mostrar filtros</button>
+                                  <div id="oculto2"  style='display:none;'>
+                                      <div class=" visible-xs col-xs-12 categoria categoria_mobile">
+                                            <ul class="genero">
+                                                <h4>Género</h4>
+                                                <a href=""><li>Acción 
+                                                </li></a>
+                                                <a href=""><li>Animación
+                                                </li></a>
+                                                <a href=""><li>Aventuras
+                                                </li></a>
+                                                <a href=""><li>Ciencia Ficción
+                                                </li></a>
+                                                <a href=""><li>Comedia
+                                                </li></a>
+                                                <a href=""><li>Drama
+                                                </li></a>
+                                                <a href=""><li>Infantil
+                                                </li></a>
+                                                <a href=""><li>Intriga
+                                                </li></a>
+                                                <a href=""><li>Musical
+                                                </li></a>
+                                                <a href=""><li>Romance
+                                                </li></a>
+                                                <a href=""><li>Terror
+                                                </li></a>
+                                                <a href=""><li>Thriller
+                                                </li></a>
+                                            </ul>
+                                        </div>
+                                  </div>
+                               </div>
+                           
+                            <div class="col-sm-9 pestanas col-xs-12">
+                                    <ul class="listado">
+                                        <li><a href="Info_Peli.html">
+                                            <div>
+                                                <img src="img/deadpool.jpg" class="img-responsive">
+                                                <p>Deadpool</p>
+                                            </div></a>
+                                        </li><li> <a href="">
+                                            <div>
+                                                <img src="img/SW.jpg">
+                                                <p>Star Wars</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/wally.jpg">
+                                                <p>Corazón del mar</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/creed.jpg">
+                                                <p>Creed</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/renacido.jpg">
+                                                <p>El Renacido</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/deadpool.jpg">
+                                                <p>Deadpool</p>
+                                            </div></a>
+                                        </li><li> <a href="">
+                                            <div>
+                                                <img src="img/SW.jpg">
+                                                <p>Star Wars</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/wally.jpg">
+                                                <p>Corazón del mar</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/creed.jpg">
+                                                <p>Creed</p>
+                                            </div></a>
+                                        </li><li><a href="">
+                                            <div>
+                                                <img src="img/renacido.jpg">
+                                                <p>El Renacido</p>
+                                            </div></a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            
+                            <div class="col-sm-3 visible-sm visible-md visible-lg categoria">
+                                    
+                                    <ul class="genero">
+                                        <h4>Género</h4>
+                                        <a href=""><li>Acción 
+                                                </li></a>
+                                                <a href=""><li>Animación
+                                                </li></a>
+                                                <a href=""><li>Aventuras
+                                                </li></a>
+                                                <a href=""><li>Ciencia Ficción
+                                                </li></a>
+                                                <a href=""><li>Comedia
+                                                </li></a>
+                                                <a href=""><li>Drama
+                                                </li></a>
+                                                <a href=""><li>Infantil
+                                                </li></a>
+                                                <a href=""><li>Intriga
+                                                </li></a>
+                                                <a href=""><li>Musical
+                                                </li></a>
+                                                <a href=""><li>Romance
+                                                </li></a>
+                                                <a href=""><li>Terror
+                                                </li></a>
+                                                <a href=""><li>Thriller
+                                                </li></a>
+                                    </ul>
+                                </div> 
+                        </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -29,33 +29,26 @@ Entidades:
 	
 	Favoritos/Calificación
 
-	Noticias/Post/Críticas
+	Noticias/Análisis
+    
+﻿# FASE 3:
 	
 ﻿# Instrucciones para descargar y ejecutar:
  
  -Para descargar el último tag del repositorio se puede utilizar la opción de descargar en .zip directamente desde la rama master.
-  Puesto que se trata de un repositorio público se puede obtener la última versión (tag: Fase 2) clonando el repositorio a local.
+  Puesto que se trata de un repositorio público se puede obtener la última versión (tag: Fase 3) clonando el repositorio a local.
   
- -La forma más recomendable para visualizar el código es utilizar el IDE Brackets. Este software también permite previsualizar en el    navegador los documentos web.
- 
+ -La forma más recomendable para visualizar el código es utilizar node.js
+  Con el comando "ng serve" en la carpeta del proyecto se ejecuta la página y se muestra por defecto en el localhost:4200
+  
  -Se ha comprobado su perfecto funcionamiento en los siguientes navegadores:
   	Google Chrome.
   	Mozilla Firefox.
 
-﻿# Hosting de la web (Github):
- 
- http://alvaro95pa.github.io/daw_web/Home.html
-
   
-﻿# Diagrama de navegacion:
+﻿# Diagrama de clases:
  
-![Image](CapturasDAW/Diagrama_navegcion.png)
+![Image](CapturaDAW/Diagrama_clases.png)
 
-﻿# Captura de pantalla de las paginas principales:
- 
-![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaPantallaPrincipal.png "Pagina principal")
-![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaNoticias.png "Pagina de noticias")
-![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaAnalisis.png "Pagina de analisis")
-![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaCatalogo.png "Pagina del catalogo")
-![Image](https://raw.githubusercontent.com/Alvaro95pa/daw_web/master/CapturasDAW/capturaPerfil.png "Pagina del perfil")
+
 
