@@ -1,0 +1,306 @@
+footer{
+  color: white;
+  text-align: center;
+}
+
+.footer {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+.footer_content {
+  margin-top: 10px;
+  height: 190px;
+  background-color: firebrick;
+  width: 1140px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 2px;
+  border: 3px solid grey;
+}
+
+.redes a {
+  text-decoration: none;
+}
+
+.redes img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Home */
+.fondo {
+    background-color: whitesmoke;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-radius: 3px;
+}
+
+.botonRed {
+    color: whitesmoke;
+    background-color: firebrick;
+    border-radius: 3px;
+}
+
+.logo img {
+    width: 130px;
+    height: 100px;
+    padding-left: 20px;
+}
+
+.logo span {
+    font-size: 40px;
+    font-family: 'Black Ops One';
+    padding-left: 20px;
+}
+
+.cabecera {
+    background-color: firebrick;
+    border-radius: 5px;
+    margin-top: 1%;
+}
+
+#login {
+    background-color: firebrick;
+    color: white;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+#login:hover {
+    background-color: darkred;
+    color: whitesmoke;
+    border: 0px;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+
+.red_hr {
+    border-top: 4px solid firebrick;
+    border-radius: 3px;
+}
+
+.pestaña {
+    width: 33%;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  #nombre {
+    font-size: 30px;
+  }
+}
+
+.sesion {
+    text-align: center;
+}
+
+.reg {
+    text-align: center;
+    font-size: 18px;
+}
+
+.record {
+    padding-left: 40px;
+}
+
+.noticia {
+    color: black;
+    text-decoration: none;
+}
+
+.cierre {
+    font-size: 20px;
+    background-color: firebrick;
+    color: white;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.cierre:hover {
+    font-size: 20px;
+    background-color: darkred;
+    color: white;
+    border: 0px;
+    border-radius: 3px;
+    align-content: center;
+}
+
+#mBody {
+   text-align: center;
+}
+
+.margen {
+    margin-bottom: 20px;
+}
+
+/* Análisis */
+.aLista {
+    padding-left: 0px;
+}
+
+.aLista li {
+    list-style: none;
+}
+
+.filtro {
+    padding-top: 20px;
+}
+
+.fondoRed {
+    background-color: firebrick;
+    border-radius: 3px;
+}
+
+.logo2 img {
+    width: 100px;
+    height: 70px;
+    padding-left: 20px;
+}
+
+.logo2 span {
+    font-size: 30px;
+    padding-left: 7px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.fondo2 {
+    background-color: white;
+    border: 1px solid gainsboro;
+    padding-bottom: 20px;
+}
+
+.more {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.icono {
+    width: 25px;
+    height: 23px;
+}
+
+@media screen and (max-width: 400px) {
+  #spanTab {
+    visibility: hidden;
+  }
+}
+
+.cartel {
+  height: 170px;
+}
+
+.cartel img{
+    width: 200px;
+    height: 250px;
+    float: left;
+}
+
+.cartel p {
+    padding-left: 230px;
+}
+
+@media screen and (max-width: 1000px) {
+    .cartel img {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+
+    .cartel p {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #text {
+        visibility: hidden;
+        width: 0px;
+        height: 0px;
+    }
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+/* Colores de span */
+#PS4 {
+    color: blue;
+}
+
+#PC {
+    color: red;
+}
+
+#XBOX {
+    color: limegreen;
+}
+
+.aCuerpo {
+    padding-top: 76px;
+}
+
+#imagenAnalisis {
+    width: 800px;
+    height: 550px;
+    margin-bottom: 10px;
+}
+
+.aCuerpo div {
+
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    #imagenAnalisis {
+        width: 0px;
+        height: 0px;
+        visibility: hidden;
+    }
+}
+
+#log2 {
+  color: green;
+  font-weight: bold;
+}
+
+#log2:hover {
+  font-size: 16px;
+}
+
+#log:hover {
+  font-weight: bold;
+}
+
+#err {
+  border: 2px solid red;
+  box-shadow: 0 0 3px red;
+}
+
+.carrusel {
+  width: 700px;
+}
+
+@media screen and (max-width: 800px) {
+  #destacadas {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+}
+
+#usr_avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.calendario {
+  padding-top: 30px;
+}
