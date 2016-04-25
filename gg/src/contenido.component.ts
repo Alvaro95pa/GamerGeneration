@@ -6,15 +6,16 @@ import { Usuario } from './usuario.model'
 import { Datos } from './datos.model';
 import { Amigo } from './amigos.model';
 import { RouteParams } from 'angular2/router';
-import { Prod } from './prod.model'
-import {Sesion} from './sesion.model';
+import { Prod } from './clases'
+import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
+import { Router } from 'angular2/router';
 
 @Component({
   selector: 'contenido-component',
   templateUrl: 'app/contenido.component.html',
   directives: [MenuComponent],
-  styleUrls: ['app/contenido.component.css'],
+  styleUrls: ['app/style3.css'],
   providers: [UsuarioService, SesionService]
 })
 
@@ -24,7 +25,7 @@ export class ContenidoComponent{
   actual: string;
   visible: boolean = false;
   //Metodos
-  constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams, private _sesionService: SesionService) {}
+  constructor(private _router: Router, private _usuarioService: UsuarioService, private _routeParams: RouteParams, private _sesionService: SesionService) {}
   ngOnInit() {
     let id= +this._routeParams.get('id');
     this._usuarioService.getUsuario(id).then(usuario =>{
@@ -55,5 +56,8 @@ export class ContenidoComponent{
       }
     }
     this._usuarioService.removeContenido(cont, this.usuario.id);
+  }
+  irA(producto: Prod){
+    this._router.navigate(['Detalleprod', {tipoProd: producto.tipoProd, idProd: producto.id}]);
   }
 }

@@ -5,14 +5,14 @@ import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario.model';
 import { Datos } from './datos.model';
 import { Router } from 'angular2/router';
-import {Sesion} from './sesion.model';
+import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
   selector: 'gente-component',
   templateUrl: 'app/gente.component.html',
   directives: [MenuComponent],
-  styleUrls: ['app/amigos.component.css'],
+  styleUrls: ['app/style3.css'],
   providers: [UsuarioService, SesionService]
 })
 

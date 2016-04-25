@@ -6,14 +6,14 @@ import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario.model'
 import { Datos } from './datos.model';
 import { RouteParams } from 'angular2/router';
-import {Sesion} from './sesion.model';
+import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
   selector: 'ajustes-component',
   templateUrl: 'app/ajustes.component.html',
   directives: [MenuComponent, SeleccionComponent],
-  styleUrls: ['app/ajustes.component.css'],
+  styleUrls: ['app/style3.css'],
   providers: [UsuarioService, SesionService]
 })
 

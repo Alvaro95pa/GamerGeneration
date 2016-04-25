@@ -5,16 +5,16 @@ import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario.model'
 import { Datos } from './datos.model';
-import { Prod } from './prod.model';
+import { Prod } from './clases';
 import { Amigo } from './amigos.model';
-import {Sesion} from './sesion.model';
+import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
   selector: 'cuenta-component',
   templateUrl: 'app/cuenta.component.html',
   directives: [MenuComponent],
-  styleUrls: ['app/cuenta.component.css'],
+  styleUrls: ['app/style3.css'],
   providers: [UsuarioService, SesionService]
 })
 
