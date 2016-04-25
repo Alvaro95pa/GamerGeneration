@@ -1,29 +1,31 @@
 import {Component, OnInit} from 'angular2/core';
 import {FooterComponent} from './footer.component';
-import {Noticia} from './noticia';
+import {Contenido} from './contenido.model';
 import { Router } from 'angular2/router';
-import {NoticiaService} from './noticias.service';
+import {ContenidoService} from './contenido.service';
 
 @Component({
   selector: 'noticias',
   templateUrl: 'app/noticias.html',
   styleUrls: ['css/style.css'],
-  directives: [FooterComponent],
+  providers: [ContenidoService],
   pipes: []
 })
 
 export class Noticias implements OnInit {
-  noticias: Noticia[];
+  contenido: Contenido[] = [];
 
   constructor(
     private _router: Router,
-    private _noticiaService: NoticiaService) {}
-
-    getNoticias() {
-      this._noticiaService.getNoticias().then(noticias => this.noticias = noticias);
-    }
+    private _contentService: ContenidoService) {}
 
     ngOnInit() {
-      this.getNoticias();
+      this._contentService.getContenido().then(contenido =>{
+      this.contenido = contenido;
+    });
     }
+    gotoDetail(contenido: Contenido) {
+    let link = ['NoticiaDetails', { id: contenido.id }];
+    this._router.navigate(link);
+  }
 }

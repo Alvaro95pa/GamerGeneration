@@ -4,17 +4,17 @@
           <hr class="red_hr">
 
           <div class="panel-group">
-            <ul class="noticias">
-              <li *ngFor="#noticia of noticias">
-              <a href="#">
+            <ul class="noticias" *ngFor="#cont of contenido">
+              <li *ngIf="cont.tipo=='Noticia'" >
+              <a (click)="gotoDetail(cont)">
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">{{noticia.titulo}}</h3>{{noticia.fecha}}
+                    <h3 class="panel-title">{{cont.titulo}}</h3>{{cont.fecha}}
                   </div>
                   <div class="panel-body">
-                    <img class="embed-responsive-item" src="{{noticia.multimedia}}"/>
+                    <img class="embed-responsive-item" src="{{cont.multimedia}}"/>
                     <hr>
-                    <p class="noticia">{{noticia.cuerpo}}</p>
+                    <p class="noticia">{{cont.resumen}}</p>
                   </div>
                 </div>
             </a>

@@ -6,13 +6,13 @@ import {Analisis} from './analisis';
 import {Admin} from './admin.model';
 import {AdminService} from './admin.service';
 import {Noticias} from './noticias.component';
-import {NoticiaService} from './noticias.service';
+import {NoticiaDetails} from './noticia-detail.component';
 
 @Component({
 	selector: 'cabecera',
 	templateUrl: 'app/cabecera.component.html',
 	directives: [FooterComponent, Home, Analisis, Noticias, ROUTER_DIRECTIVES],
-	providers: [ROUTER_PROVIDERS, AdminService, NoticiaService]
+	providers: [ROUTER_PROVIDERS, AdminService]
 })
 @RouteConfig([
   {
@@ -30,7 +30,12 @@ import {NoticiaService} from './noticias.service';
     path: '/analisis',
     name: 'Analisis',
     component: Analisis
-  }
+  },
+	{
+		path: '/noticias/:id',
+		name: 'NoticiaDetails',
+		component: NoticiaDetails,
+	}
 ])
 
 export class CabeceraComponent {

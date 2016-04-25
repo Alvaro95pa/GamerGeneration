@@ -1,4 +1,5 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -14,5 +15,9 @@
     "sourceRoot": "/",
     "target": "es5"
   },
-  "compileOnSave": false
+  "files":[
+    "app.ts",
+    "typings.d.ts",
+    "app/noticia-detail.component.ts"
+  ]
 }
