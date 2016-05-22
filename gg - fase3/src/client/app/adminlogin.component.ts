@@ -17,12 +17,12 @@ import { RouteParams } from 'angular2/router';
               <center>
                   <h2>Inicia Sesion</h2>
                   <div class="input-group nuevocontenido">
-                    <span class="input-group-addon" id="basic-addon1">Usuario:</span>
+                    <span class="input-group-addon" id="basic-addon1">Usuario: </span>
                     <input [(ngModel)]="user" type="text" class="form-control" placeholder="Inserte un usuario" aria-describedby="basic-addon1">
                   </div>
                   <div class="col-sm-12 input-group nuevocontenido">
                     <span class="input-group-addon" id="basic-addon1">Contraseña:</span>
-                    <input [(ngModel)]="pass" type="text" class="form-control" placeholder="Inserte una contraseña" aria-describedby="basic-addon1">
+                    <input [(ngModel)]="pass" type="password" class="form-control" placeholder="Inserte una contraseña" aria-describedby="basic-addon1">
                   </div>
                   <p *ngIf="error">Datos introducidos incorrectos</p>
                   <button (click)="loginadmin()" class="btn btn-info">Conectarse</button>

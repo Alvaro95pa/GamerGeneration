@@ -51,15 +51,15 @@ var datos2: Datos = {
   pPerfilTodos: true,
   cPerfilTodos: false,
   aPerfilTodos: true,
-  contenido: null,
+  contenido: [],
   amigos: []
 };
 var usuario2: Usuario = {
   id: 2,
   nombre: "Iván",
-  apellidos: null,
+  apellidos: '',
   nacionalidad: "Española",
-  cumpleanos: null,
+  cumpleanos: '',
   usuario: "velocidadEscarlata",
   contrasena: "5678",
   correo: "soyLoMas@gmail.com",

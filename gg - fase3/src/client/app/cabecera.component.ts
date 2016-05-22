@@ -172,8 +172,10 @@ export class CabeceraComponent implements OnInit{
 
 			} else if((this.sesion.usuario == this.usr[i].usuario) && (this.sesion.contrasena != this.usr[i].contrasena)){
 					this.sesion.user = true;
+          this.sesion.pass = false;
 			} else if((this.sesion.usuario != this.usr[i].usuario) && (this.sesion.contrasena == this.usr[i].contrasena)){
 					this.sesion.pass = true;
+          this.sesion.user = false;
 			}
 		}
 		this.sesion.loged = true;

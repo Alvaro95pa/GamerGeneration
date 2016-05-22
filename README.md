@@ -31,24 +31,7 @@ Entidades:
 
 	Noticias/Análisis
     
-﻿# FASE 3:
-	
-﻿# Instrucciones para descargar y ejecutar:
- 
- -Para descargar el último tag del repositorio se puede utilizar la opción de descargar en .zip directamente desde la rama master.
-  Puesto que se trata de un repositorio público se puede obtener la última versión (tag: Fase 3) clonando el repositorio a local.
-  
- -La forma más recomendable para visualizar el código es utilizar node.js
-  Con el comando "ng serve" en la carpeta del proyecto se ejecuta la página y se muestra por defecto en el localhost:4200
-  
- -Se ha comprobado su perfecto funcionamiento en los siguientes navegadores:
-  	Google Chrome.
-  	Mozilla Firefox.
 
-  
-﻿# Diagrama de clases:
- 
-![Image](CapturaDAW/Diagrama_clases.png)
 
 
 
