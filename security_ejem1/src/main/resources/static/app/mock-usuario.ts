@@ -1,5 +1,4 @@
 import { Usuario } from './usuario.model';
-import { Datos } from './datos.model';
 
 //Usuario 1
 var datos1: Datos = {

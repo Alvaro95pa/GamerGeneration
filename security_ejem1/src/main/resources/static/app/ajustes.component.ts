@@ -3,10 +3,8 @@ import { MenuComponent } from './menu.component';
 import { SeleccionComponent } from './seleccion.component';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
-import { Usuario } from './usuario.model'
-import { Datos } from './datos.model';
+import { Usuario } from './usuario.model';
 import { RouteParams } from 'angular2/router';
-import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
@@ -31,9 +29,7 @@ export class AjustesComponent  implements OnInit {
     this._usuarioService.getUsuario(id).subscribe(usuario =>{
       this.usuario = usuario;
       this.preContra = this.usuario.contrasena;
-      this._sesionService.getSesion().subscribe(sesion =>{
-        this.actual = sesion.usuario;
-      });
+      this.actual = this._sesionService.getSesion().usuario;
       this.visible = true
     })
   }
@@ -65,15 +61,15 @@ export class AjustesComponent  implements OnInit {
   }
   cambiaEstado(estado: boolean, sitio: string){
     if(sitio == 'perfil'){
-      this.usuario.datos.pPerfilTodos = estado;
+      this.usuario.pPerfilTodos = estado;
       this._usuarioService.setPrivacidad(this.usuario);
     }
     if(sitio == 'contenido'){
-      this.usuario.datos.cPerfilTodos = estado;
+      this.usuario.cPerfilTodos = estado;
       this._usuarioService.setPrivacidad(this.usuario);
     }
     if(sitio == 'amigos'){
-      this.usuario.datos.aPerfilTodos = estado;
+      this.usuario.aPerfilTodos = estado;
       this._usuarioService.setPrivacidad(this.usuario);
     }
   }

@@ -3,9 +3,7 @@ import { MenuComponent } from './menu.component';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario.model';
-import { Datos } from './datos.model';
 import { Router } from 'angular2/router';
-import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
@@ -25,9 +23,7 @@ export class GenteComponent implements OnInit {
   ngOnInit() {
     this._usuarioService.getUsuarios().subscribe(usuarios =>{
       this.usuarios = usuarios;
-      this._sesionService.getSesion().subscribe(sesion =>{
-        this.actual = sesion.usuario;
-      });
+      this.actual = this._sesionService.getSesion().usuario;
       this.visible = true
     });
   }

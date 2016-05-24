@@ -1,12 +1,11 @@
 import { Injectable } from 'angular2/core';
 import { Usuario } from './usuario.model'
-import { Datos } from './datos.model';
 import { Prod } from './clases';
 import { Observable } from 'rxjs/Observable';
 import { Http, Headers, RequestOptions } from 'angular2/http';
 import 'rxjs/Rx';
 
-const BASE_URL = 'http://127.0.0.1:8080/usuarios/';
+const BASE_URL = 'http://127.0.0.1:8443/usuarios/';
 
 @Injectable()
 export class UsuarioService {

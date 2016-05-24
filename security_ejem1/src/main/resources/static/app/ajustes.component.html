@@ -110,15 +110,15 @@
       </div>
       <div class="panel-body centrado">
         <span>Perfil</span>
-        <seleccion-component (cambio)="cambiaEstado(!usuario.datos.pPerfilTodos, 'perfil')" [inicial]='usuario.datos.pPerfilTodos'></seleccion-component>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.pPerfilTodos, 'perfil')" [inicial]='usuario.pPerfilTodos'></seleccion-component>
         <br>
         <br>
         <span>Contenido</span>
-        <seleccion-component (cambio)="cambiaEstado(!usuario.datos.cPerfilTodos, 'contenido')" [inicial]='usuario.datos.cPerfilTodos'></seleccion-component>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.cPerfilTodos, 'contenido')" [inicial]='usuario.cPerfilTodos'></seleccion-component>
         <br>
         <br>
         <span>Amigos</span>
-        <seleccion-component (cambio)="cambiaEstado(!usuario.datos.aPerfilTodos, 'amigos')" [inicial]='usuario.datos.aPerfilTodos'></seleccion-component>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.aPerfilTodos, 'amigos')" [inicial]='usuario.aPerfilTodos'></seleccion-component>
       </div>
     </div>
     <!-- Eliminar cuenta  -->

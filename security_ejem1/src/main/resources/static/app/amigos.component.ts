@@ -3,10 +3,7 @@ import { MenuComponent } from './menu.component';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario.model';
-import { Datos } from './datos.model';
-import { Amigo } from './amigos.model';
 import { Router, RouteParams } from 'angular2/router';
-import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
@@ -27,13 +24,11 @@ export class AmigosComponent implements OnInit {
     let id= +this._routeParams.get('id');
     this._usuarioService.getUsuario(id).subscribe(usuario =>{
       this.usuario = usuario;
-      this._sesionService.getSesion().subscribe(sesion =>{
-        this.actual = sesion.usuario;
-      });
+      this.actual = this._sesionService.getSesion().usuario;
       this.visible = true
     })
   }
-  irConcreto(amigo: Amigo){
+  irConcreto(amigo: Usuario){
     this._router.navigate(['Cuenta', { id: amigo.id }]);
   }
 }
