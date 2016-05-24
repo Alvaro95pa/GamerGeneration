@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library.user;
+package es.urjc.code.daw.library.imagenes;
 
 import java.util.Collection;
 
@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,59 +15,43 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/usuarios")
-@CrossOrigin(origins = "http://localhost:8443")
-public class UserController {
-
-	private static final Logger log = LoggerFactory.getLogger(UserController.class);
-
+@RequestMapping("/images")
+public class ImagesController {
+	
+	private static final Logger log = LoggerFactory.getLogger(ImagesController.class);
+	
 	@Autowired
-	private UserRepository repository;
+	private ImagesRepository repository;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<User> getUsuarios() {
+	public Collection<Image> getImagenes() {
 		return repository.findAll();
 	}
-
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<User> getUsuario(@PathVariable long id) {
+	public ResponseEntity<Image> getImagenes(@PathVariable long id) {
 
-		log.info("Obtener usuario {}", id);
+		log.info("Obteniendo imagenes {}", id);
 
-		User usuario = repository.findOne(id);
-		if (usuario != null) {
-			return new ResponseEntity<>(usuario, HttpStatus.OK);
+		Image img = repository.findOne(id);
+		if (img != null) {
+			return new ResponseEntity<>(img, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public User nuevoUsuario(@RequestBody User usuario) {
+	public Image nuevoContenido(@RequestBody Image img) {
 
-		repository.save(usuario);
+		repository.save(img);
 
-		return usuario;
+		return img;
 	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<User> actulizarUsuario(@PathVariable long id, @RequestBody User cambioUsuario) {
-
-		User usuario = repository.findOne(id);
-		if (usuario != null) {
-
-			cambioUsuario.setId(id);
-			repository.save(cambioUsuario);
-
-			return new ResponseEntity<>(cambioUsuario, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
-
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<User> borrarUsuario(@PathVariable long id) {
+	public ResponseEntity<Image> borraContenido(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);
@@ -77,5 +60,4 @@ public class UserController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
 }

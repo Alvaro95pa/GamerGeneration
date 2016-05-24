@@ -1,0 +1,94 @@
+<div class="container" *ngIf="visible">
+  <div class="cabecera">
+      <div class="logo">
+          <img src="./img/control.png"/>
+          <span id="nombre">GAMER GENERATION</span>
+      </div>
+      <!-- Barra -->
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </button>
+                <a class="navbar-brand" [routerLink]="['Home']"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                      <li><a [routerLink]="['Princ_Catalogo']">Catálogo</a></li>
+                      <li><a [routerLink]="['Noticias']">Noticias</a></li>
+                      <li><a [routerLink]="['Analisis']">Análisis</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right" *ngIf="!loged"> <!--User sin logear-->
+                      <li>
+                          <a href="" id="log" role="button" aria-haspopup="true" aria-expanded="false"
+                          data-toggle="modal" data-target="#myModal">
+                          <span class="glyphicon glyphicon-user"></span> Login</a>
+                      </li>
+                  </ul>
+
+                  <ul class="nav navbar-nav navbar-right" *ngIf="loged"> <!--User logeado-->
+                      <li>
+                          <a href="" id="log2" role="button" aria-haspopup="true" aria-expanded="false"
+                          data-toggle="modal" data-target="#myModal"><img id="usr_avatar" src="{{usr.imagen}}"> {{usr.usuario}}</a>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document" id="mDialog">
+                  <div class="modal-content" id="mContent" *ngIf="!loged">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h3 class="sesion">Iniciar sesión</h3>
+                    </div>
+
+                    <!--Body sin login-->
+                    <div class="modal-body">
+                      <form class="margen">
+                          <span>Usuario:</span>
+                          <input  #user type="text" class="form-control" placeholder="Username">
+                          <span>Contraseña:</span>
+                          <input #pass type="password" class="form-control" placeholder="Password">
+                      </form>
+                      <div *ngIf="fail">
+                        <p id="red">Usuario o contraseña incorrectas</p>
+                      </div>
+                      <button type="button" id="login" (click)="logIn($event, user.value, pass.value)">Entrar</button>
+                      <hr>
+                      <div class="reg">
+                          <span>
+                          Si aún no estas registrado en nuestra web puedes hacerlo aquí:
+                          </span>
+                          <a type="button" class="btn btn-info" [routerLink]="['Registro']"
+                          data-dismiss="modal" aria-label="Close">
+                            Registrarse
+                          </a>
+                          <hr>
+                      </div>
+                      <a [routerLink]="['AdminLogin']" data-dismiss="modal" aria-label="Close">Modo Administrador</a>
+                    </div>
+                  </div>
+
+                  <!--Body con login -->
+                  <div class="modal-content" id="mContent" *ngIf="loged">
+                    <div class="modal-body" id="mBody">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                      <h2>Ir a perfil:</h2>
+                      <a class="btn btn-info" [routerLink]="['Cuenta', {id: usr.id}]" data-dismiss="modal" aria-label="Close">Perfil</a>
+                      <h3>Cierre de sesión</h3>
+                      <button type="button" class="cierre" id="cerrar" (click)="logOut()">Cerrar sesión</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- Fin del Modal -->
+
+          </div>
+      </nav>
+  </div>
+  <router-outlet></router-outlet>
+  <my-footer></my-footer>
+</div>

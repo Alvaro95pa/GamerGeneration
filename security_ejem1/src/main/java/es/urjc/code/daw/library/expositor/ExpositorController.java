@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library.user;
+package es.urjc.code.daw.library.expositor;
 
 import java.util.Collection;
 
@@ -16,59 +16,44 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/expositor")
 @CrossOrigin(origins = "http://localhost:8443")
-public class UserController {
-
-	private static final Logger log = LoggerFactory.getLogger(UserController.class);
-
+public class ExpositorController {
+	
+	private static final Logger log = LoggerFactory.getLogger(ExpositorController.class);
+	
 	@Autowired
-	private UserRepository repository;
-
+	private ExpositorRepository repository;
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<User> getUsuarios() {
+	public Collection<Expositor> getExpositores() {
 		return repository.findAll();
 	}
-
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<User> getUsuario(@PathVariable long id) {
+	public ResponseEntity<Expositor> getExpuesto(@PathVariable long id) {
 
-		log.info("Obtener usuario {}", id);
+		log.info("Obteniendo expuesto {}", id);
 
-		User usuario = repository.findOne(id);
-		if (usuario != null) {
-			return new ResponseEntity<>(usuario, HttpStatus.OK);
+		Expositor expo = repository.findOne(id);
+		if (expo != null) {
+			return new ResponseEntity<>(expo, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public User nuevoUsuario(@RequestBody User usuario) {
+	public Expositor nuevoExpuesto(@RequestBody Expositor expo) {
 
-		repository.save(usuario);
+		repository.save(expo);
 
-		return usuario;
+		return expo;
 	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<User> actulizarUsuario(@PathVariable long id, @RequestBody User cambioUsuario) {
-
-		User usuario = repository.findOne(id);
-		if (usuario != null) {
-
-			cambioUsuario.setId(id);
-			repository.save(cambioUsuario);
-
-			return new ResponseEntity<>(cambioUsuario, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
-
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<User> borrarUsuario(@PathVariable long id) {
+	public ResponseEntity<Expositor> borrarExpuesto(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);
@@ -77,5 +62,5 @@ public class UserController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
 }
