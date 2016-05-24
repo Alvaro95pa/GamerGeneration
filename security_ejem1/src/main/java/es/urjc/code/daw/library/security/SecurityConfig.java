@@ -7,22 +7,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-/**
- * Security configuration. In this class can be configured several aspects
- * related to security:
- * <ul>
- * <li>Security behavior: Login method, session management, CSRF, etc..</li>
- * <li>Authentication provider: Responsible to authenticate users. In this
- * example, we use an instance of UserRepositoryAuthProvider, that authenticate
- * users stored in a Spring Data database.</li>
- * <li>URL Access Authorization: Access to http URLs depending on Authenticated
- * vs anonymous users and also based on user role.</li>
- * </ul>
- * 
- * NOTE: The only part of this class intended for app developer customization is
- * the method <code>configureUrlAuthorization</code>. App developer should
- * decide what URLs are accessible by what user role.
- */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -50,9 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// APP: This rules have to be changed by app developer
 
 		// URLs that need authentication to access to it
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/books/**").hasRole("ADMIN");		
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/usuarios/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/usuarios/**").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/usuarios/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/usuarios/**").hasRole("ADMIN");		
 
 		// Other URLs can be accessed without authentication
 		http.authorizeRequests().anyRequest().permitAll();

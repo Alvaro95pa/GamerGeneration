@@ -18,13 +18,6 @@ import es.urjc.code.daw.library.user.User;
 import es.urjc.code.daw.library.user.UserComponent;
 import es.urjc.code.daw.library.user.UserRepository;
 
-/**
- * This class is used to check http credentials against database data. Also it
- * is responsible to set database user info into userComponent, a session scoped
- * bean that holds session user information.
- * 
- * NOTE: This class is not intended to be modified by app developer.
- */
 @Component
 public class UserRepositoryAuthProvider implements AuthenticationProvider {
 
