@@ -42,7 +42,7 @@ export class listcontenido implements OnInit{
     this.ContenidoService.getContenidoTipo(tipo).subscribe(list => this.list_contenido=list);
   }
   eliminarContenido(content:Contenido){
-    this.adminservice.deleteContenido(content);
+    this.adminservice.deleteContenido(content.id);
     this.getcontenido();
   }
   getopcion(){

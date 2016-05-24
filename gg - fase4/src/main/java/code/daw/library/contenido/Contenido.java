@@ -20,7 +20,7 @@ public class Contenido {
 	private String nProducto;
 	private String tipo;
 	private String categoria;
-	private String titular;
+	private String titulo;
 	private String fecha;
 	
 	@OneToOne(cascade=CascadeType.ALL)
@@ -37,13 +37,13 @@ public class Contenido {
 	public Contenido() {}
 
 	public Contenido(String nProducto, String tipo, String categoria, 
-			String titular, String fecha, Image multimedia, String resumen, 
+			String titulo, String fecha, Image multimedia, String resumen, 
 			String cuerpo, String ratio, Expositor expo) {
 		super();
 		this.nProducto = nProducto;
 		this.tipo = tipo;
 		this.categoria = categoria;
-		this.titular = titular;
+		this.titulo = titulo;
 		this.fecha = fecha;
 		this.multimedia = multimedia;
 		this.resumen = resumen;
@@ -76,12 +76,12 @@ public class Contenido {
 		this.categoria = categoria;
 	}
 	
-	public String getTitular() {
-		return this.titular;
+	public String getTitulo() {
+		return this.titulo;
 	}
 	
-	public void setTitular(String titular) {
-		this.titular = titular;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 	
 	public String getFecha() {
@@ -144,7 +144,7 @@ public class Contenido {
 	public String toString() {
 		return "Contenido [id=" +this.id +", nProducto=" +this.nProducto 
 				+", tipo=" +this.tipo +", categoria=" +this.categoria 
-				+", titular=" +this.titular +", fecha=" +this.fecha +", multimedia=" 
+				+", titulo=" +this.titulo +", fecha=" +this.fecha +", multimedia=" 
 				+this.multimedia.toString() +", resumen=" +this.resumen +", resumen=" +this.resumen 
 				+", cuerpo=" +this.cuerpo +", expo=" +this.expo.toString() +"]";
 	}

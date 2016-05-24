@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Http, Headers, RequestOptions } from 'angular2/http';
 import 'rxjs/Rx';
 
-const BASE_URL = 'http://127.0.0.1:8080/contenido/';
+const BASE_URL = 'http://127.0.0.1:8443/contenido/';
 
 @Injectable()
 export class ContenidoService {
@@ -29,12 +29,6 @@ export class ContenidoService {
    .catch(error => this.handleError(error));
   }
 
-  getContenidoSlides(expuesto:boolean){
-    return this.http.get(BASE_URL + expuesto)
-    .map(response => response.json())
-    .catch(error => this.handleError(error));
-  }
-  
   //Subida de contenido
   addContenido(contenido: Contenido){
     let añadido = JSON.stringify(contenido);

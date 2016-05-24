@@ -18,6 +18,6 @@ public class DatabaseInitializer implements CommandLineRunner {
 				"Se acerca el lanzamiento de Dark Souls 3", "24/03/2016", 
 				new Image("DarkSouls3", "img/ds_cont.jpg"), "El lanzamiento de Dark Souls 3 está a menos de un mes y Bandai no deja de crear hype.", 
 				"El lanzamiento de Dark Souls 3 está a menos de un mes y Bandai no deja de crear hype.", 
-				"", new Expositor(true, new Image("DarkSouls3", "img/ds_cont.jpg"))));
+				"", new Expositor(true, new Image("DarkSouls3", "img/ds_slide.jpg"))));
 	}
 }

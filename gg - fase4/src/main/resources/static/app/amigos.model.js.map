@@ -1,0 +1,1 @@
+{"version":3,"file":"amigos.model.js","sourceRoot":"","sources":["amigos.model.ts"],"names":[],"mappings":";;;;;;;YAAA;gBAAA;gBAIA,CAAC;gBAAD,YAAC;YAAD,CAAC,AAJD,IAIC;YAJD,yBAIC,CAAA","sourcesContent":["export class Amigo {\r\n  id: number;\r\n  usuario: string;\r\n  imagen: string;\r\n}\r\n"]}

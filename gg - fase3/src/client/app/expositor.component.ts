@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
 import {CAROUSEL_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {Contenido} from './contenido.model';
 import {ContenidoService} from './contenido.service';
 
@@ -8,7 +9,7 @@ import {ContenidoService} from './contenido.service';
   selector: 'expositor',
   directives: [CAROUSEL_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES],
   templateUrl: 'app/expositor.component.html',
-  providers: [ContenidoService]
+  providers: [ContenidoService, HTTP_PROVIDERS]
 })
 
 export class ExpositorComponent {
@@ -23,13 +24,13 @@ export class ExpositorComponent {
 
 
   public addSlide():void {
-    this._contentService.getContenidoSlides(true).subscribe(contenido =>{
+    this._contentService.getContenido().subscribe(contenido =>{
       this.contenido = contenido;
     });
     for(let i=0; i<this.contenido.length; i++){
       if(this.contenido[i].dest.destacado){
         this.slides.push({
-          image: this.contenido[i].dest.imgn,
+          image: this.contenido[i].dest.imgn.url,
           text: this.contenido[i].titulo,
           date: this.contenido[i].fecha
         })

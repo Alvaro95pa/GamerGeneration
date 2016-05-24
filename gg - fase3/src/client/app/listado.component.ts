@@ -17,7 +17,9 @@ export class ListadoComponent implements OnInit {
 	ngOnInit(){
 		this._contentService.getContenido().subscribe(contenido =>{
       this.contenido = contenido;
+			console.log(this.contenido[0].titulo);
     });
+
 	}
 	gotoDetail(contenido: Contenido) {
 		let link;

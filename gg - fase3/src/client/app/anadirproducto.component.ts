@@ -171,7 +171,7 @@ export class anadirproducto implements OnInit{
       genero:this.genero,
       plataforma:this.plataforma
     }
-    this.adminservice.pushProd(this.new_prod, this.new_infodetalle);
+    this.adminservice.pushProd(this.new_prod);
     this.gotoadmin_productos();
   }
   getopcion(){

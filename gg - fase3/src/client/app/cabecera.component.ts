@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {FooterComponent} from './footer.component';
 import {Home} from './home';
 import {Analisis} from './analisis';
@@ -36,7 +37,7 @@ import {loginadmin} from './adminlogin.component';
 	selector: 'cabecera',
 	templateUrl: 'app/cabecera.component.html',
 	directives: [FooterComponent, Home, ROUTER_DIRECTIVES, CuentaComponent, AmigosComponent, AjustesComponent],
-	providers: [ROUTER_PROVIDERS, SesionService, UsuarioService, modoadminservice, clasesservice, ContenidoService, AdminService]
+	providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, SesionService, UsuarioService, modoadminservice, clasesservice, ContenidoService, AdminService]
 })
 @RouteConfig([
   {
