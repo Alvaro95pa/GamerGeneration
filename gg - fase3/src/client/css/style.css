@@ -316,3 +316,8 @@ footer{
 .regist {
   color: green !important;
 }
+
+#red{
+  color: red;
+  font-size: 20px;
+}

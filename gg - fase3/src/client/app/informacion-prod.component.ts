@@ -1,9 +1,8 @@
 import {Component,OnInit} from 'angular2/core';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
-
+import {Usuario} from './usuario.model';
 import {Prod,infodetalle,infotecnica,requisitosinfor,comentario} from './clases';
-import {Sesion} from './sesion.model';
 import {comentarioscomponent} from './comentarios.component';
 import {clasesservice} from './clases.service';
 import {SesionService} from './sesion.service';
@@ -140,12 +139,14 @@ export class informacionprod implements OnInit{
   logeado:boolean = true;
   id_user=1;
 
-  sesion:Sesion;
+  loged:boolean;
+  usr: Usuario;
   aux_prod:Prod;
 
 
   constructor (private router: Router,private UsuarioService: UsuarioService,private SesionService: SesionService,private clasesservice: clasesservice,private _routeParams: RouteParams){}
   AddSeguir(info:infodetalle){
+    /*
     this.seguir=!this.seguir;
     if(this.seguir){
       this.UsuarioService.addContenido(this.aux_prod,this.sesion.id);
@@ -153,14 +154,14 @@ export class informacionprod implements OnInit{
       this.UsuarioService.removeContenido(this.aux_prod,this.sesion.id);
     }
     console.log(info.id);
+    */
   }
 
   getsesion(){
-    this.SesionService.getSesion().then(login => {
-      this.sesion=login;
-      console.log(this.sesion.usuario);
-    });
+    this.loged = this.SesionService.getLogged();
+    this.usr = this.SesionService.getSesion();
   }
+
   getProducto(){
     let id = +this._routeParams.get('idprod');
     let tipoprod = +this._routeParams.get('tipoprod');
@@ -169,6 +170,7 @@ export class informacionprod implements OnInit{
     this.aux_tipoprod=tipoprod;
     this.aux_id=id;
   }
+
   getcomentarios(){
     let id = +this._routeParams.get('idprod');
     this.clasesservice.getcomentarios(id).then( list => this.comentarios = list);
@@ -182,16 +184,17 @@ export class informacionprod implements OnInit{
     this.visible=true;
   }
   enviarcomentario(){
-    console.log(this.sesion.usuario);
+    /*
+    console.log(this.usr.usuario);
     if(this.nota>10 || this.nota<0){
       this.error=true;
     } else {
       this.resp_comentario = {
-        idcomentario:this.sesion.id,
+        idcomentario:this.usr.id,
         idjuego:this.aux_id,
         idcontenido:0,
-        user:this.sesion.usuario,
-        user_img:this.sesion.imagen,
+        user:this.usr.usuario,
+        user_img:this.usr.imagen,
         fecha:"Hoy",
         puntuacion:this.nota,
         mensaje:this.respuesta
@@ -199,6 +202,7 @@ export class informacionprod implements OnInit{
       this.clasesservice.pushRespuesta(this.resp_comentario);
       this.getcomentarios();
       console.log(this.resp_comentario.puntuacion);
-    }
+
+    }*/
   }
 }

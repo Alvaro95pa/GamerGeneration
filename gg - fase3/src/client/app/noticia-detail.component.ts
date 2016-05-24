@@ -5,7 +5,7 @@ import {clasesservice} from './clases.service';
 import {SesionService} from './sesion.service';
 import { RouteParams } from 'angular2/router';
 import {Prod,comentario} from './clases';
-import {Sesion} from './sesion.model';
+import {Usuario} from './usuario.model';
 import {comentarioscomponent} from './comentarios.component';
 
 @Component({
@@ -21,8 +21,8 @@ export class NoticiaDetails implements OnInit{
   producto: Prod;
   comentarios:comentario[];
   resp_comentario:comentario;
-  sesion:Sesion;
-
+  loged:boolean;
+  usr: Usuario;
   aux_id:number;
   respuesta:string;
 
@@ -48,13 +48,12 @@ export class NoticiaDetails implements OnInit{
     this._clasesService.getcomentariosContenido(id).then( list => this.comentarios = list);
   }
   getsesion(){
-    this.SesionService.getSesion().then(login => {
-      this.sesion=login;
-      console.log(this.sesion.usuario);
-    });
+    this.loged = this.SesionService.getLogged();
+    this.usr = this.SesionService.getSesion();
   }
-  enviarcomentario(){
 
+  enviarcomentario(){
+    /*
     this.resp_comentario = {
       idcomentario:this.sesion.id,
       idjuego:0,
@@ -68,6 +67,6 @@ export class NoticiaDetails implements OnInit{
     this._clasesService.pushRespuesta(this.resp_comentario);
     this.getComentarios();
     console.log(this.resp_comentario.mensaje);
-
+    */
   }
 }

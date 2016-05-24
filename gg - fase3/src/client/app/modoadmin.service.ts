@@ -4,7 +4,6 @@ import {Prod,infodetalle,comentario,usuario} from './clases';
 import { Usuario } from './usuario.model'
 import {Contenido} from './contenido.model';
 import {prod_list,infolista,comentarios_list,usuarios_list} from './mock';
-import { USUARIOS } from './mock-usuario';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
@@ -83,9 +82,11 @@ export class modoadminservice {
   }
 
   deleteUser(user:Usuario){
+    /*
     let position = USUARIOS.indexOf(user);
     USUARIOS.splice(position,1);
     console.log(position);
+    */
   }
 
   private mostrarError(error: any){

@@ -54,7 +54,7 @@ export class listusers implements OnInit{
   }
   constructor (private router: Router,private UsuarioService: UsuarioService, private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
   getusuarios(){
-    this.UsuarioService.getUsuarios().then(users => this.list_usuarios = users);
+    this.UsuarioService.getUsuarios().subscribe(users => this.list_usuarios = users);
   }
   getopcion(){
     let opcion = this._routeParams.get('opcion');

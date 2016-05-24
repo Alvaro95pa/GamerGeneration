@@ -1,7 +1,6 @@
 import { Component, Input } from 'angular2/core';
 import { Router } from 'angular2/router';
 import { Usuario } from './usuario.model'
-import { Datos } from './datos.model';
 
 @Component({
   selector: 'menu-component',
