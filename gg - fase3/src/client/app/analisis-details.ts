@@ -31,7 +31,7 @@ export class AnalisisDetails implements OnInit{
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
-    this._contentService.getContenidoId(id).then(contenido =>{
+    this._contentService.getContenidoId(id).subscribe(contenido =>{
       this.contenido = contenido;
       this.visible = true;
       this._clasesService.getProdNombre(this.contenido.nombreProd).then(producto =>{

@@ -25,13 +25,13 @@ export class NoticiaDetails implements OnInit{
 
   aux_id:number;
   respuesta:string;
-  
+
   constructor(private SesionService: SesionService,private _contentService: ContenidoService, private _clasesService: clasesservice,
     private _routeParams: RouteParams) {}
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
-    this._contentService.getContenidoId(id).then(contenido =>{
+    this._contentService.getContenidoId(id).subscribe(contenido =>{
       this.contenido = contenido;
       this.visible = true;
       this._clasesService.getProdNombre(this.contenido.nombreProd).then(producto =>{
@@ -41,7 +41,7 @@ export class NoticiaDetails implements OnInit{
     this.getComentarios();
     this.getsesion();
   }
-  
+
   getComentarios(){
     let id = +this._routeParams.get('id');
     this.aux_id=id;

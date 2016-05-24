@@ -39,7 +39,7 @@ export class listcontenido implements OnInit{
 
   getcontenido(){
     let tipo = this._routeParams.get('tipo');
-    this.ContenidoService.getContenidoTipo(tipo).then(list => this.list_contenido=list);
+    this.ContenidoService.getContenidoTipo(tipo).subscribe(list => this.list_contenido=list);
   }
   eliminarContenido(content:Contenido){
     this.adminservice.deleteContenido(content);

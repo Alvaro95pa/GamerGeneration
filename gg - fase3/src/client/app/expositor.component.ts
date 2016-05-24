@@ -23,7 +23,9 @@ export class ExpositorComponent {
 
 
   public addSlide():void {
-    this.contenido = this._contentService.getContenidoSlides();
+    this._contentService.getContenidoSlides(true).subscribe(contenido =>{
+      this.contenido = contenido;
+    });
     for(let i=0; i<this.contenido.length; i++){
       if(this.contenido[i].dest.destacado){
         this.slides.push({
