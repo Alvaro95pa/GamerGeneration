@@ -1,7 +1,7 @@
 import { Component,Input } from 'angular2/core';
 import { Usuario } from './usuario.model';
 import { UsuarioService } from './usuario.service';
-import { Datos } from './datos.model';
+import {Image} from './image.model';
 
 @Component({
   selector: 'registro-component',
@@ -15,15 +15,25 @@ export class registrar {
   contrasena: string;
   contrasena2: string;
   nuevo_usuario: Usuario;
-  nuevo_datos: Datos;
   boton:boolean = false;
   error: boolean = false;
   id: number = 3;
   registrado: boolean = false;
+  img:Image;
   //Métodos
   constructor (private _usuarioService: UsuarioService){}
   registrar(){
-    this.nuevo_datos = {
+    this.nuevo_usuario = {
+      id: this.id,
+      nombre: '',
+      apellidos: '',
+      nacionalidad: '',
+      cumpleanos: '',
+      roles: ['ROLE_USER'],
+      usuario: this.usuario,
+      contrasena: this.contrasena,
+      correo: this.correo,
+      imagen: this.img,
       nAmigos: 0,
       nPelis: 0,
       nSeries: 0,
@@ -38,18 +48,6 @@ export class registrar {
       aPerfilTodos: true,
       contenido: [],
       amigos: []
-    }
-    this.nuevo_usuario = {
-      id: this.id,
-      nombre: '',
-      apellidos: '',
-      nacionalidad: '',
-      cumpleanos: '',
-      usuario: this.usuario,
-      contrasena: this.contrasena,
-      correo: this.correo,
-      imagen: 'img/avatar.png',
-      datos: this.nuevo_datos
     };
     this._usuarioService.addUsuario(this.nuevo_usuario);
     this.id = this.id + 1;

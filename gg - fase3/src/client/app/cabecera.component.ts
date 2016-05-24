@@ -1,9 +1,9 @@
 import {Component, OnInit} from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {FooterComponent} from './footer.component';
 import {Home} from './home';
 import {Analisis} from './analisis';
-import {Sesion} from './sesion.model';
 import {Usuario} from './usuario.model';
 import {Noticias} from './noticias.component';
 import {SesionService} from './sesion.service';
@@ -36,7 +36,7 @@ import {loginadmin} from './adminlogin.component';
 	selector: 'cabecera',
 	templateUrl: 'app/cabecera.component.html',
 	directives: [FooterComponent, Home, ROUTER_DIRECTIVES, CuentaComponent, AmigosComponent, AjustesComponent],
-	providers: [ROUTER_PROVIDERS, SesionService, UsuarioService, modoadminservice, clasesservice, ContenidoService, AdminService]
+	providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, SesionService, UsuarioService, modoadminservice, clasesservice, ContenidoService, AdminService]
 })
 @RouteConfig([
   {
@@ -148,47 +148,34 @@ import {loginadmin} from './adminlogin.component';
 ])
 
 export class CabeceraComponent implements OnInit{
-	sesion: Sesion;
-	usr: Usuario[] = [];
+	loged: boolean;
+	usr: Usuario;
 	visible: boolean = false;
+	fail: boolean = false;
 
 	constructor(private _sesionService: SesionService, private _usuarioService: UsuarioService) {}
 
 	ngOnInit(){
-		this._sesionService.getSesion().then(sesion =>{
-      this.sesion = sesion;
-			this.visible = true;
-		})
+		this.loged = this._sesionService.getLogged();
+		this.visible = true;
 	};
 
-	inicioSesion(){
-		this.usr = this._usuarioService.getUsuarios2();
-		for(let i=0; i<this.usr.length; i++){
-			if((this.sesion.usuario == this.usr[i].usuario) && (this.sesion.contrasena == this.usr[i].contrasena)){
-				this.sesion.user = true;
-				this.sesion.pass = true;
-				this.sesion.imagen = this.usr[i].imagen;
-				this.sesion.id = this.usr[i].id;
+	logIn(event: any, user: string, pass: string){
 
-			} else if((this.sesion.usuario == this.usr[i].usuario) && (this.sesion.contrasena != this.usr[i].contrasena)){
-					this.sesion.user = true;
-          this.sesion.pass = false;
-			} else if((this.sesion.usuario != this.usr[i].usuario) && (this.sesion.contrasena == this.usr[i].contrasena)){
-					this.sesion.pass = true;
-          this.sesion.user = false;
-			}
-		}
-		this.sesion.loged = true;
-		this._sesionService.setSesion(this.sesion);
-	}
+	  event.preventDefault();
 
-	cierreSesion(){
-		this.sesion.user = false;
-		this.sesion.pass = false;
-		this.sesion.usuario = '';
-		this.sesion.contrasena = '';
-		this.sesion.loged = false;
-		this._sesionService.setSesion(this.sesion);
-	}
+	  this._sesionService.logIn(user, pass).subscribe(
+	      user => console.log(user),
+	      error =>{console.log("Invalid user or password"), this.fail = true
+		});
+		this.usr = this._sesionService.getSesion();
+  }
+
+	logOut(){
+		this._sesionService.logOut().subscribe(
+			response => {},
+			error => console.log("Error when trying to log out: "+error)
+		);
+  }
 
 }

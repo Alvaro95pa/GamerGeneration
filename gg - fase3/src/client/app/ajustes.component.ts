@@ -3,10 +3,8 @@ import { MenuComponent } from './menu.component';
 import { SeleccionComponent } from './seleccion.component';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
-import { Usuario } from './usuario.model'
-import { Datos } from './datos.model';
+import { Usuario } from './usuario.model';
 import { RouteParams } from 'angular2/router';
-import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
@@ -28,12 +26,10 @@ export class AjustesComponent  implements OnInit {
   constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams, private _sesionService: SesionService) {}
   ngOnInit() {
     let id= +this._routeParams.get('id');
-    this._usuarioService.getUsuario(id).then(usuario =>{
+    this._usuarioService.getUsuario(id).subscribe(usuario =>{
       this.usuario = usuario;
       this.preContra = this.usuario.contrasena;
-      this._sesionService.getSesion().then(sesion =>{
-        this.actual = sesion.usuario;
-      });
+      this.actual = this._sesionService.getSesion().usuario;
       this.visible = true
     })
   }
@@ -57,24 +53,24 @@ export class AjustesComponent  implements OnInit {
     }
   }
   guardarDatosP(){
-    this._usuarioService.setPersonales(this.usuario, this.usuario.id);
+    this._usuarioService.setPersonales(this.usuario);
   }
   guardarContra(pass: string){
     this.usuario.contrasena = pass;
-    this._usuarioService.setContraseña(this.usuario.contrasena, this.usuario.id);
+    this._usuarioService.setContraseña(this.usuario);
   }
   cambiaEstado(estado: boolean, sitio: string){
     if(sitio == 'perfil'){
-      this.usuario.datos.pPerfilTodos = estado;
-      this._usuarioService.setPrivacidad(this.usuario.datos, this.usuario.id);
+      this.usuario.pPerfilTodos = estado;
+      this._usuarioService.setPrivacidad(this.usuario);
     }
     if(sitio == 'contenido'){
-      this.usuario.datos.cPerfilTodos = estado;
-      this._usuarioService.setPrivacidad(this.usuario.datos, this.usuario.id);
+      this.usuario.cPerfilTodos = estado;
+      this._usuarioService.setPrivacidad(this.usuario);
     }
     if(sitio == 'amigos'){
-      this.usuario.datos.aPerfilTodos = estado;
-      this._usuarioService.setPrivacidad(this.usuario.datos, this.usuario.id);
+      this.usuario.aPerfilTodos = estado;
+      this._usuarioService.setPrivacidad(this.usuario);
     }
   }
 }

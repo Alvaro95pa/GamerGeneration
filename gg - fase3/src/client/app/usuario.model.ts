@@ -1,8 +1,9 @@
-import { Datos } from './datos.model';
-
+import { Prod } from './clases';
+import { Image } from './image.model';
 export class Usuario {
   //Identificador
   id: number;
+  roles: string[];
   //Informacion personal
   nombre: string;
   apellidos: string;
@@ -12,7 +13,26 @@ export class Usuario {
   usuario: string;
   contrasena: string;
   correo: string;
-  imagen: string;
+  imagen: Image;
   //Mas informacion
-  datos: Datos;
+  //Estadisticas
+  nAmigos: number;
+  nPelis: number;
+  nSeries: number;
+  nJuegos: number;
+  //Informacion
+  ultima: string;
+  tUsuario: string;
+  //Favoritos
+  fPeli: Prod;
+  fSerie: Prod;
+  fJuego: Prod;
+  //Privacidad
+  pPerfilTodos: boolean;
+  cPerfilTodos: boolean;
+  aPerfilTodos: boolean;
+  //Contenido
+  contenido: Prod[];
+  //Amigos
+  amigos: Usuario[];
 }

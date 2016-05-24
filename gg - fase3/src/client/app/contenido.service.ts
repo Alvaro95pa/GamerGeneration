@@ -1,23 +1,56 @@
-import {CONTENIDO} from './mock-contenido';
+import {Contenido} from './contenido.model';
 import { Injectable } from 'angular2/core';
+import { Observable } from 'rxjs/Observable';
+import { Http, Headers, RequestOptions } from 'angular2/http';
+import 'rxjs/Rx';
+
+const BASE_URL = 'http://127.0.0.1:8443/contenido/';
 
 @Injectable()
 export class ContenidoService {
+
+  constructor(private http: Http){}
+
   getContenido() {
-    return Promise.resolve(CONTENIDO);
+    return this.http.get(BASE_URL)
+    .map(response => response.json())
+    .catch(error => this.handleError(error));
   }
 
   getContenidoId(id: number) {
-    return Promise.resolve(CONTENIDO).then(
-      contenido => contenido.filter(contenido => contenido.id === id)[0]
-    );
+    return this.http.get(BASE_URL + id)
+   .map(response => response.json())
+   .catch(error => this.handleError(error));
   }
 
   getContenidoTipo(tipo:string){
-    return Promise.resolve(CONTENIDO).then( list => list.filter(prod => prod.tipo===tipo))
+    return this.http.get(BASE_URL + tipo)
+   .map(response => response.json())
+   .catch(error => this.handleError(error));
   }
 
-  getContenidoSlides(){
-    return CONTENIDO;
+  //Subida de contenido
+  addContenido(contenido: Contenido){
+    let añadido = JSON.stringify(contenido);
+    let headers = new Headers({
+        'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({headers});
+    return this.http.post(BASE_URL, añadido, options)
+    .map(response => response.json())
+    .catch(error => this.handleError(error));
+  }
+
+  //Borrado de contenido
+  removeUsuario(contenido: Contenido){
+    return this.http.delete(BASE_URL + contenido.id)
+    .map(response => undefined)
+    .catch(error => this.handleError(error));
+  }
+
+  //handleError
+  private handleError(error: any){
+    console.error(error);
+    return Observable.throw("Server error (" + error.status + "): " + error.text());
   }
 }

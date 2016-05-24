@@ -5,7 +5,7 @@ import {clasesservice} from './clases.service';
 import {SesionService} from './sesion.service';
 import { RouteParams } from 'angular2/router';
 import {Prod,comentario} from './clases';
-import {Sesion} from './sesion.model';
+import {Usuario} from './usuario.model';
 import {comentarioscomponent} from './comentarios.component';
 
 @Component({
@@ -21,17 +21,17 @@ export class NoticiaDetails implements OnInit{
   producto: Prod;
   comentarios:comentario[];
   resp_comentario:comentario;
-  sesion:Sesion;
-
+  loged:boolean;
+  usr: Usuario;
   aux_id:number;
   respuesta:string;
-  
+
   constructor(private SesionService: SesionService,private _contentService: ContenidoService, private _clasesService: clasesservice,
     private _routeParams: RouteParams) {}
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
-    this._contentService.getContenidoId(id).then(contenido =>{
+    this._contentService.getContenidoId(id).subscribe(contenido =>{
       this.contenido = contenido;
       this.visible = true;
       this._clasesService.getProdNombre(this.contenido.nombreProd).then(producto =>{
@@ -41,20 +41,19 @@ export class NoticiaDetails implements OnInit{
     this.getComentarios();
     this.getsesion();
   }
-  
+
   getComentarios(){
     let id = +this._routeParams.get('id');
     this.aux_id=id;
     this._clasesService.getcomentariosContenido(id).then( list => this.comentarios = list);
   }
   getsesion(){
-    this.SesionService.getSesion().then(login => {
-      this.sesion=login;
-      console.log(this.sesion.usuario);
-    });
+    this.loged = this.SesionService.getLogged();
+    this.usr = this.SesionService.getSesion();
   }
-  enviarcomentario(){
 
+  enviarcomentario(){
+    /*
     this.resp_comentario = {
       idcomentario:this.sesion.id,
       idjuego:0,
@@ -68,6 +67,6 @@ export class NoticiaDetails implements OnInit{
     this._clasesService.pushRespuesta(this.resp_comentario);
     this.getComentarios();
     console.log(this.resp_comentario.mensaje);
-
+    */
   }
 }

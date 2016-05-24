@@ -6,6 +6,7 @@ import {clasesservice} from './clases.service'
 import {modoadminservice} from './modoadmin.service';
 import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
+import {Image} from './image.model';
 
 @Component({
   selector:'anadircontenido',
@@ -40,7 +41,7 @@ import { RouteParams } from 'angular2/router';
       </div>
       <div class="input-group nuevocontenido">
         <span class="input-group-addon" id="basic-addon1">Multimedia:</span>
-        <input [(ngModel)]="multimedia" type="text" class="form-control" placeholder="Inserte una URL de un video" aria-describedby="basic-addon1">
+        <input [(ngModel)]="imgn" type="text" class="form-control" placeholder="Inserte una URL de un video" aria-describedby="basic-addon1">
       </div>
       <div class="input-group nuevocontenido">
         <span class="input-group-addon" id="basic-addon1">Resumen:</span>
@@ -58,7 +59,7 @@ import { RouteParams } from 'angular2/router';
           </div>
           <div class="input-group nuevocontenido">
             <span class="input-group-addon" id="basic-addon1">Imagen a mostrar:</span>
-            <input [(ngModel)]="imgn" type="text" class="form-control" placeholder="Inserte una imagen" aria-describedby="basic-addon1">
+            <input [(ngModel)]="imgn2" type="text" class="form-control" placeholder="Inserte una imagen" aria-describedby="basic-addon1">
           </div>
       </div>
       <div *ngIf="tipoopcion == 3" class="input-group nuevocontenido">
@@ -78,11 +79,15 @@ export class anadircontenido implements OnInit{
   categoria:string;
   titulo:string;
   fecha:string;
-  multimedia:string;
+  imagenPortada:Image;
+  expositor:Image;
   resumen:string;
   cuerpo:string;
   puntuacion:string;
   imgn:string;
+  descripcion: string;
+  imgn2:string;
+  descripcion2: string;
   dest:Destacado;
   destacado:boolean =false;
 
@@ -90,10 +95,21 @@ export class anadircontenido implements OnInit{
   constructor (private router: Router,private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
 
   anadirElemContenido(){
+    this.imagenPortada = {
+      descripcion: this.descripcion,
+      url: this.imgn
+    }
+
+    this.expositor = {
+      descripcion: this.descripcion2,
+      url: this.imgn2
+    }
+
     this.dest = {
       destacado:this.destacado,
-      imgn:this.imgn
+      imgn: this.expositor
     }
+
     this.new_contenido = {
       id:20,
       nombreProd:"",
@@ -101,7 +117,7 @@ export class anadircontenido implements OnInit{
       categoria:this.categoria,
       titulo:this.titulo,
       fecha:this.fecha,
-      multimedia:this.multimedia,
+      multimedia:this.imagenPortada,
       resumen:this.resumen,
       cuerpo:this.cuerpo,
       ratio:this.puntuacion,

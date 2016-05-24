@@ -1,5 +1,5 @@
 <!-- Perfil privado -->
-<div *ngIf="visible && !usuario.datos.pPerfilTodos && !(usuario.usuario == actual)" class="panel panel-default">
+<div *ngIf="visible && !usuario.pPerfilTodos && !(usuario.usuario == actual)" class="panel panel-default">
   <div class="panel-body">
     <div class="privado">
       <p> Este perfil es privado </p>
@@ -7,7 +7,7 @@
   </div>
 </div>
 <!-- Perfil publico -->
-<div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual">
+<div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == actual">
 <!-- Primera fila (Datos personales y avatar con información)  -->
   <div class="row">
     <!-- Menú del pefil  -->
@@ -31,7 +31,7 @@
     <!-- Avatar y datos principales  -->
     <div class="col-md-3">
       <div class="panel panel-default">
-        <div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="panel-body">
+        <div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == actual" class="panel-body">
           <img class="imagen" src={{usuario.imagen}}/>
           <p class="avatar"> Usuario : {{usuario.usuario}} </p>
           <p class="avatar"> Correo: {{usuario.correo}} </p>
@@ -45,19 +45,19 @@
     <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-body">
-          <p class="datos"> Número de amigos : {{usuario.datos.nAmigos}} </p>
-          <p class="datos"> Número de peliculas vistas : {{usuario.datos.nPelis}} </p>
-          <p class="datos"> Número de series vistas : {{usuario.datos.nSeries}} </p>
-          <p class="datos"> Número de videojuegos jugados : {{usuario.datos.nJuegos}} </p>
+          <p class="datos"> Número de amigos : {{usuario.nAmigos}} </p>
+          <p class="datos"> Número de peliculas vistas : {{usuario.nPelis}} </p>
+          <p class="datos"> Número de series vistas : {{usuario.nSeries}} </p>
+          <p class="datos"> Número de videojuegos jugados : {{usuario.nJuegos}} </p>
         </div>
       </div>
     </div>
     <!-- Detalles -->
     <div class="col-md-3">
       <div class="panel panel-default">
-        <div *ngIf="visible && usuario.datos.pPerfilTodos || visible && usuario.usuario == actual" class="panel-body">
-          <p class="info2"> Ultima visita : {{usuario.datos.ultima}} </p>
-          <p class="info2"> Usuario desde : {{usuario.datos.tUsuario}} </p>
+        <div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == actual" class="panel-body">
+          <p class="info2"> Ultima visita : {{usuario.ultima}} </p>
+          <p class="info2"> Usuario desde : {{usuario.tUsuario}} </p>
         </div>
       </div>
       <button *ngIf="!(visible && usuario.usuario == actual) && !amigo" class="btn btn-primary col-md-12" (click)="addAmigo()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir amigo </button>
@@ -76,8 +76,8 @@
             <div class="panel panel-default">
               <div class="panel-body fotos">
                 <p> Pelicula </p>
-                <img src={{usuario.datos.fPeli.img}}/>
-                <p> {{usuario.datos.fPeli.name}} </p>
+                <img src={{usuario.fPeli.img}}/>
+                <p> {{usuario.fPeli.name}} </p>
               </div>
             </div>
           </div>
@@ -85,8 +85,8 @@
             <div class="panel panel-default">
               <div class="panel-body fotos">
                 <p> Serie </p>
-                <img src={{usuario.datos.fSerie.img}}/>
-                <p> {{usuario.datos.fSerie.name}} </p>
+                <img src={{usuario.fSerie.img}}/>
+                <p> {{usuario.fSerie.name}} </p>
               </div>
             </div>
           </div>
@@ -94,8 +94,8 @@
             <div class="panel panel-default">
               <div class="panel-body fotos">
                 <p> Videojuego </p>
-                <img src={{usuario.datos.fJuego.img}}/>
-                <p> {{usuario.datos.fJuego.name}} </p>
+                <img src={{usuario.fJuego.img}}/>
+                <p> {{usuario.fJuego.name}} </p>
               </div>
             </div>
           </div>

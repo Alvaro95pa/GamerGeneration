@@ -3,11 +3,8 @@ import { MenuComponent } from './menu.component';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario.model'
-import { Datos } from './datos.model';
-import { Amigo } from './amigos.model';
 import { RouteParams } from 'angular2/router';
 import { Prod } from './clases';
-import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 import { Router } from 'angular2/router';
 
@@ -27,34 +24,49 @@ export class ContenidoComponent{
   constructor(private _router: Router, private _usuarioService: UsuarioService, private _routeParams: RouteParams, private _sesionService: SesionService) {}
   ngOnInit() {
     let id= +this._routeParams.get('id');
-    this._usuarioService.getUsuario(id).then(usuario =>{
+    this._usuarioService.getUsuario(id).subscribe(usuario =>{
       this.usuario = usuario;
-      this._sesionService.getSesion().then(sesion =>{
-        this.actual = sesion.usuario;
-      });
+      this.actual = this._sesionService.getSesion().usuario;
       this.visible = true
     })
   };
   cambiarFavorito(fav: Prod){
-      this._usuarioService.setFavorito(fav, this.usuario.id);
+    if(fav.tipoprod == 3){
+      this.usuario.fPeli = fav;
+    }
+    if(fav.tipoprod == 2){
+      this.usuario.fSerie = fav;
+    }
+    if(fav.tipoprod == 1){
+      this.usuario.fJuego = fav;
+    }
+      this._usuarioService.setFavorito(this.usuario);
   }
   removeContenido(cont: Prod){
     if(cont.tipoprod == 3){
-      if(cont.name == this.usuario.datos.fPeli.name){
-        this._usuarioService.removeFav(cont, this.usuario.id);
+      if(cont.name == this.usuario.fPeli.name){
+        this.usuario.fPeli = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+        this._usuarioService.removeFav(this.usuario);
       }
+      this.usuario.nPelis = this.usuario.nPelis - 1;
     }
     if(cont.tipoprod == 2){
-      if(cont.name == this.usuario.datos.fSerie.name){
-        this._usuarioService.removeFav(cont, this.usuario.id);
+      if(cont.name == this.usuario.fSerie.name){
+        this.usuario.fSerie = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+        this._usuarioService.removeFav(this.usuario);
       }
+      this.usuario.nSeries = this.usuario.nSeries - 1;
     }
     if(cont.tipoprod == 1){
-      if(cont.name == this.usuario.datos.fJuego.name){
-        this._usuarioService.removeFav(cont, this.usuario.id);
+      if(cont.name == this.usuario.fJuego.name){
+        this.usuario.fJuego = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+        this._usuarioService.removeFav(this.usuario);
       }
+      this.usuario.nJuegos = this.usuario.nJuegos - 1;
     }
-    this._usuarioService.removeContenido(cont, this.usuario.id);
+    let posicion = this.usuario.contenido.indexOf(cont);
+    this.usuario.contenido.splice(posicion,1);
+    this._usuarioService.removeContenido(this.usuario);
   }
   irA(producto: Prod){
     this._router.navigate(['Detalleprod', {tipoProd: producto.tipoprod, idProd: producto.id}]);

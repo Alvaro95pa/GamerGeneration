@@ -100,7 +100,7 @@ export class listobjetos implements OnInit{
     }
   }
   eliminarProd(produc:Prod){
-    this.adminservice.deleteProd(produc);
+    this.adminservice.deleteProd(produc.id);
     if (!this.checkpelis && !this.checkseries && !this.checkjuego){
       this.getproductos();
       console.log("Prueba");
@@ -111,10 +111,10 @@ export class listobjetos implements OnInit{
 
   constructor (private router: Router,private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
   getproductos(){
-    this.adminservice.getProductos().then(list => this.list_productos=list);
+    this.adminservice.getProductos().subscribe(list => this.list_productos=list);
   }
   getproductosfiltro(){
-    this.adminservice.getProductosFiltro(this.juego,this.series,this.pelis).then(list => this.list_productos=list);
+    this.adminservice.getProductosFiltro(this.juego,this.series,this.pelis).subscribe(list => this.list_productos=list);
   }
   getopcion(){
     let opcion = this._routeParams.get('opcion');

@@ -15,9 +15,10 @@ export class ListadoComponent implements OnInit {
 	constructor(private _router: Router, private _contentService: ContenidoService) {}
 
 	ngOnInit(){
-		this._contentService.getContenido().then(contenido =>{
+		this._contentService.getContenido().subscribe(contenido =>{
       this.contenido = contenido;
     });
+
 	}
 	gotoDetail(contenido: Contenido) {
 		let link;

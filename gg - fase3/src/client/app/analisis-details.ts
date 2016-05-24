@@ -5,7 +5,7 @@ import {clasesservice} from './clases.service';
 import {SesionService} from './sesion.service';
 import { RouteParams } from 'angular2/router';
 import {Prod,comentario} from './clases';
-import {Sesion} from './sesion.model';
+import {Usuario} from './usuario.model';
 import {comentarioscomponent} from './comentarios.component';
 
 @Component({
@@ -21,8 +21,8 @@ export class AnalisisDetails implements OnInit{
   producto: Prod;
   comentarios:comentario[];
   resp_comentario:comentario;
-  sesion:Sesion;
-
+  loged:boolean;
+  usuario: Usuario;
   aux_id:number;
   respuesta:string;
 
@@ -31,7 +31,7 @@ export class AnalisisDetails implements OnInit{
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
-    this._contentService.getContenidoId(id).then(contenido =>{
+    this._contentService.getContenidoId(id).subscribe(contenido =>{
       this.contenido = contenido;
       this.visible = true;
       this._clasesService.getProdNombre(this.contenido.nombreProd).then(producto =>{
@@ -47,20 +47,19 @@ export class AnalisisDetails implements OnInit{
     this.aux_id=id;
     this._clasesService.getcomentariosContenido(id).then( list => this.comentarios = list);
   }
-  getsesion(){
-    this.SesionService.getSesion().then(login => {
-      this.sesion=login;
-      console.log(this.sesion.usuario);
-    });
-  }
-  enviarcomentario(){
 
-    this.resp_comentario = {
-      idcomentario:this.sesion.id,
+  getsesion(){
+    this.loged = this.SesionService.getLogged();
+    this.usuario = this.SesionService.getSesion();
+  }
+
+  enviarcomentario(){
+    /*this.resp_comentario = {
+      idcomentario:this.usuario.id,
       idjuego:0,
       idcontenido:this.aux_id,
-      user:this.sesion.usuario,
-      user_img:this.sesion.imagen,
+      user:this.usuario.usuario,
+      user_img:this.usuario.imagen,
       fecha:"Hoy",
       puntuacion:0,
       mensaje:this.respuesta
@@ -68,6 +67,6 @@ export class AnalisisDetails implements OnInit{
     this._clasesService.pushRespuesta(this.resp_comentario);
     this.getComentarios();
     console.log(this.resp_comentario.mensaje);
-
+    */
   }
 }

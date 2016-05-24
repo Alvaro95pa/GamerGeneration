@@ -19,7 +19,7 @@ export class Noticias implements OnInit {
     private _contentService: ContenidoService) {}
 
     ngOnInit() {
-      this._contentService.getContenido().then(contenido =>{
+      this._contentService.getContenido().subscribe(contenido =>{
       this.contenido = contenido;
     });
     }

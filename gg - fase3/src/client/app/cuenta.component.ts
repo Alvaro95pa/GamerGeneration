@@ -4,10 +4,7 @@ import { RouteParams } from 'angular2/router';
 import { UsuarioService } from './usuario.service';
 import { OnInit } from 'angular2/core';
 import { Usuario } from './usuario.model'
-import { Datos } from './datos.model';
 import { Prod } from './clases';
-import { Amigo } from './amigos.model';
-import { Sesion } from './sesion.model';
 import { SesionService } from './sesion.service';
 
 @Component({
@@ -28,36 +25,42 @@ export class CuentaComponent implements OnInit {
   //Metodos
   constructor(private _usuarioService: UsuarioService, private _routeParams: RouteParams, private _sesionService: SesionService) {}
   ngOnInit() {
-    this._sesionService.getSesion().then(sesion =>{
-      this.actual = sesion.usuario;
-      this.id_actual = sesion.id;
-      let id = +this._routeParams.get('id');
-      this._usuarioService.getUsuario(id).then(usuario =>{
+    this.actual = this._sesionService.getSesion().usuario;
+    this.id_actual = this._sesionService.getSesion().id;
+    let id = +this._routeParams.get('id');
+    this._usuarioService.getUsuario(id).subscribe(usuario =>{
       this.usuario = usuario;
       if(id != this.id_actual){
-        this._usuarioService.getUsuario(this.id_actual).then(usuario =>{
+        this._usuarioService.getUsuario(this.id_actual).subscribe(usuario =>{
           this.usuario_actual = usuario;
           this.esAmigo()
         })
       };
       this.visible = true
-      })
-    });
+    })
   };
   addAmigo(){
-    var actual: Amigo = {id: this.id_actual, usuario: this.actual, imagen: "img/avatar1.jpg"};
-    var amigo: Amigo = {id: this.usuario.id, usuario: this.usuario.usuario, imagen: this.usuario.imagen};
-    this._usuarioService.addAmigo(amigo, actual);
+    this.usuario.amigos.push(this.usuario_actual);
+    this.usuario.nAmigos = this.usuario.nAmigos + 1;
+    this.usuario_actual.amigos.push(this.usuario);
+    this.usuario_actual.nAmigos = this.usuario_actual.nAmigos + 1;
+    this._usuarioService.addAmigo(this.usuario);
+    this._usuarioService.addAmigo(this.usuario_actual);
     this.esAmigo();
   }
   removeAmigo(){
-    var actual: Amigo = {id: this.id_actual, usuario: this.actual, imagen: "img/avatar1.jpg"};
-    var amigo: Amigo = {id: this.usuario.id, usuario: this.usuario.usuario, imagen: this.usuario.imagen};
-    this._usuarioService.remAmigo(amigo, actual);
+    let posicion1 = this.usuario.amigos.indexOf(this.usuario_actual);
+    this.usuario.amigos.splice(posicion1, 1);
+    let posicion2 = this.usuario_actual.amigos.indexOf(this.usuario);
+    this.usuario_actual.amigos.splice(posicion2, 1);
+    this.usuario.nAmigos = this.usuario.nAmigos - 1;
+    this.usuario_actual.nAmigos = this.usuario_actual.nAmigos - 1;
+    this._usuarioService.remAmigo(this.usuario);
+    this._usuarioService.remAmigo(this.usuario_actual);
     this.amigo = false;
   }
   esAmigo(){
-      for(let amigo of this.usuario_actual.datos.amigos){
+      for(let amigo of this.usuario_actual.amigos){
         if(amigo.id == this.usuario.id){
           this.amigo = true;
         }

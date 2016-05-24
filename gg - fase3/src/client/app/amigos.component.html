@@ -1,5 +1,5 @@
 <!-- Amigos perfil -->
-<div *ngIf="visible && (usuario.datos.aPerfilTodos || (usuario.usuario == actual))" class="row">
+<div *ngIf="visible && (usuario.aPerfilTodos || (usuario.usuario == actual))" class="row">
   <!-- Menú del pefil  -->
   <div class="col-md-2">
     <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
@@ -9,7 +9,7 @@
     <div class="panel panel-default">
       <div class="panel-body amigos">
         <ul class="amigos">
-          <li *ngFor="#amigo of usuario.datos.amigos" (click)="irConcreto(amigo)">
+          <li *ngFor="#amigo of usuario.amigos" (click)="irConcreto(amigo)">
             <img class="imagen" src={{amigo.imagen}}/>
             <p> Usuario: {{amigo.usuario}} </p>
           </li>
