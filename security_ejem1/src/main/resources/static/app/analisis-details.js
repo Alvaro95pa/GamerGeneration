@@ -61,8 +61,10 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
                     this._clasesService.getcomentariosContenido(id).then(function (list) { return _this.comentarios = list; });
                 };
                 AnalisisDetails.prototype.getsesion = function () {
+                    var _this = this;
                     this.loged = this.SesionService.getLogged();
-                    this.usuario = this.SesionService.getSesion();
+                    this.SesionService.getSesion().then(function (actual) { return _this.usuario = actual; });
+                    ;
                 };
                 AnalisisDetails.prototype.enviarcomentario = function () {
                     /*this.resp_comentario = {

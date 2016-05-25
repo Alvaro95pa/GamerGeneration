@@ -25,6 +25,7 @@ public class Contenido {
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private Image multimedia;
+	
 	private String resumen;
 	
 	private String cuerpo;

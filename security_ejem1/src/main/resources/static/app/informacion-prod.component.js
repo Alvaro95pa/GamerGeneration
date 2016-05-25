@@ -60,8 +60,10 @@ System.register(['angular2/core', 'angular2/router', './comentarios.component', 
                     */
                 };
                 informacionprod.prototype.getsesion = function () {
+                    var _this = this;
                     this.loged = this.SesionService.getLogged();
-                    this.usr = this.SesionService.getSesion();
+                    this.SesionService.getSesion().then(function (actual) { return _this.usr = actual; });
+                    ;
                 };
                 informacionprod.prototype.getProducto = function () {
                     var _this = this;

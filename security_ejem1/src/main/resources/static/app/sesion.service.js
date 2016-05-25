@@ -38,7 +38,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                 }
                 //Metodos
                 SesionService.prototype.getSesion = function () {
-                    return this.user;
+                    return Promise.resolve(this.user);
+                };
+                SesionService.prototype.setSesion = function (actual) {
+                    this.actual = actual;
                 };
                 SesionService.prototype.reqIsLogged = function () {
                     var _this = this;

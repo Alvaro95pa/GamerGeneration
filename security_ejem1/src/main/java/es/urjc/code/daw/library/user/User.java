@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -24,7 +26,7 @@ public class User {
 	//Datos esenciales
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 	
 	private String usuario;
 	
@@ -41,6 +43,8 @@ public class User {
 	private String apellidos;
 	private String nacionalidad;
 	private String cumpleanos;
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	private Image imagen;
 	
 	//Datos secundarios
@@ -52,21 +56,24 @@ public class User {
 	private String ultima;
 	private String tUsuario;
 	
+	@OneToOne
 	private Producto fPeli;
+	
+	@OneToOne
 	private Producto fSerie;
+	
+	@OneToOne
 	private Producto fJuego;
 	
 	private boolean pPerfilTodos;
 	private boolean cPerfilTodos;
 	private boolean aPerfilTodos;
 	
-	@ElementCollection(fetch = FetchType.EAGER)
-	@OneToMany
-	private List<Producto> contenido = new ArrayList <Producto>();
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Producto> contenido;
 	
-	@ElementCollection(fetch = FetchType.EAGER)
-	@OneToMany
-	private List<User> amigos = new ArrayList <User>();
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<User> amigos;
 	
 	public User() {
 	}
@@ -75,11 +82,13 @@ public class User {
 		this.usuario = usuario;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.correo = correo;
+		this.contenido = new ArrayList <Producto>();
+		this.amigos = new ArrayList <User>();
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 	
 	public User(String usuario, String password, String correo, String nombre, String apellidos, String nacionalidad, String cumpleanos, 
-			Image imagen, int nAmigos, int nPelis, int nSeries, int nJuegos, String ultima, String tUsuario,
+			int nAmigos, int nPelis, int nSeries, int nJuegos, String ultima, String tUsuario,
 			Producto fPeli, Producto fSerie, Producto fJuego, boolean pPerfilTodos, boolean cPerfilTodos, 
 			boolean aPerfilTodos, String... roles) {
 		this.usuario = usuario;
@@ -89,7 +98,6 @@ public class User {
 		this.apellidos = apellidos;
 		this.nacionalidad = nacionalidad;
 		this.cumpleanos = cumpleanos;
-		this.imagen = imagen;
 		this.nAmigos = nAmigos;
 		this.nPelis = nPelis;
 		this.nSeries = nSeries;
@@ -102,43 +110,16 @@ public class User {
 		this.pPerfilTodos = pPerfilTodos;
 		this.cPerfilTodos = cPerfilTodos;
 		this.aPerfilTodos = aPerfilTodos;
+		this.contenido = new ArrayList <Producto>();
+		this.amigos = new ArrayList <User>();
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 	
-	public User(String usuario, String password, String correo, String nombre, String apellidos, String nacionalidad, String cumpleanos, 
-			Image imagen, int nAmigos, int nPelis, int nSeries, int nJuegos, String ultima, String tUsuario,
-			Producto fPeli, Producto fSerie, Producto fJuego, boolean pPerfilTodos, boolean cPerfilTodos, 
-			boolean aPerfilTodos, List<Producto> contenido, List<User> amigos, String... roles) {
-		this.usuario = usuario;
-		this.passwordHash = new BCryptPasswordEncoder().encode(password);
-		this.correo = correo;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.nacionalidad = nacionalidad;
-		this.cumpleanos = cumpleanos;
-		this.imagen = imagen;
-		this.nAmigos = nAmigos;
-		this.nPelis = nPelis;
-		this.nSeries = nSeries;
-		this.nJuegos = nJuegos;
-		this.ultima = ultima;
-		this.tUsuario = tUsuario;
-		this.fPeli = fPeli;
-		this.fSerie = fSerie;
-		this.fJuego = fJuego;
-		this.pPerfilTodos = pPerfilTodos;
-		this.cPerfilTodos = cPerfilTodos;
-		this.aPerfilTodos = aPerfilTodos;
-		this.contenido = contenido;
-		this.amigos = amigos;
-		this.roles = new ArrayList<>(Arrays.asList(roles));
-	}
-
-	public Long getId() {
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	

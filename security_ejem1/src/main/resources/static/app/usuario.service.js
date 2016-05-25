@@ -25,7 +25,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
             },
             function (_1) {}],
         execute: function() {
-            BASE_URL = 'http://127.0.0.1:8443/usuarios/';
+            BASE_URL = 'https://127.0.0.1:8443/usuarios/';
             UsuarioService = (function () {
                 //Constructor
                 function UsuarioService(http) {
@@ -51,7 +51,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -63,7 +64,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -75,7 +77,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -87,7 +90,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var añadido = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.post(BASE_URL, añadido, options)
@@ -106,7 +110,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -118,7 +123,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -130,7 +136,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -142,7 +149,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -164,7 +172,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     }
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)
@@ -176,7 +185,8 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                     var _this = this;
                     var cambio = JSON.stringify(usuario);
                     var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(BASE_URL + usuario.id, cambio, options)

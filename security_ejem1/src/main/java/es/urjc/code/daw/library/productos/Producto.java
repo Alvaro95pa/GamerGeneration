@@ -2,10 +2,12 @@ package es.urjc.code.daw.library.productos;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import es.urjc.code.daw.library.comentario.Comentario;
 import es.urjc.code.daw.library.imagenes.Image;
@@ -15,14 +17,17 @@ import java.util.List;
 
 @Entity
 public class Producto {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id = -1;
+	private long id;
 	
 	private int tipoprod;
 	private String name;
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	private Image img;
+	
 	private String fecha;
 	private String genero;
 	
@@ -38,18 +43,17 @@ public class Producto {
 	private String trailer;
 	private String sinopsis;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	private List<Comentario> comentarios = new ArrayList <Comentario>();
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<Comentario> comentarios;
 
 	public Producto() {}
 
-	public Producto(int tipoprod, String name, Image img, String fecha, String genero, String plataforma,
+	public Producto(int tipoprod, String name, String fecha, String genero, String plataforma,
 			String desarrollador, String editor, String procesador, String memoria, String grafica,
 			String almacenamiento, String trailer, String sinopsis) {
 		super();
 		this.tipoprod = tipoprod;
 		this.name = name;
-		this.img = img;
 		this.fecha = fecha;
 		this.genero = genero;
 		this.plataforma = plataforma;
@@ -61,6 +65,7 @@ public class Producto {
 		this.almacenamiento = almacenamiento;
 		this.trailer = trailer;
 		this.sinopsis = sinopsis;
+		this.comentarios = new ArrayList <Comentario>();
 	}
 
 	public void addComentario (Comentario comment){

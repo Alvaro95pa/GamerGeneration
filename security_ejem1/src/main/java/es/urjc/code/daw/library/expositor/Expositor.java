@@ -11,6 +11,7 @@ import javax.persistence.OneToOne;
 import es.urjc.code.daw.library.imagenes.Image;
 
 
+
 @Entity
 public class Expositor {
 

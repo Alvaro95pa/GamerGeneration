@@ -113,19 +113,18 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
                     this.fail = false;
                 }
                 CabeceraComponent.prototype.ngOnInit = function () {
-                    this.loged = this._sesionService.getLogged();
+                    //this.loged = this._sesionService.getLogged();
                     this.visible = true;
                 };
                 ;
-                CabeceraComponent.prototype.logIn = function (event, user, pass) {
+                CabeceraComponent.prototype.logInSpring = function (event, user, pass) {
                     var _this = this;
                     event.preventDefault();
-                    this._sesionService.logIn(user, pass).subscribe(function (user) { return console.log(user); }, function (error) {
+                    this._sesionService.logIn(user, pass).subscribe(function (user) { console.log(user); _this._sesionService.setSesion(user); _this._sesionService.getSesion().then(function (actual) { return _this.usr = actual; }); }, function (error) {
                         console.log("Invalid user or password"), _this.fail = true;
                     });
-                    this.usr = this._sesionService.getSesion();
                 };
-                CabeceraComponent.prototype.logOut = function () {
+                CabeceraComponent.prototype.logOutSpring = function () {
                     this._sesionService.logOut().subscribe(function (response) { }, function (error) { return console.log("Error when trying to log out: " + error); });
                 };
                 CabeceraComponent = __decorate([

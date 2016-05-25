@@ -41,18 +41,19 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                 }
                 CuentaComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this.actual = this._sesionService.getSesion().usuario;
-                    this.id_actual = this._sesionService.getSesion().id;
                     var id = +this._routeParams.get('id');
                     this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
-                        if (id != _this.id_actual) {
-                            _this._usuarioService.getUsuario(_this.id_actual).subscribe(function (usuario) {
-                                _this.usuario_actual = usuario;
+                        _this._sesionService.getSesion().then(function (actual) {
+                            _this.usuario_actual = actual;
+                            _this.id_actual = _this.usuario_actual.id;
+                            _this.amigos = _this.usuario_actual.amigos;
+                            if (id != _this.id_actual) {
                                 _this.esAmigo();
-                            });
-                        }
-                        ;
+                            }
+                            ;
+                        });
+                        console.log('Hola');
                         _this.visible = true;
                     });
                 };
@@ -78,7 +79,7 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                     this.amigo = false;
                 };
                 CuentaComponent.prototype.esAmigo = function () {
-                    for (var _i = 0, _a = this.usuario_actual.amigos; _i < _a.length; _i++) {
+                    for (var _i = 0, _a = this.amigos; _i < _a.length; _i++) {
                         var amigo = _a[_i];
                         if (amigo.id == this.usuario.id) {
                             this.amigo = true;

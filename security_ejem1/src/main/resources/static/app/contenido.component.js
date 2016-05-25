@@ -45,7 +45,7 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                     var id = +this._routeParams.get('id');
                     this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
-                        _this.actual = _this._sesionService.getSesion().usuario;
+                        _this._sesionService.getSesion().then(function (actual) { return _this.actual = actual.usuario; });
                         _this.visible = true;
                     });
                 };
