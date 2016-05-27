@@ -12,31 +12,31 @@ public class Image {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
 	
-	private String description;
-	private String fileName;
+	private String descripcion;
+	private String url;
 	
 	public Image(){}
 	
 	public Image(String description, String fileName) {
 		super();
-		this.description = description;
-		this.fileName = fileName;
+		this.descripcion = description;
+		this.url = fileName;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescripcion(String description) {
+		this.descripcion = description;
 	}
 
-	public String getFileName() {
-		return fileName;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setUrl(String fileName) {
+		this.url = fileName;
 	}
 	
 	public long getId() {
@@ -49,7 +49,7 @@ public class Image {
 
 	@Override
 	public String toString() {
-		return "Image [id=" +this.id +", description=" + description + ", fileName=" + fileName + "]";
+		return "Image [id=" +this.id +", descripcion=" + this.descripcion + ", url=" + this.url + "]";
 	}
 
 }

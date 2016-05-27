@@ -26,15 +26,15 @@ export class ExpositorComponent {
   public addSlide():void {
     this._contentService.getContenido().subscribe(contenido =>{
       this.contenido = contenido;
-    });
-    for(let i=0; i<this.contenido.length; i++){
-      if(this.contenido[i].dest.destacado){
-        this.slides.push({
-          image: this.contenido[i].dest.imgn.url,
-          text: this.contenido[i].titulo,
-          date: this.contenido[i].fecha
-        })
+      for(let i=0; i<this.contenido.length; i++){
+        if(this.contenido[i].dest.destacado){
+          this.slides.push({
+            image: this.contenido[i].dest.imgn.url,
+            text: this.contenido[i].titulo,
+            date: this.contenido[i].fecha
+          })
+        }
       }
-    }
+    });
   }
 }

@@ -6,7 +6,7 @@ import {Prod} from './clases';
   selector:'prod-detalle',
   template: `
     <a class="detalle"><div>
-      <img src={{prod.img}}>
+      <img src={{prod.img.url}}>
       <p>{{prod.name}}</p>
     </div></a>
   `

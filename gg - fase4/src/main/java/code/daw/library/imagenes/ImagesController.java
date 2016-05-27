@@ -1,63 +1,82 @@
 package code.daw.library.imagenes;
 
-import java.util.Collection;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/images")
+@CrossOrigin(origins = "*")
 public class ImagesController {
-	
+
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
 	private static final Logger log = LoggerFactory.getLogger(ImagesController.class);
+	private List<Image> images = new ArrayList<>();
 	
 	@Autowired
 	private ImagesRepository repository;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<Image> getImagenes() {
-		return repository.findAll();
+	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
+	public Image handleFileUpload(@RequestParam String description, @RequestParam MultipartFile file) throws IOException {
+
+		if (file.isEmpty()) {
+			throw new RuntimeException("The file is empty");
+		}
+
+		if (!Files.exists(FILES_FOLDER)) {
+			Files.createDirectories(FILES_FOLDER);
+		}
+
+		String fileName = "image-" + images.size() + ".jpg";
+		File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+		file.transferTo(uploadedFile);
+
+		Image image = new Image(description, fileName);
+
+		images.add(image);
+
+		return image;
 	}
+
+	@RequestMapping("/images")
+	public List<Image> getImages() {
+		return images;
+	}
+
+	//NOTE: The url format "/images/{fileName:.+}" avoid Spring MVC remove file extension.
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Image> getImagenes(@PathVariable long id) {
+	@RequestMapping("/images/{fileName:.+}")
+	public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
+			throws FileNotFoundException, IOException {
+		
+		Path image = FILES_FOLDER.resolve(fileName);
 
-		log.info("Obteniendo imagenes {}", id);
-
-		Image img = repository.findOne(id);
-		if (img != null) {
-			return new ResponseEntity<>(img, HttpStatus.OK);
+		if (Files.exists(image)) {
+			res.setContentType("image/jpeg");
+			res.setContentLength((int) image.toFile().length());
+			FileCopyUtils.copy(Files.newInputStream(image), res.getOutputStream());
+			
 		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			res.sendError(404, "File" + fileName + "(" + image.toAbsolutePath() + ") does not exist");
 		}
 	}
-	
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.CREATED)
-	public Image nuevoContenido(@RequestBody Image img) {
 
-		repository.save(img);
-
-		return img;
-	}
-	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Image> borraContenido(@PathVariable long id) {
-
-		if (repository.exists(id)) {
-			repository.delete(id);
-			return new ResponseEntity<>(null, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
 }

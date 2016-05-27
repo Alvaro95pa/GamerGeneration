@@ -45,21 +45,27 @@ export class ContenidoComponent{
   removeContenido(cont: Prod){
     if(cont.tipoprod == 3){
       if(cont.name == this.usuario.fPeli.name){
-        this.usuario.fPeli = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+        this.usuario.fPeli = { id: null, tipoprod: null, name: null, img: null, fecha: null,
+          genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
+        grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null};
         this._usuarioService.removeFav(this.usuario);
       }
       this.usuario.nPelis = this.usuario.nPelis - 1;
     }
     if(cont.tipoprod == 2){
       if(cont.name == this.usuario.fSerie.name){
-        this.usuario.fSerie = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+        this.usuario.fSerie = { id: null, tipoprod: null, name: null, img: null, fecha: null,
+          genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
+        grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null};
         this._usuarioService.removeFav(this.usuario);
       }
       this.usuario.nSeries = this.usuario.nSeries - 1;
     }
     if(cont.tipoprod == 1){
       if(cont.name == this.usuario.fJuego.name){
-        this.usuario.fJuego = { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null};
+        this.usuario.fJuego = { id: null, tipoprod: null, name: null, img: null, fecha: null,
+          genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
+        grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null};
         this._usuarioService.removeFav(this.usuario);
       }
       this.usuario.nJuegos = this.usuario.nJuegos - 1;

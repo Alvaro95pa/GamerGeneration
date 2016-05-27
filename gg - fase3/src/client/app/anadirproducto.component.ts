@@ -1,6 +1,7 @@
 import {Component,Input,OnInit} from 'angular2/core';
-import {usuario,infotecnica,requisitosinfor,Prod,infodetalle} from './clases';
+import {usuario,infotecnica,requisitosinfor,Prod,comentario} from './clases';
 import {Contenido} from './contenido.model';
+import {Image} from './image.model';
 import {clasesservice} from './clases.service'
 import {modoadminservice} from './modoadmin.service';
 import { Router } from 'angular2/router';
@@ -111,7 +112,6 @@ import { RouteParams } from 'angular2/router';
 export class anadirproducto implements OnInit{
   tipoopcion:number = 1;
   new_prod:Prod;
-  new_infodetalle:infodetalle;
   tipoprod:number;
   name:string;
   img:string;
@@ -128,51 +128,37 @@ export class anadirproducto implements OnInit{
   infotecnic: infotecnica;
   inforequisitos: requisitosinfor;
   sinopsis:string;
-  /*tipo:string;
-  categoria:string;
-  titulo:string;
-  fecha:string;
-  multimedia:string;
-  resumen:string;
-  cuerpo:string;
-  puntuacion:string;*/
+  new_comentarios: comentario[];
+  newimg:Image;
 
   constructor (private router: Router,private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
 
   anadirElemProd(){
-    this.infotecnic = {
-      fecha: this.fecha,
-      genero: this.genero,
-      plataforma: this.plataforma,
-      desarrollador: this.desarrollador,
-      editor: this.editor
-    };
-    this.inforequisitos = {
-      procesador:this.procesador,
-      memoria:this.memoria,
-      graficos:this.grafica,
-      almacenamiento: this.almacenamiento
-    };
-    this.new_infodetalle = {
-      id:8,
-      tipoprod: this.tipoprod,
-      name:this.name,
-      img:this.img,
-      trailer:this.trailer,
-      infotecnic:this.infotecnic,
-      inforequisitos:this.inforequisitos,
-      sinopsis:this.sinopsis
+    this.newimg = {
+      descripcion:"",
+      url:this.img
     }
     this.new_prod = {
-      id:20,
+      id:1,
       tipoprod:this.tipoprod,
       name:this.name,
-      img:this.img,
+      img:this.newimg,
+      fecha: this.fecha,
       genero:this.genero,
-      plataforma:this.plataforma
+      plataforma:this.plataforma,
+      desarrollador:this.desarrollador,
+      editor:this.editor,
+      procesador:this.procesador,
+      memoria:this.memoria,
+      grafica:this.grafica,
+      almacenamiento:this.almacenamiento,
+      trailer:this.trailer,
+      sinopsis:this.sinopsis,
+      comentarios: this.new_comentarios
     }
-    this.adminservice.pushProd(this.new_prod);
-    this.gotoadmin_productos();
+
+      this.adminservice.pushProd(this.new_prod);
+
   }
   getopcion(){
     this.tipoopcion=4;

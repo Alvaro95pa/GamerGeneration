@@ -1,5 +1,5 @@
 import {Component,Input,OnInit} from 'angular2/core';
-import {usuario} from './clases';
+import {usuario, comentario} from './clases';
 import {Destacado} from './destacado.model';
 import {Contenido} from './contenido.model';
 import {clasesservice} from './clases.service'
@@ -90,6 +90,7 @@ export class anadircontenido implements OnInit{
   descripcion2: string;
   dest:Destacado;
   destacado:boolean =false;
+  coments: comentario[];
 
 
   constructor (private router: Router,private adminservice: modoadminservice,private clasesservice: clasesservice,private _routeParams: RouteParams){}
@@ -121,7 +122,8 @@ export class anadircontenido implements OnInit{
       resumen:this.resumen,
       cuerpo:this.cuerpo,
       ratio:this.puntuacion,
-      dest:this.dest
+      dest:this.dest,
+      comentario: this.coments
     }
     this.adminservice.pushContenido(this.new_contenido);
     console.log(this.new_contenido.ratio);

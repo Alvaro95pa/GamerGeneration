@@ -21,26 +21,27 @@ export class listproductosconfiltermenucomponent implements OnInit {
 
   constructor (private router: Router,private clasesservice: clasesservice,private _routeParams: RouteParams){}
   getProductosconfiltro(){
+    /*
     let tipoprod = +this._routeParams.get('tipoprod');
     let filtro = this._routeParams.get('filtro');
     let tipo = this._routeParams.get('tipo');
     if (tipoprod == 1){
       if (tipo=="plat"){
-        this.clasesservice.getProductosTipo(1).then(list => list.filter(prod => prod.plataforma === filtro )).then(productos => this.list_producto = productos);
+        this.clasesservice.getProductosTipo(1).subscribe(list => list.filter(prod => prod.plataforma === filtro )).then(productos => this.list_producto = productos);
         //this.clasesservice.getProdPlataforma(filtro).then(list => this.list_producto = list );
       }
       if (tipo =="gen") {
-        this.clasesservice.getProductosTipo(1).then(list => list.filter(prod => prod.genero === filtro )).then(productos => this.list_producto = productos);
+        this.clasesservice.getProductosTipo(1).subscribe(list => list.filter(prod => prod.genero === filtro )).then(productos => this.list_producto = productos);
         //this.clasesservice.getProdGenero(filtro).then(list => this.list_producto = list);
       }
     }
     if (tipoprod ==2){
-      this.clasesservice.getProductosTipo(2).then(list => list.filter(prod => prod.genero === filtro )).then(productos => this.list_producto = productos);
+      this.clasesservice.getProductosTipo(2).subscribe(list => list.filter(prod => prod.genero === filtro )).subs(productos => this.list_producto = productos);
     }
     if (tipoprod==3){
       this.clasesservice.getProductosTipo(3).then(list => list.filter(prod => prod.genero === filtro )).then(productos => this.list_producto = productos);
     }
-    this.aux_tipoprod = tipoprod;
+    this.aux_tipoprod = tipoprod;*/
   }
   ngOnInit (){
     this.getProductosconfiltro();

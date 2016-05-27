@@ -1,3 +1,6 @@
+import {Image} from './image.model';
+
+
 export class usuario{
   id:number;
   nombre:string;
@@ -13,20 +16,28 @@ export class Prod {
   id: number;
   tipoprod: number;
   name: string;
-  img:string;
-  genero: string;
-  plataforma: string;
+  img:Image; // Cambiar mas adelante por el tipo imagen q usa alvaro
+  fecha:string;
+  genero:string;
+
+  plataforma:string;
+  desarrollador:string;
+  editor:string;
+
+  procesador:string;
+  memoria:string;
+  grafica:string;
+  almacenamiento:string;
+
+  trailer:string;
+  sinopsis:string;
+
+  comentarios: comentario[];
 }
 export class infodetalle{
-  id: number;
-  tipoprod: number;
-  name: string;
-  img:string;
-  trailer:string;
-  infotecnic:infotecnica;
-  inforequisitos: requisitosinfor;
-  sinopsis:string;
+
 }
+
 export class infotecnica{
   fecha: string;
   genero: string;

@@ -6,6 +6,7 @@ import {SesionService} from './sesion.service';
 import { RouteParams } from 'angular2/router';
 import {Prod,comentario} from './clases';
 import {Usuario} from './usuario.model';
+import {Image} from './image.model';
 import {comentarioscomponent} from './comentarios.component';
 
 @Component({
@@ -34,19 +35,19 @@ export class AnalisisDetails implements OnInit{
     this._contentService.getContenidoId(id).subscribe(contenido =>{
       this.contenido = contenido;
       this.visible = true;
-      this._clasesService.getProdNombre(this.contenido.nombreProd).then(producto =>{
+      this._clasesService.getProdNombre(this.contenido.nombreProd).subscribe(producto =>{
         this.producto = producto;
       })
     });
-    this.getComentarios();
+    //this.getComentarios();
     this.getsesion();
   }
 
-  getComentarios(){
+  /*getComentarios(){
     let id = +this._routeParams.get('id');
     this.aux_id=id;
-    this._clasesService.getcomentariosContenido(id).then( list => this.comentarios = list);
-  }
+    this._clasesService.getcomentariosContenido(id).subscribe( list => this.comentarios = list);
+  }*/
 
   getsesion(){
     this.loged = this.SesionService.getLogged();
@@ -54,19 +55,17 @@ export class AnalisisDetails implements OnInit{
   }
 
   enviarcomentario(){
-    /*this.resp_comentario = {
+    this.resp_comentario = {
       idcomentario:this.usuario.id,
       idjuego:0,
       idcontenido:this.aux_id,
       user:this.usuario.usuario,
-      user_img:this.usuario.imagen,
+      user_img:this.usuario.imagen.url,
       fecha:"Hoy",
       puntuacion:0,
       mensaje:this.respuesta
     };
-    this._clasesService.pushRespuesta(this.resp_comentario);
-    this.getComentarios();
-    console.log(this.resp_comentario.mensaje);
-    */
+    this.contenido.comentario.push(this.resp_comentario);
+    this._contentService.actualizarContenido(this.contenido);
   }
 }

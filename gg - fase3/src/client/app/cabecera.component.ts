@@ -156,22 +156,21 @@ export class CabeceraComponent implements OnInit{
 	constructor(private _sesionService: SesionService, private _usuarioService: UsuarioService) {}
 
 	ngOnInit(){
-		this.loged = this._sesionService.getLogged();
+		//this.loged = this._sesionService.getLogged();
 		this.visible = true;
 	};
 
-	logIn(event: any, user: string, pass: string){
+	logInSpring(event: any, user: string, pass: string){
 
 	  event.preventDefault();
 
 	  this._sesionService.logIn(user, pass).subscribe(
-	      user => console.log(user),
+	      user => {console.log(user); this.usr = user},
 	      error =>{console.log("Invalid user or password"), this.fail = true
 		});
-		this.usr = this._sesionService.getSesion();
   }
 
-	logOut(){
+	logOutSpring(){
 		this._sesionService.logOut().subscribe(
 			response => {},
 			error => console.log("Error when trying to log out: "+error)

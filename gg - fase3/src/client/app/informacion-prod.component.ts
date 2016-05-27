@@ -3,6 +3,7 @@ import { Router } from 'angular2/router';
 import { RouteParams } from 'angular2/router';
 import {Usuario} from './usuario.model';
 import {Prod,infodetalle,infotecnica,requisitosinfor,comentario} from './clases';
+import {Sesion} from './sesion.model';
 import {comentarioscomponent} from './comentarios.component';
 import {clasesservice} from './clases.service';
 import {SesionService} from './sesion.service';
@@ -12,7 +13,7 @@ import {UsuarioService} from './usuario.service';
 @Component({
   selector:'prod-detalle',
   template: `
-    <div class="panel-group" *ngFor="#produc of producto">
+    <div class="panel-group">
       <div class="panel panel-danger">
         <div class="panel-heading">Datos Básicos</div>
         <div class="panel-body">
@@ -20,58 +21,58 @@ import {UsuarioService} from './usuario.service';
             <h4>Información técnica</h4>
             <dl  *ngIf="aux_tipoprod!=1 && visible">
               <dt>Fecha de lanzamiento: </dt>
-              <dd>{{produc.infotecnic.fecha}}</dd>
+              <dd>{{produc.fecha}}</dd>
               <dt>Género: </dt>
-              <dd><span class="label label-default">{{produc.infotecnic.genero}}</span></dd>
+              <dd><span class="label label-default">{{produc.genero}}</span></dd>
               <dt>Director:</dt>
-              <dd>{{produc.infotecnic.desarrollador}}</dd>
+              <dd>{{produc.desarrollador}}</dd>
               <dt>Patrocinador:</dt>
-              <dd>{{produc.infotecnic.editor}}</dd>
+              <dd>{{produc.editor}}</dd>
             </dl>
             <dl  *ngIf="aux_tipoprod==1 && visible">
               <dt>Fecha de lanzamiento: </dt>
-              <dd>{{produc.infotecnic.fecha}}</dd>
+              <dd>{{produc.fecha}}</dd>
               <dt>Género: </dt>
-              <dd><span class="label label-default">{{produc.infotecnic.genero}}</span></dd>
+              <dd><span class="label label-default">{{produc.genero}}</span></dd>
               <dt>Desarrollador:</dt>
-              <dd>{{produc.infotecnic.desarrollador}}</dd>
+              <dd>{{produc.desarrollador}}</dd>
               <dt>Editor:</dt>
-              <dd>{{produc.infotecnic.editor}}</dd>
+              <dd>{{produc.editor}}</dd>
               <dt>Plataformas:</dt>
-              <dd><span class="label label-default">{{produc.infotecnic.plataforma}}</span></dd>
+              <dd><span class="label label-default">{{produc.plataforma}}</span></dd>
             </dl>
             <div *ngIf="aux_tipoprod==1 && visible">
               <h4>Requisitos del sistema</h4>
               <dl>
                 <dt>Procesador:</dt>
-                <dd>{{produc.inforequisitos.procesador}}</dd>
+                <dd>{{produc.procesador}}</dd>
                 <dt>Memoria:</dt>
-                <dd>{{produc.inforequisitos.memoria}}</dd>
+                <dd>{{produc.memoria}}</dd>
                 <dt>Gráficos:</dt>
-                <dd>{{produc.inforequisitos.graficos}}</dd>
+                <dd>{{produc.grafica}}</dd>
                 <dt>Almacenamiento:</dt>
-                <dd>{{produc.inforequisitos.almacenamiento}}</dd>
+                <dd>{{produc.almacenamiento}}</dd>
               </dl>
             </div>
           </div>
 
           <div class="portada col-md-3 col-xs-5">
-            <img src={{produc.img}}>
-            <div *ngIf="sesion.loged" (click)="AddSeguir(produc)" [class.checkfavorito]="seguir" class="favorito col-md-12 col-xs-12">
+            <img src={{produc.img.url}}>
+            <div  (click)="AddSeguir(produc)" [class.checkfavorito]="seguir" class="favorito col-md-12 col-xs-12">
               <div><span class="glyphicon glyphicon-plus"></span>Seguir</div>
             </div>
           </div>
 
         </div>
       </div>
-      <div *ngIf="produc.sinopsis" class="panel panel-danger sinopsis">
+      <div *ngIf="visible" class="panel panel-danger sinopsis">
         <div class="panel-heading">Sinopsis</div>
         <div class="panel-body">
           <p>{{produc.sinopsis}}</p>
         </div>
       </div>
 
-      <div *ngIf="produc.trailer" class="panel panel-danger trailer">
+      <div *ngIf="visible" class="panel panel-danger trailer">
         <div class="panel-heading">Trailer</div>
         <div class="panel-body ">
            <div class="embed-responsive embed-responsive-16by9">
@@ -80,24 +81,24 @@ import {UsuarioService} from './usuario.service';
         </div>
       </div>
 
-      <div *ngIf="comentarios" class="panel panel-danger comentarios">
+      <div *ngIf="visible" class="panel panel-danger comentarios">
         <div class="panel-heading">Comentarios</div>
         <div class="panel-body">
-          <div *ngFor="#coment of comentarios">
+          <div *ngFor="#coment of produc.comentarios">
             <comentarios [comentario]="coment"></comentarios>
           </div>
         </div>
        </div>
 
-       <div *ngIf="sesion.loged" class="panel panel-danger comentarios respuesta">
+       <div  class="panel panel-danger comentarios respuesta">
         <div class="panel-heading">
           <button type="button" class="btn btn-primary btn_respuesta" onclick="document.getElementById('oculto').style.display = 'block';"><span class="glyphicon glyphicon-plus"></span> Responder</button></div>
         <div class="panel-body" id="oculto" style='display:none;'>
           <div class="col-md-12 col-xs-12 respuesta">
             <header class="col-md-2 col-xs-2">
               <dl>
-                <dd><img src={{sesion.imagen}}></dd>
-                <dd><a>{{sesion.usuario}}</a></dd>
+
+                <dd><a>sesion.nombre</a></dd>
               </dl>
             </header>
             <div class="col-sm-10 col-xs-10">
@@ -122,9 +123,9 @@ import {UsuarioService} from './usuario.service';
   `,
   directives: [comentarioscomponent]
 })
-
+//<!--*ngIf="sesion.loged"-->
 export class informacionprod implements OnInit{
-  producto: infodetalle[];
+  produc: Prod;
   aux_tipoprod: number;
   aux_id:number;
   comentarios:comentario[];
@@ -140,12 +141,12 @@ export class informacionprod implements OnInit{
   id_user=1;
 
   loged:boolean;
-  usr: Usuario;
+  usuario: Usuario;
   aux_prod:Prod;
 
 
   constructor (private router: Router,private UsuarioService: UsuarioService,private SesionService: SesionService,private clasesservice: clasesservice,private _routeParams: RouteParams){}
-  AddSeguir(info:infodetalle){
+  AddSeguir(info:Prod){
     /*
     this.seguir=!this.seguir;
     if(this.seguir){
@@ -159,50 +160,46 @@ export class informacionprod implements OnInit{
 
   getsesion(){
     this.loged = this.SesionService.getLogged();
-    this.usr = this.SesionService.getSesion();
+    this.usuario = this.SesionService.getSesion();
   }
-
   getProducto(){
     let id = +this._routeParams.get('idprod');
     let tipoprod = +this._routeParams.get('tipoprod');
-    this.clasesservice.getinfo(id).then(prod =>{
-      this.producto = prod} );
+    this.clasesservice.getProd(id).subscribe(prod =>{
+      this.produc = prod
+      console.log(id + " "+ prod.name + " "+ this.produc.name + " "+ this.produc.grafica);
+      this.visible=true;
+    } );
     this.aux_tipoprod=tipoprod;
     this.aux_id=id;
   }
-
   getcomentarios(){
     let id = +this._routeParams.get('idprod');
-    this.clasesservice.getcomentarios(id).then( list => this.comentarios = list);
+    this.comentarios = this.produc[0].comentarios;
   }
   ngOnInit() {
     this.getProducto();
-    this.getcomentarios();
-    this.getsesion();
-    this.clasesservice.getProd(this.aux_id).then(prod => this.aux_prod=prod[0]);
+    //this.getcomentarios();
+    //this.getsesion();
+    this.clasesservice.getProd(this.aux_id).subscribe(prod => this.aux_prod=prod[0]);
 
-    this.visible=true;
   }
   enviarcomentario(){
-    /*
-    console.log(this.usr.usuario);
     if(this.nota>10 || this.nota<0){
       this.error=true;
     } else {
       this.resp_comentario = {
-        idcomentario:this.usr.id,
-        idjuego:this.aux_id,
-        idcontenido:0,
-        user:this.usr.usuario,
-        user_img:this.usr.imagen,
+        idcomentario:this.usuario.id,
+        idjuego:0,
+        idcontenido:this.aux_id,
+        user:this.usuario.usuario,
+        user_img:this.usuario.imagen.url,
         fecha:"Hoy",
-        puntuacion:this.nota,
+        puntuacion:0,
         mensaje:this.respuesta
       };
-      this.clasesservice.pushRespuesta(this.resp_comentario);
-      this.getcomentarios();
-      console.log(this.resp_comentario.puntuacion);
-
-    }*/
+      this.produc.comentarios.push(this.resp_comentario);
+      this.clasesservice.actualizarProducto(this.produc);
+    }
   }
 }

@@ -34,7 +34,7 @@ export class NoticiaDetails implements OnInit{
     this._contentService.getContenidoId(id).subscribe(contenido =>{
       this.contenido = contenido;
       this.visible = true;
-      this._clasesService.getProdNombre(this.contenido.nombreProd).then(producto =>{
+      this._clasesService.getProdNombre(this.contenido.nombreProd).subscribe(producto =>{
         this.producto = producto;
       })
     });
@@ -45,7 +45,7 @@ export class NoticiaDetails implements OnInit{
   getComentarios(){
     let id = +this._routeParams.get('id');
     this.aux_id=id;
-    this._clasesService.getcomentariosContenido(id).then( list => this.comentarios = list);
+    this._clasesService.getcomentariosContenido(id).subscribe( list => this.comentarios = list);
   }
   getsesion(){
     this.loged = this.SesionService.getLogged();
@@ -53,20 +53,17 @@ export class NoticiaDetails implements OnInit{
   }
 
   enviarcomentario(){
-    /*
     this.resp_comentario = {
-      idcomentario:this.sesion.id,
+      idcomentario:this.usr.id,
       idjuego:0,
       idcontenido:this.aux_id,
-      user:this.sesion.usuario,
-      user_img:this.sesion.imagen,
+      user:this.usr.usuario,
+      user_img:this.usr.imagen.url,
       fecha:"Hoy",
       puntuacion:0,
       mensaje:this.respuesta
     };
-    this._clasesService.pushRespuesta(this.resp_comentario);
-    this.getComentarios();
-    console.log(this.resp_comentario.mensaje);
-    */
+    this.contenido.comentario.push(this.resp_comentario);
+    this._contentService.actualizarContenido(this.contenido);
   }
 }

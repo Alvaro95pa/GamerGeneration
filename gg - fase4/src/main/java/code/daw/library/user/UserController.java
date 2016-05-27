@@ -1,4 +1,4 @@
-package code.daw.library.contenido;
+package code.daw.library.user;
 
 import java.util.Collection;
 
@@ -15,62 +15,60 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import code.daw.library.productos.Producto;
-
 @RestController
-@RequestMapping("/contenido")
+@RequestMapping("/usuarios")
 @CrossOrigin(origins = "https://localhost:8443")
-public class ContenidoController {
-	
-	private static final Logger log = LoggerFactory.getLogger(ContenidoController.class);
-	
+public class UserController {
+
+	private static final Logger log = LoggerFactory.getLogger(UserController.class);
+
 	@Autowired
-	private ContenidoRepository repository;
-	
+	private UserRepository repository;
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<Contenido> getContenidos() {
+	public Collection<User> getUsuarios() {
 		return repository.findAll();
 	}
-	
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Contenido> getContenido(@PathVariable long id) {
+	public ResponseEntity<User> getUsuario(@PathVariable long id) {
 
-		log.info("Obteniendo contenido {}", id);
+		log.info("Obtener usuario {}", id);
 
-		Contenido contenido = repository.findOne(id);
-		if (contenido != null) {
-			return new ResponseEntity<>(contenido, HttpStatus.OK);
+		User usuario = repository.findOne(id);
+		if (usuario != null) {
+			return new ResponseEntity<>(usuario, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Contenido> actualizarProd(@PathVariable long id, @RequestBody Contenido cont) {
 
-		Contenido prod = repository.findOne(id);
-		if (prod != null) {
-
-			cont.setId(id);
-			repository.save(cont);
-
-			return new ResponseEntity<>(cont, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
-	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Contenido nuevoContenido(@RequestBody Contenido contenido) {
+	public User nuevoUsuario(@RequestBody User usuario) {
 
-		repository.save(contenido);
+		repository.save(usuario);
 
-		return contenido;
+		return usuario;
 	}
-	
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<User> actulizarUsuario(@PathVariable long id, @RequestBody User cambioUsuario) {
+
+		User usuario = repository.findOne(id);
+		if (usuario != null) {
+
+			cambioUsuario.setId(id);
+			repository.save(cambioUsuario);
+
+			return new ResponseEntity<>(cambioUsuario, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Contenido> borraContenido(@PathVariable long id) {
+	public ResponseEntity<User> borrarUsuario(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);
@@ -79,4 +77,5 @@ public class ContenidoController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
+
 }

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/expositor")
-@CrossOrigin(origins = "http://localhost:8443")
+@CrossOrigin(origins = "https://localhost:8443")
 public class ExpositorController {
 	
 	private static final Logger log = LoggerFactory.getLogger(ExpositorController.class);

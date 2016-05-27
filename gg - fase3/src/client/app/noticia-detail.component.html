@@ -22,14 +22,14 @@
            </div>
 
 
-            <div *ngIf="sesion.loged" class="panel panel-danger comentarios respuesta">
+            <div *ngIf="loged" class="panel panel-danger comentarios respuesta">
              <div class="panel-heading">
                <button type="button" class="btn btn-primary btn_respuesta" onclick="document.getElementById('oculto').style.display = 'block';"><span class="glyphicon glyphicon-plus"></span> Responder</button></div>
              <div class="panel-body" id="oculto" style='display:none;'>
                <div class="col-md-12 col-xs-12 respuesta">
                  <header class="col-md-2 col-xs-2">
                    <dl>
-                     <dd><img src={{sesion.imagen}}></dd>
+                     <dd><img src={{usr.imagen.url}}></dd>
                      <dd><a>{{sesion.usuario}}</a></dd>
                    </dl>
                  </header>
@@ -37,7 +37,7 @@
                    <div class="text col-sm-12 col-xs-12">
                      <div class="col-sm-12">
                        <p>Mensaje:</p>
-                       <textarea class="mens"   [(ngModel)]="respuesta">Escribe</textarea>
+                       <textarea class="mens" [(ngModel)]="respuesta">Escribe</textarea>
                      </div>
                    </div>
                    <button (click)="enviarcomentario()" id="btn_enviar" class="col-sm-2 col-xs-12">Enviar</button>

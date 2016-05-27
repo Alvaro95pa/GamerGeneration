@@ -3,7 +3,6 @@ import {Injectable} from 'angular2/core';
 import {Prod,infodetalle,comentario,usuario} from './clases';
 import { Usuario } from './usuario.model'
 import {Contenido} from './contenido.model';
-import {prod_list,infolista,comentarios_list,usuarios_list} from './mock';
 import {Http, Headers, RequestOptions} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/Rx';
@@ -77,8 +76,10 @@ export class modoadminservice {
       .catch(err => this.mostrarError(err));
   }
 
+
   getusuarios(){
-    return Promise.resolve (usuarios_list);
+    /*
+    return Promise.resolve (usuarios_list);*/
   }
 
   deleteUser(user:Usuario){

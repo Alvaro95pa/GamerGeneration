@@ -27,13 +27,5 @@ import {comentario} from './clases';
 export class comentarioscomponent{
   @Input()
   comentario: comentario;
-  //usuario: Usuario;
-
-  /*constructor(private _router: Router, private _usuarioService: UsuarioService) {}
-
-  gotoDetail(nombre: string) {
-    this._usuarioService.getContenidoNombre(nombre).then(user => this.usuario=user);
-    let link = ['Cuenta', { id: this.usuario }];
-    this._router.navigate(link);
-  }*/
+  
 }

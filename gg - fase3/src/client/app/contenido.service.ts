@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Http, Headers, RequestOptions } from 'angular2/http';
 import 'rxjs/Rx';
 
-const BASE_URL = 'http://127.0.0.1:8443/contenido/';
+const BASE_URL = 'https://127.0.0.1:8443/contenido/';
 
 @Injectable()
 export class ContenidoService {
@@ -37,6 +37,17 @@ export class ContenidoService {
     });
     let options = new RequestOptions({headers});
     return this.http.post(BASE_URL, añadido, options)
+    .map(response => response.json())
+    .catch(error => this.handleError(error));
+  }
+
+  actualizarContenido(contenido: Contenido){
+    let añadido = JSON.stringify(contenido);
+    let headers = new Headers({
+        'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({headers});
+    return this.http.put(BASE_URL+"/"+contenido.id, añadido, options)
     .map(response => response.json())
     .catch(error => this.handleError(error));
   }
