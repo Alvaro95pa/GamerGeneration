@@ -1,0 +1,9 @@
+<div class="menu">
+  <div class="list-group">
+    <a *ngIf="usuario.pPerfilTodos || usuario.usuario == actual" class="list-group-item" (click)="irA('Cuenta', usuario.id)"><span class="glyphicon glyphicon-user"> Cuenta </span></a>
+    <a *ngIf="usuario.cPerfilTodos || usuario.usuario == actual" class="list-group-item" (click)="irA('Contenido', usuario.id)"><span class="glyphicon glyphicon-folder-open" > Contenido </span></a>
+    <a *ngIf="usuario.usuario == actual" class="list-group-item" (click)="irA('Ajustes', usuario.id)"><span class="glyphicon glyphicon-cog"> Ajustes </span></a>
+    <a *ngIf="usuario.aPerfilTodos || usuario.usuario == actual" class="list-group-item" (click)="irA('Amigos', usuario.id)"><span class="glyphicon glyphicon-heart"> Amigos </span></a>
+    <a *ngIf="usuario.usuario == actual" class="list-group-item" (click)="ir('Gente')"><span class="glyphicon glyphicon-globe"> Gente </span></a>
+  </div>
+</div>
