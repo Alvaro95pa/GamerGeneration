@@ -37,6 +37,7 @@ System.register(['angular2/core', './clases.service', './modoadmin.service', 'an
                     this.tipoopcion = 1;
                 }
                 anadirproducto.prototype.anadirElemProd = function () {
+                    var _this = this;
                     this.newimg = {
                         descripcion: "",
                         url: this.img
@@ -59,7 +60,10 @@ System.register(['angular2/core', './clases.service', './modoadmin.service', 'an
                         sinopsis: this.sinopsis,
                         comentarios: this.new_comentarios
                     };
-                    this.adminservice.pushProd(this.new_prod);
+                    this.adminservice.pushProd(this.new_prod).subscribe(function (prod) {
+                        console.log(prod);
+                        _this.gotoadmin_productos();
+                    });
                 };
                 anadirproducto.prototype.getopcion = function () {
                     this.tipoopcion = 4;

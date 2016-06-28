@@ -46,7 +46,7 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                     this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
                         _this._sesionService.getSesion().then(function (actual) {
-                            _this.usuario_actual = actual;
+                            _this.usuario_actual = usuario;
                             _this.id_actual = _this.usuario_actual.id;
                             _this.amigos = _this.usuario_actual.amigos;
                             if (id != _this.id_actual) {
@@ -54,7 +54,6 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                             }
                             ;
                             _this.visible = true;
-                            console.log(_this.visible);
                         });
                     });
                 };

@@ -31,7 +31,7 @@ public class User {
 	private String usuario;
 	
 	@JsonIgnore
-	private String passwordHash;
+	private String contrasena;
 	
 	private String correo;
 	
@@ -70,7 +70,7 @@ public class User {
 	private boolean aPerfilTodos;
 	
 	@OneToMany(fetch = FetchType.EAGER)
-	private List<Producto> contenido;
+	private List<Producto> coleccion;
 	
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<User> amigos;
@@ -80,9 +80,9 @@ public class User {
 
 	public User(String usuario, String password, String correo, String... roles) {
 		this.usuario = usuario;
-		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.contrasena = new BCryptPasswordEncoder().encode(password);
 		this.correo = correo;
-		this.contenido = new ArrayList <Producto>();
+		this.coleccion = new ArrayList <Producto>();
 		this.amigos = new ArrayList <User>();
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
@@ -92,7 +92,7 @@ public class User {
 			Producto fPeli, Producto fSerie, Producto fJuego, boolean pPerfilTodos, boolean cPerfilTodos, 
 			boolean aPerfilTodos, String... roles) {
 		this.usuario = usuario;
-		this.passwordHash = new BCryptPasswordEncoder().encode(password);
+		this.contrasena = new BCryptPasswordEncoder().encode(password);
 		this.correo = correo;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -110,7 +110,7 @@ public class User {
 		this.pPerfilTodos = pPerfilTodos;
 		this.cPerfilTodos = cPerfilTodos;
 		this.aPerfilTodos = aPerfilTodos;
-		this.contenido = new ArrayList <Producto>();
+		this.coleccion = new ArrayList <Producto>();
 		this.amigos = new ArrayList <User>();
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
@@ -131,12 +131,12 @@ public class User {
 		this.usuario = usuario;
 	}
 
-	public String getPasswordHash() {
-		return this.passwordHash;
+	public String getContrasena() {
+		return this.contrasena;
 	}
 
-	public void setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
+	public void setContrasena(String contrasena) {
+		this.contrasena = new BCryptPasswordEncoder().encode(contrasena);
 	}
 	
 	public String getCorreo() {
@@ -195,35 +195,35 @@ public class User {
 		this.imagen = imagen;
 	}
 	
-	public int getNAmigos() {
+	public int getnAmigos() {
 		return this.nAmigos;
 	}
 
-	public void setNAmigos(int nAmigos) {
+	public void setnAmigos(int nAmigos) {
 		this.nAmigos = nAmigos;
 	}
 	
-	public int getNPelis() {
+	public int getnPelis() {
 		return this.nPelis;
 	}
 
-	public void setNPelis(int nPelis) {
+	public void setnPelis(int nPelis) {
 		this.nPelis = nPelis;
 	}
 	
-	public int getNSeries() {
+	public int getnSeries() {
 		return this.nSeries;
 	}
 
-	public void setNSeries(int nSeries) {
+	public void setnSeries(int nSeries) {
 		this.nSeries = nSeries;
 	}
 	
-	public int getNJuegos() {
+	public int getnJuegos() {
 		return this.nJuegos;
 	}
 
-	public void setNJuegos(int nJuegos) {
+	public void setnJuegos(int nJuegos) {
 		this.nJuegos = nJuegos;
 	}
 	
@@ -235,68 +235,68 @@ public class User {
 		this.ultima = ultima;
 	}
 	
-	public String getTUsuario() {
+	public String gettUsuario() {
 		return this.tUsuario;
 	}
 
-	public void setTUsuario(String tUsuario) {
+	public void settUsuario(String tUsuario) {
 		this.tUsuario = tUsuario;
 	}
 		
-	public Producto getFPeli() {
+	public Producto getfPeli() {
 		return this.fPeli;
 	}
 
-	public void setFPeli(Producto fPeli) {
+	public void setfPeli(Producto fPeli) {
 		this.fPeli = fPeli;
 	}
 
-	public Producto getFSerie() {
+	public Producto getfSerie() {
 		return this.fSerie;
 	}
 
-	public void setFSerie(Producto fSerie) {
+	public void setfSerie(Producto fSerie) {
 		this.fSerie = fSerie;
 	}
 
-	public Producto getFJuego() {
+	public Producto getfJuego() {
 		return this.fJuego;
 	}
 
-	public void setFJuego(Producto fJuego) {
+	public void setfJuego(Producto fJuego) {
 		this.fJuego = fJuego;
 	}
 
-	public boolean getPPerfilTodos() {
+	public boolean getpPerfilTodos() {
 		return this.pPerfilTodos;
 	}
 	
-	public void setPPerfilTodos(boolean pPerfilTodos) {
+	public void setpPerfilTodos(boolean pPerfilTodos) {
 		this.pPerfilTodos = pPerfilTodos;
 	}
 	
-	public boolean getCPerfilTodos() {
+	public boolean getcPerfilTodos() {
 		return this.cPerfilTodos;
 	}
 	
-	public void setCPerfilTodos(boolean cPerfilTodos) {
+	public void setcPerfilTodos(boolean cPerfilTodos) {
 		this.cPerfilTodos = cPerfilTodos;
 	}
 	
-	public boolean getAPerfilTodos() {
+	public boolean getaPerfilTodos() {
 		return this.aPerfilTodos;
 	}
 	
-	public void setAPerfilTodos(boolean aPerfilTodos) {
+	public void setaPerfilTodos(boolean aPerfilTodos) {
 		this.aPerfilTodos = aPerfilTodos;
 	}
 
-	public List<Producto> getContenido() {
-		return this.contenido;
+	public List<Producto> getColeccion() {
+		return this.coleccion;
 	}
 	
-	public void setContenido(List<Producto> contenido) {
-		this.contenido = contenido;
+	public void setColeccion(List<Producto> coleccion) {
+		this.coleccion = coleccion;
 	}
 
 	public List<User> getAmigos() {
@@ -316,10 +316,10 @@ public class User {
 	}
 	
 	public void addContenido(Producto p){
-		this.contenido.add(p);
+		this.coleccion.add(p);
 	}
 	
 	public void removeContenido(Producto p){
-		this.amigos.remove(p);
+		this.coleccion.remove(p);
 	}
 }

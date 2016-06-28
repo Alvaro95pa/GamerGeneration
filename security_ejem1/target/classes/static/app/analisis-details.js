@@ -40,44 +40,55 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
                     this._clasesService = _clasesService;
                     this._routeParams = _routeParams;
                     this.visible = false;
+                    this.visible_usuario = false;
+                    this.error = false;
                 }
                 AnalisisDetails.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._contentService.getContenidoId(id).subscribe(function (contenido) {
                         _this.contenido = contenido,
-                            function (prodAux) { return _this.cargarProducto(_this.contenido.nombreProd); };
+                            _this.getProducto(contenido.nProducto);
                     });
-                    //this.getComentarios();
+                    this.getComentarios();
                     this.getsesion();
                 };
-                AnalisisDetails.prototype.cargarProducto = function (prod) {
+                AnalisisDetails.prototype.getProducto = function (nombre) {
                     var _this = this;
-                    this._clasesService.getProdNombre(prod).subscribe(function (producto) { _this.producto = producto; });
+                    this._clasesService.getProdNombre(nombre).subscribe(function (producto) {
+                        _this.producto = producto;
+                        _this.visible = true;
+                    });
                 };
-                /*getComentarios(){
-                  let id = +this._routeParams.get('id');
-                  this.aux_id=id;
-                  this._clasesService.getcomentariosContenido(id).subscribe( list => this.comentarios = list);
-                }*/
+                AnalisisDetails.prototype.getComentarios = function () {
+                    var _this = this;
+                    var id = +this._routeParams.get('id');
+                    this.aux_id = id;
+                    this._clasesService.getcomentariosContenido(id).subscribe(function (list) { return _this.comentarios = list; });
+                };
                 AnalisisDetails.prototype.getsesion = function () {
                     var _this = this;
                     this.loged = this._sesionService.getLogged();
-                    this._sesionService.getSesion().then(function (actual) { return _this.usuario = actual; });
+                    this._sesionService.getSesion().then(function (actual) {
+                        _this.usuario = actual,
+                            _this.visible_usuario = true;
+                    });
                 };
                 AnalisisDetails.prototype.enviarcomentario = function () {
                     this.resp_comentario = {
-                        idcomentario: this.usuario.id,
                         idjuego: 0,
-                        idcontenido: this.aux_id,
+                        idcontenido: this.contenido.id,
                         user: this.usuario.usuario,
                         user_img: this.usuario.imagen.url,
                         fecha: "Hoy",
                         puntuacion: 0,
                         mensaje: this.respuesta
                     };
-                    this.contenido.comentario.push(this.resp_comentario);
-                    this._contentService.actualizarContenido(this.contenido);
+                    this.contenido.comentarios.push(this.resp_comentario);
+                    console.log(this.contenido.comentarios);
+                    this._contentService.actualizarContenido(this.contenido).subscribe(function (cont) {
+                        console.log("Hecho");
+                    });
                 };
                 AnalisisDetails = __decorate([
                     core_1.Component({

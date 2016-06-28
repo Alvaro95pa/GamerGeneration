@@ -25,10 +25,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx']
             },
             function (_1) {}],
         execute: function() {
-            prod_URL = 'http://localhost:8443/productos';
-            comentarios_URL = 'http://localhost:8443/comentarios';
-            content_URL = 'http://localhost:8443/contenido';
-            users_URL = 'http://localhost:8443/users';
+            prod_URL = 'https://localhost:8443/productos';
+            comentarios_URL = 'https://localhost:8443/comentarios';
+            content_URL = 'https://localhost:8443/contenido';
+            users_URL = 'https://localhost:8443/usuarios';
             modoadminservice = (function () {
                 function modoadminservice(http) {
                     this.http = http;
@@ -69,9 +69,15 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx']
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
+                modoadminservice.prototype.getContenido = function () {
+                    var _this = this;
+                    return this.http.get(content_URL + '/')
+                        .map(function (resp) { return resp.json(); })
+                        .catch(function (err) { return _this.mostrarError(err); });
+                };
                 modoadminservice.prototype.deleteContenido = function (id) {
                     var _this = this;
-                    return this.http.delete(prod_URL + '/' + id)
+                    return this.http.delete(content_URL + '/' + id)
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
@@ -87,22 +93,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx']
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
-                modoadminservice.prototype.getContenido = function () {
+                modoadminservice.prototype.getContenidotipo = function (tipo) {
                     var _this = this;
-                    return this.http.get(content_URL + '/')
+                    return this.http.get(content_URL + '/tipo/' + tipo)
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
-                modoadminservice.prototype.getusuarios = function () {
-                    /*
-                    return Promise.resolve (usuarios_list);*/
-                };
-                modoadminservice.prototype.deleteUser = function (user) {
-                    /*
-                    let position = USUARIOS.indexOf(user);
-                    USUARIOS.splice(position,1);
-                    console.log(position);
-                    */
+                modoadminservice.prototype.deleteUser = function (id) {
+                    var _this = this;
+                    console.log(users_URL + '/' + id);
+                    return this.http.delete(users_URL + '/' + id)
+                        .map(function (resp) { return resp.json(); })
+                        .catch(function (err) { return _this.mostrarError(err); });
                 };
                 modoadminservice.prototype.mostrarError = function (error) {
                     console.error(error);

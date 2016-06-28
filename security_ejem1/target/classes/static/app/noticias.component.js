@@ -29,11 +29,15 @@ System.register(['angular2/core', 'angular2/router', './contenido.service'], fun
                     this._router = _router;
                     this._contentService = _contentService;
                     this.contenido = [];
+                    this.contAux = [];
                 }
                 Noticias.prototype.ngOnInit = function () {
                     var _this = this;
                     this._contentService.getContenido().subscribe(function (contenido) {
                         _this.contenido = contenido;
+                        for (var i = _this.contenido.length - 1; -1 < i; i--) {
+                            _this.contAux[_this.contenido.length - i - 1] = _this.contenido[i];
+                        }
                     });
                 };
                 Noticias.prototype.gotoDetail = function (contenido) {

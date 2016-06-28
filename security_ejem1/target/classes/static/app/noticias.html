@@ -4,7 +4,7 @@
           <hr class="red_hr">
 
           <div class="panel-group">
-            <ul class="noticias" *ngFor="#cont of contenido">
+            <ul class="noticias" *ngFor="#cont of contAux">
               <li *ngIf="cont.tipo=='Noticia'" >
               <a (click)="gotoDetail(cont)">
                 <div class="panel panel-info">

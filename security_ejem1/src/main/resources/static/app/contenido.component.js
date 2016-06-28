@@ -45,8 +45,10 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                     var id = +this._routeParams.get('id');
                     this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
-                        _this._sesionService.getSesion().then(function (actual) { return _this.actual = actual.usuario; });
-                        _this.visible = true;
+                        _this._sesionService.getSesion().then(function (actual) {
+                            _this.actual = actual.usuario;
+                            _this.visible = true;
+                        });
                     });
                 };
                 ;
@@ -90,8 +92,8 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                         }
                         this.usuario.nJuegos = this.usuario.nJuegos - 1;
                     }
-                    var posicion = this.usuario.contenido.indexOf(cont);
-                    this.usuario.contenido.splice(posicion, 1);
+                    var posicion = this.usuario.coleccion.indexOf(cont);
+                    this.usuario.coleccion.splice(posicion, 1);
                     this._usuarioService.removeContenido(this.usuario);
                 };
                 ContenidoComponent.prototype.irA = function (producto) {

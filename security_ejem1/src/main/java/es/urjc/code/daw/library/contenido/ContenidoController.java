@@ -43,6 +43,26 @@ public class ContenidoController {
 		}
 	}
 	
+	@RequestMapping(value = {"/tipo/{tipo}"}, method = RequestMethod.GET)
+	public Collection<Contenido> getContenidobytipo(@PathVariable String tipo) {
+		return repository.findBytipo(tipo);
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Contenido> actualizarProd(@PathVariable long id, @RequestBody Contenido cont) {
+
+		Contenido prod = repository.findOne(id);
+		if (prod != null) {
+
+			cont.setId(id);
+			repository.save(cont);
+
+			return new ResponseEntity<>(cont, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Contenido nuevoContenido(@RequestBody Contenido contenido) {
@@ -53,11 +73,11 @@ public class ContenidoController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Contenido> borraContenido(@PathVariable long id) {
+	public ResponseEntity<Long> borraContenido(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);
-			return new ResponseEntity<>(null, HttpStatus.OK);
+			return new ResponseEntity<>(id, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

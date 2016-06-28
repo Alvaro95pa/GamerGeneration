@@ -27,12 +27,10 @@ System.register(['angular2/core', './usuario.service'], function(exports_1, cont
                     this._usuarioService = _usuarioService;
                     this.boton = false;
                     this.error = false;
-                    this.id = 3;
                     this.registrado = false;
                 }
                 registrar.prototype.registrar = function () {
                     this.nuevo_usuario = {
-                        id: this.id,
                         nombre: '',
                         apellidos: '',
                         nacionalidad: '',
@@ -60,11 +58,10 @@ System.register(['angular2/core', './usuario.service'], function(exports_1, cont
                         pPerfilTodos: true,
                         cPerfilTodos: true,
                         aPerfilTodos: true,
-                        contenido: [],
+                        coleccion: [],
                         amigos: []
                     };
-                    this._usuarioService.addUsuario(this.nuevo_usuario);
-                    this.id = this.id + 1;
+                    this._usuarioService.addUsuario(this.nuevo_usuario).subscribe(function (usuario) { return console.log("Hola"); });
                     this.registrado = true;
                 };
                 registrar = __decorate([

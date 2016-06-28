@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value={"/comentarios"})
-@CrossOrigin(origins = "https://localhost:8443")
+@CrossOrigin(origins = "localhost:8443")
 public class ComentarioController {
 
 	@Autowired

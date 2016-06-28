@@ -40,16 +40,14 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
                     this._clasesService = _clasesService;
                     this._routeParams = _routeParams;
                     this.visible = false;
+                    this.visible_usuario = false;
                 }
                 NoticiaDetails.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._contentService.getContenidoId(id).subscribe(function (contenido) {
-                        _this.contenido = contenido;
-                        _this.visible = true;
-                        _this._clasesService.getProdNombre(_this.contenido.nombreProd).subscribe(function (producto) {
-                            _this.producto = producto;
-                        });
+                        _this.contenido = contenido,
+                            _this.visible = true;
                     });
                     this.getComentarios();
                     this.getsesion();
@@ -63,21 +61,25 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
                 NoticiaDetails.prototype.getsesion = function () {
                     var _this = this;
                     this.loged = this._sesionService.getLogged();
-                    this._sesionService.getSesion().then(function (actual) { return _this.usr = actual; });
+                    this._sesionService.getSesion().then(function (actual) {
+                        _this.usr = actual,
+                            _this.visible_usuario = true;
+                    });
                 };
                 NoticiaDetails.prototype.enviarcomentario = function () {
                     this.resp_comentario = {
-                        idcomentario: this.usr.id,
                         idjuego: 0,
-                        idcontenido: this.aux_id,
+                        idcontenido: this.contenido.id,
                         user: this.usr.usuario,
                         user_img: this.usr.imagen.url,
                         fecha: "Hoy",
                         puntuacion: 0,
                         mensaje: this.respuesta
                     };
-                    this.contenido.comentario.push(this.resp_comentario);
-                    this._contentService.actualizarContenido(this.contenido);
+                    this.contenido.comentarios.push(this.resp_comentario);
+                    this._contentService.actualizarContenido(this.contenido).subscribe(function (cont) {
+                        console.log("Hecho");
+                    });
                 };
                 NoticiaDetails = __decorate([
                     core_1.Component({

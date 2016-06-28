@@ -1,5 +1,5 @@
 <!-- Perfil privado -->
-<div *ngIf="(visible && !usuario.pPerfilTodos && (!(usuario.usuario == usuario_actual.usuario)))" class="panel panel-default">
+<div *ngIf="visible && !usuario.pPerfilTodos && !(usuario.usuario == usuario_actual.usuario)" class="panel panel-default">
   <div class="panel-body">
     <div class="privado">
       <p> Este perfil es privado </p>
@@ -7,7 +7,7 @@
   </div>
 </div>
 <!-- Perfil publico -->
-<div *ngIf="(visible && usuario.pPerfilTodos) || (visible && usuario.usuario == usuario_actual.usuario)">
+<div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == usuario_actual.usuario">
 <!-- Primera fila (Datos personales y avatar con información)  -->
   <div class="row">
     <!-- Menú del pefil  -->
@@ -15,12 +15,12 @@
       <menu-component [usuario]='usuario' [actual]='usuario_actual.usuario'></menu-component>
     </div>
     <!-- Datos personales  -->
-    <div class="col-md-7">
-      <div class="panel panel-danger">
+    <div  class="col-md-7">
+      <div  class="panel panel-danger">
         <div class="panel-heading">
           Datos personales
         </div>
-        <div class="panel-body">
+        <div  class="panel-body">
           <p *ngIf="usuario.nombre != ''" class="datos"> Nombre : {{usuario.nombre}} </p>
           <p *ngIf="usuario.apellidos != ''" class="datos"> Apellidos : {{usuario.apellidos}} </p>
           <p *ngIf="usuario.nacionalidad != ''" class="datos"> Nacionalidad : {{usuario.nacionalidad}} </p>
@@ -31,7 +31,7 @@
     <!-- Avatar y datos principales  -->
     <div class="col-md-3">
       <div class="panel panel-default">
-        <div *ngIf="(visible && usuario.pPerfilTodos) || (visible && usuario.usuario == usuario_actual.usuario)" class="panel-body">
+        <div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == usuario_actual.usuario" class="panel-body">
           <img *ngIf="visible" class="imagen" src={{usuario.imagen.url}}/>
           <p class="avatar"> Usuario : {{usuario.usuario}} </p>
           <p class="avatar"> Correo: {{usuario.correo}} </p>
@@ -44,7 +44,7 @@
     <!-- Estadísticas -->
     <div class="col-md-9">
       <div class="panel panel-default">
-        <div class="panel-body" *ngIf="(visible && usuario.pPerfilTodos) || (visible && usuario.usuario == usuario_actual.usuario)">
+        <div class="panel-body">
           <p class="datos"> Número de amigos : {{usuario.nAmigos}} </p>
           <p class="datos"> Número de peliculas vistas : {{usuario.nPelis}} </p>
           <p class="datos"> Número de series vistas : {{usuario.nSeries}} </p>
@@ -55,13 +55,13 @@
     <!-- Detalles -->
     <div class="col-md-3">
       <div class="panel panel-default">
-        <div *ngIf="(visible && usuario.pPerfilTodos) || (visible && usuario.usuario == usuario_actual.usuario)" class="panel-body">
+        <div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == usuario_actual.usuario" class="panel-body">
           <p class="info2"> Ultima visita : {{usuario.ultima}} </p>
           <p class="info2"> Usuario desde : {{usuario.tUsuario}} </p>
         </div>
       </div>
-      <button *ngIf="(!(visible && usuario.usuario == usuario_actual.usuario)) && !amigo" class="btn btn-primary col-md-12" (click)="addAmigo()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir amigo </button>
-      <button *ngIf="(!(visible && usuario.usuario == usuario_actual.usuario)) && amigo" class="btn btn-danger col-md-12" (click)="removeAmigo()"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Eliminar amigo </button>
+      <button *ngIf="!(visible && usuario.usuario == usuario_actual.usuario) && !amigo" class="btn btn-primary col-md-12" (click)="addAmigo()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir amigo </button>
+      <button *ngIf="!(visible && usuario.usuario == usuario_actual.usuario) && amigo" class="btn btn-danger col-md-12" (click)="removeAmigo()"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Eliminar amigo </button>
     </div>
   </div>
   <!-- Tercera fila (favoritos) -->

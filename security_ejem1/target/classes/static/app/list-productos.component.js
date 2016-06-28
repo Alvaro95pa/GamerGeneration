@@ -60,11 +60,9 @@ System.register(['angular2/core', 'angular2/router', './clases.service', './prod
                 listproductoscomponent.prototype.gotoFiltrar = function (tipo, filt) {
                     var _this = this;
                     if (tipo != "genero") {
-                        console.log(tipo + " " + this.aux_tipoprod + " " + filt);
                         this.clasesservice.getProdPlataforma(this.aux_tipoprod, filt).subscribe(function (prod) { return _this.list_producto = prod; });
                     }
                     else {
-                        console.log(tipo + " " + this.aux_tipoprod + " " + filt);
                         this.clasesservice.getProdGenero(this.aux_tipoprod, filt).subscribe(function (prod) { return _this.list_producto = prod; });
                     }
                 };
@@ -73,8 +71,9 @@ System.register(['angular2/core', 'angular2/router', './clases.service', './prod
                     this.router.navigate(link);
                 };
                 listproductoscomponent.prototype.gotoTipoprod = function (tipo) {
-                    var link = ['SelecCatalogo', { tipoprod: tipo }];
-                    this.router.navigate(link);
+                    var _this = this;
+                    this.aux_tipoprod = tipo;
+                    this.clasesservice.getProductosTipo(tipo).subscribe(function (prod) { return _this.list_producto = prod; });
                 };
                 listproductoscomponent = __decorate([
                     core_1.Component({

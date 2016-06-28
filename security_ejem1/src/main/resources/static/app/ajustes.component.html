@@ -66,43 +66,6 @@
         </div>
       </div>
     </div>
-    <!-- Contraseña  -->
-    <div *ngIf="visible" class="panel panel-danger">
-      <div class="panel-heading">
-        Cambiar contraseña
-      </div>
-      <div class="panel-body">
-        <div class="input-group personales">
-          <input #prePass (click)="noNotificar('contra')" type="password" class="form-control" placeholder="Contraseña">
-          <span class="input-group-addon" id="basic-addon2"> * </span>
-        </div>
-        <div class="input-group personales">
-          <input #pass (click)="noNotificar('contra')" type="password" class="form-control" placeholder="Nueva contraseña">
-          <span class="input-group-addon" id="basic-addon2"> * </span>
-        </div>
-        <div class="input-group personales">
-          <input #repPass (click)="noNotificar('contra')" type="password" class="form-control" placeholder="Repetir contraseña">
-          <span class="input-group-addon" id="basic-addon2"> * </span>
-        </div>
-        <div class="row">
-          <div class="col-md-10">
-            <span> * (Obligatorio) </span>
-            <br>
-            <br>
-            <div *ngIf="contra" class="alert alert-success alert-dismissible" role="alert">
-              <button (click)="noNotificar('contra')" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              Se ha cambiado la contraseña con éxito
-            </div>
-          </div>
-          <div class="col-md-2">
-            <span *ngIf="prePass.value != preContra || pass.value != repPass.value || pass.value == '' || prePass.value ==''" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-            <button *ngIf="prePass.value != preContra || pass.value != repPass.value || pass.value == '' || prePass.value ==''" type="submit" class="btn btn-warning"> Guardar </button>
-            <span *ngIf="prePass.value == preContra && pass.value == repPass.value && pass.value != ''" class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-            <button (click)="guardarContra(pass.value); notificar('contra'); prePass.value = ''; pass.value = ''; repPass.value = ''" *ngIf="prePass.value == preContra && pass.value == repPass.value && pass.value != ''" type="submit" class="btn btn-success"> Guardar </button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Privacidad  -->
     <div *ngIf="visible" class="panel panel-danger">
       <div class="panel-heading">

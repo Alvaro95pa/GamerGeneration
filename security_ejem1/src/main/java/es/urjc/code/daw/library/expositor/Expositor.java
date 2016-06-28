@@ -11,7 +11,6 @@ import javax.persistence.OneToOne;
 import es.urjc.code.daw.library.imagenes.Image;
 
 
-
 @Entity
 public class Expositor {
 
@@ -22,14 +21,14 @@ public class Expositor {
 	private boolean destacado;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	private Image imagen;
+	private Image imgn;
 	
 	public Expositor(){}
 	
 	public Expositor(boolean dest, Image img){
 		super();
 		this.destacado = dest;
-		this.imagen = img;
+		this.imgn = img;
 	}
 	
 	public boolean getDestacado(){
@@ -40,12 +39,12 @@ public class Expositor {
 		this.destacado = dest;
 	}
 	
-	public Image getImagen(){
-		return this.imagen;
+	public Image getImgn(){
+		return this.imgn;
 	}
 	
-	public void setImagen(Image img){
-		this.imagen = img;
+	public void setImgn(Image img){
+		this.imgn = img;
 	}
 	
 	public long getId() {
@@ -59,6 +58,6 @@ public class Expositor {
 	@Override
 	public String toString() {
 		return "Expositor [id=" +this.id +", destacado=" 
-				+this.destacado +", imagen=" +this.imagen.toString() +"]";
+				+this.destacado +", imgn=" +this.imgn.toString() +"]";
 	}
 }	

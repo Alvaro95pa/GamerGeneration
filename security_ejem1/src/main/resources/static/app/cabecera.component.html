@@ -67,7 +67,6 @@
                           </a>
                           <hr>
                       </div>
-                      <a [routerLink]="['AdminLogin']" data-dismiss="modal" aria-label="Close">Modo Administrador</a>
                     </div>
                   </div>
 
@@ -76,8 +75,15 @@
                     <div class="modal-body" id="mBody">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                      <h2>Ir a perfil:</h2>
-                      <a class="btn btn-info" [routerLink]="['Cuenta', {id: usr.id}]" data-dismiss="modal" aria-label="Close">Perfil</a>
+                      <div *ngIf="numRols == 1 && usr.roles[0] == 'ROLE_USER'">
+                        <h2>Ir a perfil:</h2>
+                        <a class="btn btn-info" [routerLink]="['Cuenta', {id: usr.id}]" data-dismiss="modal" aria-label="Close">Perfil</a>
+                      </div>
+                      <div *ngIf="numRols > 1 && usr.roles[1] == 'ROLE_ADMIN'">
+                        <h2>Ir al menú de administración:</h2>
+                        <a class="btn btn-info" [routerLink]="['AdminUsers']" data-dismiss="modal" aria-label="Close">Administración</a>
+                      </div>
+                      <hr>
                       <h3>Cierre de sesión</h3>
                       <button type="button" class="cierre" id="cerrar" (click)="logOutSpring()">Cerrar sesión</button>
                     </div>

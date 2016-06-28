@@ -39,7 +39,7 @@ public class UserRepositoryAuthProvider implements AuthenticationProvider {
 			throw new BadCredentialsException("User not found");
 		}
 
-		if (!new BCryptPasswordEncoder().matches(password, user.getPasswordHash())) {
+		if (!new BCryptPasswordEncoder().matches(password, user.getContrasena())) {
 
 			throw new BadCredentialsException("Wrong password");
 		} else {

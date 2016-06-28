@@ -42,8 +42,10 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                     var _this = this;
                     this._usuarioService.getUsuarios().subscribe(function (usuarios) {
                         _this.usuarios = usuarios;
-                        _this._sesionService.getSesion().then(function (actual) { return _this.actual = actual.usuario; });
-                        _this.visible = true;
+                        _this._sesionService.getSesion().then(function (actual) {
+                            _this.actual = actual.usuario;
+                            _this.visible = true;
+                        });
                     });
                 };
                 GenteComponent.prototype.irConcreto = function (persona) {

@@ -1,12 +1,19 @@
 package es.urjc.code.daw.library.contenido;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Size;
 
+import es.urjc.code.daw.library.comentario.Comentario;
 import es.urjc.code.daw.library.expositor.Expositor;
 import es.urjc.code.daw.library.imagenes.Image;
 
@@ -26,13 +33,18 @@ public class Contenido {
 	@OneToOne(cascade=CascadeType.ALL)
 	private Image multimedia;
 	
+	@Size(max = 1000)
 	private String resumen;
 	
+	@Size(max = 5000)
 	private String cuerpo;
 	private String ratio;
 	
 	@OneToOne(cascade=CascadeType.ALL)
-	private Expositor expo;
+	private Expositor dest;
+	
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	private List<Comentario> comentarios;
 	
 
 	public Contenido() {}
@@ -50,14 +62,19 @@ public class Contenido {
 		this.resumen = resumen;
 		this.cuerpo = cuerpo;
 		this.ratio = ratio;
-		this.expo = expo;
+		this.dest = expo;
+		this.comentarios = new ArrayList <Comentario>();
 	}
 	
-	public String getNombreProducto() {
+	public void addComentario (Comentario comment){
+		this.comentarios.add(comment);
+	}
+	
+	public String getnProducto() {
 	 return this.nProducto;
 	}
 
-	public void setNombreProducto(String nProd) {
+	public void setnProducto(String nProd) {
 		this.nProducto = nProd;
 	}
 	
@@ -125,12 +142,12 @@ public class Contenido {
 		this.ratio = ratio;
 	}
 	
-	public Expositor getExpositor() {
-		return this.expo;
+	public Expositor getDest() {
+		return this.dest;
 	}
 	
-	public void setExpositor(Expositor expo) {
-		this.expo = expo;
+	public void setDest(Expositor expo) {
+		this.dest = expo;
 	}
 	
 	public long getId() {
@@ -141,12 +158,21 @@ public class Contenido {
 		this.id = id;
 	}
 	
+	
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
+
 	@Override
 	public String toString() {
 		return "Contenido [id=" +this.id +", nProducto=" +this.nProducto 
 				+", tipo=" +this.tipo +", categoria=" +this.categoria 
 				+", titulo=" +this.titulo +", fecha=" +this.fecha +", multimedia=" 
 				+this.multimedia.toString() +", resumen=" +this.resumen +", resumen=" +this.resumen 
-				+", cuerpo=" +this.cuerpo +", expo=" +this.expo.toString() +"]";
+				+", cuerpo=" +this.cuerpo +", dest=" +this.dest.toString() +"]";
 	}
 }

@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common', 'ng2-bootstrap/ng2-bootstrap', 'angular2/http', './contenido.service'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/common', 'ng2-bootstrap/ng2-bootstrap', 'angular2/http', './contenido.service', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common', 'ng2-bootstrap/ng2-bootstra
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, ng2_bootstrap_1, http_1, contenido_service_1;
+    var core_1, common_1, ng2_bootstrap_1, http_1, contenido_service_1, router_1;
     var ExpositorComponent;
     return {
         setters:[
@@ -28,11 +28,15 @@ System.register(['angular2/core', 'angular2/common', 'ng2-bootstrap/ng2-bootstra
             },
             function (contenido_service_1_1) {
                 contenido_service_1 = contenido_service_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             ExpositorComponent = (function () {
-                function ExpositorComponent(_contentService) {
+                function ExpositorComponent(_contentService, _router) {
                     this._contentService = _contentService;
+                    this._router = _router;
                     this.myInterval = 4000;
                     this.noWrapSlides = false;
                     this.slides = [];
@@ -61,7 +65,7 @@ System.register(['angular2/core', 'angular2/common', 'ng2-bootstrap/ng2-bootstra
                         templateUrl: 'app/expositor.component.html',
                         providers: [contenido_service_1.ContenidoService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [contenido_service_1.ContenidoService])
+                    __metadata('design:paramtypes', [contenido_service_1.ContenidoService, router_1.Router])
                 ], ExpositorComponent);
                 return ExpositorComponent;
             }());

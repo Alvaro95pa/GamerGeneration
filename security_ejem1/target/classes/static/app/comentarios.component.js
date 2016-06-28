@@ -1,4 +1,4 @@
-System.register(['angular2/core', './clases'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,12 @@ System.register(['angular2/core', './clases'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, clases_1;
+    var core_1;
     var comentarioscomponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (clases_1_1) {
-                clases_1 = clases_1_1;
             }],
         execute: function() {
             comentarioscomponent = (function () {
@@ -26,12 +23,12 @@ System.register(['angular2/core', './clases'], function(exports_1, context_1) {
                 }
                 __decorate([
                     core_1.Input(), 
-                    __metadata('design:type', clases_1.comentario)
+                    __metadata('design:type', Object)
                 ], comentarioscomponent.prototype, "comentario", void 0);
                 comentarioscomponent = __decorate([
                     core_1.Component({
                         selector: 'comentarios',
-                        template: "\n  <article class=\"col-md-12 col-xs-12 comentarios\">\n    <header class=\"col-md-2 col-xs-2\">\n      <dl>\n        <dd><img src={{comentario.user_img}}></dd>\n        <dd><a>{{comentario.user}}</a></dd>\n      </dl>\n    </header>\n    <time class=\"col-md-10 col-xs-10 fecha\">{{comentario.fecha}}</time>\n    <p class=\"col-md-9 col-xs-8\">{{comentario.mensaje}}</p>\n    <div *ngIf=\"comentario.idjuego!=0\" class=\"col-md-1 col-xs-12 puntuacion\"><span>{{comentario.puntuacion}}</span></div>\n  </article>\n  ",
+                        template: "\n  <article class=\"col-md-12 col-xs-12 comentarios\">\n    <header class=\"col-md-2 col-xs-2\">\n      <dl>\n        <dd><img src={{comentario.user_img}}></dd>\n        <dd><a>{{comentario.user}}</a></dd>\n      </dl>\n    </header>\n    <time class=\"col-md-10 col-xs-10 fecha\">{{comentario.fecha}}</time>\n    <p class=\"col-md-9 col-xs-8\">{{comentario.mensaje}}</p>\n    <div *ngIf=\"comentario.idjuego != 0\" class=\"col-md-1 col-xs-12 puntuacion\"><span>{{comentario.puntuacion}}</span></div>\n  </article>\n  ",
                     }), 
                     __metadata('design:paramtypes', [])
                 ], comentarioscomponent);

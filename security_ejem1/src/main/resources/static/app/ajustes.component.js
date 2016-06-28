@@ -41,57 +41,43 @@ System.register(['angular2/core', './menu.component', './seleccion.component', '
                     this._sesionService = _sesionService;
                     this.visible = false;
                     this.datos = false;
-                    this.contra = false;
-                    this.preContra = 'nada';
                 }
                 AjustesComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
-                        _this.preContra = _this.usuario.contrasena;
-                        _this._sesionService.getSesion().then(function (actual) { return _this.actual = actual.usuario; });
-                        _this.visible = true;
+                        _this._sesionService.getSesion().then(function (actual) {
+                            _this.actual = actual.usuario;
+                            _this.visible = true;
+                        });
                     });
                 };
                 AjustesComponent.prototype.notificar = function (campo) {
                     if (campo == 'datos') {
                         this.datos = true;
                     }
-                    if (campo == 'contra') {
-                        this.contra = true;
-                    }
-                };
-                AjustesComponent.prototype.prepaContra = function () {
-                    this.preContra = this.usuario.contrasena;
                 };
                 AjustesComponent.prototype.noNotificar = function (campo) {
                     if (campo == 'datos') {
                         this.datos = false;
                     }
-                    if (campo == 'contra') {
-                        this.contra = false;
-                    }
                 };
                 AjustesComponent.prototype.guardarDatosP = function () {
-                    this._usuarioService.setPersonales(this.usuario);
-                };
-                AjustesComponent.prototype.guardarContra = function (pass) {
-                    this.usuario.contrasena = pass;
-                    this._usuarioService.setContraseña(this.usuario);
+                    this._usuarioService.setPersonales(this.usuario).subscribe(function (usuario) { return console.log(usuario); });
                 };
                 AjustesComponent.prototype.cambiaEstado = function (estado, sitio) {
                     if (sitio == 'perfil') {
                         this.usuario.pPerfilTodos = estado;
-                        this._usuarioService.setPrivacidad(this.usuario);
+                        this._usuarioService.setPrivacidad(this.usuario).subscribe(function (usuario) { return console.log(usuario); });
                     }
                     if (sitio == 'contenido') {
                         this.usuario.cPerfilTodos = estado;
-                        this._usuarioService.setPrivacidad(this.usuario);
+                        this._usuarioService.setPrivacidad(this.usuario).subscribe(function (usuario) { return console.log("Hola"); });
                     }
                     if (sitio == 'amigos') {
                         this.usuario.aPerfilTodos = estado;
-                        this._usuarioService.setPrivacidad(this.usuario);
+                        this._usuarioService.setPrivacidad(this.usuario).subscribe(function (usuario) { return console.log("Hola"); });
                     }
                 };
                 AjustesComponent = __decorate([

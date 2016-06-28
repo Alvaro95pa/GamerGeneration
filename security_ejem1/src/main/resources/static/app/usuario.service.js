@@ -46,19 +46,6 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return _this.handleError(error); });
                 };
-                //Cambiar la contraseña del usuario
-                UsuarioService.prototype.setContraseña = function (usuario) {
-                    var _this = this;
-                    var cambio = JSON.stringify(usuario);
-                    var headers = new http_1.Headers({
-                        'Content-Type': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    });
-                    var options = new http_1.RequestOptions({ headers: headers });
-                    return this.http.put(BASE_URL + usuario.id, cambio, options)
-                        .map(function (response) { return response.json(); })
-                        .catch(function (error) { return _this.handleError(error); });
-                };
                 //Cambiar los datos personales del usuario
                 UsuarioService.prototype.setPersonales = function (usuario) {
                     var _this = this;
@@ -160,7 +147,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                 //Añadir contenido al usuario
                 UsuarioService.prototype.addContenido = function (producto, usuario) {
                     var _this = this;
-                    usuario.contenido.push(producto);
+                    usuario.coleccion.push(producto);
                     if (producto.tipoprod == 3) {
                         usuario.nPelis = usuario.nPelis + 1;
                     }

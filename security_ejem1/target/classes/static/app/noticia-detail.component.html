@@ -8,44 +8,44 @@
       <hr>
       <p> {{contenido.cuerpo}}
       </p>
+
       <hr>
-
       <h3>Comentarios:</h3>
-           <hr>
-           <div *ngIf="comentarios" class="panel panel-danger comentarios">
-             <div class="panel-heading">Comentarios</div>
-             <div class="panel-body">
-               <div *ngFor="#coment of comentarios">
-                 <comentarios [comentario]="coment"></comentarios>
+      <hr>
+      <div *ngIf="visible" class="panel panel-danger comentarios">
+        <div class="panel-heading">Comentarios</div>
+        <div class="panel-body">
+          <div *ngFor="#coment of contenido.comentarios">
+            <comentarios [comentario]="coment"></comentarios>
+          </div>
+        </div>
+      </div>
+
+
+      <div *ngIf="loged && visible_usuario" class="panel panel-danger comentarios respuesta">
+       <div class="panel-heading">
+         <button type="button" class="btn btn-primary btn_respuesta" onclick="document.getElementById('oculto').style.display = 'block';"><span class="glyphicon glyphicon-plus"></span> Responder</button></div>
+       <div class="panel-body" id="oculto" style='display:none;'>
+         <div class="col-md-12 col-xs-12 respuesta">
+           <header class="col-md-2 col-xs-2">
+             <dl>
+               <dd><img *ngIf="visible_usuario" src={{usr.imagen.url}}></dd>
+               <dd><a>{{usr.usuario}}</a></dd>
+             </dl>
+           </header>
+           <div class="col-sm-10 col-xs-10">
+             <div class="text col-sm-12 col-xs-12">
+               <div class="col-sm-10">
+                 <p>Mensaje:</p>
+                 <textarea class="mens" [(ngModel)]="respuesta">Escribe</textarea>
                </div>
              </div>
+             <button (click)="enviarcomentario()" id="btn_enviar" class="col-sm-2 col-xs-12">Enviar</button>
+             <div *ngIf="error" class="msg_error"><p >Debe introducir una puntuación entre 1 y 10</p></div>
            </div>
-
-
-            <div *ngIf="loged" class="panel panel-danger comentarios respuesta">
-             <div class="panel-heading">
-               <button type="button" class="btn btn-primary btn_respuesta" onclick="document.getElementById('oculto').style.display = 'block';"><span class="glyphicon glyphicon-plus"></span> Responder</button></div>
-             <div class="panel-body" id="oculto" style='display:none;'>
-               <div class="col-md-12 col-xs-12 respuesta">
-                 <header class="col-md-2 col-xs-2">
-                   <dl>
-                     <dd><img src={{usr.imagen.url}}></dd>
-                     <dd><a>{{sesion.usuario}}</a></dd>
-                   </dl>
-                 </header>
-                 <div class="col-sm-10 col-xs-10">
-                   <div class="text col-sm-12 col-xs-12">
-                     <div class="col-sm-12">
-                       <p>Mensaje:</p>
-                       <textarea class="mens" [(ngModel)]="respuesta">Escribe</textarea>
-                     </div>
-                   </div>
-                   <button (click)="enviarcomentario()" id="btn_enviar" class="col-sm-2 col-xs-12">Enviar</button>
-                 </div>
-               </div>
-             </div>
-
-    </div>
+         </div>
+       </div>
+       </div>
 
     </div>
 

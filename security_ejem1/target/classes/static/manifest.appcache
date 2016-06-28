@@ -1,55 +1,49 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 0479a0f68237ed66be05014e8c4fa133fe158925
+# sw.version: 06b4707d3f6cdfdac575e3eb4c938993b5e7222e
 # sw.file.hash: bfa745f427ef052ac136c5caea7e843d98fa67fa
 \app.js
 # sw.file.hash: 421c46a67a5e72e522c7fdd3f960e31d0dc0d903
 \app.js.map
-# sw.file.hash: 20064341489cd04e32d362fae7ce058ac1183982
-\app\admin.service.js
-# sw.file.hash: 54e3ac493c73ef1830d35676d3165923c43948f8
-\app\admin.service.js.map
-# sw.file.hash: e03a7de1f4550c3c1f18cfeda965a9a098a3f475
-\app\adminlogin.component.js
-# sw.file.hash: b4d31dcc396fc274c0e5b7d37c4e100a892771d8
-\app\adminlogin.component.js.map
-# sw.file.hash: 90ae4af5cacd01ff391c14223d04209037ba6a55
+# sw.file.hash: dc84a97eb1a609af104118dd8d3b7cdbbc8aebb5
 \app\ajustes.component.html
-# sw.file.hash: 63215b825c048254996f1fc775da68ee9a242035
+# sw.file.hash: 4b5f53242febbe3eeb6a372827ab700b02eaa3f0
 \app\ajustes.component.js
-# sw.file.hash: 21ad78b7b0ba08a37ef5e8ef54f32f703154e416
+# sw.file.hash: 5acd18fc31d69c58d5d030df5b47c5a24025c360
 \app\ajustes.component.js.map
 # sw.file.hash: 4868e54e7d158497e86ede265a95dd830bff7709
 \app\amigos.component.html
-# sw.file.hash: 4e9538a5f5b20af02897a8b11042a5542c8455cd
+# sw.file.hash: 94a301938d1ba1d0b958fedbea1dfa137bd17838
 \app\amigos.component.js
-# sw.file.hash: 45525c27add572789b88f19a84b63f33d81188a7
+# sw.file.hash: 3b4f0f315fa5139033395e6e92b72ec00d477f95
 \app\amigos.component.js.map
-# sw.file.hash: b3fe82f6570e3ea00f62531c582ec10395a522ea
+# sw.file.hash: 9117d0cfa239fa26b64662051b438fb9dea33ffe
 \app\anadircontenido.component.js
-# sw.file.hash: 4c9cc3a6c699b9536201928965fdf7c974b89512
+# sw.file.hash: 8147f5fe23b0257cd57bd595e6d2f6790ff76f1b
 \app\anadircontenido.component.js.map
-# sw.file.hash: 8a48f8599b1c45b1187cfcac913c4e50c1c75728
+# sw.file.hash: ca975319dcf6e885784124993c9ada56525abd9a
 \app\anadirproducto.component.js
-# sw.file.hash: fd8d917da28fb3ccadab89d5bf4312c61011ac1e
+# sw.file.hash: c89225e3248ce0d719247abb616bd124fe2e8600
 \app\anadirproducto.component.js.map
-# sw.file.hash: 1a746e8f92feb1a5eadde68fd3ccbe6c5c937bee
+# sw.file.hash: 91c1e9c7d9632f7487061e61d00c960cdcebfdf5
 \app\analisis-details.html
-# sw.file.hash: 704bfa694576ab81f7b4a6a11cff84a7074dcfa8
+# sw.file.hash: 726fe0acd1a74d73d08677bbef76b4917b8f611f
 \app\analisis-details.js
-# sw.file.hash: a0d5f1a84d7673dad4df98b58f54a8a0b813bb05
+# sw.file.hash: 6df73ad47fdc520908e7412081850635151637da
 \app\analisis-details.js.map
-# sw.file.hash: bcce74a50192150b3e9b988e33037627d35ddee2
+# sw.file.hash: e3830120a3037ed711c7dbf12a9d2adf5b394592
 \app\analisis.html
-# sw.file.hash: 048316f610c1feea5744398e5e4e973eecf4e7e6
+# sw.file.hash: dbc94a69492efb821dced103480943b2447fc281
 \app\analisis.js
-# sw.file.hash: e2a549da53c1e378c49f1234d8ff1c9c0a4a43d2
+# sw.file.hash: 99a4bb1c72fe934f88c9f9413efb85b7bf22a500
 \app\analisis.js.map
-# sw.file.hash: 1013cb17e16e5450d06d9123fa241c5287104173
+# sw.file.hash: bae2f41495f414ff3d99ec1e36859171114534b8
+\app\app.rar
+# sw.file.hash: 6cad09e3d885e71fb81a77d87b1330997af29402
 \app\cabecera.component.html
-# sw.file.hash: 9d1578350be76301f4f638b49f219978540dc0c8
+# sw.file.hash: e4d47ee85482715ea9b6273338d901ba40c2b850
 \app\cabecera.component.js
-# sw.file.hash: 2c7d57d6e0852239b68605680cf4a75080265c78
+# sw.file.hash: ba6e868dd0a3655da3b9527a83148939ace4edd3
 \app\cabecera.component.js.map
 # sw.file.hash: 547da21ce0d30c75dcbcea5286568b845cc8732b
 \app\calendario.component.html
@@ -57,47 +51,47 @@ CACHE MANIFEST
 \app\calendario.component.js
 # sw.file.hash: 47f7b0916da258bb95fe5d430720361f9c42cdd4
 \app\calendario.component.js.map
-# sw.file.hash: d0623827c65b69cd96c958961d1a3a7080141777
+# sw.file.hash: 2da9ac24caedd6086d1aee0e43a9d5e21922d80e
 \app\clases.js
-# sw.file.hash: 4130e4e50e9ac5c907383ccc1e0be03aab75674e
+# sw.file.hash: efbc775944dcd29211e6b89729812f2bb8ab878b
 \app\clases.js.map
 # sw.file.hash: be7046f50694f29055a9b4ce5571f981f01f8f25
 \app\clases.service.js
-# sw.file.hash: a8c827b05f78468d23e65fb77ce373f41733e82f
+# sw.file.hash: 630778c8a055225264bd01c8b693c804df4bb6c0
 \app\clases.service.js.map
-# sw.file.hash: 3fc5f5f6c56f51b4985c5c4b746c56164dc77921
+# sw.file.hash: 8e81a119d8aaf898feced1029d06b21c943f75f1
 \app\comentarios.component.js
-# sw.file.hash: 0501247680fb78d34e8061ed544fb0b445fddf82
+# sw.file.hash: ab3db5cba78b94c3dc6b58bcc74747f49904dd22
 \app\comentarios.component.js.map
-# sw.file.hash: 5783cb38ea9b79c6a059ac3dd0d3a1831a69a3b3
+# sw.file.hash: 7a84d34b860c1249982900f4b11aa03813fe0425
 \app\contenido.component.html
-# sw.file.hash: d37190ad56be5db8d4cd0c41f3181dc7ebf19a01
+# sw.file.hash: 989b4b6699f6ccf77d9da978943eed701a889253
 \app\contenido.component.js
-# sw.file.hash: 0d9a03efd457655516f906b6c781cc07fceead36
+# sw.file.hash: 6abd826c7f76aa9a316e348793ac67257398d07e
 \app\contenido.component.js.map
 # sw.file.hash: d5f64741beb7f8a722a601ce7b0b5545f5be05e4
 \app\contenido.model.js
-# sw.file.hash: 21a79bc7e9508715586302f2dfdc8fb5436f7903
+# sw.file.hash: 291f4ad95d75162f216c724bd3c9f87c97331d8f
 \app\contenido.model.js.map
-# sw.file.hash: 7b0001c50f2868350f51999e562649cb26580a87
+# sw.file.hash: 6348404073fbda01573e7d3d7a8184cebd95e2ff
 \app\contenido.service.js
-# sw.file.hash: 70a84dd093076e3a7aa3d71458093197a5b2383a
+# sw.file.hash: d5cef14d5c226261df26c51aaae737157fa6c416
 \app\contenido.service.js.map
-# sw.file.hash: ad4d4fdf74692d250c044067a5396e0f97f0d501
+# sw.file.hash: 7bab7d035b1f180188742146a89f5ad5120cf469
 \app\cuenta.component.html
-# sw.file.hash: b553b09f776ff0a90b6db2f180c501d92c9f7ccf
+# sw.file.hash: cd551d7c1a9c7854623eae5032f0c58deb0bb530
 \app\cuenta.component.js
-# sw.file.hash: d6410966dc9af8dad83d794bfa8c7129dfc7d638
+# sw.file.hash: d4afb4c7cf0c152fd9044338610c189434332817
 \app\cuenta.component.js.map
 # sw.file.hash: 562bdb691232f751277c0a115eeedd9375d41d0c
 \app\destacado.model.js
 # sw.file.hash: 28518a5ddff8c1241f24bd9dbe735d6fd8d57a36
 \app\destacado.model.js.map
-# sw.file.hash: b5d2d60a970dc388ea43b5c39620238b54302f7b
+# sw.file.hash: ad861e9ee44a0c52e893959aff7e5784c0f0b348
 \app\expositor.component.html
-# sw.file.hash: 136f3bbf2fea7dfe0cab69bb39a68bb1dbf39a6b
+# sw.file.hash: 73b6993614d41ec385f3c55c9c0625c944fe533b
 \app\expositor.component.js
-# sw.file.hash: 6b779e955680a2b72ac59aa7ab244b5a4101e381
+# sw.file.hash: 27ab5ee7860f6683078ba7099df8b1bc32f59c53
 \app\expositor.component.js.map
 # sw.file.hash: ac82c2b17ca707e07ff05ff774b1d3ae982075a8
 \app\footer.component.html
@@ -107,9 +101,9 @@ CACHE MANIFEST
 \app\footer.component.js.map
 # sw.file.hash: c0cc75d1c81ad46f870f13db307fbff7537c9d84
 \app\gente.component.html
-# sw.file.hash: 0186974ef417f5398e67ca6afce6bbffab8193e9
+# sw.file.hash: d3c48e0273658f8a6d17b91d5a82fa501c1915b8
 \app\gente.component.js
-# sw.file.hash: 49257a508fcc2c3f3dc8480d01f98102abdc4d13
+# sw.file.hash: 3dcb981cbd75c29740ad013433b6d1e0998673d7
 \app\gente.component.js.map
 # sw.file.hash: 0911147ff52b03b9f2fb6b4260a317327f519284
 \app\home.html
@@ -121,77 +115,65 @@ CACHE MANIFEST
 \app\image.model.js
 # sw.file.hash: fd35c5a2ae5a84d6f412ec6c7af40a9c6bf708cb
 \app\image.model.js.map
-# sw.file.hash: 79ecebbf8b8885619c1b90078a5ed0d4aabb6de6
+# sw.file.hash: 971f62c2fcf3e6eda26ca6a18643497090a389ad
 \app\informacion-prod.component.js
-# sw.file.hash: 91625fdc523fc34bb6577d5a1d5e37384c56e955
+# sw.file.hash: d73fbb7fac077cff30d98f27c89511ec8f18fc99
 \app\informacion-prod.component.js.map
-# sw.file.hash: 2a5801ad6cb37347e0c0eaa0b62dd49509b7837c
+# sw.file.hash: 9be8d8219d8d43d19637e82bbdd6b88c1c65cec0
 \app\list-contenido.component.js
-# sw.file.hash: abc66a5615a4370c46c4f547dadafacb37fe57de
+# sw.file.hash: 9ec7abe0bda1541266294e445afef290a154022e
 \app\list-contenido.component.js.map
-# sw.file.hash: 1b3a11711a8e0255155c0675b2ddf0bb89bf521b
+# sw.file.hash: 04a921540f9df89211c4ca18dadd1f4b26c70f1c
 \app\list-objetos.component.js
-# sw.file.hash: 2d1141373e06fbeffd3ac843c2e08cf051ca8aa3
+# sw.file.hash: 8de43097713a8d36f1b53de39ed6d0142e4ed149
 \app\list-objetos.component.js.map
-# sw.file.hash: 45d25eaceab59f59f2c7905b8e7bdb3b02f0726f
+# sw.file.hash: ce4e3f7fd7fcb41028de0a6fc3dad551a787c390
 \app\list-productos.component.js
-# sw.file.hash: 0a2a250514a9b0806e64ffd3925be193f5b1bb35
+# sw.file.hash: 459dec50d2ea98ad077aa1d45f11fc652316f2de
 \app\list-productos.component.js.map
 # sw.file.hash: 07be8998bb02f89d1f7aac57bac6dbbecd9cb8c0
 \app\list-productos.html
-# sw.file.hash: a9d6e91bb3ee2ad1b7abaed1628e5d2a2ba49c29
-\app\list-productosconfiltermenu.component.js
-# sw.file.hash: 2c9ba58db91bc0c7c89faafda3ff242d81a4cf70
-\app\list-productosconfiltermenu.component.js.map
-# sw.file.hash: 9dc0276b59fa37616414a5f4b0bb2da8ce7bc2ff
+# sw.file.hash: 51171d617e8f4b82c6d0dd5011f2d9c81f3e7723
 \app\list-users.component.js
-# sw.file.hash: b4f78bc0f25dce05896e72af4f07cbbc1804c571
+# sw.file.hash: 874cd4c372cb04a498c41889187229b06b260a4f
 \app\list-users.component.js.map
-# sw.file.hash: 4cda1355cb8b11b47101487947eb5829309daa00
+# sw.file.hash: 1940cac6d56d93d040eddad5df5b321b881a5b9c
 \app\listado.component.html
-# sw.file.hash: 6ad0830b88e6790c959c6a1aba442de1b712a619
+# sw.file.hash: 6f256945cbc235d99721dfabcde54a35f9c3c1c4
 \app\listado.component.js
-# sw.file.hash: e53999487d3b176494cdf69ebe38d92ebb724e70
+# sw.file.hash: a24d13b528a12e33d4c8e1ff73672b9ebfee8801
 \app\listado.component.js.map
-# sw.file.hash: fd40aea7f3115a3076c08a91bdf7be44ec0bfa49
+# sw.file.hash: 5c357eb567d546e23f912dd0e7b86f8c16d988d6
 \app\menu.component.html
-# sw.file.hash: c18773c2574c123d6e02d82e4d7e0d55ccbfb615
+# sw.file.hash: 81262f05b4724387e5d889ac09e7daf7a539740d
 \app\menu.component.js
-# sw.file.hash: af813f22660fac4cf087cfe21174b67fa17865e3
+# sw.file.hash: 3c89a057484ee5fb1a0c33aad2200c7859bca7cf
 \app\menu.component.js.map
-# sw.file.hash: acf62d01d29ad347d12a8c99f82399c3165e9587
-\app\mock-admin.js
-# sw.file.hash: 2d9c8f0f0773ff9b1e1e836d5f481f8b8a50815d
-\app\mock-admin.js.map
-# sw.file.hash: 7346310c782c43fbba7f77b14598b64cacc3e276
-\app\mock-sesion.js
-# sw.file.hash: 3f86f30cee71c648db65cac3570df9411de27709
-\app\mock-sesion.js.map
-# sw.file.hash: bd71b8ca18b8d0fffd5733df1b0c7c4860453e1e
+# sw.file.hash: ab0d607d4c2ae981115ebe96c673ef6f1a1e4d02
 \app\modoadmin.service.js
-# sw.file.hash: 1c0ef3d40dfe02a5cf37d824a009bff97cc09c39
+# sw.file.hash: 9817b91fe4143cec667adc6c41f16e0279889778
 \app\modoadmin.service.js.map
-# sw.file.hash: a88195643780a984605e908c612b920b91c7d971
+# sw.file.hash: fcd4124165a6e90aca7fb76fd02ba0fd44051ff9
 \app\noticia-detail.component.html
-# sw.file.hash: ef0cc24a7ae6c23ed1ce2c0427a588948e0e57d3
+# sw.file.hash: 5af8623e4f5cf7f24a0e49a722446cce09ccbed3
 \app\noticia-detail.component.js
-# sw.file.hash: 800cc409fe689f56b03e2b05ae884d381cc26b51
+# sw.file.hash: 3e1ee9b2c724874370f3c2535a537799c354d7e1
 \app\noticia-detail.component.js.map
-# sw.file.hash: 62a4cc7cd26655706346f23544bba10a066e695b
+# sw.file.hash: cc36542dee800e1c9befecef91b9a10a02fcbf0e
 \app\noticias.component.js
-# sw.file.hash: f869e59ddac22f749bf14d194cae548e853b3635
+# sw.file.hash: c3ad8a53174a2cc6a5fabd93f8c18c02f5e94a0e
 \app\noticias.component.js.map
-# sw.file.hash: 0947352c5d0a270029957dcde058ede7094da1d9
+# sw.file.hash: d40817ceebe51cd2eff291e6185bfe8683ec29b1
 \app\noticias.html
-# sw.file.hash: 96b9839de227eaa36a15b89b271c641e75d9cf7b
+# sw.file.hash: 7fc290aedc311ea843cb4932dd4e210cbdab11fa
 \app\prod-detalle.component.js
-# sw.file.hash: 193f83174ae619832a78c168f103b50d75b51918
+# sw.file.hash: 6a4ce174c824fdb92a04812505d969e0a12177b3
 \app\prod-detalle.component.js.map
-# sw.file.hash: 7744ff138f939e5f6f1887a0098fab2300c48c8f
+# sw.file.hash: c7205a72a6af8b647d9d21242f0f79364c5b585e
 \app\registro.component.html
-# sw.file.hash: a9d8b00b76bc41df85669893bc1e4cbfbc21583e
+# sw.file.hash: 54e56288b971d2b2f19a7b3d648599d2c04ca95c
 \app\registro.component.js
-# sw.file.hash: 26168f59a18a0d40a21ff6e261d61b5b26a31e20
+# sw.file.hash: 5bd38a9bb12777d5dc19665b0127fd8c0cf01ea8
 \app\registro.component.js.map
 # sw.file.hash: 8777ea42c1796418d6396685ed4ffb84816a2eaa
 \app\route-config.js
@@ -211,13 +193,13 @@ CACHE MANIFEST
 \app\sesion.service.js
 # sw.file.hash: a4fc92d9e4de045553db5fa3514ce14c8e75a0cc
 \app\sesion.service.js.map
-# sw.file.hash: 8879acd8703092932b019e2cf143a3544c24df3c
+# sw.file.hash: 47f2d3600f699258ebf815dba6d31e75f61b5d31
 \app\usuario.model.js
-# sw.file.hash: ee645a7b3726aea22d19e37736daae15c6bf3052
+# sw.file.hash: bdfc2d958cc36c5126f8d3de35e039009daea4eb
 \app\usuario.model.js.map
-# sw.file.hash: 2a09b0bf8d97d6df41503e73f160f7b65d3cc431
+# sw.file.hash: 5be4dfde6dc7c3c3c1a90de1b91e2721532cc91d
 \app\usuario.service.js
-# sw.file.hash: 2c3a494385601d0ec11652f3322e8e9c1d6b1a9a
+# sw.file.hash: a48c5a95cc5c5af6835fad90aeb5f995fd33324e
 \app\usuario.service.js.map
 # sw.file.hash: ca3b48e514a0720ce82755ea3326100c425d78e5
 \css\fondo.css
@@ -341,7 +323,7 @@ CACHE MANIFEST
 \img\xcom.jpg
 # sw.file.hash: 2e4a1d8346ac2c8c959487a7023ce01c83c6aa8c
 \index.html
-# sw.file.hash: 23c4ba827e487c4274ffa61a262c361b5ae7af77
+# sw.file.hash: 70855e197a9b6f0e95c3f6779a2be7ac2bb84662
 \tsconfig.json
 # sw.file.hash: be771bd0a4170c04abff753212def2a2376a408e
 \vendor\angular2\bundles\angular2-polyfills.js

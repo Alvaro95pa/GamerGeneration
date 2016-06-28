@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/productos")
-@CrossOrigin(origins = "https://localhost:8443")
+@CrossOrigin(origins = "http://localhost:8443")
 public class ProductoController {
 
 	//private static final Logger log = LoggerFactory.getLogger(ProductoController.class);
@@ -30,8 +30,13 @@ public class ProductoController {
 	}
 	//Devolver un producto por su nombre
 		@RequestMapping(value = {"/{nombre}"}, method = RequestMethod.GET)
-		public Collection<Producto> getProductobyname(@PathVariable String nombre) {
-			return repository.findByname(nombre);
+		public ResponseEntity<Producto> getProductobyname(@PathVariable String nombre) {
+			Producto prod = repository.findByname(nombre);
+			if (prod != null) {
+				return new ResponseEntity<>(prod, HttpStatus.OK);
+			} else {
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
 		}
 	//Devolver todos los productos que tengan un tipoprod
 	@RequestMapping(value = "/tipoprod/{tipoprod}", method = RequestMethod.GET)

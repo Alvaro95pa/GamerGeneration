@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.component', './home', './analisis', './noticias.component', './sesion.service', './usuario.service', './analisis-details', './noticia-detail.component', './registro.component', './cuenta.component', './contenido.component', './clases.service', './modoadmin.service', './admin.service', './amigos.component', './ajustes.component', './gente.component', './contenido.service', './list-productos.component', './list-productosconfiltermenu.component', './informacion-prod.component', './list-users.component', './list-contenido.component', './anadircontenido.component', './anadirproducto.component', './list-objetos.component', './adminlogin.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.component', './home', './analisis', './noticias.component', './sesion.service', './usuario.service', './analisis-details', './noticia-detail.component', './registro.component', './cuenta.component', './contenido.component', './clases.service', './modoadmin.service', './amigos.component', './ajustes.component', './gente.component', './contenido.service', './list-productos.component', './informacion-prod.component', './list-users.component', './list-contenido.component', './anadircontenido.component', './anadirproducto.component', './list-objetos.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, http_1, footer_component_1, home_1, analisis_1, noticias_component_1, sesion_service_1, usuario_service_1, analisis_details_1, noticia_detail_component_1, registro_component_1, cuenta_component_1, contenido_component_1, clases_service_1, modoadmin_service_1, admin_service_1, amigos_component_1, ajustes_component_1, gente_component_1, contenido_service_1, list_productos_component_1, list_productosconfiltermenu_component_1, informacion_prod_component_1, list_users_component_1, list_contenido_component_1, anadircontenido_component_1, anadirproducto_component_1, list_objetos_component_1, adminlogin_component_1;
+    var core_1, router_1, http_1, footer_component_1, home_1, analisis_1, noticias_component_1, sesion_service_1, usuario_service_1, analisis_details_1, noticia_detail_component_1, registro_component_1, cuenta_component_1, contenido_component_1, clases_service_1, modoadmin_service_1, amigos_component_1, ajustes_component_1, gente_component_1, contenido_service_1, list_productos_component_1, informacion_prod_component_1, list_users_component_1, list_contenido_component_1, anadircontenido_component_1, anadirproducto_component_1, list_objetos_component_1;
     var CabeceraComponent;
     return {
         setters:[
@@ -62,9 +62,6 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
             function (modoadmin_service_1_1) {
                 modoadmin_service_1 = modoadmin_service_1_1;
             },
-            function (admin_service_1_1) {
-                admin_service_1 = admin_service_1_1;
-            },
             function (amigos_component_1_1) {
                 amigos_component_1 = amigos_component_1_1;
             },
@@ -79,9 +76,6 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
             },
             function (list_productos_component_1_1) {
                 list_productos_component_1 = list_productos_component_1_1;
-            },
-            function (list_productosconfiltermenu_component_1_1) {
-                list_productosconfiltermenu_component_1 = list_productosconfiltermenu_component_1_1;
             },
             function (informacion_prod_component_1_1) {
                 informacion_prod_component_1 = informacion_prod_component_1_1;
@@ -100,9 +94,6 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
             },
             function (list_objetos_component_1_1) {
                 list_objetos_component_1 = list_objetos_component_1_1;
-            },
-            function (adminlogin_component_1_1) {
-                adminlogin_component_1 = adminlogin_component_1_1;
             }],
         execute: function() {
             CabeceraComponent = (function () {
@@ -113,15 +104,18 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
                     this.fail = false;
                 }
                 CabeceraComponent.prototype.ngOnInit = function () {
-                    //this.loged = this._sesionService.getLogged();
                     this.visible = true;
                 };
                 ;
                 CabeceraComponent.prototype.logInSpring = function (event, user, pass) {
                     var _this = this;
                     event.preventDefault();
-                    this._sesionService.logIn(user, pass).subscribe(function (user) { console.log(user); _this.usr = user; }, function (error) {
-                        console.log("Invalid user or password"), _this.fail = true;
+                    this._sesionService.logIn(user, pass).subscribe(function (user) {
+                        _this.usr = user;
+                        _this.numRols = user.roles.length;
+                    }, function (error) {
+                        console.log("Invalid user or password"),
+                            _this.fail = true;
                     });
                 };
                 CabeceraComponent.prototype.logOutSpring = function () {
@@ -132,7 +126,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
                         selector: 'cabecera',
                         templateUrl: 'app/cabecera.component.html',
                         directives: [footer_component_1.FooterComponent, home_1.Home, router_1.ROUTER_DIRECTIVES, cuenta_component_1.CuentaComponent, amigos_component_1.AmigosComponent, ajustes_component_1.AjustesComponent],
-                        providers: [router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, sesion_service_1.SesionService, usuario_service_1.UsuarioService, modoadmin_service_1.modoadminservice, clases_service_1.clasesservice, contenido_service_1.ContenidoService, admin_service_1.AdminService]
+                        providers: [router_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, sesion_service_1.SesionService, usuario_service_1.UsuarioService, modoadmin_service_1.modoadminservice, clases_service_1.clasesservice, contenido_service_1.ContenidoService]
                     }),
                     router_1.RouteConfig([
                         {
@@ -182,8 +176,8 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
                             component: amigos_component_1.AmigosComponent,
                         },
                         {
-                            path: '/contenido/:id',
-                            name: 'Contenido',
+                            path: '/Coleccion/:id',
+                            name: 'Coleccion',
                             component: contenido_component_1.ContenidoComponent,
                         },
                         {
@@ -202,19 +196,9 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
                             component: informacion_prod_component_1.informacionprod
                         },
                         {
-                            path: '/Catalogo/:tipoprod/:tipo/:filtro',
-                            name: 'FiltroJ',
-                            component: list_productosconfiltermenu_component_1.listproductosconfiltermenucomponent,
-                        },
-                        {
                             path: '/Catalogo/:tipoprod',
                             name: 'SelecCatalogo',
                             component: list_productos_component_1.listproductoscomponent,
-                        },
-                        {
-                            path: '/Admin',
-                            name: 'AdminLogin',
-                            component: adminlogin_component_1.loginadmin
                         },
                         {
                             path: '/Admin/Users',
