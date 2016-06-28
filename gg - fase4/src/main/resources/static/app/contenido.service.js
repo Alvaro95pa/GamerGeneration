@@ -25,7 +25,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
             },
             function (_1) {}],
         execute: function() {
-            BASE_URL = 'http://127.0.0.1:8443/contenido/';
+            BASE_URL = 'https://localhost:8443/contenido/';
             ContenidoService = (function () {
                 function ContenidoService(http) {
                     this.http = http;
@@ -60,8 +60,19 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return _this.handleError(error); });
                 };
+                ContenidoService.prototype.actualizarContenido = function (contenido) {
+                    var _this = this;
+                    var añadido = JSON.stringify(contenido);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put(BASE_URL + "/" + contenido.id, añadido, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.handleError(error); });
+                };
                 //Borrado de contenido
-                ContenidoService.prototype.removeUsuario = function (contenido) {
+                ContenidoService.prototype.removeContenido = function (contenido) {
                     var _this = this;
                     return this.http.delete(BASE_URL + contenido.id)
                         .map(function (response) { return undefined; })

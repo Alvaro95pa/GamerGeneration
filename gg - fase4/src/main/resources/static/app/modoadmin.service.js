@@ -1,4 +1,4 @@
-System.register(['angular2/core', './mock', './mock-usuario', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,18 +10,12 @@ System.register(['angular2/core', './mock', './mock-usuario', 'angular2/http', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, mock_1, mock_usuario_1, http_1, Observable_1;
+    var core_1, http_1, Observable_1;
     var prod_URL, comentarios_URL, content_URL, users_URL, modoadminservice;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (mock_1_1) {
-                mock_1 = mock_1_1;
-            },
-            function (mock_usuario_1_1) {
-                mock_usuario_1 = mock_usuario_1_1;
             },
             function (http_1_1) {
                 http_1 = http_1_1;
@@ -31,10 +25,10 @@ System.register(['angular2/core', './mock', './mock-usuario', 'angular2/http', '
             },
             function (_1) {}],
         execute: function() {
-            prod_URL = 'http://localhost:8443/productos';
-            comentarios_URL = 'http://localhost:8443/comentarios';
-            content_URL = 'http://localhost:8443/contenido';
-            users_URL = 'http://localhost:8443/users';
+            prod_URL = 'https://localhost:8443/productos';
+            comentarios_URL = 'https://localhost:8443/comentarios';
+            content_URL = 'https://localhost:8443/contenido';
+            users_URL = 'https://localhost:8443/usuarios';
             modoadminservice = (function () {
                 function modoadminservice(http) {
                     this.http = http;
@@ -75,9 +69,15 @@ System.register(['angular2/core', './mock', './mock-usuario', 'angular2/http', '
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
+                modoadminservice.prototype.getContenido = function () {
+                    var _this = this;
+                    return this.http.get(content_URL + '/')
+                        .map(function (resp) { return resp.json(); })
+                        .catch(function (err) { return _this.mostrarError(err); });
+                };
                 modoadminservice.prototype.deleteContenido = function (id) {
                     var _this = this;
-                    return this.http.delete(prod_URL + '/' + id)
+                    return this.http.delete(content_URL + '/' + id)
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
@@ -93,19 +93,18 @@ System.register(['angular2/core', './mock', './mock-usuario', 'angular2/http', '
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
-                modoadminservice.prototype.getContenido = function () {
+                modoadminservice.prototype.getContenidotipo = function (tipo) {
                     var _this = this;
-                    return this.http.get(content_URL + '/')
+                    return this.http.get(content_URL + '/tipo/' + tipo)
                         .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
-                modoadminservice.prototype.getusuarios = function () {
-                    return Promise.resolve(mock_1.usuarios_list);
-                };
-                modoadminservice.prototype.deleteUser = function (user) {
-                    var position = mock_usuario_1.USUARIOS.indexOf(user);
-                    mock_usuario_1.USUARIOS.splice(position, 1);
-                    console.log(position);
+                modoadminservice.prototype.deleteUser = function (id) {
+                    var _this = this;
+                    console.log(users_URL + '/' + id);
+                    return this.http.delete(users_URL + '/' + id)
+                        .map(function (resp) { return resp.json(); })
+                        .catch(function (err) { return _this.mostrarError(err); });
                 };
                 modoadminservice.prototype.mostrarError = function (error) {
                     console.error(error);

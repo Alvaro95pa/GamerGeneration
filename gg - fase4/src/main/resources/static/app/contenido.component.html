@@ -1,5 +1,5 @@
 <!-- Contenido perfil -->
-<div *ngIf="visible && (usuario.datos.aPerfilTodos || (usuario.usuario == actual))" class="row">
+<div *ngIf="visible && (usuario.aPerfilTodos || (usuario.usuario == actual))" class="row">
   <!-- Menú del pefil  -->
   <div class="col-md-2">
     <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
@@ -8,13 +8,13 @@
   <div class="col-md-10">
     <div class="panel panel-default">
       <div class="panel-body">
-        <ul *ngFor="#contenido of usuario.datos.contenido" class="listado2">
+        <ul *ngFor="#contenido of usuario.contenido" class="listado2">
           <li>
             <div>
               <img (click)="irA(contenido)" src={{contenido.img}}>
               <p> {{contenido.name}} </p>
-              <button *ngIf="usuario.datos.fPeli.name == contenido.name || usuario.datos.fSerie.name == contenido.name || usuario.datos.fJuego.name == contenido.name"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
-              <button *ngIf="usuario.datos.fPeli.name != contenido.name && usuario.datos.fSerie.name != contenido.name && usuario.datos.fJuego.name != contenido.name" (click)="cambiarFavorito(contenido)"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></button>
+              <button *ngIf="usuario.fPeli.name == contenido.name || usuario.fSerie.name == contenido.name || usuario.fJuego.name == contenido.name"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+              <button *ngIf="usuario.fPeli.name != contenido.name && usuario.fSerie.name != contenido.name && usuario.fJuego.name != contenido.name" (click)="cambiarFavorito(contenido)"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></button>
               <button (click)="removeContenido(contenido)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
             </div>
           </li>

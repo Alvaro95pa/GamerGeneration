@@ -34,53 +34,61 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
             }],
         execute: function() {
             AnalisisDetails = (function () {
-                function AnalisisDetails(SesionService, _contentService, _clasesService, _routeParams) {
-                    this.SesionService = SesionService;
+                function AnalisisDetails(_sesionService, _contentService, _clasesService, _routeParams) {
+                    this._sesionService = _sesionService;
                     this._contentService = _contentService;
                     this._clasesService = _clasesService;
                     this._routeParams = _routeParams;
                     this.visible = false;
+                    this.visible_usuario = false;
+                    this.error = false;
                 }
                 AnalisisDetails.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._contentService.getContenidoId(id).subscribe(function (contenido) {
-                        _this.contenido = contenido;
-                        _this.visible = true;
-                        _this._clasesService.getProdNombre(_this.contenido.nombreProd).then(function (producto) {
-                            _this.producto = producto;
-                        });
+                        _this.contenido = contenido,
+                            _this.getProducto(contenido.nProducto);
                     });
                     this.getComentarios();
                     this.getsesion();
+                };
+                AnalisisDetails.prototype.getProducto = function (nombre) {
+                    var _this = this;
+                    this._clasesService.getProdNombre(nombre).subscribe(function (producto) {
+                        _this.producto = producto;
+                        _this.visible = true;
+                    });
                 };
                 AnalisisDetails.prototype.getComentarios = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this.aux_id = id;
-                    this._clasesService.getcomentariosContenido(id).then(function (list) { return _this.comentarios = list; });
+                    this._clasesService.getcomentariosContenido(id).subscribe(function (list) { return _this.comentarios = list; });
                 };
                 AnalisisDetails.prototype.getsesion = function () {
                     var _this = this;
-                    this.SesionService.getSesion().then(function (login) {
-                        _this.sesion = login;
-                        console.log(_this.sesion.usuario);
+                    this.loged = this._sesionService.getLogged();
+                    this._sesionService.getSesion().then(function (actual) {
+                        _this.usuario = actual,
+                            _this.visible_usuario = true;
                     });
                 };
                 AnalisisDetails.prototype.enviarcomentario = function () {
                     this.resp_comentario = {
-                        idcomentario: this.sesion.id,
                         idjuego: 0,
-                        idcontenido: this.aux_id,
-                        user: this.sesion.usuario,
-                        user_img: this.sesion.imagen,
+                        idcontenido: this.contenido.id,
+                        user: this.usuario.usuario,
+                        user_img: this.usuario.imagen.url,
                         fecha: "Hoy",
                         puntuacion: 0,
                         mensaje: this.respuesta
                     };
-                    this._clasesService.pushRespuesta(this.resp_comentario);
-                    this.getComentarios();
-                    console.log(this.resp_comentario.mensaje);
+                    this.contenido.comentarios.push(this.resp_comentario);
+                    console.log(this.contenido.comentarios);
+                    this._contentService.actualizarContenido(this.contenido).subscribe(function (cont) {
+                        console.log("Hecho");
+                    });
                 };
                 AnalisisDetails = __decorate([
                     core_1.Component({

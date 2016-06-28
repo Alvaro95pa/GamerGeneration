@@ -40,11 +40,9 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                 }
                 GenteComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._usuarioService.getUsuarios().then(function (usuarios) {
+                    this._usuarioService.getUsuarios().subscribe(function (usuarios) {
                         _this.usuarios = usuarios;
-                        _this._sesionService.getSesion().then(function (sesion) {
-                            _this.actual = sesion.usuario;
-                        });
+                        _this._sesionService.getSesion().then(function (actual) { return _this.actual = actual.usuario; });
                         _this.visible = true;
                     });
                 };

@@ -1,4 +1,4 @@
-<div *ngFor="#cont of contenido">
+<div *ngFor="#cont of contAux">
   <a (click)="gotoDetail(cont)" class="noticia" >
       <div class="panel panel-danger">
           <div class="panel-heading">
@@ -12,6 +12,7 @@
                   <img src="{{cont.multimedia.url}}">
                   <p>{{cont.resumen}}</p>
                </div>
+
           </div>
       </div>
   </a>

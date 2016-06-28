@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import code.daw.library.productos.Producto;
-
 @RestController
 @RequestMapping("/contenido")
 @CrossOrigin(origins = "https://localhost:8443")
@@ -45,6 +43,11 @@ public class ContenidoController {
 		}
 	}
 	
+	@RequestMapping(value = {"/tipo/{tipo}"}, method = RequestMethod.GET)
+	public Collection<Contenido> getContenidobytipo(@PathVariable String tipo) {
+		return repository.findBytipo(tipo);
+	}
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Contenido> actualizarProd(@PathVariable long id, @RequestBody Contenido cont) {
 
@@ -70,11 +73,11 @@ public class ContenidoController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Contenido> borraContenido(@PathVariable long id) {
+	public ResponseEntity<Long> borraContenido(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);
-			return new ResponseEntity<>(null, HttpStatus.OK);
+			return new ResponseEntity<>(id, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}

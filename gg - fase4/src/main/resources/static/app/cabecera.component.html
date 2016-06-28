@@ -19,7 +19,7 @@
                       <li><a [routerLink]="['Noticias']">Noticias</a></li>
                       <li><a [routerLink]="['Analisis']">Análisis</a></li>
                   </ul>
-                  <ul class="nav navbar-nav navbar-right" *ngIf="!sesion.user || !sesion.pass"> <!--User sin logear-->
+                  <ul class="nav navbar-nav navbar-right" *ngIf="!_sesionService.isLogged"> <!--User sin logear-->
                       <li>
                           <a href="" id="log" role="button" aria-haspopup="true" aria-expanded="false"
                           data-toggle="modal" data-target="#myModal">
@@ -27,10 +27,10 @@
                       </li>
                   </ul>
 
-                  <ul class="nav navbar-nav navbar-right" *ngIf="sesion.user && sesion.pass && sesion.loged"> <!--User logeado-->
+                  <ul class="nav navbar-nav navbar-right" *ngIf="_sesionService.isLogged"> <!--User logeado-->
                       <li>
                           <a href="" id="log2" role="button" aria-haspopup="true" aria-expanded="false"
-                          data-toggle="modal" data-target="#myModal"><img id="usr_avatar" src="{{sesion.imagen}}"> {{sesion.usuario}}</a>
+                          data-toggle="modal" data-target="#myModal"><img id="usr_avatar" src={{usr.imagen.url}}> {{usr.usuario}}</a>
                       </li>
                   </ul>
               </div>
@@ -38,7 +38,7 @@
               <!-- Modal -->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document" id="mDialog">
-                  <div class="modal-content" id="mContent" *ngIf="!sesion.user && !sesion.pass && !sesion.loged">
+                  <div class="modal-content" id="mContent" *ngIf="!_sesionService.isLogged">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                       <h3 class="sesion">Iniciar sesión</h3>
@@ -48,16 +48,14 @@
                     <div class="modal-body">
                       <form class="margen">
                           <span>Usuario:</span>
-                          <input type="text" class="form-control" placeholder="Nombre de usuario"
-                          [(ngModel)]="sesion.usuario">
-                      </form>
-                      <form class="margen">
+                          <input  #user type="text" class="form-control" placeholder="Username">
                           <span>Contraseña:</span>
-                          <input type="password" class="form-control" placeholder="Contraseña"
-                          [(ngModel)]="sesion.contrasena">
+                          <input #pass type="password" class="form-control" placeholder="Password">
                       </form>
-                      <button type="button" id="login" (click)="inicioSesion()">Entrar</button>
-                      <label class="record"><input type="checkbox">Recuérdame</label>
+                      <div *ngIf="fail">
+                        <p id="red">Usuario o contraseña incorrectas</p>
+                      </div>
+                      <button type="button" id="login" (click)="logInSpring($event, user.value, pass.value)">Entrar</button>
                       <hr>
                       <div class="reg">
                           <span>
@@ -69,59 +67,25 @@
                           </a>
                           <hr>
                       </div>
-                      <a [routerLink]="['AdminLogin']" data-dismiss="modal" aria-label="Close">Modo Administrador</a>
-                    </div>
-                  </div>
-
-                  <!--Datos erroneos-->
-                  <div class="modal-content" id="mContent" *ngIf="((sesion.loged && !sesion.user) || (sesion.loged && !sesion.pass))">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                      <h3 class="sesion">Iniciar sesión</h3>
-                    </div>
-                    <div class="modal-body">
-                      <form class="margen">
-                          <span>Usuario:</span>
-                          <input *ngIf="sesion.user" type="text" class="form-control" placeholder="Nombre de usuario"
-                          [(ngModel)]="sesion.usuario">
-                          <input *ngIf="!sesion.user" id="err" type="text" class="form-control" placeholder="USUARIO INCORRECTO"
-                          [(ngModel)]="sesion.usuario">
-                      </form>
-                      <form class="margen">
-                          <span>Contraseña:</span>
-                          <input *ngIf="sesion.pass" type="password" class="form-control" placeholder="Contraseña"
-                          [(ngModel)]="sesion.contrasena">
-                          <input *ngIf="!sesion.pass" id="err" type="password" class="form-control" placeholder="CONTRASEÑA INCORRECTA"
-                          [(ngModel)]="sesion.contrasena">
-                      </form>
-                      <button type="button" id="login" (click)="inicioSesion()">Entrar</button>
-                      <label class="record"><input type="checkbox">Recuérdame</label>
-                      <hr>
-                      <div class="reg">
-                          <span>
-                          Si aún no estas registrado en nuestra web puedes hacerlo aquí:
-                          </span>
-                          <a type="button" class="btn btn-info" [routerLink]="['Registro']"
-                          data-dismiss="modal" aria-label="Close">
-                            Registrarse
-                          </a>
-                          <hr>
-                      </div>
-                      <a [routerLink]="['AdminLogin']" data-dismiss="modal" aria-label="Close">Modo Administrador</a>
                     </div>
                   </div>
 
                   <!--Body con login -->
-                  <div class="modal-content" id="mContent" *ngIf="sesion.user && sesion.pass && sesion.loged">
+                  <div class="modal-content" id="mContent" *ngIf="_sesionService.isLogged">
                     <div class="modal-body" id="mBody">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button>
-                      <h2>Ir a perfil:</h2>
-                      <a class="btn btn-info" [routerLink]="['Cuenta', { id: sesion.id }]" data-dismiss="modal" aria-label="Close">Perfil</a>
+                      <div *ngIf="numRols == 1 && usr.roles[0] == 'ROLE_USER'">
+                        <h2>Ir a perfil:</h2>
+                        <a class="btn btn-info" [routerLink]="['Cuenta', {id: usr.id}]" data-dismiss="modal" aria-label="Close">Perfil</a>
+                      </div>
+                      <div *ngIf="numRols > 1 && usr.roles[1] == 'ROLE_ADMIN'">
+                        <h2>Ir al menú de administración:</h2>
+                        <a class="btn btn-info" [routerLink]="['AdminUsers']" data-dismiss="modal" aria-label="Close">Administración</a>
+                      </div>
+                      <hr>
                       <h3>Cierre de sesión</h3>
-                      <button type="button" class="cierre" id="cerrar" (click)="cierreSesion()">Cerrar sesión</button>
+                      <button type="button" class="cierre" id="cerrar" (click)="logOutSpring()">Cerrar sesión</button>
                     </div>
                   </div>
 

@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Size;
 
 import code.daw.library.comentario.Comentario;
 import code.daw.library.expositor.Expositor;
@@ -32,8 +33,10 @@ public class Contenido {
 	@OneToOne(cascade=CascadeType.ALL)
 	private Image multimedia;
 	
+	@Size(max = 1000)
 	private String resumen;
 	
+	@Size(max = 5000)
 	private String cuerpo;
 	private String ratio;
 	
@@ -67,11 +70,11 @@ public class Contenido {
 		this.comentarios.add(comment);
 	}
 	
-	public String getNombreProducto() {
+	public String getnProducto() {
 	 return this.nProducto;
 	}
 
-	public void setNombreProducto(String nProd) {
+	public void setnProducto(String nProd) {
 		this.nProducto = nProd;
 	}
 	

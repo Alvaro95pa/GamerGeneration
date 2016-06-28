@@ -29,12 +29,15 @@ System.register(['angular2/core', './contenido.service', 'angular2/router'], fun
                     this._router = _router;
                     this._contentService = _contentService;
                     this.contenido = [];
+                    this.contAux = [];
                 }
                 ListadoComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._contentService.getContenido().subscribe(function (contenido) {
                         _this.contenido = contenido;
-                        console.log(_this.contenido[0].titulo);
+                        for (var i = _this.contenido.length - 1; -1 < i; i--) {
+                            _this.contAux[_this.contenido.length - i - 1] = _this.contenido[i];
+                        }
                     });
                 };
                 ListadoComponent.prototype.gotoDetail = function (contenido) {

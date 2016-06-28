@@ -29,14 +29,6 @@ System.register(['angular2/core', './clases.service', './modoadmin.service', 'an
             }],
         execute: function() {
             anadirproducto = (function () {
-                /*tipo:string;
-                categoria:string;
-                titulo:string;
-                fecha:string;
-                multimedia:string;
-                resumen:string;
-                cuerpo:string;
-                puntuacion:string;*/
                 function anadirproducto(router, adminservice, clasesservice, _routeParams) {
                     this.router = router;
                     this.adminservice = adminservice;
@@ -45,39 +37,33 @@ System.register(['angular2/core', './clases.service', './modoadmin.service', 'an
                     this.tipoopcion = 1;
                 }
                 anadirproducto.prototype.anadirElemProd = function () {
-                    this.infotecnic = {
+                    var _this = this;
+                    this.newimg = {
+                        descripcion: "",
+                        url: this.img
+                    };
+                    this.new_prod = {
+                        id: 1,
+                        tipoprod: this.tipoprod,
+                        name: this.name,
+                        img: this.newimg,
                         fecha: this.fecha,
                         genero: this.genero,
                         plataforma: this.plataforma,
                         desarrollador: this.desarrollador,
-                        editor: this.editor
-                    };
-                    this.inforequisitos = {
+                        editor: this.editor,
                         procesador: this.procesador,
                         memoria: this.memoria,
-                        graficos: this.grafica,
-                        almacenamiento: this.almacenamiento
-                    };
-                    this.new_infodetalle = {
-                        id: 8,
-                        tipoprod: this.tipoprod,
-                        name: this.name,
-                        img: this.img,
+                        grafica: this.grafica,
+                        almacenamiento: this.almacenamiento,
                         trailer: this.trailer,
-                        infotecnic: this.infotecnic,
-                        inforequisitos: this.inforequisitos,
-                        sinopsis: this.sinopsis
+                        sinopsis: this.sinopsis,
+                        comentarios: this.new_comentarios
                     };
-                    this.new_prod = {
-                        id: 20,
-                        tipoprod: this.tipoprod,
-                        name: this.name,
-                        img: this.img,
-                        genero: this.genero,
-                        plataforma: this.plataforma
-                    };
-                    this.adminservice.pushProd(this.new_prod);
-                    this.gotoadmin_productos();
+                    this.adminservice.pushProd(this.new_prod).subscribe(function (prod) {
+                        console.log(prod);
+                        _this.gotoadmin_productos();
+                    });
                 };
                 anadirproducto.prototype.getopcion = function () {
                     this.tipoopcion = 4;

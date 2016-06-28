@@ -43,35 +43,56 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                 ContenidoComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
-                    this._usuarioService.getUsuario(id).then(function (usuario) {
+                    this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
-                        _this._sesionService.getSesion().then(function (sesion) {
-                            _this.actual = sesion.usuario;
-                        });
+                        _this._sesionService.getSesion().then(function (actual) { return _this.actual = actual.usuario; });
                         _this.visible = true;
                     });
                 };
                 ;
                 ContenidoComponent.prototype.cambiarFavorito = function (fav) {
-                    this._usuarioService.setFavorito(fav, this.usuario.id);
+                    if (fav.tipoprod == 3) {
+                        this.usuario.fPeli = fav;
+                    }
+                    if (fav.tipoprod == 2) {
+                        this.usuario.fSerie = fav;
+                    }
+                    if (fav.tipoprod == 1) {
+                        this.usuario.fJuego = fav;
+                    }
+                    this._usuarioService.setFavorito(this.usuario);
                 };
                 ContenidoComponent.prototype.removeContenido = function (cont) {
                     if (cont.tipoprod == 3) {
-                        if (cont.name == this.usuario.datos.fPeli.name) {
-                            this._usuarioService.removeFav(cont, this.usuario.id);
+                        if (cont.name == this.usuario.fPeli.name) {
+                            this.usuario.fPeli = { id: null, tipoprod: null, name: null, img: null, fecha: null, genero: null,
+                                plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null, grafica: null,
+                                almacenamiento: null, trailer: null, sinopsis: null, comentarios: null };
+                            this._usuarioService.removeFav(this.usuario);
                         }
+                        this.usuario.nPelis = this.usuario.nPelis - 1;
                     }
                     if (cont.tipoprod == 2) {
-                        if (cont.name == this.usuario.datos.fSerie.name) {
-                            this._usuarioService.removeFav(cont, this.usuario.id);
+                        if (cont.name == this.usuario.fSerie.name) {
+                            this.usuario.fSerie = { id: null, tipoprod: null, name: null, img: null, fecha: null, genero: null,
+                                plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null, grafica: null,
+                                almacenamiento: null, trailer: null, sinopsis: null, comentarios: null };
+                            this._usuarioService.removeFav(this.usuario);
                         }
+                        this.usuario.nSeries = this.usuario.nSeries - 1;
                     }
                     if (cont.tipoprod == 1) {
-                        if (cont.name == this.usuario.datos.fJuego.name) {
-                            this._usuarioService.removeFav(cont, this.usuario.id);
+                        if (cont.name == this.usuario.fJuego.name) {
+                            this.usuario.fJuego = { id: null, tipoprod: null, name: null, img: null, fecha: null, genero: null,
+                                plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null, grafica: null,
+                                almacenamiento: null, trailer: null, sinopsis: null, comentarios: null };
+                            this._usuarioService.removeFav(this.usuario);
                         }
+                        this.usuario.nJuegos = this.usuario.nJuegos - 1;
                     }
-                    this._usuarioService.removeContenido(cont, this.usuario.id);
+                    var posicion = this.usuario.contenido.indexOf(cont);
+                    this.usuario.contenido.splice(posicion, 1);
+                    this._usuarioService.removeContenido(this.usuario);
                 };
                 ContenidoComponent.prototype.irA = function (producto) {
                     this._router.navigate(['Detalleprod', { tipoProd: producto.tipoprod, idProd: producto.id }]);

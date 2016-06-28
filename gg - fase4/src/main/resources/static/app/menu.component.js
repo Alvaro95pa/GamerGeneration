@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './usuario.model'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './usuario.model'], functio
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, usuario_model_1;
+    var core_1, router_1;
     var MenuComponent;
     return {
         setters:[
@@ -19,9 +19,6 @@ System.register(['angular2/core', 'angular2/router', './usuario.model'], functio
             },
             function (router_1_1) {
                 router_1 = router_1_1;
-            },
-            function (usuario_model_1_1) {
-                usuario_model_1 = usuario_model_1_1;
             }],
         execute: function() {
             MenuComponent = (function () {
@@ -37,7 +34,7 @@ System.register(['angular2/core', 'angular2/router', './usuario.model'], functio
                 };
                 __decorate([
                     core_1.Input(), 
-                    __metadata('design:type', usuario_model_1.Usuario)
+                    __metadata('design:type', Object)
                 ], MenuComponent.prototype, "usuario", void 0);
                 __decorate([
                     core_1.Input(), 

@@ -243,7 +243,7 @@ public class User {
 		this.tUsuario = tUsuario;
 	}
 		
-	public Producto getFPeli() {
+	public Producto getfPeli() {
 		return this.fPeli;
 	}
 

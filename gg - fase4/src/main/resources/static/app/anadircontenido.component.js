@@ -37,6 +37,7 @@ System.register(['angular2/core', './clases.service', './modoadmin.service', 'an
                     this.destacado = false;
                 }
                 anadircontenido.prototype.anadirElemContenido = function () {
+                    var _this = this;
                     this.imagenPortada = {
                         descripcion: this.descripcion,
                         url: this.imgn
@@ -51,7 +52,7 @@ System.register(['angular2/core', './clases.service', './modoadmin.service', 'an
                     };
                     this.new_contenido = {
                         id: 20,
-                        nombreProd: "",
+                        nProducto: "",
                         tipo: this.tipo,
                         categoria: this.categoria,
                         titulo: this.titulo,
@@ -60,11 +61,13 @@ System.register(['angular2/core', './clases.service', './modoadmin.service', 'an
                         resumen: this.resumen,
                         cuerpo: this.cuerpo,
                         ratio: this.puntuacion,
-                        dest: this.dest
+                        dest: this.dest,
+                        comentarios: this.coments
                     };
-                    this.adminservice.pushContenido(this.new_contenido);
-                    console.log(this.new_contenido.ratio);
-                    this.gotoadmin_contenido(this.tipo);
+                    this.adminservice.pushContenido(this.new_contenido).subscribe(function (cont) {
+                        console.log(cont);
+                        _this.gotoadmin_contenido(_this.tipo);
+                    });
                 };
                 anadircontenido.prototype.getopcion = function () {
                     var tipo = this._routeParams.get('tipo');

@@ -34,22 +34,20 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
             }],
         execute: function() {
             NoticiaDetails = (function () {
-                function NoticiaDetails(SesionService, _contentService, _clasesService, _routeParams) {
-                    this.SesionService = SesionService;
+                function NoticiaDetails(_sesionService, _contentService, _clasesService, _routeParams) {
+                    this._sesionService = _sesionService;
                     this._contentService = _contentService;
                     this._clasesService = _clasesService;
                     this._routeParams = _routeParams;
                     this.visible = false;
+                    this.visible_usuario = false;
                 }
                 NoticiaDetails.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._contentService.getContenidoId(id).subscribe(function (contenido) {
-                        _this.contenido = contenido;
-                        _this.visible = true;
-                        _this._clasesService.getProdNombre(_this.contenido.nombreProd).then(function (producto) {
-                            _this.producto = producto;
-                        });
+                        _this.contenido = contenido,
+                            _this.visible = true;
                     });
                     this.getComentarios();
                     this.getsesion();
@@ -58,29 +56,30 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this.aux_id = id;
-                    this._clasesService.getcomentariosContenido(id).then(function (list) { return _this.comentarios = list; });
+                    this._clasesService.getcomentariosContenido(id).subscribe(function (list) { return _this.comentarios = list; });
                 };
                 NoticiaDetails.prototype.getsesion = function () {
                     var _this = this;
-                    this.SesionService.getSesion().then(function (login) {
-                        _this.sesion = login;
-                        console.log(_this.sesion.usuario);
+                    this.loged = this._sesionService.getLogged();
+                    this._sesionService.getSesion().then(function (actual) {
+                        _this.usr = actual,
+                            _this.visible_usuario = true;
                     });
                 };
                 NoticiaDetails.prototype.enviarcomentario = function () {
                     this.resp_comentario = {
-                        idcomentario: this.sesion.id,
                         idjuego: 0,
-                        idcontenido: this.aux_id,
-                        user: this.sesion.usuario,
-                        user_img: this.sesion.imagen,
+                        idcontenido: this.contenido.id,
+                        user: this.usr.usuario,
+                        user_img: this.usr.imagen.url,
                         fecha: "Hoy",
                         puntuacion: 0,
                         mensaje: this.respuesta
                     };
-                    this._clasesService.pushRespuesta(this.resp_comentario);
-                    this.getComentarios();
-                    console.log(this.resp_comentario.mensaje);
+                    this.contenido.comentarios.push(this.resp_comentario);
+                    this._contentService.actualizarContenido(this.contenido).subscribe(function (cont) {
+                        console.log("Hecho");
+                    });
                 };
                 NoticiaDetails = __decorate([
                     core_1.Component({

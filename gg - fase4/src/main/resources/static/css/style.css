@@ -203,6 +203,10 @@ footer{
 }
 
 @media screen and (max-width: 1000px) {
+    .cartel{
+      height:100%;
+    }
+
     .cartel img {
         visibility: hidden;
         width: 0px;
@@ -211,6 +215,7 @@ footer{
 
     .cartel p {
         padding-left: 0px;
+        height: 100%;
     }
 }
 
@@ -315,4 +320,9 @@ footer{
 
 .regist {
   color: green !important;
+}
+
+#red{
+  color: red;
+  font-size: 20px;
 }

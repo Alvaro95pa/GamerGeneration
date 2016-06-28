@@ -42,11 +42,9 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                 AmigosComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
-                    this._usuarioService.getUsuario(id).then(function (usuario) {
+                    this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
-                        _this._sesionService.getSesion().then(function (sesion) {
-                            _this.actual = sesion.usuario;
-                        });
+                        _this._sesionService.getSesion().then(function (actual) { return _this.actual = actual.usuario; });
                         _this.visible = true;
                     });
                 };

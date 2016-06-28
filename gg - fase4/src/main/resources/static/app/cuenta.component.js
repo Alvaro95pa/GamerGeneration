@@ -36,43 +36,51 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                     this._usuarioService = _usuarioService;
                     this._routeParams = _routeParams;
                     this._sesionService = _sesionService;
+                    //Variables
                     this.visible = false;
                     this.amigo = false;
                 }
                 CuentaComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._sesionService.getSesion().then(function (sesion) {
-                        _this.actual = sesion.usuario;
-                        _this.id_actual = sesion.id;
-                        var id = +_this._routeParams.get('id');
-                        _this._usuarioService.getUsuario(id).then(function (usuario) {
-                            _this.usuario = usuario;
+                    var id = +this._routeParams.get('id');
+                    this._usuarioService.getUsuario(id).subscribe(function (usuario) {
+                        _this.usuario = usuario;
+                        _this._sesionService.getSesion().then(function (actual) {
+                            _this.usuario_actual = actual;
+                            _this.id_actual = _this.usuario_actual.id;
+                            _this.amigos = _this.usuario_actual.amigos;
                             if (id != _this.id_actual) {
-                                _this._usuarioService.getUsuario(_this.id_actual).then(function (usuario) {
-                                    _this.usuario_actual = usuario;
-                                    _this.esAmigo();
-                                });
+                                _this.esAmigo();
                             }
                             ;
                             _this.visible = true;
+                            console.log(_this.visible);
                         });
                     });
                 };
                 ;
                 CuentaComponent.prototype.addAmigo = function () {
-                    var actual = { id: this.id_actual, usuario: this.actual, imagen: "img/avatar1.jpg" };
-                    var amigo = { id: this.usuario.id, usuario: this.usuario.usuario, imagen: this.usuario.imagen };
-                    this._usuarioService.addAmigo(amigo, actual);
+                    this.usuario.amigos.push(this.usuario_actual);
+                    this.usuario.nAmigos = this.usuario.nAmigos + 1;
+                    this.usuario_actual.amigos.push(this.usuario);
+                    this.usuario_actual.nAmigos = this.usuario_actual.nAmigos + 1;
+                    this._usuarioService.addAmigo(this.usuario);
+                    this._usuarioService.addAmigo(this.usuario_actual);
                     this.esAmigo();
                 };
                 CuentaComponent.prototype.removeAmigo = function () {
-                    var actual = { id: this.id_actual, usuario: this.actual, imagen: "img/avatar1.jpg" };
-                    var amigo = { id: this.usuario.id, usuario: this.usuario.usuario, imagen: this.usuario.imagen };
-                    this._usuarioService.remAmigo(amigo, actual);
+                    var posicion1 = this.usuario.amigos.indexOf(this.usuario_actual);
+                    this.usuario.amigos.splice(posicion1, 1);
+                    var posicion2 = this.usuario_actual.amigos.indexOf(this.usuario);
+                    this.usuario_actual.amigos.splice(posicion2, 1);
+                    this.usuario.nAmigos = this.usuario.nAmigos - 1;
+                    this.usuario_actual.nAmigos = this.usuario_actual.nAmigos - 1;
+                    this._usuarioService.remAmigo(this.usuario);
+                    this._usuarioService.remAmigo(this.usuario_actual);
                     this.amigo = false;
                 };
                 CuentaComponent.prototype.esAmigo = function () {
-                    for (var _i = 0, _a = this.usuario_actual.datos.amigos; _i < _a.length; _i++) {
+                    for (var _i = 0, _a = this.amigos; _i < _a.length; _i++) {
                         var amigo = _a[_i];
                         if (amigo.id == this.usuario.id) {
                             this.amigo = true;

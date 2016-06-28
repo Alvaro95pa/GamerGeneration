@@ -31,33 +31,37 @@ System.register(['angular2/core', './usuario.service'], function(exports_1, cont
                     this.registrado = false;
                 }
                 registrar.prototype.registrar = function () {
-                    this.nuevo_datos = {
-                        nAmigos: 0,
-                        nPelis: 0,
-                        nSeries: 0,
-                        nJuegos: 0,
-                        ultima: "hoy",
-                        tUsuario: "hoy",
-                        fPeli: { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null },
-                        fSerie: { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null },
-                        fJuego: { id: null, tipoprod: null, name: null, img: null, genero: null, plataforma: null },
-                        pPerfilTodos: true,
-                        cPerfilTodos: true,
-                        aPerfilTodos: true,
-                        contenido: [],
-                        amigos: []
-                    };
                     this.nuevo_usuario = {
                         id: this.id,
                         nombre: '',
                         apellidos: '',
                         nacionalidad: '',
                         cumpleanos: '',
+                        roles: ['ROLE_USER'],
                         usuario: this.usuario,
                         contrasena: this.contrasena,
                         correo: this.correo,
-                        imagen: 'img/avatar.png',
-                        datos: this.nuevo_datos
+                        imagen: this.img,
+                        nAmigos: 0,
+                        nPelis: 0,
+                        nSeries: 0,
+                        nJuegos: 0,
+                        ultima: "hoy",
+                        tUsuario: "hoy",
+                        fPeli: { id: null, tipoprod: null, name: null, img: null, fecha: null,
+                            genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
+                            grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null },
+                        fSerie: { id: null, tipoprod: null, name: null, img: null, fecha: null,
+                            genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
+                            grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null },
+                        fJuego: { id: null, tipoprod: null, name: null, img: null, fecha: null,
+                            genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
+                            grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null },
+                        pPerfilTodos: true,
+                        cPerfilTodos: true,
+                        aPerfilTodos: true,
+                        contenido: [],
+                        amigos: []
                     };
                     this._usuarioService.addUsuario(this.nuevo_usuario);
                     this.id = this.id + 1;
