@@ -1,0 +1,98 @@
+<!-- Ajustes perfil -->
+<div (click)="prepaContra()" *ngIf="visible && usuario.usuario == actual" class="row">
+  <!-- Menu del perfil  -->
+  <div class="col-md-2">
+    <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
+  </div>
+  <!-- Ajustes  -->
+  <div class="col-md-10">
+    <!-- Datos personales  -->
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        Cambiar datos personales
+      </div>
+      <div class="panel-body">
+        <div class="personales">
+          <input [(ngModel)]="usuario.nombre" *ngIf="visible && usuario.nombre == ''" type="text" class="form-control" placeholder="Nombre">
+          <div *ngIf="visible && usuario.nombre != ''" class="input-group">
+            <span  class="input-group-addon" id="basic-addon1"> Nombre </span>
+            <input [(ngModel)]="usuario.nombre" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.nombre}}">
+          </div>
+        </div>
+        <div class="personales">
+          <input [(ngModel)]="usuario.apellidos" *ngIf="visible && usuario.apellidos == ''" type="text" class="form-control" placeholder="Apellidos">
+          <div *ngIf="visible && usuario.apellidos != ''" class="input-group">
+            <span  class="input-group-addon" id="basic-addon1"> Apellidos </span>
+            <input [(ngModel)]="usuario.apellidos" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.apellidos}}">
+          </div>
+        </div>
+        <div *ngIf="visible" class="input-group personales">
+          <span  class="input-group-addon" id="basic-addon1"> Usuario </span>
+          <input (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.usuario}}">
+          <span class="input-group-addon" id="basic-addon2"> No cambiable </span>
+        </div>
+        <div *ngIf="visible" class="input-group personales">
+          <span  class="input-group-addon" id="basic-addon1"> Correo </span>
+          <input [(ngModel)]="usuario.correo" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.correo}}">
+          <span class="input-group-addon" id="basic-addon2"> * </span>
+        </div>
+        <div class="personales">
+          <input [(ngModel)]="usuario.cumpleanos" *ngIf="visible && usuario.cumpleanos == ''" type="text" class="form-control" placeholder="Cumpleaños">
+          <div *ngIf="visible && usuario.cumpleanos != ''" class="input-group">
+            <span  class="input-group-addon" id="basic-addon1"> Cumpleaños </span>
+            <input [(ngModel)]="usuario.cumpleanos" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.cumpleanos}}">
+            <span class="input-group-addon" id="basic-addon2"> dd/mm </span>
+          </div>
+        </div><div class="personales">
+          <input [(ngModel)]="usuario.nacionalidad" *ngIf="visible && usuario.nacionalidad == ''" type="text" class="form-control" placeholder="Nacionalidad">
+          <div *ngIf="visible && usuario.nacionalidad != ''" class="input-group">
+            <span  class="input-group-addon" id="basic-addon1"> Nacionalidad </span>
+            <input [(ngModel)]="usuario.nacionalidad" (click)="noNotificar('datos')" type="text" class="form-control" placeholder="{{usuario.nacionalidad}}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10">
+            <span> * (Obligatorio) </span>
+            <br>
+            <br>
+            <div *ngIf="datos" class="alert alert-success alert-dismissible" role="alert">
+              <button (click)="noNotificar('datos')" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              Se han realizado los cambios con éxito
+            </div>
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary" (click)="notificar('datos'); guardarDatosP()"> Guardar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Privacidad  -->
+    <div *ngIf="visible" class="panel panel-danger">
+      <div class="panel-heading">
+        Privacidad
+      </div>
+      <div class="panel-body centrado">
+        <span>Perfil</span>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.pPerfilTodos, 'perfil')" [inicial]='usuario.pPerfilTodos'></seleccion-component>
+        <br>
+        <br>
+        <span>Contenido</span>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.cPerfilTodos, 'contenido')" [inicial]='usuario.cPerfilTodos'></seleccion-component>
+        <br>
+        <br>
+        <span>Amigos</span>
+        <seleccion-component (cambio)="cambiaEstado(!usuario.aPerfilTodos, 'amigos')" [inicial]='usuario.aPerfilTodos'></seleccion-component>
+      </div>
+    </div>
+    <!-- Eliminar cuenta  -->
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        Borrar cuenta
+      </div>
+      <div class="panel-body centrado">
+        <p> Su cuenta será borrada para siempre y no podrá recuperarla. Al pulsar el botón de eliminar su cuenta será totalmente eliminada</p>
+        <button type="submit" class="btn btn-danger"> Eliminar </button>
+      </div>
+    </div>
+  </div>
+</div>

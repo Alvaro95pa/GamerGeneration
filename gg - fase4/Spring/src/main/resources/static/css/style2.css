@@ -1,0 +1,397 @@
+.admin {
+  padding: 5px;
+}
+
+.formulario {
+  padding-left: 20px;
+}
+
+.formulario label{
+  font-size: 16px;
+  color: #666;
+}
+
+.formulario input{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.registro div{
+  margin-top: 10px;
+}
+.registro p {
+  color: red;
+}
+/*CSS de Modo Admin*/
+.contorno{
+  border: 1px #E6E6E6 solid;
+  padding: 0px;
+  color: white;
+}
+.contorno a{
+  color:black;
+  font-weight: bold;
+}
+.contorno a:hover{
+  background: #CB4040 !important;
+}
+.selected {
+  background-color: firebrick !important;
+  color: white !important;
+}
+.selecteccheck{
+  background-color: #D95757 !important;
+  color: white !important;
+}
+.nuevocontenido{
+  padding-left: 20px;
+  padding-bottom: 10px;
+  float:right;
+}
+.checkboxdest{
+  background-color: green;
+  color:green !important;
+}
+.chdestacado{
+  padding: 6px 12px;
+  min-width: 10px;
+  color:white;
+  border: 1px #E6E6E6 solid;
+}
+.aux{
+  padding: 0;
+}
+.listado button{
+  margin-left: 9%;
+  margin-bottom: 10px;
+}
+.btnanadir{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  float: right;
+}
+.adminlistado{
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+}
+.anadircategoria{
+  display: inline-block;
+}
+.anadircategoria li{
+  width: 32%;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+.filtroobjeto{
+  margin-top: 20px;
+}
+.filtroobjeto h3{
+  margin: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+.admin{
+  margin-top: 20px;
+  background: white;
+  margin-right: 0px;
+  margin-left: 0px;
+  border-radius: 3px;
+}
+.admin_info p{
+  padding: 0;
+}
+.admin_info h3{
+  padding: 0;
+  font-size: 20px;
+}
+.admin_contenido button{
+  margin-top: 3%;
+}
+.admin_info{
+  float: right;
+  padding-left: 0px;
+}
+.admin_info:hover{
+  background: #F2F2F2;
+}
+.admin_info{
+  padding: 0;
+  padding-right: 20px;
+}
+
+.infor_user button{
+  margin-top: 2.6%;
+}
+.infor_user img{
+  width: 80%;
+  padding: 10px;
+}
+.contenedor_admin{
+  margin: 0;
+}
+/*
+Listado Noticias
+Listado Analisis
+Listado Usuarios
+Listado Catalogo
+
+*/
+
+.registro form {
+    padding-top: 22px;
+}
+.registro {
+  padding-right: 30%;
+  padding-left: 30%;
+}
+.condiciones {
+    padding-top: 20px;
+    font-size: 12px;
+    font-family: cabin;
+}
+@media screen and (max-width: 768px) {
+    .registro{
+      padding-right: 10%;
+      padding-left: 10%;
+    }
+}
+
+/*CSS respuesta de info-prod*/
+.respuesta textarea{
+    width: 100%;
+}
+.respuesta input{
+
+}
+.respuesta .nota{
+  padding-bottom: 15px;
+}
+.mens{
+    height:200px;
+}
+.btn_respuesta{
+    background: #CC2525;
+}
+.text{
+  padding: 0 !important;
+}
+
+.msg_error{
+  color:red;
+}
+#btn_enviar{
+  margin-right: 10px;
+  margin-left: 15px;
+}
+/*CSS Boton favoritos*/
+.favorito {
+  background: #F2F2F2;
+  padding: 6px 0px;
+  margin-top: 5px;
+  border: 1px #E6E6E6 solid;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.checkfavorito{
+  background: green;
+}
+#fav {
+    margin:0px;
+    margin-top:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+    padding: 0px;
+}
+
+#fav:hover {
+    background: #00FF40;
+}
+
+#fav label {
+    float:left;
+    width:4.0em;
+    margin: 0px;
+    width: 100%;
+}
+
+#fav label span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+    font-size-adjust: auto;
+    height: 30px;
+}
+
+#fav label input {
+    position:absolute;
+    top:-20px;
+}
+
+#fav input:checked + span {
+    background-color:#911;
+    color:#fff;
+    text-align: center;
+}
+
+/* CSS de Informacion de un producto */
+.portada{
+    text-align: center;
+}
+
+.portada img{
+    width: 100%;
+    max-height: 250px;
+
+}
+
+.datos dt{
+    float: left;
+    margin-right: 8px;
+}
+.datos h4{
+    font-size: 16px;
+    color: #666;
+    margin: 4px 0px;
+    padding: 0px 0px 4px 0px;
+    border-bottom: 2px solid #DDD;
+}
+.comentarios header{
+    text-align: center;
+    padding: 0px;
+}
+
+.comentarios img{
+    width: 70%;
+}
+.puntuacion{
+    border: 1px solid #BDBDBD;
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 14px;
+    background-color: #CC2525;
+    border-radius: 5px 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.comentarios time{
+    border-bottom: 1px solid #BDBDBD;
+}
+/* CSS de listado productos */
+.listado li{
+  display: inline-block;
+  width: 20%;
+}
+
+.listado li:hover{
+  background: firebrick;
+}
+.listado {
+  list-style: none;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+}
+.norelative{
+  position: inherit;
+  padding: 0;
+}
+/* CSS de cada producto */
+.detalle{
+  text-decoration: none;
+}
+.detalle div{
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2vw;
+}
+.detalle li img{
+  width: 100%;
+  margin-bottom: 3px;
+  height: 100%;
+}
+
+.detalle img{
+  width: 100%;
+  margin-bottom: 3px;
+  height: 100%;
+}
+ /* CCS de las pestañas para elegir tipo*/
+.contenedor_catalogo{
+  border: 1px #E6E6E6 solid;
+
+}
+.pestanas_catalogo {
+  list-style: none;
+  padding: 0px;
+}
+.pestanas_catalogo li:hover{
+  background: #F2F2F2;
+}
+.pestanas_catalogo li{
+  width: 33.33%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px #E6E6E6 solid;
+
+}
+.pestanas_catalogo a {
+  text-decoration: none;
+  width: 33%;
+  background: red;
+  font-weight: bold;
+  color: #6E6E6E;
+}
+
+/* CSS del menu */
+@media screen and (max-width: 768px) {
+    .categoria{
+      display: none;
+    }
+    .detalle div{
+      padding: 5px;
+      text-align: center;
+      font-size: 11px;
+    }
+}
+.categoria {
+    border-style: solid;
+    border-width: 1px;
+    border-color: gainsboro;
+    padding: 0px;
+    float: right;
+}
+.categoria h4{
+    margin: 0px;
+    padding: 8px;
+    text-align: center;
+    background: firebrick;
+    color: white;
+}
+
+.categoria a{
+    color: black;
+    text-decoration: none;
+}
+.categoria li {
+    padding: 5px 5px 5px 5px;
+}
+.categoria li:hover{
+    background: #F6CECE;
+}
+.categoria ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
