@@ -1,0 +1,40 @@
+<div class="row fondo">
+  <div class="panel panel-default">
+    <div class="panel-body ">
+      <center>
+        <div class="titulo">
+          Únete hoy a Gamer Generation.
+        </div>
+        <div class="registro">
+          <form>
+            <input [(ngModel)]="correo" type="text" class="form-control" placeholder="Correo electrónico">
+          </form>
+          <form>
+            <input [(ngModel)]="usuario" type="text" class="form-control" placeholder="Nombre de usuario">
+          </form>
+          <form>
+            <input [(ngModel)]="contrasena" type="password" class="form-control" placeholder="Contraseña">
+          </form>
+          <form>
+            <input [(ngModel)]="contrasena2" type="password" class="form-control" placeholder="Repite contraseña">
+          </form>
+          <div *ngIf="contrasena == contrasena2 && contrasena != null">
+            <div class="formulario2">
+              <form>
+            		<label for="exampleInputFile">Elige tu foto de perfil</label><input type="file" (change)="selectFile($event)">
+            		<button type="submit" class="btn btn-danger" (click)="upload()">Subir imagen</button>
+              </form>
+            </div>
+          </div>
+          <div class="condiciones">
+            Al registrarte, aceptas las Condiciones de Servicio y la Política de Privacidad, incluyendo el Uso de Cookies.
+          </div>
+          <p *ngIf="error" style="color: red">La contraseña no coincide</p>
+
+          <p *ngIf="registrado" class="regist">Se ha registrado satisfactoriamente</p>
+          <button class="btn btn-info" (click)="registrar()"> Registrarse </button>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!-- Contenido perfil -->
+<div *ngIf="visible && (usuario.cPerfilTodos || (usuario.usuario == actual))" class="row">
+  <!-- Menú del pefil  -->
+  <div class="col-md-2">
+    <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
+  </div>
+  <!-- Contenido  -->
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <ul *ngFor="#coleccion of usuario.coleccion" class="listado2">
+          <li>
+            <div>
+              <img *ngIf="visible" (click)="irA(coleccion)" src="images/{{coleccion.img.url}}">
+              <p> {{coleccion.name}} </p>
+              <button *ngIf="comprobarPeliculaFav(coleccion.name) || comprobarSerieFav(coleccion.name) || comprobarJuegoFav(coleccion.name)"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>
+              <button *ngIf="!comprobarPeliculaFav(coleccion.name) && !comprobarSerieFav(coleccion.name) && !comprobarJuegoFav(coleccion.name)" (click)="cambiarFavorito(coleccion)"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></button>
+              <button (click)="removeContenido(coleccion)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

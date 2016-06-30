@@ -1,6 +1,6 @@
 # GG (Gamer Generation)
 
-Contribuidores: 
+## Contribuidores: 
 
   Nombre: Jaime Alvarez Gómez, Correo: j.alvarezgo@alumnos.urjc.es, Github: xeven95
   
@@ -10,16 +10,16 @@ Contribuidores:
   
   Nombre: Álvaro Pavón Alvarado,  Correo: a.pavonal@alumnos.urjc.es, Github: Alvaro95pa
 
-Trello:
+## Trello:
 
   https://trello.com/b/mgWRrV5M/daw
   
   
-Descripción:
+## Descripción:
 
 La página principal muestra un listado de los ultimos posts (noticias y análisis) añadidos a la web, junto con una barra de navegación y una opción para iniciar sesión o registrarse. Consta de un componente en el que se muestran todas las películas, series y videojuegos sobre los que se tengan datos, así como diversas opciones para filtrar la información mostrada. A su vez, posee dos componentes similares para mostrar en uno el listado de noticias y en otro el listado de análisis. También se puede acceder a la versión completa de cada noticia y análisis. Los usuarios registrados tienen acceso a una mayor funcionalidad, destacando la posibilidad de realizar comentarios en los posts y añadir series/juegos a una lista de favoritos.
 
-Entidades:
+## Entidades:
 
 	Usuario
 	
@@ -31,9 +31,9 @@ Entidades:
 
 	Noticias/Análisis
     
-﻿# FASE 4:
+# FASE 4:
 	
-﻿# Instrucciones para descargar y ejecutar:
+## Instrucciones para descargar y ejecutar:
  
  -Para descargar el último tag del repositorio se puede utilizar la opción de descargar en .zip directamente desde la rama master.
   Puesto que se trata de un repositorio público se puede obtener la última versión (tag: Fase 4) clonando el repositorio a local.
@@ -46,23 +46,24 @@ Entidades:
   	Google Chrome.
   	Mozilla Firefox.
     
-﻿# Información necesaria para la consulta de la base de datos MYSQL:
+## Información necesaria para la consulta de la base de datos MYSQL:
  
- -Usuario:
+ -Usuario: raiz
  
- -Contraseña:
+ -Contraseña: contra
  
- -Dirección:
+ -Dirección: jdbc:mysql://localhost/ggmysql
 
   
-﻿# Diagrama de clases Java del servidor:
+### Diagrama de clases Java del servidor:
  
 ![Image](CapturaDAW/Diagrama Clases Java DAW.png)
 
-﻿# Diagrama de entidad/relación de la BBDD:
+### Diagrama de entidad/relación de la BBDD:
 
-![Image](CapturaDAW/Diagrama e-r.png)
+![Image](CapturaDAW/Diagrama_ER.png)
 
-﻿# Enlace al vídeo de muestra de interacción de la aplicación web:
+### Enlace al vídeo de muestra de interacción de la aplicación web:
  
+ https://youtu.be/ox06zjLiX28
  
