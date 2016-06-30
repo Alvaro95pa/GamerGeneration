@@ -8,7 +8,7 @@ Contribuidores:
   
   Nombre: Sergio Serrano Serrano,  Correo: s.serranoserr@alumnos.urjc.es, Github: Sergioserr
   
-  Nombre: Álvaro Pavón Alvarado,  Correo: a.pavonal@alumnos.urjc.es, Github: Alvaro95pa -> Hawk
+  Nombre: Álvaro Pavón Alvarado,  Correo: a.pavonal@alumnos.urjc.es, Github: Alvaro95pa
 
 Trello:
 
@@ -17,7 +17,7 @@ Trello:
   
 Descripción:
 
-La página principal mostrará un listado de los ultimos posts (noticias) añadidas a la web, junto con una barra de navegación y 	una opción para iniciar sesión o registrarse. También constará con un buscador de series y juegos, con el que se podrá acceder a toda la información disponible de dicha/o serie/juego. Los usuarios registrados tendrán acceso a una mayor funcionalidad, permitiéndoles modificar sus preferencias para filtrar los posts, además de comentarlos y de añadir series/juegos a una lista de favoritos.
+La página principal muestra un listado de los ultimos posts (noticias y análisis) añadidos a la web, junto con una barra de navegación y una opción para iniciar sesión o registrarse. Consta de un componente en el que se muestran todas las películas, series y videojuegos sobre los que se tengan datos, así como diversas opciones para filtrar la información mostrada. A su vez, posee dos componentes similares para mostrar en uno el listado de noticias y en otro el listado de análisis. También se puede acceder a la versión completa de cada noticia y análisis. Los usuarios registrados tienen acceso a una mayor funcionalidad, destacando la posibilidad de realizar comentarios en los posts y añadir series/juegos a una lista de favoritos.
 
 Entidades:
 
@@ -27,28 +27,42 @@ Entidades:
 
 	Catálogo
 	
-	Favoritos/Calificación
+	Expositor
 
 	Noticias/Análisis
     
-﻿# FASE 3:
+﻿# FASE 4:
 	
 ﻿# Instrucciones para descargar y ejecutar:
  
  -Para descargar el último tag del repositorio se puede utilizar la opción de descargar en .zip directamente desde la rama master.
-  Puesto que se trata de un repositorio público se puede obtener la última versión (tag: Fase 3) clonando el repositorio a local.
+  Puesto que se trata de un repositorio público se puede obtener la última versión (tag: Fase 4) clonando el repositorio a local.
   
- -La forma más recomendable para visualizar el código es utilizar node.js
-  Con el comando "ng serve" en la carpeta del proyecto se ejecuta la página y se muestra por defecto en el localhost:4200
+ -La forma más recomendable para visualizar el código es importar el contenido de la carpeta Spring al framework Spring Tool Suite.
+  Desde el framework simplemente se ejecuta la aplicación utilizando la clase main. La aplicación estará disponible en la dirección 
+  https://localhost:8443
   
  -Se ha comprobado su perfecto funcionamiento en los siguientes navegadores:
   	Google Chrome.
   	Mozilla Firefox.
+    
+﻿# Información necesaria para la consulta de la base de datos MYSQL:
+ 
+ -Usuario:
+ 
+ -Contraseña:
+ 
+ -Dirección:
 
   
-﻿# Diagrama de clases:
+﻿# Diagrama de clases Java del servidor:
  
-![Image](CapturaDAW/Diagrama_clases.png)
+![Image](CapturaDAW/Diagrama Clases Java DAW.png)
 
+﻿# Diagrama de entidad/relación de la BBDD:
 
+![Image](CapturaDAW/Diagrama e-r.png)
 
+﻿# Enlace al vídeo de muestra de interacción de la aplicación web:
+ 
+ 
