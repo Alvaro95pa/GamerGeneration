@@ -1,0 +1,1 @@
+{"version":3,"file":"image.model.js","sourceRoot":"","sources":["image.model.ts"],"names":[],"mappings":"","sourcesContent":["import 'angular2/core';\r\n\r\nexport interface Image {\r\n  descripcion: string;\r\n  url: string;\r\n}\r\n"]}
