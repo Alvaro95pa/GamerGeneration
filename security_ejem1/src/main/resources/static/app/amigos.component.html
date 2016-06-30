@@ -1,0 +1,21 @@
+<!-- Amigos perfil -->
+<div *ngIf="visible && (usuario.aPerfilTodos || (usuario.usuario == actual))" class="row">
+  <!-- Menú del pefil  -->
+  <div class="col-md-2">
+    <menu-component [usuario]='usuario' [actual]='actual'></menu-component>
+  </div>
+  <!-- Amigos  -->
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div class="panel-body amigos">
+        <ul class="amigos">
+          <li *ngFor="#amigo of usuario.amigos" (click)="irConcreto(amigo)">
+            <img *ngIf="amigo.imagen != null" class="imagen" src="images/{{amigo.imagen.url}}"/>
+            <img *ngIf="amigo.imagen == null" class="imagen" src="Foto por defecto"/>
+            <p> Usuario: {{amigo.usuario}} </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
