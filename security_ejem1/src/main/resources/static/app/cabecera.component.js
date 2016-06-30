@@ -112,6 +112,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
                     event.preventDefault();
                     this._sesionService.logIn(user, pass).subscribe(function (user) {
                         _this.usr = user;
+                        _this.fail = false;
                         _this.numRols = user.roles.length;
                     }, function (error) {
                         console.log("Invalid user or password"),
@@ -176,7 +177,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', './footer.
                             component: amigos_component_1.AmigosComponent,
                         },
                         {
-                            path: '/Coleccion/:id',
+                            path: '/coleccion/:id',
                             name: 'Coleccion',
                             component: contenido_component_1.ContenidoComponent,
                         },

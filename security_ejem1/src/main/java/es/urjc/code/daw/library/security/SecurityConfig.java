@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// URLs that need authentication to access to it
 		/*http.authorizeRequests().antMatchers(HttpMethod.GET, "/usuarios/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/usuarios/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.POST, "/usuarios/**").hasRole("ADMIN");
+		//http.authorizeRequests().antMatchers(HttpMethod.POST, "/usuarios/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/usuarios/**").hasRole("ADMIN");	*/	
 
 		// Other URLs can be accessed without authentication

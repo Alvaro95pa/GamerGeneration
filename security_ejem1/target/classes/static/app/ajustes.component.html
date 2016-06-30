@@ -1,5 +1,5 @@
 <!-- Ajustes perfil -->
-<div (click)="prepaContra()" *ngIf="visible && usuario.usuario == actual" class="row">
+<div *ngIf="visible && usuario.usuario == actual" class="row">
   <!-- Menu del perfil  -->
   <div class="col-md-2">
     <menu-component [usuario]='usuario' [actual]='actual'></menu-component>

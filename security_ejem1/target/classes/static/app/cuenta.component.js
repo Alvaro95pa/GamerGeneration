@@ -46,7 +46,7 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                     this._usuarioService.getUsuario(id).subscribe(function (usuario) {
                         _this.usuario = usuario;
                         _this._sesionService.getSesion().then(function (actual) {
-                            _this.usuario_actual = usuario;
+                            _this.usuario_actual = actual;
                             _this.id_actual = _this.usuario_actual.id;
                             _this.amigos = _this.usuario_actual.amigos;
                             if (id != _this.id_actual) {
@@ -59,12 +59,14 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                 };
                 ;
                 CuentaComponent.prototype.addAmigo = function () {
-                    this.usuario.amigos.push(this.usuario_actual);
-                    this.usuario.nAmigos = this.usuario.nAmigos + 1;
+                    var _this = this;
                     this.usuario_actual.amigos.push(this.usuario);
                     this.usuario_actual.nAmigos = this.usuario_actual.nAmigos + 1;
-                    this._usuarioService.addAmigo(this.usuario);
-                    this._usuarioService.addAmigo(this.usuario_actual);
+                    this._usuarioService.addAmigo(this.usuario_actual).subscribe(function (usuario) {
+                        _this.usuario.amigos.push(usuario);
+                        _this.usuario.nAmigos = _this.usuario.nAmigos + 1;
+                        _this._usuarioService.addAmigo(_this.usuario).subscribe();
+                    });
                     this.esAmigo();
                 };
                 CuentaComponent.prototype.removeAmigo = function () {
@@ -74,8 +76,8 @@ System.register(['angular2/core', './menu.component', 'angular2/router', './usua
                     this.usuario_actual.amigos.splice(posicion2, 1);
                     this.usuario.nAmigos = this.usuario.nAmigos - 1;
                     this.usuario_actual.nAmigos = this.usuario_actual.nAmigos - 1;
-                    this._usuarioService.remAmigo(this.usuario);
-                    this._usuarioService.remAmigo(this.usuario_actual);
+                    this._usuarioService.remAmigo(this.usuario).subscribe();
+                    this._usuarioService.remAmigo(this.usuario_actual).subscribe();
                     this.amigo = false;
                 };
                 CuentaComponent.prototype.esAmigo = function () {

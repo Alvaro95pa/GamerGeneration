@@ -1,6 +1,7 @@
 package es.urjc.code.daw.library.productos;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Producto {
 	private int tipoprod;
 	private String name;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private Image img;
 	
 	private String fecha;

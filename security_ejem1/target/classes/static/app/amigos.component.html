@@ -10,7 +10,8 @@
       <div class="panel-body amigos">
         <ul class="amigos">
           <li *ngFor="#amigo of usuario.amigos" (click)="irConcreto(amigo)">
-            <img class="imagen" src={{amigo.imagen.url}}/>
+            <img *ngIf="amigo.imagen != null" class="imagen" src="images/{{amigo.imagen.url}}"/>
+            <img *ngIf="amigo.imagen == null" class="imagen" src="Foto por defecto"/>
             <p> Usuario: {{amigo.usuario}} </p>
           </li>
         </ul>

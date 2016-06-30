@@ -62,39 +62,63 @@ System.register(['angular2/core', './menu.component', './usuario.service', 'angu
                     if (fav.tipoprod == 1) {
                         this.usuario.fJuego = fav;
                     }
-                    this._usuarioService.setFavorito(this.usuario);
+                    this._usuarioService.setFavorito(this.usuario).subscribe();
                 };
                 ContenidoComponent.prototype.removeContenido = function (cont) {
                     if (cont.tipoprod == 3) {
-                        if (cont.name == this.usuario.fPeli.name) {
-                            this.usuario.fPeli = { id: null, tipoprod: null, name: null, img: null, fecha: null, genero: null,
-                                plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null, grafica: null,
-                                almacenamiento: null, trailer: null, sinopsis: null, comentarios: null };
-                            this._usuarioService.removeFav(this.usuario);
+                        if (this.usuario.fPeli != null) {
+                            if (cont.name == this.usuario.fPeli.name) {
+                                this.usuario.fPeli = null;
+                                this._usuarioService.removeFav(this.usuario).subscribe();
+                            }
                         }
                         this.usuario.nPelis = this.usuario.nPelis - 1;
                     }
                     if (cont.tipoprod == 2) {
-                        if (cont.name == this.usuario.fSerie.name) {
-                            this.usuario.fSerie = { id: null, tipoprod: null, name: null, img: null, fecha: null, genero: null,
-                                plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null, grafica: null,
-                                almacenamiento: null, trailer: null, sinopsis: null, comentarios: null };
-                            this._usuarioService.removeFav(this.usuario);
+                        if (this.usuario.fSerie != null) {
+                            if (cont.name == this.usuario.fSerie.name) {
+                                this.usuario.fSerie = null;
+                                this._usuarioService.removeFav(this.usuario).subscribe();
+                            }
                         }
                         this.usuario.nSeries = this.usuario.nSeries - 1;
                     }
                     if (cont.tipoprod == 1) {
-                        if (cont.name == this.usuario.fJuego.name) {
-                            this.usuario.fJuego = { id: null, tipoprod: null, name: null, img: null, fecha: null, genero: null,
-                                plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null, grafica: null,
-                                almacenamiento: null, trailer: null, sinopsis: null, comentarios: null };
-                            this._usuarioService.removeFav(this.usuario);
+                        if (this.usuario.fJuego != null) {
+                            if (cont.name == this.usuario.fJuego.name) {
+                                this.usuario.fJuego = null;
+                                this._usuarioService.removeFav(this.usuario).subscribe();
+                            }
                         }
                         this.usuario.nJuegos = this.usuario.nJuegos - 1;
                     }
                     var posicion = this.usuario.coleccion.indexOf(cont);
                     this.usuario.coleccion.splice(posicion, 1);
-                    this._usuarioService.removeContenido(this.usuario);
+                    this._usuarioService.removeContenido(this.usuario).subscribe();
+                };
+                ContenidoComponent.prototype.comprobarJuegoFav = function (nombre) {
+                    if (this.usuario.fJuego != null) {
+                        return this.usuario.fJuego.name == nombre;
+                    }
+                    else {
+                        return false;
+                    }
+                };
+                ContenidoComponent.prototype.comprobarSerieFav = function (nombre) {
+                    if (this.usuario.fSerie != null) {
+                        return this.usuario.fSerie.name == nombre;
+                    }
+                    else {
+                        return false;
+                    }
+                };
+                ContenidoComponent.prototype.comprobarPeliculaFav = function (nombre) {
+                    if (this.usuario.fPeli != null) {
+                        return this.usuario.fPeli.name == nombre;
+                    }
+                    else {
+                        return false;
+                    }
                 };
                 ContenidoComponent.prototype.irA = function (producto) {
                     this._router.navigate(['Detalleprod', { tipoProd: producto.tipoprod, idProd: producto.id }]);

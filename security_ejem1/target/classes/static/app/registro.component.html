@@ -21,6 +21,7 @@
           <div class="condiciones">
             Al registrarte, aceptas las Condiciones de Servicio y la Política de Privacidad, incluyendo el Uso de Cookies.
           </div>
+          <p *ngIf="error" style="color: red">La contraseña no coincide</p>
           <p *ngIf="registrado" class="regist">Se ha registrado satisfactoriamente</p>
           <button class="btn btn-info" (click)="registrar()"> Registrarse </button>
         </div>

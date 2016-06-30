@@ -3,7 +3,7 @@
       <h1> {{contenido.titulo}} </h1>
       <hr class="red_hr">
       <div class="embed-responsive embed-responsive-16by9">
-          <img class="embed-responsive-item im_noticia" src="{{contenido.dest.imgn.url}}"/>
+          <img class="embed-responsive-item im_noticia" src="images/{{contenido.dest.imgn.url}}"/>
       </div>
       <hr>
       <p> {{contenido.cuerpo}}
@@ -29,7 +29,7 @@
          <div class="col-md-12 col-xs-12 respuesta">
            <header class="col-md-2 col-xs-2">
              <dl>
-               <dd><img *ngIf="visible_usuario" src={{usr.imagen.url}}></dd>
+               <dd><img *ngIf="visible_usuario" src="images/{{usr.imagen.url}}"></dd>
                <dd><a>{{usr.usuario}}</a></dd>
              </dl>
            </header>

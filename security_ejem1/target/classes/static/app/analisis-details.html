@@ -1,10 +1,10 @@
-<div class="row fondo" *ngIf="producto">
+<div class="row fondo" *ngIf="visible">
     <div class="col-md-12">
         <h2></h2>
         <hr class="red_hr">
-        <div class="cartel">
+        <div class="cartel" *ngIf="producto">
             <a id="pop">
-                <img *ngIf="visible" src={{producto.img.url}}>
+                <img *ngIf="visible" src="images/{{producto.img.url}}">
             </a>
             <p *ngIf="visible"><span class="negrita">Nombre:</span> {{producto.name}}</p>
             <p *ngIf="visible && producto.tipoprod==1"><span class="negrita">Pltaforma:</span><span id="{{producto.plataforma}}"> {{producto.plataforma}}</span></p>
@@ -40,7 +40,7 @@
               <div class="col-md-12 col-xs-12 respuesta">
                 <header class="col-md-2 col-xs-2">
                   <dl>
-                    <dd><img *ngIf="visible_usuario" src={{usuario.imagen.url}}></dd>
+                    <dd><img *ngIf="visible_usuario" src="images/{{usuario.imagen.url}}"></dd>
                     <dd><a>{{usuario.usuario}}</a></dd>
                   </dl>
                 </header>

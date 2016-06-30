@@ -7,7 +7,7 @@
   </div>
 </div>
 <!-- Perfil publico -->
-<div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == usuario_actual.usuario">
+<div *ngIf="visible && (usuario.pPerfilTodos || (visible && usuario.usuario == usuario_actual.usuario))">
 <!-- Primera fila (Datos personales y avatar con información)  -->
   <div class="row">
     <!-- Menú del pefil  -->
@@ -32,7 +32,7 @@
     <div class="col-md-3">
       <div class="panel panel-default">
         <div *ngIf="visible && usuario.pPerfilTodos || visible && usuario.usuario == usuario_actual.usuario" class="panel-body">
-          <img *ngIf="visible" class="imagen" src={{usuario.imagen.url}}/>
+          <img *ngIf="visible && usuario.imagen != null" class="imagen" src="images/{{usuario.imagen.url}}"/>
           <p class="avatar"> Usuario : {{usuario.usuario}} </p>
           <p class="avatar"> Correo: {{usuario.correo}} </p>
         </div>
@@ -76,8 +76,8 @@
             <div class="panel panel-default">
               <div class="panel-body fotos">
                 <p> Pelicula </p>
-                <img *ngIf="visible" src={{usuario.fPeli.img.url}}/>
-                <p *ngIf="visible"> {{usuario.fPeli.name}} </p>
+                <img *ngIf="visible && usuario.fPeli != null" src="images/{{usuario.fPeli.img.url}}"/>
+                <p *ngIf="visible && usuario.fPeli != null"> {{usuario.fPeli.name}} </p>
               </div>
             </div>
           </div>
@@ -85,8 +85,8 @@
             <div class="panel panel-default">
               <div class="panel-body fotos">
                 <p> Serie </p>
-                <img *ngIf="visible" src={{usuario.fSerie.img.url}}/>
-                <p *ngIf="visible"> {{usuario.fSerie.name}} </p>
+                <img *ngIf="visible && usuario.fSerie != null" src="images/{{usuario.fSerie.img.url}}"/>
+                <p *ngIf="visible && usuario.fSerie != null"> {{usuario.fSerie.name}} </p>
               </div>
             </div>
           </div>
@@ -94,8 +94,8 @@
             <div class="panel panel-default">
               <div class="panel-body fotos">
                 <p> Videojuego </p>
-                <img *ngIf="visible" src={{usuario.fJuego.img.url}}/>
-                <p *ngIf="visible"> {{usuario.fJuego.name}} </p>
+                <img *ngIf="visible && usuario.fJuego != null" src="images/{{usuario.fJuego.img.url}}"/>
+                <p *ngIf="visible && usuario.fJuego != null"> {{usuario.fJuego.name}} </p>
               </div>
             </div>
           </div>

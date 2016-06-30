@@ -30,7 +30,7 @@ public class Contenido {
 	private String titulo;
 	private String fecha;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private Image multimedia;
 	
 	@Size(max = 1000)

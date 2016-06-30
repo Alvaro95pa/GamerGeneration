@@ -47,8 +47,11 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._contentService.getContenidoId(id).subscribe(function (contenido) {
-                        _this.contenido = contenido,
+                        _this.contenido = contenido;
+                        _this.visible = true;
+                        if (contenido.nProducto != null) {
                             _this.getProducto(contenido.nProducto);
+                        }
                     });
                     this.getComentarios();
                     this.getsesion();
@@ -57,7 +60,6 @@ System.register(['angular2/core', './contenido.service', './clases.service', './
                     var _this = this;
                     this._clasesService.getProdNombre(nombre).subscribe(function (producto) {
                         _this.producto = producto;
-                        _this.visible = true;
                     });
                 };
                 AnalisisDetails.prototype.getComentarios = function () {

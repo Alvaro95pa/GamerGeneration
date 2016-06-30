@@ -27,7 +27,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		contenidoRep.save(new Contenido("Uncharted 4", "Noticia", "Juego", 
+		/*contenidoRep.save(new Contenido("Uncharted 4", "Noticia", "Juego", 
 				"Uncharted 4: Naughty Dog presenta el Modo Saqueo del multijugador", "22/04/2016", 
 				new Image("Uncharted", "img/u_cont.jpg"), "Es un modo de juego al estilo de captura la bandera, pero con un 'giro uncharted': 'puedes lanzar el ‘ídolo’ (también conocido como ‘bandera’)', explica Robert Cogburn, de Naughty Dog. 'Un gran equipo es clave para ganar la partida, ya que el objetivo es encontrar el ídolo en el mapa y llevarlo a tu refugio del tesoro', añade.", 
 				"Poco más de una quincena para el estreno de Uncharted 4: A Thief's End."
@@ -57,39 +57,43 @@ public class DatabaseInitializer implements CommandLineRunner {
 				new Image("DarkSouls3", "img/ds_cont.jpg"), "El lanzamiento de Dark Souls 3 está a menos de un mes y Bandai no deja de crear hype. Esta vez nos han dejado un trailercon gameplay real y un tema sonoro muy epico.", 
 				"El lanzamiento de Dark Souls 3 está a menos de un mes y Bandai no deja de crear hype. Esta vez nos han dejado un trailer con gameplay real y un tema sonoro muy epico.", 
 				"", new Expositor(true, new Image("DarkSouls3", "img/ds_slide.jpg"))));
-		
+		*/
 		//PRODUCTOS
 				//Producto 1
-				Producto prod1 = new Producto(3, "Deadpool", "nada", "accion", "pelicula",
+				/*Producto prod1 = new Producto(3, "Deadpool", "nada", "accion", "pelicula",
 						"nada", "nada", "nada", "nada", "nada", "nada", "nada", "nada");
 				//Producto 2
 				Producto prod2 = new Producto(2, "The walkind dead", "nada", "accion", "serie",
 						"nada", "nada", "nada", "nada", "nada", "nada", "nada", "nada");
 				//Producto 3
 				Producto prod3 = new Producto(1, "Civilization V", "nada", "estrategia", "juego",
-						"nada", "nada", "nada", "nada", "nada", "nada", "nada", "nada");
+						"nada", "nada", "nada", "nada", "nada", "nada", "nada", "nada");*/
 				//Producto 4
-				Producto prod4 = new Producto(3, "Batman vs Superman", "nada", "accion", "pelicula",
-						"nada", "nada", "nada", "nada", "nada", "nada", "nada", "nada");
-				prod1.setImg(new Image("DeadPool","img/dead.jpg"));
-				prod2.setImg(new Image("TWD", "img/twd.jpg"));
-				prod3.setImg(new Image("Civi","img/civ5.jpg"));
-				prod4.setImg(new Image("BvS","img/bs_cont.jpg"));
-				productoRepositorio.save(prod1);
-				productoRepositorio.save(prod2);
-				productoRepositorio.save(prod3);
-				productoRepositorio.save(prod4);
+				/*Producto prod4 = new Producto(3, "Batman vs Superman", "nada", "accion", "pelicula",
+						"nada", "nada", "nada", "nada", "nada", "nada", "nada", "nada");*/
+				//prod1.setImg(new Image("DeadPool","img/dead.jpg"));
+				//prod2.setImg(new Image("TWD", "img/twd.jpg"));
+				//prod3.setImg(new Image("Civi","img/civ5.jpg"));
+				//prod4.setImg(new Image("BvS","img/bs_cont.jpg"));
+				//productoRepositorio.save(prod1);
+				//productoRepositorio.save(prod2);
+				//productoRepositorio.save(prod3);
+				//productoRepositorio.save(prod4);
 				
 				
 				//Usuario 1
 				User usuario1 = new User("jaime", "1234", "pepitogrillo32@gmail.com", "Pepito", "Matarile Motos", 
-						"Española", "22/02", 0, 3, 3, 2, "Ayer", "hace 1 año", 
-						prod1, prod2, prod3, true, false, false, "ROLE_USER");
-				usuario1.setImagen(new Image("avatar","img/avatar1.jpg"));
-				usuario1.addContenido(prod1);
-				usuario1.addContenido(prod2);
-				usuario1.addContenido(prod3);
+						"Española", "22/02", 0, 0, 0, 0, "Ayer", "hace 1 año", 
+						null, null, null, true, false, false, "ROLE_USER");
+				User usuario2 = new User("admin", "admin", "admin@gmail.com", "Admin", "Admin", 
+						"Desconocida", "Todos los dias", 0, 0, 0, 0, "Siempre", "Siempre", 
+						null, null, null, true, true, true, "ROLE_USER", "ROLE_ADMIN");
+				//usuario1.setImagen(new Image("avatar","img/avatar1.jpg"));
+				//usuario1.addColeccion(prod1);
+				//usuario1.addColeccion(prod2);
+				//usuario1.addColeccion(prod3);
 				usuarioRepositorio.save(usuario1);
+				usuarioRepositorio.save(usuario2);
 				
 				/*User admin = new User("admin", "admin", "pepitogrillo32@gmail.com", "Pepito", "Matarile Motos", 
 						"EspaÃ±ola", "22/02", 0, 3, 3, 2, "Ayer", "desde el inicio de los tiempos", 

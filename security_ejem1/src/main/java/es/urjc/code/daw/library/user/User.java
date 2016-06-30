@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -78,21 +79,21 @@ public class User {
 	public User() {
 	}
 
-	public User(String usuario, String password, String correo, String... roles) {
+	public User(String usuario, String contrasena, String correo, String... roles) {
 		this.usuario = usuario;
-		this.contrasena = new BCryptPasswordEncoder().encode(password);
+		this.contrasena = new BCryptPasswordEncoder().encode(contrasena);
 		this.correo = correo;
-		this.coleccion = new ArrayList <Producto>();
-		this.amigos = new ArrayList <User>();
+		this.coleccion = new ArrayList<Producto>();
+		this.amigos = new ArrayList<User>();
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 	
-	public User(String usuario, String password, String correo, String nombre, String apellidos, String nacionalidad, String cumpleanos, 
+	public User(String usuario, String contrasena, String correo, String nombre, String apellidos, String nacionalidad, String cumpleanos, 
 			int nAmigos, int nPelis, int nSeries, int nJuegos, String ultima, String tUsuario,
 			Producto fPeli, Producto fSerie, Producto fJuego, boolean pPerfilTodos, boolean cPerfilTodos, 
 			boolean aPerfilTodos, String... roles) {
 		this.usuario = usuario;
-		this.contrasena = new BCryptPasswordEncoder().encode(password);
+		this.contrasena = new BCryptPasswordEncoder().encode(contrasena);
 		this.correo = correo;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
@@ -110,8 +111,8 @@ public class User {
 		this.pPerfilTodos = pPerfilTodos;
 		this.cPerfilTodos = cPerfilTodos;
 		this.aPerfilTodos = aPerfilTodos;
-		this.coleccion = new ArrayList <Producto>();
-		this.amigos = new ArrayList <User>();
+		this.coleccion = new ArrayList<Producto>();
+		this.amigos = new ArrayList<User>();
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 	
@@ -307,19 +308,19 @@ public class User {
 		this.amigos = amigos;
 	}
 	
-	public void addAmigo(User usuario){
+	public void addAmigos(User usuario){
 		this.amigos.add(usuario);
 	}
 	
-	public void removeAmigo(User usuario){
+	public void removeAmigos(User usuario){
 		this.amigos.remove(usuario);
 	}
 	
-	public void addContenido(Producto p){
+	public void addColeccion(Producto p){
 		this.coleccion.add(p);
 	}
 	
-	public void removeContenido(Producto p){
+	public void removeColeccion(Producto p){
 		this.coleccion.remove(p);
 	}
 }

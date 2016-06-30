@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -31,6 +32,8 @@ public class ImagesController {
 	private static final Logger log = LoggerFactory.getLogger(ImagesController.class);
 	private List<Image> images = new ArrayList<>();
 	
+	private int contador =1;
+	
 	@Autowired
 	private ImagesRepository repository;
 
@@ -44,23 +47,38 @@ public class ImagesController {
 		if (!Files.exists(FILES_FOLDER)) {
 			Files.createDirectories(FILES_FOLDER);
 		}
-
+		
+		if(this.images.size() == 0){
+			this.images = repository.findAll();
+		}
+		
 		String fileName = "image-" + images.size() + ".jpg";
+		//String fileName = "image-" + contador + ".jpg";
 		File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 		file.transferTo(uploadedFile);
 
 		Image image = new Image(description, fileName);
-
+		repository.save(image);
 		images.add(image);
-
+		contador++;
 		return image;
 	}
 
 	@RequestMapping("/images")
-	public List<Image> getImages() {
-		return images;
+	public int getImages() {
+		return images.size()+1;
 	}
+	
+	/*@RequestMapping("/images")
+	public int getImages() {
+		return contador;
+	}*/
 
+	@RequestMapping(value = {"/image/{id}"}, method = RequestMethod.GET)
+	public Image getImagebyid(@PathVariable long id) {
+		return repository.findOne(id);
+	}
+	
 	//NOTE: The url format "/images/{fileName:.+}" avoid Spring MVC remove file extension.
 	
 	@RequestMapping("/images/{fileName:.+}")
@@ -77,6 +95,11 @@ public class ImagesController {
 		} else {
 			res.sendError(404, "File" + fileName + "(" + image.toAbsolutePath() + ") does not exist");
 		}
+	}
+	
+	@RequestMapping(value = {"/images/all"}, method = RequestMethod.GET)
+	public Collection<Image> getProductosAll() {
+		return repository.findAll();
 	}
 
 }

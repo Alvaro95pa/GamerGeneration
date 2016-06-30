@@ -54,7 +54,6 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/Rx']
                 modoadminservice.prototype.deleteProd = function (id) {
                     var _this = this;
                     return this.http.delete(prod_URL + '/' + id)
-                        .map(function (resp) { return resp.json(); })
                         .catch(function (err) { return _this.mostrarError(err); });
                 };
                 modoadminservice.prototype.pushProd = function (produc) {

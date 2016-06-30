@@ -31,37 +31,31 @@ System.register(['angular2/core', './usuario.service'], function(exports_1, cont
                 }
                 registrar.prototype.registrar = function () {
                     this.nuevo_usuario = {
-                        nombre: '',
-                        apellidos: '',
-                        nacionalidad: '',
-                        cumpleanos: '',
+                        nombre: "",
+                        apellidos: "",
+                        nacionalidad: "",
+                        cumpleanos: "",
                         roles: ['ROLE_USER'],
                         usuario: this.usuario,
                         contrasena: this.contrasena,
                         correo: this.correo,
-                        imagen: this.img,
+                        imagen: null,
                         nAmigos: 0,
                         nPelis: 0,
                         nSeries: 0,
                         nJuegos: 0,
                         ultima: "hoy",
                         tUsuario: "hoy",
-                        fPeli: { id: null, tipoprod: null, name: null, img: null, fecha: null,
-                            genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
-                            grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null },
-                        fSerie: { id: null, tipoprod: null, name: null, img: null, fecha: null,
-                            genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
-                            grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null },
-                        fJuego: { id: null, tipoprod: null, name: null, img: null, fecha: null,
-                            genero: null, plataforma: null, desarrollador: null, editor: null, procesador: null, memoria: null,
-                            grafica: null, almacenamiento: null, trailer: null, sinopsis: null, comentarios: null },
+                        fPeli: null,
+                        fSerie: null,
+                        fJuego: null,
                         pPerfilTodos: true,
                         cPerfilTodos: true,
                         aPerfilTodos: true,
                         coleccion: [],
                         amigos: []
                     };
-                    this._usuarioService.addUsuario(this.nuevo_usuario).subscribe(function (usuario) { return console.log("Hola"); });
+                    this._usuarioService.addUsuario(this.nuevo_usuario).subscribe();
                     this.registrado = true;
                 };
                 registrar = __decorate([

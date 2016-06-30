@@ -28,7 +28,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 comentarioscomponent = __decorate([
                     core_1.Component({
                         selector: 'comentarios',
-                        template: "\n  <article class=\"col-md-12 col-xs-12 comentarios\">\n    <header class=\"col-md-2 col-xs-2\">\n      <dl>\n        <dd><img src={{comentario.user_img}}></dd>\n        <dd><a>{{comentario.user}}</a></dd>\n      </dl>\n    </header>\n    <time class=\"col-md-10 col-xs-10 fecha\">{{comentario.fecha}}</time>\n    <p class=\"col-md-9 col-xs-8\">{{comentario.mensaje}}</p>\n    <div *ngIf=\"comentario.idjuego != 0\" class=\"col-md-1 col-xs-12 puntuacion\"><span>{{comentario.puntuacion}}</span></div>\n  </article>\n  ",
+                        template: "\n  <article class=\"col-md-12 col-xs-12 comentarios\">\n    <header class=\"col-md-2 col-xs-2\">\n      <dl>\n        <dd><img src=\"images/{{comentario.user_img}}\"></dd>\n        <dd><a>{{comentario.user}}</a></dd>\n      </dl>\n    </header>\n    <time class=\"col-md-10 col-xs-10 fecha\">{{comentario.fecha}}</time>\n    <p class=\"col-md-9 col-xs-8\">{{comentario.mensaje}}</p>\n    <div *ngIf=\"comentario.idjuego != 0\" class=\"col-md-1 col-xs-12 puntuacion\"><span>{{comentario.puntuacion}}</span></div>\n  </article>\n  ",
                     }), 
                     __metadata('design:paramtypes', [])
                 ], comentarioscomponent);

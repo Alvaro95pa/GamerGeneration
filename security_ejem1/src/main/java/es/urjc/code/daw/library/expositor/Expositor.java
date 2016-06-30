@@ -1,7 +1,6 @@
 package es.urjc.code.daw.library.expositor;
 
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +19,7 @@ public class Expositor {
 	
 	private boolean destacado;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	private Image imgn;
 	
 	public Expositor(){}

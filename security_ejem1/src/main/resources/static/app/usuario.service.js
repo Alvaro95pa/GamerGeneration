@@ -25,7 +25,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
             },
             function (_1) {}],
         execute: function() {
-            BASE_URL = 'https://127.0.0.1:8443/usuarios/';
+            BASE_URL = 'https://localhost:8443/usuarios/';
             UsuarioService = (function () {
                 //Constructor
                 function UsuarioService(http) {

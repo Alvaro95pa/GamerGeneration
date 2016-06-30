@@ -28,7 +28,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 proddetalleComponent = __decorate([
                     core_1.Component({
                         selector: 'prod-detalle',
-                        template: "\n    <a class=\"detalle\"><div>\n      <img src={{prod.img.url}}>\n      <p>{{prod.name}}</p>\n    </div></a>\n  "
+                        template: "\n    <a class=\"detalle\"><div>\n      <img src=\"images/{{prod.img.url}}\">\n      <p>{{prod.name}}</p>\n    </div></a>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], proddetalleComponent);

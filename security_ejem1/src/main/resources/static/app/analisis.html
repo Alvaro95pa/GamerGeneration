@@ -28,7 +28,7 @@
                 <!--Tab juegos-->
                 <div id="vjuegos" class="tab-pane fade in active">
                     <div class="col-md-12 fondo2">
-
+                        <br>
                         <ul class="aLista" *ngFor="#cont of contAux">
                           <li *ngIf="cont.tipo=='Análisis' && cont.categoria=='Juegos'">
                             <a (click)="gotoDetail(cont)" class="noticia">
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="panel-body">
                                   <div class="cartel">
-                                    <img src="{{cont.multimedia.url}}">
+                                    <img src="images/{{cont.multimedia.url}}">
                                     <p>{{cont.resumen}}</p>
                                   </div>
                                 </div>
@@ -53,6 +53,7 @@
                 <!--Tab series-->
                 <div id="series" class="tab-pane fade">
                     <div class="col-md-12 fondo2">
+                      <br>
                         <ul class="aLista" *ngFor="#cont of contAux">
                           <li *ngIf="cont.tipo=='Análisis' && cont.categoria=='Series'">
                             <a (click)="gotoDetail(cont)" class="noticia">
@@ -62,7 +63,7 @@
                                 </div>
                                 <div class="panel-body">
                                   <div class="cartel">
-                                    <img src="{{cont.multimedia.url}}">
+                                    <img src="images/{{cont.multimedia.url}}">
                                     <p>{{cont.resumen}}</p>
                                   </div>
                                 </div>
@@ -77,6 +78,7 @@
                 <!--Tab películas-->
                 <div id="peliculas" class="tab-pane fade">
                     <div class="col-md-12 fondo2">
+                      <br>
                         <ul class="aLista" *ngFor="#cont of contAux">
                           <li *ngIf="cont.tipo=='Análisis' && cont.categoria=='Peliculas'">
                             <a class="noticia" (click)="gotoDetail(cont)">
@@ -86,7 +88,7 @@
                                 </div>
                                 <div class="panel-body">
                                   <div class="cartel">
-                                    <img src="{{cont.multimedia.url}}">
+                                    <img src="images/{{cont.multimedia.url}}">
                                     <p>{{cont.resumen}}</p>
                                   </div>
                                 </div>
