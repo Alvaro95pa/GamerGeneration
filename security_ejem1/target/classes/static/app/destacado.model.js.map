@@ -1,1 +1,0 @@
-{"version":3,"file":"destacado.model.js","sourceRoot":"","sources":["destacado.model.ts"],"names":[],"mappings":"","sourcesContent":["import 'angular2/core';\nimport {Image} from './image.model';\n\nexport interface Destacado {\n  destacado: boolean;\n  imgn: Image;\n}\n"]}

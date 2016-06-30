@@ -1,1 +1,0 @@
-{"version":3,"file":"sesion.model.js","sourceRoot":"","sources":["sesion.model.ts"],"names":[],"mappings":"","sourcesContent":["import 'angular2/core';\r\n\r\nexport interface Sesion {\r\n\tid: number;\r\n\timagen: string;\r\n\tusuario: string;\r\n  contrasena: string;\r\n\tuser: boolean;\r\n\tpass: boolean;\r\n\tloged: boolean;\r\n}\r\n"]}
