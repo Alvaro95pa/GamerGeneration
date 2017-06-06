@@ -9,11 +9,6 @@
   Nombre: Sergio Serrano Serrano,  Correo: s.serranoserr@alumnos.urjc.es, Github: Sergioserr
   
   Nombre: Álvaro Pavón Alvarado,  Correo: a.pavonal@alumnos.urjc.es, Github: Alvaro95pa
-
-## Trello:
-
-  https://trello.com/b/mgWRrV5M/daw
-  
   
 ## Descripción:
 
@@ -55,9 +50,6 @@ La página principal muestra un listado de los ultimos posts (noticias y anális
  -Dirección: jdbc:mysql://localhost/ggmysql
 
   
-### Diagrama de clases Java del servidor:
- 
-![Image](CapturaDAW/Diagrama-Clases-Java-DAW.png)
 
 ### Diagrama de entidad/relación de la BBDD:
 
