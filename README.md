@@ -57,7 +57,7 @@ La página principal muestra un listado de los ultimos posts (noticias y anális
   
 ### Diagrama de clases Java del servidor:
  
-![Image](CapturaDAW/Diagrama Clases Java DAW.png)
+![Image](CapturaDAW/Diagrama-Clases-Java-DAW.png)
 
 ### Diagrama de entidad/relación de la BBDD:
 
